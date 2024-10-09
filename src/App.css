@@ -1,0 +1,10 @@
+.navBtn {
+  border: none;
+  background: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.navBtn:hover {
+  border-bottom: 2px solid blue;
+  cursor: pointer;
+}
