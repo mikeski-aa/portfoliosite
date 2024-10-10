@@ -68,7 +68,7 @@ function OdinbookCarousel() {
     setModalOpen(false);
   };
   return (
-    <div className="projectBoxContainer">
+    <div className={"projectBoxContainer"}>
       <div className={`modal ${modalOpen}`}>
         <div className="modalContent">
           <button className="closeBtn" onClick={handleCloseModal}>
@@ -91,7 +91,7 @@ function OdinbookCarousel() {
         <div className="imagesContainer">
           <img
             src={imgArr[carouselSeat]}
-            className="carImg"
+            className={"carImg"}
             onClick={handleModalOpen}
           ></img>
         </div>
@@ -123,10 +123,7 @@ function OdinbookCarousel() {
           ></button>
         </div>
       </div>
-      <div
-        className={`projectDescription ${descShow}`}
-        onClick={handleDescShow}
-      >
+      <div className={"projectDescription"} onClick={handleDescShow}>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae eos
         laborum eius est deleniti molestias, cumque facilis debitis quos non!
         Magnam, nulla sit molestias dolores reprehenderit, nam velit quisquam
