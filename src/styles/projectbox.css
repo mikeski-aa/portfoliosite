@@ -55,6 +55,10 @@
   /* position: absolute; */
 }
 
+.carImg:hover {
+  cursor: pointer;
+}
+
 .test {
   width: 100px;
   height: 100px;
@@ -111,6 +115,63 @@
   margin-bottom: 15px;
 }
 
+.modal.false {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(170, 170, 170, 0.384);
+  backdrop-filter: blur(5px);
+  z-index: 300;
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  align-items: center;
+}
+
+.closeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-100%);
+  background: none;
+  border: none;
+  transition-duration: 0.5s;
+  font-weight: 700;
+  border-radius: 15px;
+}
+
+.closeBtn:hover {
+  background-color: rgba(241, 59, 59, 0.753);
+  cursor: pointer;
+}
+
+.crossImg {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 15px;
+}
+
+.largeImg {
+  width: 80vw;
+}
+
 @media (max-width: 500px) {
   .projectDescription {
     width: 85vw;
@@ -126,5 +187,11 @@
 
   .projectDescription.true {
     width: 85vw;
+  }
+
+  .largeImg {
+    object-fit: contain;
+    height: 50vh;
+    width: 100vw;
   }
 }

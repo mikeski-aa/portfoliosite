@@ -1,19 +1,10 @@
 import "../styles/projectbox.css";
-import loginPc from "../assets/odinbookpics/loginpc.png";
-import mainfeedPc from "../assets/odinbookpics/mainfeedpagepc.png";
-import friendPc from "../assets/odinbookpics/friendspagepc.png";
-import profilePc from "../assets/odinbookpics/profilepagepc.png";
-import loginPhone from "../assets/odinbookpics/loginphone.png";
-import mainPhone from "../assets/odinbookpics/mainfeedphone.png";
-import friendPhone from "../assets/odinbookpics/friendphone.png";
-import profilePhone from "../assets/odinbookpics/profilephone.png";
-import compView from "../assets/odinbookpics/computerview.png";
-import phoneView from "../assets/odinbookpics/phoneview.png";
 import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
 import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
 import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
 import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
 import arrow from "../assets/arrow.svg";
+import cross from "../assets/icons/cross.svg";
 import { useState } from "react";
 
 // very simple image carousel to go through project images
@@ -70,14 +61,31 @@ function OdinbookCarousel() {
 
   // handle opening modal
   const handleModalOpen = () => {
-    if (modalOpen === false) {
-      setModalOpen(true);
-    } else {
-      setModalOpen(false);
-    }
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
   return (
     <div className="projectBoxContainer">
+      <div className={`modal ${modalOpen}`}>
+        <div className="modalContent">
+          <button className="closeBtn" onClick={handleCloseModal}>
+            <img className="crossImg" src={cross}></img>
+            Close
+          </button>
+          <img src={imgArr[carouselSeat]} className="largeImg"></img>
+          <div className="modalBtns">
+            <button className="carControl" onClick={handleGoLeft}>
+              <img src={arrow} className="arrowImgLeft"></img>
+            </button>
+            <button className="carControl" onClick={handleGoRight}>
+              <img src={arrow} className="arrowImgRight"></img>
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="projectTitle">Odinbook</div>
       <div className="imageCarousel">
         <div className="imagesContainer">
