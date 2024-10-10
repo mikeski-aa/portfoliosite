@@ -9,7 +9,7 @@
 }
 
 .projectDescription {
-  width: 700px;
+  width: 55vw;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* This is where the magic happens. */
@@ -21,7 +21,7 @@
 }
 
 .projectDescription.true {
-  width: 700px;
+  width: 55vw;
   text-wrap: wrap;
 }
 
@@ -94,8 +94,9 @@
 }
 
 .arrowBtns {
-  background: none;
+  background: rgb(255, 255, 255);
   border: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
 }
 
 .arrowBtns:hover {

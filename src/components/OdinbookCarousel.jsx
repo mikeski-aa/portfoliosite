@@ -7,6 +7,12 @@ import loginPhone from "../assets/odinbookpics/loginphone.png";
 import mainPhone from "../assets/odinbookpics/mainfeedphone.png";
 import friendPhone from "../assets/odinbookpics/friendphone.png";
 import profilePhone from "../assets/odinbookpics/profilephone.png";
+import compView from "../assets/odinbookpics/computerview.png";
+import phoneView from "../assets/odinbookpics/phoneview.png";
+import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
+import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
+import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
+import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
 import arrow from "../assets/arrow.svg";
 import { useState } from "react";
 
@@ -14,27 +20,19 @@ import { useState } from "react";
 function OdinbookCarousel() {
   const [carouselSeat, setCarouselSeat] = useState(0);
   const [descShow, setDescShow] = useState(false);
-  const imgArr = [
-    loginPc,
-    mainfeedPc,
-    friendPc,
-    profilePc,
-    loginPhone,
-    mainPhone,
-    friendPhone,
-    profilePhone,
-  ];
+  const [modalOpen, setModalOpen] = useState(false);
+  const imgArr = [mergedLogin, mergedMain, mergedFriends, mergedProfile];
 
   const handleGoLeft = () => {
     if (carouselSeat === 0) {
-      setCarouselSeat(7);
+      setCarouselSeat(3);
     } else {
       setCarouselSeat(carouselSeat - 1);
     }
   };
 
   const handleGoRight = () => {
-    if (carouselSeat === 7) {
+    if (carouselSeat === 3) {
       setCarouselSeat(0);
     } else {
       setCarouselSeat(carouselSeat + 1);
@@ -50,14 +48,6 @@ function OdinbookCarousel() {
     } else if (btnNum === 2 && carouselSeat === 2) {
       return "active";
     } else if (btnNum === 3 && carouselSeat === 3) {
-      return "active";
-    } else if (btnNum === 4 && carouselSeat === 4) {
-      return "active";
-    } else if (btnNum === 5 && carouselSeat === 5) {
-      return "active";
-    } else if (btnNum === 6 && carouselSeat === 6) {
-      return "active";
-    } else if (btnNum === 7 && carouselSeat === 7) {
       return "active";
     } else {
       return "inactive";
@@ -77,12 +67,25 @@ function OdinbookCarousel() {
       setDescShow(false);
     }
   };
+
+  // handle opening modal
+  const handleModalOpen = () => {
+    if (modalOpen === false) {
+      setModalOpen(true);
+    } else {
+      setModalOpen(false);
+    }
+  };
   return (
     <div className="projectBoxContainer">
       <div className="projectTitle">Odinbook</div>
       <div className="imageCarousel">
         <div className="imagesContainer">
-          <img src={imgArr[carouselSeat]} className="carImg"></img>
+          <img
+            src={imgArr[carouselSeat]}
+            className="carImg"
+            onClick={handleModalOpen}
+          ></img>
         </div>
 
         <div className="LRbuttons">
@@ -109,22 +112,6 @@ function OdinbookCarousel() {
           <button
             className={`btnx ${activeBtn(3)}`}
             onClick={() => handleCircleClicks(3)}
-          ></button>
-          <button
-            className={`btnx ${activeBtn(4)}`}
-            onClick={() => handleCircleClicks(5)}
-          ></button>
-          <button
-            className={`btnx ${activeBtn(5)}`}
-            onClick={() => handleCircleClicks(5)}
-          ></button>
-          <button
-            className={`btnx ${activeBtn(6)}`}
-            onClick={() => handleCircleClicks(6)}
-          ></button>
-          <button
-            className={`btnx ${activeBtn(7)}`}
-            onClick={() => handleCircleClicks(7)}
           ></button>
         </div>
       </div>
