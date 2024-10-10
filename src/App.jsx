@@ -3,9 +3,10 @@ import "./App.css";
 import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
 import MySkills from "./components/MySkills";
+import ContactMe from "./components/ContactMe";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [showAbout, setShowAbout] = useState(false);
 
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
       </div>
       <div className="mainCont">
         <div className="aboutMeDivContainer">
-          <AboutMe />
+          <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
         <div className="myProjectsDiv">
           <MyProjects />
@@ -25,7 +26,9 @@ function App() {
         <div className="mySkills">
           <MySkills />
         </div>
-        <div className="contactMeDiv">Contact details</div>
+        <div className="contactMeDiv">
+          <ContactMe />
+        </div>
       </div>
     </>
   );

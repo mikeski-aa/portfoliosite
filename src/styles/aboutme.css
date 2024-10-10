@@ -11,4 +11,21 @@
 
 .aboutMeContent {
   text-align: center;
+  transition-duration: 1s;
+}
+
+.aboutMeContent.false {
+  opacity: 0;
+  max-height: 0px;
+  /* transform: scaleY(0); */
+}
+
+.aboutMeContent.true {
+  opacity: 1;
+  max-height: 150px;
+  /* transform: scaleY(100%); */
+}
+
+.aboutMeTitle:hover {
+  cursor: pointer;
 }
