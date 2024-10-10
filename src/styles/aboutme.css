@@ -7,6 +7,7 @@
 .profilePicImg {
   width: 250px;
   border-radius: 180px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .aboutMeContent {

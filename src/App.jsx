@@ -6,7 +6,7 @@ import MySkills from "./components/MySkills";
 import ContactMe from "./components/ContactMe";
 
 function App() {
-  const [showAbout, setShowAbout] = useState(false);
+  const [showAbout, setShowAbout] = useState(true);
 
   return (
     <>
