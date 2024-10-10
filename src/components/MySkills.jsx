@@ -6,6 +6,7 @@ import mongoIcon from "../assets/icons/mongo.svg";
 import nodeIcon from "../assets/icons/node.svg";
 import psqlIcon from "../assets/icons/psql.svg";
 import reactIcon from "../assets/icons/react.svg";
+import photoshopIcon from "../assets/icons/photoshop.svg";
 
 function MySkills() {
   return (
@@ -41,6 +42,10 @@ function MySkills() {
         <div className="skillBox">
           <img src={htmlIcon} className="skillIcon"></img>
           <div className="heading">HTML</div>
+        </div>
+        <div className="skillBox">
+          <img src={photoshopIcon} className="skillIcon"></img>
+          <div className="heading">Photoshop</div>
         </div>
       </div>
     </div>
