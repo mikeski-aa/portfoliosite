@@ -1,5 +1,5 @@
 import "../styles/myprojects.css";
-import ProjectBox from "./ProjectBox";
+import OdinbookCarousel from "./OdinbookCarousel";
 
 function MyProjects() {
   return (
@@ -8,7 +8,7 @@ function MyProjects() {
         <h2>My projects</h2>
       </div>
       <div className="myProjectsContainer">
-        <ProjectBox />
+        <OdinbookCarousel />
       </div>
     </div>
   );

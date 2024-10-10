@@ -1,21 +1,35 @@
 .projectBoxContainer {
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 10px 10px 10px grey;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 15px;
 }
 
 .projectDescription {
-  width: 500px;
+  width: 700px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* This is where the magic happens. */
+  transition-duration: 1s;
+}
+
+.projectDescription:hover {
+  cursor: pointer;
+}
+
+.projectDescription.true {
+  width: 700px;
+  text-wrap: wrap;
 }
 
 .imageCarousel {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  background-color: rgb(71, 61, 61);
+  background-color: rgba(255, 255, 255, 0);
   align-items: center;
 }
 
@@ -30,10 +44,14 @@
   display: flex;
   gap: 1rem;
   position: relative;
+  display: relative;
+  top: -15px;
 }
 
 .carImg {
   width: inherit;
+  height: 350px;
+  object-fit: contain;
   /* position: absolute; */
 }
 
@@ -46,6 +64,48 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  background-color: red;
+  width: 700px;
+}
+
+.btnx.active {
+  background-color: rgba(14, 156, 252, 0.63);
+}
+
+.btnx {
+  width: 25px;
+  height: 25px;
+  background: none;
+  border: 2px solid grey;
+  border-radius: 25px;
+}
+
+.btnx:hover {
+  cursor: pointer;
+  background-color: rgba(14, 156, 252, 0.63);
+}
+
+.arrowImgRight,
+.arrowImgLeft {
+  width: 25px;
+}
+
+.arrowImgLeft {
+  transform: rotateZ(180deg);
+}
+
+.arrowBtns {
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.arrowBtns:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgba(14, 156, 252, 0.63);
+}
+
+.projectTitle {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
 }
