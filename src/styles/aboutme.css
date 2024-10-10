@@ -1,0 +1,14 @@
+.aboutMeComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePicImg {
+  width: 250px;
+  border-radius: 180px;
+}
+
+.aboutMeContent {
+  text-align: center;
+}

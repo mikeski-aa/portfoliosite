@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AboutMe from "./components/AboutMe";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -7,18 +8,14 @@ function App() {
   return (
     <>
       <div className="header">
-        <button className="navBtn">Nav buttons</button>
-        <button className="navBtn">Nav buttons</button>
-        <button className="navBtn">Nav buttons</button>
-        <button className="navBtn">Nav buttons</button>
+        <button className="navBtn">About me</button>
+        <button className="navBtn">My projects</button>
+        <button className="navBtn">My skills</button>
+        <button className="navBtn">Contact</button>
       </div>
       <div className="mainCont">
         <div className="aboutMeDivContainer">
-          <div className="aboutMeHeader">About me div</div>
-          <div className="aboutMeMain">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-            voluptas consequatur quae ducimus corporis soluta.
-          </div>
+          <AboutMe />
         </div>
         <div className="myProjectsDiv">My projects go here</div>
         <div className="mySkills">My skills go here</div>

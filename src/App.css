@@ -8,3 +8,9 @@
   border-bottom: 2px solid blue;
   cursor: pointer;
 }
+
+.mainCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
