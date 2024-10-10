@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
+import MyProjects from "./components/MyProjects";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +18,9 @@ function App() {
         <div className="aboutMeDivContainer">
           <AboutMe />
         </div>
-        <div className="myProjectsDiv">My projects go here</div>
+        <div className="myProjectsDiv">
+          <MyProjects />
+        </div>
         <div className="mySkills">My skills go here</div>
         <div className="contactMeDiv">Contact details</div>
       </div>
