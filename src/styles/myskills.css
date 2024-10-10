@@ -27,3 +27,9 @@
 .mySkillsTitle {
   text-align: center;
 }
+
+.mySkillsDiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
