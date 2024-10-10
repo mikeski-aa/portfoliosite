@@ -26,12 +26,33 @@ function ProjectBox() {
     }
   };
 
+  // function to return value if over limit
+  const handleLeftImg = () => {
+    if (carouselSeat === 0) {
+      return imgArr[3];
+    } else {
+      return imgArr[carouselSeat - 1];
+    }
+  };
+
+  // function to return value if over array length for pic
+  const handleRightImg = () => {
+    if (carouselSeat === 3) {
+      return imgArr[0];
+    } else {
+      return imgArr[carouselSeat + 1];
+    }
+  };
   return (
     <div className="projectBoxContainer">
       <div className="projectTitle">Odinbook</div>
       <div className="imageCarousel">
-        <img src={imgArr[carouselSeat - 1]} className="test"></img>
-        <img src={imgArr[carouselSeat]} className="carImg"></img>
+        <div className="imagesContainer">
+          {/* <img src={handleLeftImg()} className="test"></img>
+          <img src={imgArr[carouselSeat]} className="carImg"></img>
+          <img src={handleRightImg()} className="test"></img> */}
+        </div>
+
         <div className="LRbuttons">
           <button className="goLeft" onClick={handleGoLeft}>
             Left
@@ -44,6 +65,7 @@ function ProjectBox() {
           <button className="btn1">1</button>
           <button className="btn2">2</button>
           <button className="btn3">3</button>
+          <button className="btn4">4</button>
         </div>
       </div>
       <div className="projectDescription">

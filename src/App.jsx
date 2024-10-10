@@ -10,16 +10,16 @@ function App() {
 
   return (
     <>
-      {/* <div className="header">
+      <div className="header">
         <button className="navBtn">About me</button>
         <button className="navBtn">My projects</button>
         <button className="navBtn">My skills</button>
         <button className="navBtn">Contact</button>
-      </div> */}
+      </div>
       <div className="mainCont">
-        {/* <div className="aboutMeDivContainer">
+        <div className="aboutMeDivContainer">
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
-        </div> */}
+        </div>
         <div className="myProjectsDiv">
           <MyProjects />
         </div>
