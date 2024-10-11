@@ -1,7 +1,11 @@
 .aboutMeComponent {
+  padding-left: 3px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  margin-top: 4rem;
+  color: white;
+  font-weight: 600;
 }
 
 .profilePicImg {
@@ -27,6 +31,26 @@
   /* transform: scaleY(100%); */
 }
 
-.aboutMeTitle:hover {
-  cursor: pointer;
+.line {
+  color: #c586c0;
+}
+
+.linkStyle {
+  color: #ce9178;
+}
+
+.fileStyle {
+  color: #9cdcfe;
+}
+
+.fcnStyle {
+  color: #3f9cd6;
+}
+
+.nameStyle {
+  color: #d0dcaa;
+}
+
+.brackStyle {
+  color: #ffd700;
 }

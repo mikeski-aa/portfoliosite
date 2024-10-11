@@ -11,7 +11,10 @@ function App() {
   const [showAbout, setShowAbout] = useState(true);
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
-  const [active, setActive] = useState(0);
+  const [activeOne, setActiveOne] = useState(true);
+  const [activeTwo, setActiveTwo] = useState(false);
+  const [activeThree, setActiveThree] = useState(false);
+  const [activeFour, setActiveFour] = useState(false);
 
   const contactRef = useRef(null);
   const projectsRef = useRef(null);
@@ -36,25 +39,66 @@ function App() {
   //   skillsRef.current.scrollIntoView({ behavior: "smooth" });
   // };
 
-  const handleAboutClick = () => {};
-  const handleProjectsClick = () => {};
-  const handleSkillsClick = () => {};
-  const handleContactClick = () => {};
+  // reset states of active buttons depending on what has been selected
+  const resetActive = (ignore) => {
+    const tempArr = [setActiveOne, setActiveTwo, setActiveThree, setActiveFour];
+    const filteredArr = tempArr.filter((myFunction, index) => index != ignore);
+    console.log(tempArr.length);
+    console.log("asdasdasd");
+
+    filteredArr[0](false);
+    filteredArr[1](false);
+    filteredArr[2](false);
+  };
+
+  const handleAboutClick = () => {
+    setActiveOne(true);
+    resetActive(0);
+    setCurrentPage("About_me.jsx");
+    setCpage("About");
+  };
+  const handleProjectsClick = () => {
+    setActiveTwo(true);
+    resetActive(1);
+    setCurrentPage("My_projects.jsx");
+    setCpage("My_Projects");
+  };
+  const handleSkillsClick = () => {
+    setActiveThree(true);
+    resetActive(2);
+    setCurrentPage("My_skills.jsx");
+    setCpage("My_skills");
+  };
+  const handleContactClick = () => {
+    setActiveFour(true);
+    resetActive(3);
+    setCurrentPage("Contact_me.jsx");
+    setCpage("Contact_me");
+  };
 
   return (
     <>
       <div className="header">
         <div className="buttonContainer">
-          <button className={"navBtn"} onClick={handleAboutClick}>
+          <button className={`navBtn ${activeOne}`} onClick={handleAboutClick}>
             <img src={reactIcon} className="reactIconNav"></img>About_me.jsx
           </button>
-          <button className="navBtn" onClick={handleProjectsClick}>
+          <button
+            className={`navBtn ${activeTwo}`}
+            onClick={handleProjectsClick}
+          >
             <img src={reactIcon} className="reactIconNav"></img>My_projects.jsx
           </button>
-          <button className="navBtn" onClick={handleSkillsClick}>
+          <button
+            className={`navBtn ${activeThree}`}
+            onClick={handleSkillsClick}
+          >
             <img src={reactIcon} className="reactIconNav"></img> My_skills.jsx
           </button>
-          <button className="navBtn" onClick={handleContactClick}>
+          <button
+            className={`navBtn ${activeFour}`}
+            onClick={handleContactClick}
+          >
             <img src={reactIcon} className="reactIconNav"></img>Contact.jsx
           </button>
         </div>
@@ -69,20 +113,20 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <div className="mainCont">
-        <div className="aboutMeDivContainer" ref={aboutRef}>
+      <div className="mainCont">
+        <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
-        <div className="myProjectsDiv" ref={projectsRef}>
+        <div className={`sectionDiv ${activeTwo}`} ref={projectsRef}>
           <MyProjects />
         </div>
-        <div className="mySkills" ref={skillsRef}>
+        <div className={`sectionDiv ${activeThree}`} ref={skillsRef}>
           <MySkills />
         </div>
-        <div className="contactMeDiv" ref={contactRef}>
+        <div className={`sectionDiv ${activeFour}`} ref={contactRef}>
           <ContactMe />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
