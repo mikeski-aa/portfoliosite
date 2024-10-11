@@ -84,6 +84,11 @@ body {
   display: none;
 }
 
+.backToTop {
+  position: static;
+  bottom: 0;
+}
+
 /* @media (max-width: 550px) {
   padding-left: 5px;
 } */

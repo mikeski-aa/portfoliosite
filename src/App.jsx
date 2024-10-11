@@ -126,6 +126,7 @@ function App() {
         <div className={`sectionDiv ${activeFour}`} ref={contactRef}>
           <ContactMe />
         </div>
+        <button className="backToTop">Back to top</button>
       </div>
     </>
   );

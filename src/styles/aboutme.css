@@ -9,9 +9,10 @@
 }
 
 .profilePicImg {
+  border: 2px solid #3f9cd6;
   width: 250px;
-  border-radius: 180px;
-  box-shadow: 5px 5px 5px grey;
+  object-fit: fill;
+  border-radius: 25px 0px 0px 25px;
 }
 
 .aboutMeContent {
@@ -29,6 +30,30 @@
   opacity: 1;
   max-height: 150px;
   /* transform: scaleY(100%); */
+}
+
+.aboutMeMainContent {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15vw;
+}
+
+.aboutText {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 30vw;
+  border: 2px solid #d0dcaa;
+  padding: 15px;
+  border-radius: 0px 25px 25px 0px;
 }
 
 .line {
@@ -53,4 +78,14 @@
 
 .brackStyle {
   color: #ffd700;
+}
+
+@media (max-width: 850px) {
+  .aboutMeMainContent {
+    flex-direction: column;
+  }
+
+  .aboutText {
+    width: 90vw;
+  }
 }
