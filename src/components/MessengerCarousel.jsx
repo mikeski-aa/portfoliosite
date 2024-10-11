@@ -138,12 +138,37 @@ function MessengerCarousel() {
         className={`projectDescription ${descShow}`}
         onClick={handleDescShow}
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae eos
-        laborum eius est deleniti molestias, cumque facilis debitis quos non!
-        Magnam, nulla sit molestias dolores reprehenderit, nam velit quisquam
-        iusto accusantium eveniet delectus omnis explicabo veritatis nostrum ad
-        commodi dolorem porro mollitia! Placeat quia, fugit quasi voluptatibus
-        impedit dolore doloremque?
+        <h4>Overview: </h4>
+        Fullstack project - messenger application, allowing users to add
+        friends, create groups and send messages between eachother. My main goal
+        in this project was mainly focused around improving my backend skills
+        and functionality first and foremost. The messenger functionality does
+        not utilise websockets or similar technologies, hence refresh is
+        required to update messages.
+        <h4>Technologies used</h4>
+        Language: Javascript
+        <br></br>Frontend: React <br></br>Backend: Node, Express <br></br>
+        Database: PostgreSQL (using PrismaORM)
+        <h4>Key features</h4>
+        Login and registration implemented using Passport.js middleware. Logging
+        in utilises storing user credentials as a JWT token in localstorage.
+        <br></br>Passwords are encrypted using bcrypt.js.
+        <br></br>Validation is handled both on the frontend and backend. Backend
+        validation leverages express-validator alongside Prisma's in-built
+        validation.
+        <br></br>Users are able to:
+        <ul>
+          <li>Register</li>
+          <li>Log in</li>
+          <li>Send friend requests and manage requests</li>
+          <li>Create groups</li>
+          <li>Send private messages or group messages</li>
+          <li>
+            Manage user profile: set online status, change display name, change
+            user profile picture
+          </li>
+        </ul>
+        <h4>Repos and links</h4>
       </div>
     </div>
   );

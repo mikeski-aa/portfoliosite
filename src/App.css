@@ -1,13 +1,18 @@
 .navBtn {
   border: none;
   background: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0);
-  font-weight: 600;
+  background-color: #2d2d2d;
+  border-bottom: 2px solid #2d2d2d;
+  padding: 8px;
   font-size: 1rem;
+  color: #fffff1;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .navBtn:hover {
-  border-bottom: 2px solid blue;
+  background-color: #1e1e1e;
   cursor: pointer;
 }
 
@@ -24,13 +29,46 @@ body {
 
 .header {
   position: fixed;
-  background-color: white;
+  background-color: #252526;
   width: 100vw;
   display: flex;
-  justify-content: center;
-  padding: 5px;
+  flex-direction: column;
+  padding-left: 15px;
+  border-bottom: 3px solid black;
 }
 
 .aboutMeDivContainer {
   margin-top: 1rem;
+}
+
+.reactIconNav {
+  width: 15px;
+  height: 15px;
+  filter: brightness(1);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: left;
+  gap: 2px;
+}
+
+.appLocation {
+  color: grey;
+  display: flex;
+  gap: 5px;
+}
+
+.fileLoc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: small;
+  color: rgb(211, 208, 208);
+}
+
+.smallIcon {
+  width: 15px;
+  filter: brightness(3);
 }

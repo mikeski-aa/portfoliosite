@@ -18,12 +18,9 @@ function AboutMe(props) {
         <h2 onClick={handleAboutShow}>About me</h2>
       </div>
       <div className={`aboutMeContent ${props.showAbout}`}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque totam
-        soluta molestias placeat ad commodi eveniet, nisi doloribus cum. Eum
-        possimus rerum nulla ipsa accusantium laboriosam tempore aliquam vero,
-        cumque exercitationem! Maxime adipisci necessitatibus tenetur? Quod
-        officiis quos, facilis at esse ut eos libero impedit blanditiis iste
-        reprehenderit quas placeat!
+        I'm a self-taught aspiring web developer. I begun my development journey
+        in February 2024 taking on "The Odin Project", following the curriculum
+        from basic HTML and CSS, all the way through to learning React and Node.
       </div>
     </div>
   );
