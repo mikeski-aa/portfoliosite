@@ -2,6 +2,8 @@
   border: none;
   background: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .navBtn:hover {
@@ -18,4 +20,17 @@
 
 body {
   background-color: rgb(238, 238, 238);
+}
+
+.header {
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.aboutMeDivContainer {
+  margin-top: 1rem;
 }

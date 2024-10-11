@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
@@ -7,26 +7,56 @@ import ContactMe from "./components/ContactMe";
 
 function App() {
   const [showAbout, setShowAbout] = useState(true);
+  const contactRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const aboutRef = useRef(null);
+
+  // smooth scrolling for each element
+
+  const scrollProjects = () => {
+    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollContact = () => {
+    contactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollAbout = () => {
+    aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollSkills = () => {
+    skillsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
       <div className="header">
-        <button className="navBtn">About me</button>
-        <button className="navBtn">My projects</button>
-        <button className="navBtn">My skills</button>
-        <button className="navBtn">Contact</button>
+        <button className="navBtn" onClick={scrollAbout}>
+          About me
+        </button>
+        <button className="navBtn" onClick={scrollProjects}>
+          My projects
+        </button>
+        <button className="navBtn" onClick={scrollSkills}>
+          My skills
+        </button>
+        <button className="navBtn" onClick={scrollContact}>
+          Contact
+        </button>
       </div>
       <div className="mainCont">
-        <div className="aboutMeDivContainer">
+        <div className="aboutMeDivContainer" ref={aboutRef}>
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
-        <div className="myProjectsDiv">
+        <div className="myProjectsDiv" ref={projectsRef}>
           <MyProjects />
         </div>
-        <div className="mySkills">
+        <div className="mySkills" ref={skillsRef}>
           <MySkills />
         </div>
-        <div className="contactMeDiv">
+        <div className="contactMeDiv" ref={contactRef}>
           <ContactMe />
         </div>
       </div>
