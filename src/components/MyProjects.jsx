@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/myprojects.css";
 import OdinbookCarousel from "./OdinbookCarousel";
+import MessengerCarousel from "./MessengerCarousel";
 
 function MyProjects() {
   return (
@@ -10,7 +11,7 @@ function MyProjects() {
       </div>
       <div className="myProjectsContainer">
         <OdinbookCarousel />
-        <OdinbookCarousel />
+        <MessengerCarousel />
       </div>
     </div>
   );

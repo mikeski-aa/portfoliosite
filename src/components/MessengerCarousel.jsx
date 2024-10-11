@@ -1,29 +1,34 @@
 import "../styles/projectbox.css";
-import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
-import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
-import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
-import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
+// import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
+// import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
+// import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
+// import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
+import dualadmin from "../assets/messengerapp/dualadmin.png";
+import dualconvo from "../assets/messengerapp/dualConvo.png";
+import duallogin from "../assets/messengerapp/dualDMlogin.png";
+import dualfriends from "../assets/messengerapp/dualFriends.png";
+import dualgroup from "../assets/messengerapp/dualGroup.png";
 import arrow from "../assets/arrow.svg";
 import cross from "../assets/icons/cross.svg";
 import { useState } from "react";
 
 // very simple image carousel to go through project images
-function OdinbookCarousel() {
+function MessengerCarousel() {
   const [carouselSeat, setCarouselSeat] = useState(0);
   const [descShow, setDescShow] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const imgArr = [mergedLogin, mergedMain, mergedFriends, mergedProfile];
+  const imgArr = [duallogin, dualfriends, dualadmin, dualconvo, dualgroup];
 
   const handleGoLeft = () => {
     if (carouselSeat === 0) {
-      setCarouselSeat(3);
+      setCarouselSeat(4);
     } else {
       setCarouselSeat(carouselSeat - 1);
     }
   };
 
   const handleGoRight = () => {
-    if (carouselSeat === 3) {
+    if (carouselSeat === 4) {
       setCarouselSeat(0);
     } else {
       setCarouselSeat(carouselSeat + 1);
@@ -39,6 +44,8 @@ function OdinbookCarousel() {
     } else if (btnNum === 2 && carouselSeat === 2) {
       return "active";
     } else if (btnNum === 3 && carouselSeat === 3) {
+      return "active";
+    } else if (btnNum === 4 && carouselSeat === 4) {
       return "active";
     } else {
       return "inactive";
@@ -86,7 +93,7 @@ function OdinbookCarousel() {
           </div>
         </div>
       </div>
-      <div className="projectTitle">Odinbook</div>
+      <div className="projectTitle">Messenger app</div>
       <div className="imageCarousel">
         <div className="imagesContainer">
           <img
@@ -121,44 +128,25 @@ function OdinbookCarousel() {
             className={`btnx ${activeBtn(3)}`}
             onClick={() => handleCircleClicks(3)}
           ></button>
+          <button
+            className={`btnx ${activeBtn(4)}`}
+            onClick={() => handleCircleClicks(3)}
+          ></button>
         </div>
       </div>
       <div
         className={`projectDescription ${descShow}`}
         onClick={handleDescShow}
       >
-        <h4>Overview: </h4>
-        Fullstack project - social media web app, strongly inspierd by Facebook
-        in design and layout. This was my final project having successfully
-        finished "The Odin Project" course. My goal with this project was to
-        deliver a functional and responsive web app.
-        <h4>Technologies used</h4>
-        Language: Javascript
-        <br></br>Frontend: React <br></br>Backend: Node, Express <br></br>
-        Database: PostgreSQL (using PrismaORM)
-        <h4>Key features</h4>
-        Login and registration implemented using Passport.js middleware. Logging
-        in utilises storing user credentials as a JWT token in localstorage.
-        <br></br>Passwords are encrypted using bcrypt.js.
-        <br></br>Validation is handled both on the frontend and backend. Backend
-        validation leverages express-validator alongside Prisma's in-built
-        validation.
-        <br></br>Guest login - users are logged into a shared account
-        <br></br>Users are able to:
-        <ul>
-          <li>Register</li>
-          <li>Log in (into their registered account or guest)</li>
-          <li>Create text posts, or posts with images</li>
-          <li>Like and comment on posts</li>
-          <li>Like comments</li>
-          <li>Search for friends and send requests</li>
-          <li>Manage requests</li>
-          <li>Manage their profile - changing profile icon, profile banner</li>
-        </ul>
-        <h4>Repos and links</h4>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae eos
+        laborum eius est deleniti molestias, cumque facilis debitis quos non!
+        Magnam, nulla sit molestias dolores reprehenderit, nam velit quisquam
+        iusto accusantium eveniet delectus omnis explicabo veritatis nostrum ad
+        commodi dolorem porro mollitia! Placeat quia, fugit quasi voluptatibus
+        impedit dolore doloremque?
       </div>
     </div>
   );
 }
 
-export default OdinbookCarousel;
+export default MessengerCarousel;

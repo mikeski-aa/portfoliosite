@@ -13,7 +13,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* This is where the magic happens. */
-  transition-duration: 1s;
+  max-height: 5vh;
 }
 
 .projectDescription:hover {
@@ -23,6 +23,7 @@
 .projectDescription.true {
   width: 55vw;
   text-wrap: wrap;
+  max-height: 100%;
 }
 
 .imageCarousel {
@@ -193,5 +194,9 @@
     object-fit: contain;
     height: 50vh;
     width: 100vw;
+  }
+
+  .carImg {
+    height: 200px;
   }
 }
