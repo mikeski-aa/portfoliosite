@@ -1,10 +1,16 @@
 .vertBar {
   display: flex;
-  flex-direction: column;
-  background-color: #333333;
-  width: 40px;
-  height: 100vh;
-  gap: 0.9rem;
+
+
+}
+
+.vertBtnDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    background-color: #333333;
+    width: 40px;
+    height: 100vh;
 }
 
 .vertIcon {
@@ -20,6 +26,10 @@
   height: 25px;
 }
 
+.vertBtn.true {
+    border-left: 2px solid white;
+}
+
 .vertIcon:hover {
   fill: white;
 }
@@ -30,6 +40,19 @@
 
 .vertBtn:hover {
   cursor: pointer;
+}
+
+.explorerDiv {
+    background-color: #252526;
+    transition: 0.5s ease-in-out;
+}
+
+.explorerDiv.false {
+    max-width: 0;
+}
+
+.explorerDiv.true {
+    max-width: 180px;
 }
 
 /* need to add styling for mobile and defnitely for when side bar is opened
