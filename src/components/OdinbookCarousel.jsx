@@ -31,7 +31,7 @@ function OdinbookCarousel() {
     }
   };
 
-  // function to set active name
+  // function to set active button in carousel navigation
   const activeBtn = (btnNum) => {
     if (btnNum === 0 && carouselSeat === 0) {
       return "active";
@@ -125,7 +125,7 @@ function OdinbookCarousel() {
           ></button>
         </div>
       </div>
-      <button className="handleClickMore" onClick={handleDescShow}>
+      <button className="detailsBtn" onClick={handleDescShow}>
         {btnText}
       </button>
       <div className={`projectDescription ${descShow}`}>

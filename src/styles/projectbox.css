@@ -20,15 +20,30 @@
   opacity: 0;
 }
 
-.projectDescription:hover {
-  cursor: pointer;
-}
-
 .projectDescription.true {
   width: 55vw;
   text-wrap: wrap;
   max-height: 100vh;
   opacity: 1;
+}
+
+.detailsBtn {
+  width: 10rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  background: none;
+  border: 2px solid #9cdcfe;
+  color: white;
+  transition: 0.5s;
+}
+
+.detailsBtn:hover {
+  cursor: pointer;
+  border-color: #d0dcaa;
 }
 
 .temp {
