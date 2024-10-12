@@ -2,6 +2,13 @@
   width: 50px;
 }
 
+.contactMeComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: white;
+}
+
 .contactOption {
   display: flex;
   flex-direction: column;
@@ -23,7 +30,7 @@
 }
 
 .contactMeTitle {
-  text-align: center;
+  text-align: left;
 }
 
 .contactOption:hover {

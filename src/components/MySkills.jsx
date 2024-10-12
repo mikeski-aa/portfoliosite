@@ -41,6 +41,7 @@ function MySkills() {
           <SkillBox name={item.name} />
         ))}
       </div>
+      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
     </div>
   );
 }
