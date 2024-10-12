@@ -1,0 +1,28 @@
+.leftPart {
+  background-color: #16825d;
+  width: 140px;
+}
+
+.rightPart {
+  width: 150px;
+}
+
+.middlePart {
+  width: 100%;
+}
+
+.middlePart,
+.rightPart {
+  background-color: #007acc;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+}

@@ -8,6 +8,7 @@ import reactIcon from "../src/assets/icons/react.svg";
 import methodIcon from "../src/assets/icons/symbol-method.svg";
 import VertBar from "./components/VertBar";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export const GlobalContext = createContext();
 
@@ -146,11 +147,8 @@ function App() {
               <ContactMe />
             </div>
           </div>
-          <div className="footer">
-            {" "}
-            <button className="backToTop">Back to top</button>
-          </div>
         </div>
+        <Footer />
       </div>
       {/* <div className="headerContainer">
         <VertBar />
