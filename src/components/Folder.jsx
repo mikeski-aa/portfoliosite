@@ -10,13 +10,21 @@ function Folder(props) {
       setFolderStat(true);
     }
   };
+
+  // I am thinking this component could be re-written using recursive components
   return (
     <div className="folderDiv">
       <button className="folderBtn" onClick={handleFolderClick}>
         <Arrow className={`folderChevron ${folderStat}`} />
         {props.name}
       </button>
-      <div className={`fileList ${folderStat}`}>FILES WILL GO HERE</div>
+      <div className={`fileList ${folderStat}`}>
+        <button className="folderBtn" onClick={handleFolderClick}>
+          <Arrow className={`folderChevron ${folderStat}`} />
+          {props.name}
+        </button>
+        <div className={`fileList ${folderStat}`}></div>
+      </div>
     </div>
   );
 }

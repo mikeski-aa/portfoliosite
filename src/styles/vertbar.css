@@ -55,4 +55,36 @@
     max-width: 180px;
 }
 
+.explorerDiv {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.folderChevron {
+    background: none;
+    width: 10px;
+    height: 10px;
+    fill: grey
+}
+
+.folderChevron.true {
+    transform: rotateZ(90deg);
+}
+
+.folderBtn {
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 0.55rem;
+    width: 180px;
+    gap: 5px;
+}
+
+.fileList.false {
+    display: none;
+}
+
 /* need to add styling for mobile and defnitely for when side bar is opened

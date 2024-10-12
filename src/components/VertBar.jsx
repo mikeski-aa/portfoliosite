@@ -3,6 +3,7 @@ import FilesIcon from "../assets/bwicons/filealt.svg?react";
 import GithubIcon from "../assets/bwicons/github2.svg?react";
 import LinkedIn from "../assets/bwicons/linkedin.svg?react";
 import Email from "../assets/bwicons/email.svg?react";
+import Explorer from "./Explorer";
 import { useState } from "react";
 
 function VertBar() {
@@ -32,7 +33,7 @@ function VertBar() {
         </button>
       </div>
       <div className={`explorerDiv ${showExp}`}>
-        ASDASDADASDASDasdasdasdasdasdasdadasdasdasd asdasdasdasdasd
+        <Explorer />
       </div>
     </div>
   );
