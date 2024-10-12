@@ -10,14 +10,14 @@ import ReactIcon from "../assets/bwicons/react.svg?react";
 
 function SkillBox(props) {
   const icons = {
-    CSS: <CssIcon />,
-    HTML: <HtmlIcon />,
-    JavaScript: <JsIcon />,
-    MongoDB: <MongoIcon />,
-    Node: <NodeIcon />,
-    Photoshop: <PsIcon />,
-    PostgreSQL: <PsqlIcon />,
-    React: <ReactIcon />,
+    CSS: <CssIcon className="skillIcon" />,
+    HTML: <HtmlIcon className="skillIcon" />,
+    JavaScript: <JsIcon className="skillIcon" />,
+    MongoDB: <MongoIcon className="skillIcon" />,
+    Node: <NodeIcon className="skillIcon" />,
+    Photoshop: <PsIcon className="skillIcon" />,
+    PostgreSQL: <PsqlIcon className="skillIcon" />,
+    React: <ReactIcon className="skillIcon" />,
   };
 
   const renderedIcon = icons[props.name];
