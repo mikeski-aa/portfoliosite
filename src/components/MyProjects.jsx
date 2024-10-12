@@ -35,6 +35,7 @@ function MyProjects() {
         <OdinbookCarousel />
         {/* <MessengerCarousel /> */}
       </div>
+      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
     </div>
   );
 }

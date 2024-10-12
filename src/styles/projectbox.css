@@ -6,6 +6,7 @@
   border: 2px solid #d0dcaa;
   border-radius: 5px;
   padding: 15px;
+  width: 65vw;
 }
 
 .projectDescription {
@@ -40,6 +41,7 @@
   top: -150px;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 .positionButtons {
   display: flex;
@@ -53,6 +55,7 @@
   height: 350px;
   width: 55vw;
   object-fit: contain;
+  z-index: 5;
   /* position: absolute; */
 }
 
@@ -73,7 +76,7 @@
 }
 
 .btnx.active {
-  background-color: rgba(14, 156, 252, 0.63);
+  background-color: #9cdcfe;
 }
 
 .btnx {
@@ -86,12 +89,14 @@
 
 .btnx:hover {
   cursor: pointer;
-  background-color: rgba(14, 156, 252, 0.63);
+  background-color: #9cdcfe;
 }
 
 .arrowImgRight,
 .arrowImgLeft {
   width: 25px;
+  height: 25px;
+  fill: #c586c0;
 }
 
 .arrowImgLeft {
@@ -99,14 +104,15 @@
 }
 
 .arrowBtns {
-  background: rgb(255, 255, 255);
-  border: 2px solid rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid #9cdcfe;
   border-radius: 5px;
+  background-color: #d0dcaa00;
 }
 
 .arrowBtns:hover {
   cursor: pointer;
-  border-bottom: 2px solid rgba(14, 156, 252, 0.63);
+  border-color: #d0dcaa;
 }
 
 .projectTitle {
@@ -158,15 +164,19 @@
 }
 
 .closeBtn:hover {
-  background-color: rgba(241, 59, 59, 0.753);
   cursor: pointer;
 }
 
 .crossImg {
   width: 25px;
   height: 25px;
-
   border-radius: 15px;
+  transition-duration: 0.5s;
+  fill: red;
+}
+
+.crossImg:hover {
+  fill: red;
 }
 
 .largeImg {

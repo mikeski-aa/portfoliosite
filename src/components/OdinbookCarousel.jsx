@@ -3,8 +3,8 @@ import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
 import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
 import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
 import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
-import arrow from "../assets/arrow.svg";
-import cross from "../assets/icons/cross.svg";
+import Arrow from "../assets/arrow.svg?react";
+import Cross from "../assets/icons/cross.svg?react";
 import { useState } from "react";
 
 // very simple image carousel to go through project images
@@ -72,16 +72,15 @@ function OdinbookCarousel() {
       <div className={`modal ${modalOpen}`}>
         <div className="modalContent">
           <button className="closeBtn" onClick={handleCloseModal}>
-            <img className="crossImg" src={cross}></img>
-            Close
+            <Cross className="crossImg" />
           </button>
           <img src={imgArr[carouselSeat]} className="largeImg"></img>
           <div className="modalBtns">
-            <button className="carControl" onClick={handleGoLeft}>
-              <img src={arrow} className="arrowImgLeft"></img>
+            <button className="arrowBtns" onClick={handleGoLeft}>
+              <Arrow className="arrowImgLeft" />
             </button>
-            <button className="carControl" onClick={handleGoRight}>
-              <img src={arrow} className="arrowImgRight"></img>
+            <button className="arrowBtns" onClick={handleGoRight}>
+              <Arrow className="arrowImgRight" />
             </button>
           </div>
         </div>
@@ -98,10 +97,10 @@ function OdinbookCarousel() {
 
         <div className="LRbuttons">
           <button className="arrowBtns" onClick={handleGoLeft}>
-            <img src={arrow} className="arrowImgLeft"></img>
+            <Arrow className="arrowImgLeft" />
           </button>
           <button className="arrowBtns" onClick={handleGoRight}>
-            <img src={arrow} className="arrowImgRight"></img>
+            <Arrow className="arrowImgRight" />
           </button>
         </div>
         <div className="positionButtons">
@@ -179,11 +178,32 @@ function OdinbookCarousel() {
         <h4 className="line">Repos and links</h4>
         <ul className="ulStyle">
           <li>
-            <a href="https://odinbookproject.netlify.app/">Project website</a>
+            <a
+              className="linkStyle"
+              target="_blank"
+              href="https://odinbookproject.netlify.app/"
+            >
+              Project website
+            </a>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>
+            <a
+              className="linkStyle"
+              target="_blank"
+              href="https://github.com/mikeski-aa/social-media-frontend"
+            >
+              Frontend repo
+            </a>
+          </li>
+          <li>
+            <a
+              className="linkStyle"
+              target="_blank"
+              href="https://github.com/mikeski-aa/social-media-backend"
+            >
+              Backend repo
+            </a>
+          </li>
         </ul>
       </div>
     </div>
