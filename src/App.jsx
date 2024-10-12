@@ -43,8 +43,6 @@ function App() {
   const resetActive = (ignore) => {
     const tempArr = [setActiveOne, setActiveTwo, setActiveThree, setActiveFour];
     const filteredArr = tempArr.filter((myFunction, index) => index != ignore);
-    console.log(tempArr.length);
-    console.log("asdasdasd");
 
     filteredArr[0](false);
     filteredArr[1](false);
@@ -74,6 +72,26 @@ function App() {
     resetActive(3);
     setCurrentPage("Contact_me.jsx");
     setCpage("Contact_me");
+  };
+
+  const [items, setItems] = useState(["One", "Two"]);
+
+  const handleDragStart = (e, index) => {
+    // e.preventDefault();
+    e.dataTransfer.setData("index", index);
+  };
+
+  const handleDrop = (e, targetIndex) => {
+    e.preventDefault();
+    const sourceIndex = parseInt(e.dataTransfer.getData("index"));
+    const newItems = [...items];
+
+    newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
+    setItems(newItems);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -114,7 +132,21 @@ function App() {
         </div>
       </div>
       <div className="mainCont">
-        <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
+        <div className="dragContTest">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="dragItem"
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, index)}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+        {/* <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
         <div className={`sectionDiv ${activeTwo}`} ref={projectsRef}>
@@ -126,7 +158,7 @@ function App() {
         <div className={`sectionDiv ${activeFour}`} ref={contactRef}>
           <ContactMe />
         </div>
-        <button className="backToTop">Back to top</button>
+        <button className="backToTop">Back to top</button> */}
       </div>
     </>
   );
