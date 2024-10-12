@@ -17,7 +17,7 @@ function MyProjects() {
         <br></br>
         <div className="line">
           <span className="fcnStyle">function</span>{" "}
-          <span className="nameStyle">AboutMe</span>
+          <span className="nameStyle">My_projects</span>
           <span className="brackStyle">
             {"("}
             <span className="fileStyle">props</span>

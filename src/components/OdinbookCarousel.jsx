@@ -86,7 +86,7 @@ function OdinbookCarousel() {
           </div>
         </div>
       </div>
-      <div className="projectTitle">Odinbook</div>
+      <div className="projectTitle line testclass">Odinbook</div>
       <div className="imageCarousel">
         <div className="imagesContainer">
           <img
@@ -127,24 +127,45 @@ function OdinbookCarousel() {
         className={`projectDescription ${descShow}`}
         onClick={handleDescShow}
       >
-        <h4>Overview: </h4>
-        Fullstack project - social media web app, strongly inspierd by Facebook
-        in design and layout. This was my final project having successfully
-        finished "The Odin Project" course. My goal with this project was to
-        deliver a functional and responsive web app.
-        <h4>Technologies used</h4>
-        Language: Javascript
-        <br></br>Frontend: React <br></br>Backend: Node, Express <br></br>
-        Database: PostgreSQL (using PrismaORM)
-        <h4>Key features</h4>
-        Login and registration implemented using Passport.js middleware. Logging
-        in utilises storing user credentials as a JWT token in localstorage.
-        <br></br>Passwords are encrypted using bcrypt.js.
-        <br></br>Validation is handled both on the frontend and backend. Backend
-        validation leverages express-validator alongside Prisma's in-built
-        validation.
-        <br></br>Guest login - users are logged into a shared account
-        <br></br>Users are able to:
+        <h4 className="line bolder">Overview: </h4>
+        <span className="fileStyle bolder">Fullstack project</span> - social
+        media web app, strongly inspierd by Facebook in design and layout. This
+        was my final project having successfully finished "The Odin Project"
+        course. My goal with this project was to deliver a functional and
+        responsive application for mobile and desktop users.
+        <h4 className="line bolder">Technologies used</h4>
+        <span className="fileStyle bolder">Language:</span> Javascript
+        <br></br>
+        <span className="fileStyle bolder">Frontend:</span> React <br></br>
+        <span className="fileStyle bolder">Backend:</span> Node, Express{" "}
+        <br></br>
+        <span className="fileStyle bolder">Database:</span> PostgreSQL (using
+        PrismaORM)
+        <h4 className="line bolder">Key features</h4>
+        <ul className="ulStyle">
+          <li>
+            <span className="fcnStyle bolder">Login and registration </span>
+            implemented using Passport.js middleware.
+          </li>
+          <li>
+            <span className="fcnStyle bolder">Logging in </span>
+            utilises storing user credentials as a JWT token in localstorage.
+          </li>
+          <li>
+            <span className="fcnStyle bolder">Encryption</span> of passwords
+            done using bcrypt.js.
+          </li>
+          <li>
+            <span className="fcnStyle bolder">Validation</span> is handled both
+            on the frontend and backend. Backend validation leverages
+            express-validator alongside Prisma's in-built validation.
+          </li>
+          <li>
+            <span className="fcnStyle bolder">Guest login </span>- users are
+            logged into a shared account
+          </li>
+        </ul>
+        <span className="brackStyle bolder">Users are able to:</span>
         <ul>
           <li>Register</li>
           <li>Log in (into their registered account or guest)</li>
@@ -155,7 +176,15 @@ function OdinbookCarousel() {
           <li>Manage requests</li>
           <li>Manage their profile - changing profile icon, profile banner</li>
         </ul>
-        <h4>Repos and links</h4>
+        <h4 className="line">Repos and links</h4>
+        <ul className="ulStyle">
+          <li>
+            <a href="https://odinbookproject.netlify.app/">Project website</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </div>
   );
