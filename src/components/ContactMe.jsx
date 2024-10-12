@@ -31,8 +31,8 @@ function ContactMe() {
         <h2>Contact_me</h2>
       </div>
       <div className="contactMeDiv">
-        {contact.map((item) => (
-          <ContactBox name={item.name} />
+        {contact.map((item, index) => (
+          <ContactBox key={index} name={item.name} />
         ))}
       </div>
       <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>

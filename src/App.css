@@ -113,6 +113,8 @@ body {
 
 .headtest {
   position: fixed;
+  z-index: 90;
+  width: 100%;
 }
 
 /* 

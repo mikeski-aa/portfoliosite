@@ -35,8 +35,8 @@ function MySkills() {
         <h2>My skills</h2>
       </div>
       <div className="mySkillsDiv">
-        {skills.map((item) => (
-          <SkillBox name={item.name} />
+        {skills.map((item, index) => (
+          <SkillBox key={index} name={item.name} />
         ))}
       </div>
       <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>

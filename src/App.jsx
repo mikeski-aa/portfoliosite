@@ -7,6 +7,7 @@ import ContactMe from "./components/ContactMe";
 import reactIcon from "../src/assets/icons/react.svg";
 import methodIcon from "../src/assets/icons/symbol-method.svg";
 import VertBar from "./components/VertBar";
+import NavBar from "./components/NavBar";
 
 export const GlobalContext = createContext();
 
@@ -101,32 +102,15 @@ function App() {
         <VertBar />
         <div className="mainTest">
           <div className="headtest">
-            <div className="buttonContainer">
-              {navItems.map((item, index) => (
-                <button
-                  key={index}
-                  className={`navBtn ${item.active}`}
-                  draggable
-                  onClick={(e) => handleNavClick(e)}
-                  onDragStart={(e) => handleDragStart(e, index)}
-                  onDragOver={handleDragOver}
-                  onDrop={(e) => handleDrop(e, index)}
-                >
-                  <img src={reactIcon} className="reactIconNav"></img>
-                  {item.name}
-                </button>
-              ))}
-            </div>
-            <div className="appLocation">
-              <div className="fileLoc">{"src > "}</div>
-              <div className="fileLoc">
-                <img src={reactIcon} className="smallIcon" />{" "}
-                {currentPage + " >"}
-              </div>
-              <div className="fileLoc">
-                <img src={methodIcon} className="smallIcon"></img> {cPage}
-              </div>
-            </div>
+            <NavBar
+              handleNavClick={(e) => handleNavClick(e)}
+              handleDragOver={(e) => handleDragOver(e)}
+              handleDrop={(e) => handleDrop(e, index)}
+              handleDragStart={(e) => handleDragStart(e, index)}
+              currentPage={currentPage}
+              cPage={cPage}
+              navItems={navItems}
+            />
           </div>
           <div className="mainCont">
             <div
