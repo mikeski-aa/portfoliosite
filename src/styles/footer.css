@@ -1,10 +1,10 @@
 .leftPart {
   background-color: #16825d;
-  width: 140px;
+  width: 160px;
 }
 
 .rightPart {
-  width: 150px;
+  width: 180px;
 }
 
 .middlePart {
@@ -16,6 +16,12 @@
   background-color: #007acc;
 }
 
+.leftPart,
+.middlePart {
+  display: flex;
+  align-items: center;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -25,4 +31,10 @@
   bottom: 0;
   z-index: 9999;
   width: 100%;
+}
+
+.footerIcon {
+  width: 15px;
+  height: 15px;
+  fill: white;
 }
