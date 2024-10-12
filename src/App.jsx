@@ -12,10 +12,28 @@ function App() {
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
   const [activePage, setActivePage] = useState(0);
-  const [activeOne, setActiveOne] = useState(true);
-  const [activeTwo, setActiveTwo] = useState(false);
-  const [activeThree, setActiveThree] = useState(false);
-  const [activeFour, setActiveFour] = useState(false);
+
+  const [navItems, setNavItems] = useState([
+    { name: "About_Me.jsx", active: true, shortname: "About_me", trueIndex: 0 },
+    {
+      name: "My_projects.jsx",
+      active: false,
+      shortname: "My_projects",
+      trueIndex: 1,
+    },
+    {
+      name: "My_skills.jsx",
+      active: false,
+      shortname: "My_skills",
+      trueIndex: 2,
+    },
+    {
+      name: "Contact_me.jsx",
+      active: false,
+      shortname: "Contact_me",
+      trueIndex: 3,
+    },
+  ]);
 
   const contactRef = useRef(null);
   const projectsRef = useRef(null);
@@ -41,41 +59,8 @@ function App() {
   // };
 
   // reset states of active buttons depending on what has been selected
-  const resetActive = (ignore) => {
-    const tempArr = [setActiveOne, setActiveTwo, setActiveThree, setActiveFour];
-    const filteredArr = tempArr.filter((myFunction, index) => index != ignore);
 
-    filteredArr[0](false);
-    filteredArr[1](false);
-    filteredArr[2](false);
-  };
-
-  const handleAboutClick = () => {
-    setActiveOne(true);
-    resetActive(0);
-    setCurrentPage("About_me.jsx");
-    setCpage("About");
-  };
-  const handleProjectsClick = () => {
-    setActiveTwo(true);
-    resetActive(1);
-    setCurrentPage("My_projects.jsx");
-    setCpage("My_Projects");
-  };
-  const handleSkillsClick = () => {
-    setActiveThree(true);
-    resetActive(2);
-    setCurrentPage("My_skills.jsx");
-    setCpage("My_skills");
-  };
-  const handleContactClick = () => {
-    setActiveFour(true);
-    resetActive(3);
-    setCurrentPage("Contact_me.jsx");
-    setCpage("Contact_me");
-  };
-
-  const handleTestClick = (e) => {
+  const handleNavClick = (e) => {
     const copyItems = [...navItems];
     for (let x = 0; x < copyItems.length; x++) {
       if (copyItems[x].name === e.target.innerText) {
@@ -90,30 +75,7 @@ function App() {
     setNavItems(copyItems);
   };
 
-  const [navItems, setNavItems] = useState([
-    { name: "About_Me.jsx", active: true, shortname: "About_me", trueIndex: 0 },
-    {
-      name: "My_projects.jsx",
-      active: false,
-      shortname: "My_projects",
-      trueIndex: 1,
-    },
-    {
-      name: "My_skills.jsx",
-      active: false,
-      shortname: "My_skills",
-      trueIndex: 2,
-    },
-    {
-      name: "Contact_me.jsx",
-      active: false,
-      shortname: "Contact_me",
-      trueIndex: 3,
-    },
-  ]);
-
   const handleDragStart = (e, index) => {
-    // e.preventDefault();
     e.dataTransfer.setData("index", index);
   };
 
@@ -138,7 +100,7 @@ function App() {
               key={index}
               className={`navBtn ${item.active}`}
               draggable
-              onClick={(e) => handleTestClick(e)}
+              onClick={(e) => handleNavClick(e)}
               onDragStart={(e) => handleDragStart(e, index)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
@@ -147,30 +109,6 @@ function App() {
               {item.name}
             </button>
           ))}
-          {/* <button
-            className={activePage === 0 ? "navBtn true" : "navBtn"}
-            onClick={handleAboutClick}
-          >
-            <img src={reactIcon} className="reactIconNav"></img>About_me.jsx
-          </button>
-          <button
-            className={activePage === 1 ? "navBtn true" : "navBtn"}
-            onClick={handleProjectsClick}
-          >
-            <img src={reactIcon} className="reactIconNav"></img>My_projects.jsx
-          </button>
-          <button
-            className={`navBtn ${activeThree}`}
-            onClick={handleSkillsClick}
-          >
-            <img src={reactIcon} className="reactIconNav"></img> My_skills.jsx
-          </button>
-          <button
-            className={`navBtn ${activeFour}`}
-            onClick={handleContactClick}
-          >
-            <img src={reactIcon} className="reactIconNav"></img>Contact.jsx
-          </button> */}
         </div>
 
         <div className="appLocation">
@@ -184,22 +122,6 @@ function App() {
         </div>
       </div>
       <div className="mainCont">
-        {/* <div className="dragContTest">
-          {navItems.map((item, index) => (
-            <button
-              key={index}
-              className={`navBtn ${item.active}`}
-              draggable
-              onClick={(e) => handleTestClick(e)}
-              onDragStart={(e) => handleDragStart(e, index)}
-              onDragOver={handleDragOver}
-              onDrop={(e) => handleDrop(e, index)}
-            >
-              <img src={reactIcon} className="reactIconNav"></img>
-              {item.name}
-            </button>
-          ))}
-        </div> */}
         <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
