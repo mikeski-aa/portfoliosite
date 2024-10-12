@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 3px solid black;
-  z-index: 10;
+  z-index: 25;
   height: fit-content;
 }
 
@@ -53,6 +53,7 @@ body {
   gap: 2px;
   background-color: #252526;
   overflow: auto;
+  z-index: 500;
 }
 
 .appLocation {
