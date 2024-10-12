@@ -27,7 +27,6 @@ body {
 }
 
 .header {
-  position: fixed;
   background-color: #252526;
   width: 100vw;
   display: flex;
@@ -35,6 +34,7 @@ body {
   padding-left: 5px;
   border-bottom: 3px solid black;
   z-index: 10;
+  height: fit-content;
 }
 
 .aboutMeDivContainer {
@@ -104,6 +104,17 @@ body {
   background-color: blue;
   color: white;
   height: 50px;
+}
+
+.headerContainer {
+  display: flex;
+  position: fixed;
+}
+
+.vertBar {
+  background-color: green;
+  width: 34px;
+  height: 100vh;
 }
 
 /* .sideBarTest {

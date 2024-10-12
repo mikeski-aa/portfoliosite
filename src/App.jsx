@@ -92,8 +92,8 @@ function App() {
 
   return (
     <div className="page">
-      <div className="tempTest">
-        <div className="vertBar">BLABLA</div>
+      <div className="headerContainer">
+        <div className="vertBar"></div>
         <div className="header">
           <div className="buttonContainer">
             {navItems.map((item, index) => (
@@ -125,7 +125,7 @@ function App() {
       </div>
 
       <div className="mainCont">
-        {/* <div
+        <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
         >
@@ -148,7 +148,7 @@ function App() {
           ref={contactRef}
         >
           <ContactMe />
-        </div> */}
+        </div>
         <button className="backToTop">Back to top</button>
       </div>
     </div>
