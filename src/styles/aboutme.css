@@ -82,10 +82,10 @@
 
 @media (max-width: 850px) {
   .aboutMeMainContent {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 
   .aboutText {
-    width: 90vw;
+    /* width: 90vw; */
   }
 }

@@ -7,3 +7,8 @@
   font-size: 0.9rem;
   padding: 5px;
 }
+
+.explorerContainer.false {
+  /* opacity: 0; */
+  visibility: hidden;
+}

@@ -45,14 +45,16 @@
 .explorerDiv {
     background-color: #252526;
     transition: 0.5s ease-in-out;
+    /* opacity: 1; */
 }
 
 .explorerDiv.false {
     max-width: 0;
+
 }
 
 .explorerDiv.true {
-    max-width: 180px;
+    max-width: 190px;
 }
 
 .explorerDiv {

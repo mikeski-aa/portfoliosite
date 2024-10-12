@@ -4,7 +4,7 @@ import GithubIcon from "../assets/bwicons/github2.svg?react";
 import LinkedIn from "../assets/bwicons/linkedin.svg?react";
 import Email from "../assets/bwicons/email.svg?react";
 import Explorer from "./Explorer";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 function VertBar() {
   const [showExp, setShowExp] = useState(false);
@@ -33,7 +33,7 @@ function VertBar() {
         </button>
       </div>
       <div className={`explorerDiv ${showExp}`}>
-        <Explorer />
+        <Explorer status={showExp} />
       </div>
     </div>
   );
