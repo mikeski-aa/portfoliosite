@@ -11,6 +11,7 @@ function App() {
   const [showAbout, setShowAbout] = useState(true);
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
+  const [activePage, setActivePage] = useState(0);
   const [activeOne, setActiveOne] = useState(true);
   const [activeTwo, setActiveTwo] = useState(false);
   const [activeThree, setActiveThree] = useState(false);
@@ -76,10 +77,12 @@ function App() {
 
   const handleTestClick = (e) => {
     const copyItems = [...navItems];
-    console.log(copyItems);
     for (let x = 0; x < copyItems.length; x++) {
       if (copyItems[x].name === e.target.innerText) {
         copyItems[x].active = true;
+        setCurrentPage(copyItems[x].name);
+        setCpage(copyItems[x].shortname);
+        setActivePage(copyItems[x].trueIndex);
       } else {
         copyItems[x].active = false;
       }
@@ -88,18 +91,24 @@ function App() {
   };
 
   const [navItems, setNavItems] = useState([
-    { name: "About_Me.jsx", action: handleTestClick, active: true },
+    { name: "About_Me.jsx", active: true, shortname: "About_me", trueIndex: 0 },
     {
       name: "My_projects.jsx",
       active: false,
+      shortname: "My_projects",
+      trueIndex: 1,
     },
     {
       name: "My_skills.jsx",
       active: false,
+      shortname: "My_skills",
+      trueIndex: 2,
     },
     {
       name: "Contact_me.jsx",
       active: false,
+      shortname: "Contact_me",
+      trueIndex: 3,
     },
   ]);
 
@@ -113,7 +122,6 @@ function App() {
     const sourceIndex = parseInt(e.dataTransfer.getData("index"));
     const newItems = [...navItems];
     newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
-    console.log(newItems);
     setNavItems(newItems);
   };
 
@@ -125,11 +133,28 @@ function App() {
     <>
       <div className="header">
         <div className="buttonContainer">
-          <button className={`navBtn ${activeOne}`} onClick={handleAboutClick}>
+          {navItems.map((item, index) => (
+            <button
+              key={index}
+              className={`navBtn ${item.active}`}
+              draggable
+              onClick={(e) => handleTestClick(e)}
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, index)}
+            >
+              <img src={reactIcon} className="reactIconNav"></img>
+              {item.name}
+            </button>
+          ))}
+          {/* <button
+            className={activePage === 0 ? "navBtn true" : "navBtn"}
+            onClick={handleAboutClick}
+          >
             <img src={reactIcon} className="reactIconNav"></img>About_me.jsx
           </button>
           <button
-            className={`navBtn ${activeTwo}`}
+            className={activePage === 1 ? "navBtn true" : "navBtn"}
             onClick={handleProjectsClick}
           >
             <img src={reactIcon} className="reactIconNav"></img>My_projects.jsx
@@ -145,7 +170,7 @@ function App() {
             onClick={handleContactClick}
           >
             <img src={reactIcon} className="reactIconNav"></img>Contact.jsx
-          </button>
+          </button> */}
         </div>
 
         <div className="appLocation">
@@ -159,7 +184,7 @@ function App() {
         </div>
       </div>
       <div className="mainCont">
-        <div className="dragContTest">
+        {/* <div className="dragContTest">
           {navItems.map((item, index) => (
             <button
               key={index}
@@ -174,17 +199,29 @@ function App() {
               {item.name}
             </button>
           ))}
-        </div>
-        <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
+        </div> */}
+        <div
+          className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
+          ref={aboutRef}
+        >
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
-        <div className={`sectionDiv ${activeTwo}`} ref={projectsRef}>
+        <div
+          className={activePage === 1 ? "sectionDiv true" : "sectionDiv false"}
+          ref={projectsRef}
+        >
           <MyProjects />
         </div>
-        <div className={`sectionDiv ${activeThree}`} ref={skillsRef}>
+        <div
+          className={activePage === 2 ? "sectionDiv true" : "sectionDiv false"}
+          ref={skillsRef}
+        >
           <MySkills />
         </div>
-        <div className={`sectionDiv ${activeFour}`} ref={contactRef}>
+        <div
+          className={activePage === 3 ? "sectionDiv true" : "sectionDiv false"}
+          ref={contactRef}
+        >
           <ContactMe />
         </div>
         <button className="backToTop">Back to top</button>
