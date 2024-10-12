@@ -8,7 +8,7 @@ function ProjectComponent(props) {
       <div className="projectHeading">{props.title}</div>
       <div className="projectText">{props.desc}</div>
       <div className="projectLink">
-        <a href={props.projectLink} className="projectLink">
+        <a target="_blank" href={props.projectLink} className="projectLink">
           Project link
         </a>
       </div>

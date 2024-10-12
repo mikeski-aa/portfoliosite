@@ -86,6 +86,22 @@
   cursor: pointer;
 }
 
+.techStackUl {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.techStackList {
+  display: flex;
+  gap: 2rem;
+}
+
+.tsListItem {
+  width: 4rem;
+}
+
 .test {
   width: 100px;
   height: 100px;
@@ -108,6 +124,7 @@
   background: none;
   border: 2px solid grey;
   border-radius: 25px;
+  transition-duration: 0.5s;
 }
 
 .btnx:hover {
@@ -131,6 +148,7 @@
   border: 2px solid #9cdcfe;
   border-radius: 5px;
   background-color: #d0dcaa00;
+  transition-duration: 0.5s;
 }
 
 .arrowBtns:hover {

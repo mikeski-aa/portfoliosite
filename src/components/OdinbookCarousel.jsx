@@ -136,13 +136,23 @@ function OdinbookCarousel() {
         course. My goal with this project was to deliver a functional and
         responsive application for mobile and desktop users.
         <h4 className="line bolder">Technologies used</h4>
-        <span className="fileStyle bolder">Language:</span> Javascript
-        <br></br>
-        <span className="fileStyle bolder">Frontend:</span> React <br></br>
-        <span className="fileStyle bolder">Backend:</span> Node, Express{" "}
-        <br></br>
-        <span className="fileStyle bolder">Database:</span> PostgreSQL (using
-        PrismaORM)
+        <ul className="techStackUl">
+          <li className="techStackList">
+            <span className="tsListItem fileStyle bolder">Language:</span>{" "}
+            Javascript
+          </li>
+          <li className="techStackList">
+            <span className="tsListItem fileStyle bolder">Frontend:</span> React
+          </li>
+          <li className="techStackList">
+            <span className="tsListItem fileStyle bolder">Backend:</span> Node,
+            Express
+          </li>
+          <li className="techStackList">
+            <span className="tsListItem fileStyle bolder">Database:</span>{" "}
+            PostgreSQL (using PrismaORM)
+          </li>
+        </ul>
         <h4 className="line bolder">Key features</h4>
         <ul className="ulStyle">
           <li>
@@ -169,7 +179,7 @@ function OdinbookCarousel() {
         </ul>
         <span className="brackStyle bolder">Users are able to:</span>
         <ul>
-          <li>Register</li>
+          <li>Register a new account</li>
           <li>Log in (into their registered account or guest)</li>
           <li>Create text posts, or posts with images</li>
           <li>Like and comment on posts</li>
