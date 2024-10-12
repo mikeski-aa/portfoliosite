@@ -107,10 +107,19 @@ body {
   height: 50px;
 }
 
+.pageTest {
+  display: flex;
+}
+
+.headtest {
+  position: fixed;
+}
+
+/* 
 .headerContainer {
   display: flex;
   position: fixed;
-}
+} */
 
 /* .sideBarTest {
   background-color: green;

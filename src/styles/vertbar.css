@@ -1,6 +1,6 @@
 .vertBar {
   display: flex;
-
+    position: sticky;
 
 }
 

@@ -97,7 +97,75 @@ function App() {
 
   return (
     <div className="page">
-      <div className="headerContainer">
+      <div className="pageTest">
+        <VertBar />
+        <div className="mainTest">
+          <div className="headtest">
+            <div className="buttonContainer">
+              {navItems.map((item, index) => (
+                <button
+                  key={index}
+                  className={`navBtn ${item.active}`}
+                  draggable
+                  onClick={(e) => handleNavClick(e)}
+                  onDragStart={(e) => handleDragStart(e, index)}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, index)}
+                >
+                  <img src={reactIcon} className="reactIconNav"></img>
+                  {item.name}
+                </button>
+              ))}
+            </div>
+            <div className="appLocation">
+              <div className="fileLoc">{"src > "}</div>
+              <div className="fileLoc">
+                <img src={reactIcon} className="smallIcon" />{" "}
+                {currentPage + " >"}
+              </div>
+              <div className="fileLoc">
+                <img src={methodIcon} className="smallIcon"></img> {cPage}
+              </div>
+            </div>
+          </div>
+          <div className="mainCont">
+            <div
+              className={
+                activePage === 0 ? "sectionDiv true" : "sectionDiv false"
+              }
+              ref={aboutRef}
+            >
+              <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
+            </div>
+            <div
+              className={
+                activePage === 1 ? "sectionDiv true" : "sectionDiv false"
+              }
+              ref={projectsRef}
+            >
+              <MyProjects />
+            </div>
+            <div
+              className={
+                activePage === 2 ? "sectionDiv true" : "sectionDiv false"
+              }
+              ref={skillsRef}
+            >
+              <MySkills />
+            </div>
+            <div
+              className={
+                activePage === 3 ? "sectionDiv true" : "sectionDiv false"
+              }
+              ref={contactRef}
+            >
+              <ContactMe />
+            </div>
+            <button className="backToTop">Back to top</button>
+          </div>
+        </div>
+      </div>
+      {/* <div className="headerContainer">
         <VertBar />
         <div className="header">
           <div className="buttonContainer">
@@ -127,9 +195,9 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="mainCont">
+      {/* <div className="mainCont">
         <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
@@ -155,7 +223,7 @@ function App() {
           <ContactMe />
         </div>
         <button className="backToTop">Back to top</button>
-      </div>
+      </div> */}
     </div>
   );
 }
