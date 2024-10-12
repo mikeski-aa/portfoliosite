@@ -11,10 +11,13 @@
 
 .projectDescription {
   width: 55vw;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* This is where the magic happens. */
+  transition: 0.5s ease-in-out;
+}
+
+.projectDescription.false {
   max-height: 5vh;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .projectDescription:hover {
@@ -24,7 +27,12 @@
 .projectDescription.true {
   width: 55vw;
   text-wrap: wrap;
-  max-height: 100%;
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.temp {
+  min-height: 100%;
 }
 
 .imageCarousel {

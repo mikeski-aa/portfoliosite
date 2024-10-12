@@ -12,6 +12,7 @@ function OdinbookCarousel() {
   const [carouselSeat, setCarouselSeat] = useState(0);
   const [descShow, setDescShow] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [btnText, setBtnText] = useState("See details");
   const imgArr = [mergedLogin, mergedMain, mergedFriends, mergedProfile];
 
   const handleGoLeft = () => {
@@ -54,8 +55,10 @@ function OdinbookCarousel() {
   const handleDescShow = () => {
     if (descShow === false) {
       setDescShow(true);
+      setBtnText("Hide details");
     } else {
       setDescShow(false);
+      setBtnText("Show details");
     }
   };
 
@@ -122,10 +125,10 @@ function OdinbookCarousel() {
           ></button>
         </div>
       </div>
-      <div
-        className={`projectDescription ${descShow}`}
-        onClick={handleDescShow}
-      >
+      <button className="handleClickMore" onClick={handleDescShow}>
+        {btnText}
+      </button>
+      <div className={`projectDescription ${descShow}`}>
         <h4 className="line bolder">Overview: </h4>
         <span className="fileStyle bolder">Fullstack project</span> - social
         media web app, strongly inspierd by Facebook in design and layout. This
