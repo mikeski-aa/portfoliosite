@@ -1,0 +1,35 @@
+.vertBar {
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  width: 40px;
+  height: 100vh;
+  gap: 0.9rem;
+}
+
+.vertIcon {
+  width: 25px;
+  height: 25px;
+  z-index: 20;
+}
+
+.vertBtn {
+  border: 2px solid rgba(255, 255, 255, 0);
+  background: none;
+  width: 25px;
+  height: 25px;
+}
+
+.vertIcon:hover {
+  fill: white;
+}
+
+.vertIcon {
+  fill: #717171;
+}
+
+.vertBtn:hover {
+  cursor: pointer;
+}
+
+/* need to add styling for mobile and defnitely for when side bar is opened

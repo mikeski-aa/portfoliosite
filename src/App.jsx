@@ -6,6 +6,9 @@ import MySkills from "./components/MySkills";
 import ContactMe from "./components/ContactMe";
 import reactIcon from "../src/assets/icons/react.svg";
 import methodIcon from "../src/assets/icons/symbol-method.svg";
+import VertBar from "./components/VertBar";
+
+// cleanup and get rid of all old svg imports not done as react components
 
 function App() {
   const [showAbout, setShowAbout] = useState(true);
@@ -93,7 +96,7 @@ function App() {
   return (
     <div className="page">
       <div className="headerContainer">
-        <div className="vertBar"></div>
+        <VertBar />
         <div className="header">
           <div className="buttonContainer">
             {navItems.map((item, index) => (
@@ -124,7 +127,7 @@ function App() {
         </div>
       </div>
 
-      <div className="mainCont">
+      {/* <div className="mainCont">
         <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
@@ -150,7 +153,7 @@ function App() {
           <ContactMe />
         </div>
         <button className="backToTop">Back to top</button>
-      </div>
+      </div> */}
     </div>
   );
 }
