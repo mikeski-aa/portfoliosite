@@ -7,14 +7,12 @@ function MySkills() {
     <div className="mySkillsComponent">
       <div className="codeStyle">
         <div className="line">
-          import <span className="fileStyle">cssIcon</span> from{" "}
-          <span className="linkStyle">"../assets/icons/css.svg"</span>
+          import <span className="fileStyle">SkillBox</span> from{" "}
+          <span className="linkStyle">"./SkillBox";</span>
         </div>
         <div className="line">
-          import <span className="fileStyle">htmlIcon</span> from{" "}
-          <span className="linkStyle">
-            import htmlIcon from "../assets/icons/html.svg";
-          </span>
+          import <span className="fileStyle">skills</span> from{" "}
+          <span className="linkStyle">"../utils/skillsData";</span>
         </div>
         <div className="line">
           import <span className="linkStyle">"../styles/myskills.css";</span>

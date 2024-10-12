@@ -70,10 +70,13 @@ function App() {
     setNavItems(copyItems);
   };
 
+  // handle setting index data when tab is beggining to be dragged
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("index", index);
   };
 
+  // handle drop - set new index, splice array replacing item positions.
+  // set new state to update the layout
   const handleDrop = (e, targetIndex) => {
     e.preventDefault();
     const sourceIndex = parseInt(e.dataTransfer.getData("index"));
@@ -82,42 +85,47 @@ function App() {
     setNavItems(newItems);
   };
 
+  // disable default behaviour, otherwise drag won't work
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
   return (
-    <>
-      <div className="header">
-        <div className="buttonContainer">
-          {navItems.map((item, index) => (
-            <button
-              key={index}
-              className={`navBtn ${item.active}`}
-              draggable
-              onClick={(e) => handleNavClick(e)}
-              onDragStart={(e) => handleDragStart(e, index)}
-              onDragOver={handleDragOver}
-              onDrop={(e) => handleDrop(e, index)}
-            >
-              <img src={reactIcon} className="reactIconNav"></img>
-              {item.name}
-            </button>
-          ))}
-        </div>
-
-        <div className="appLocation">
-          <div className="fileLoc">{"src > "}</div>
-          <div className="fileLoc">
-            <img src={reactIcon} className="smallIcon" /> {currentPage + " >"}
+    <div className="page">
+      <div className="tempTest">
+        <div className="vertBar">BLABLA</div>
+        <div className="header">
+          <div className="buttonContainer">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                className={`navBtn ${item.active}`}
+                draggable
+                onClick={(e) => handleNavClick(e)}
+                onDragStart={(e) => handleDragStart(e, index)}
+                onDragOver={handleDragOver}
+                onDrop={(e) => handleDrop(e, index)}
+              >
+                <img src={reactIcon} className="reactIconNav"></img>
+                {item.name}
+              </button>
+            ))}
           </div>
-          <div className="fileLoc">
-            <img src={methodIcon} className="smallIcon"></img> {cPage}
+
+          <div className="appLocation">
+            <div className="fileLoc">{"src > "}</div>
+            <div className="fileLoc">
+              <img src={reactIcon} className="smallIcon" /> {currentPage + " >"}
+            </div>
+            <div className="fileLoc">
+              <img src={methodIcon} className="smallIcon"></img> {cPage}
+            </div>
           </div>
         </div>
       </div>
+
       <div className="mainCont">
-        <div
+        {/* <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
         >
@@ -140,10 +148,10 @@ function App() {
           ref={contactRef}
         >
           <ContactMe />
-        </div>
+        </div> */}
         <button className="backToTop">Back to top</button>
       </div>
-    </>
+    </div>
   );
 }
 

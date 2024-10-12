@@ -46,7 +46,7 @@ function AboutMe(props) {
             <img src={profilePic} className="profilePicImg"></img>
           </div>
         </div>
-        <div className="aboutSection">
+        {/* <div className="aboutSection">
           <div className="aboutPic">
             <img src={egAsset} className="profilePicImg"></img>
           </div>
@@ -75,7 +75,7 @@ function AboutMe(props) {
           <div className="aboutPic">
             <img src={egAsset} className="profilePicImg"></img>
           </div>
-        </div>
+        </div> */}
         <GitHubCalendar username="mikeski-aa" />
       </div>
       {/* <h2 className="profileName">Mike Ru</h2>

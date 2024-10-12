@@ -12,3 +12,5 @@ const contact = [
     link: "https://www.github.com",
   },
 ];
+
+export default contact;
