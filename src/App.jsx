@@ -91,25 +91,17 @@ function App() {
     { name: "About_Me.jsx", action: handleTestClick, active: true },
     {
       name: "My_projects.jsx",
-      action: handleTestClick,
       active: false,
     },
     {
       name: "My_skills.jsx",
-      action: handleTestClick,
       active: false,
     },
     {
       name: "Contact_me.jsx",
-      action: handleTestClick,
       active: false,
     },
   ]);
-
-  useEffect(() => {
-    console.log("change detected");
-    console.log(navItems);
-  }, [navItems]);
 
   const handleDragStart = (e, index) => {
     // e.preventDefault();
@@ -173,7 +165,7 @@ function App() {
               key={index}
               className={`navBtn ${item.active}`}
               draggable
-              onClick={(e) => item.action(e)}
+              onClick={(e) => handleTestClick(e)}
               onDragStart={(e) => handleDragStart(e, index)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
@@ -183,7 +175,7 @@ function App() {
             </button>
           ))}
         </div>
-        {/* <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
+        <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
           <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
         </div>
         <div className={`sectionDiv ${activeTwo}`} ref={projectsRef}>
@@ -195,7 +187,7 @@ function App() {
         <div className={`sectionDiv ${activeFour}`} ref={contactRef}>
           <ContactMe />
         </div>
-        <button className="backToTop">Back to top</button> */}
+        <button className="backToTop">Back to top</button>
       </div>
     </>
   );
