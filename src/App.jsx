@@ -12,53 +12,47 @@ function App() {
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
   const [activePage, setActivePage] = useState(0);
+  const contactRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const aboutRef = useRef(null);
 
   const [navItems, setNavItems] = useState([
-    { name: "About_Me.jsx", active: true, shortname: "About_me", trueIndex: 0 },
+    {
+      name: "About_Me.jsx",
+      active: true,
+      shortname: "About_me",
+      trueIndex: 0,
+      refLink: aboutRef,
+    },
     {
       name: "My_projects.jsx",
       active: false,
       shortname: "My_projects",
       trueIndex: 1,
+      refLink: projectsRef,
     },
     {
       name: "My_skills.jsx",
       active: false,
       shortname: "My_skills",
       trueIndex: 2,
+      refLink: skillsRef,
     },
     {
       name: "Contact_me.jsx",
       active: false,
       shortname: "Contact_me",
       trueIndex: 3,
+      refLink: contactRef,
     },
   ]);
 
-  const contactRef = useRef(null);
-  const projectsRef = useRef(null);
-  const skillsRef = useRef(null);
-  const aboutRef = useRef(null);
-
   // smooth scrolling for each element
 
-  // const scrollProjects = () => {
-  //   projectsRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // const scrollContact = () => {
-  //   contactRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // const scrollAbout = () => {
-  //   aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // const scrollSkills = () => {
-  //   skillsRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // reset states of active buttons depending on what has been selected
+  const smoothScroll = (inputRef) => {
+    inputRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleNavClick = (e) => {
     const copyItems = [...navItems];
@@ -68,6 +62,7 @@ function App() {
         setCurrentPage(copyItems[x].name);
         setCpage(copyItems[x].shortname);
         setActivePage(copyItems[x].trueIndex);
+        smoothScroll(copyItems[x].refLink);
       } else {
         copyItems[x].active = false;
       }

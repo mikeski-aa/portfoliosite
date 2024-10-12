@@ -80,9 +80,9 @@ body {
   background-color: #1e1e1e;
 }
 
-.sectionDiv.false {
+/* .sectionDiv.false {
   display: none;
-}
+} */
 
 .backToTop {
   position: static;

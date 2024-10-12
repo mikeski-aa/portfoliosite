@@ -33,7 +33,7 @@ function MyProjects() {
       </div>
       <div className="myProjectsContainer">
         <OdinbookCarousel />
-        <MessengerCarousel />
+        {/* <MessengerCarousel /> */}
       </div>
     </div>
   );
