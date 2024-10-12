@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Arrow from "../assets/arrow.svg?react";
+import File from "./File";
+import files from "../utils/files";
 
 function Folder(props) {
   const [rootStat, setFolderStat] = useState(false);
@@ -47,7 +49,11 @@ function Folder(props) {
             <Arrow className={`folderChevron ${childTwoStat}`} />
             {props.childTwo}
           </button>
-          <div className={`fileList ${childTwoStat}`}></div>
+          <div className={`fileList ${childTwoStat} componentList`}>
+            {files.map((item, index) => (
+              <File key={index} name={item.name} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

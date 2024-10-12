@@ -1,0 +1,21 @@
+.fileBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.55rem;
+  border: none;
+  background: none;
+  color: white;
+  padding-left: 30px;
+}
+
+.fileBtn:hover {
+  cursor: pointer;
+  background-color: rgba(87, 87, 87, 0.363);
+}
+
+.fileIcon {
+  width: 15px;
+  height: 15px;
+  fill: rgb(44, 168, 240);
+}
