@@ -8,6 +8,9 @@ import psqlIcon from "../assets/icons/psql.svg";
 import reactIcon from "../assets/icons/react.svg";
 import photoshopIcon from "../assets/icons/photoshop.svg";
 
+import SkillBox from "./SkillBox";
+import skills from "../utils/skillsData";
+
 function MySkills() {
   return (
     <div className="mySkillsComponent">
@@ -75,6 +78,9 @@ function MySkills() {
           <img src={photoshopIcon} className="skillIcon"></img>
           <div className="heading">Photoshop</div>
         </div>
+        {skills.map((item) => (
+          <SkillBox name={item.name} />
+        ))}
       </div>
     </div>
   );

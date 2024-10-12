@@ -38,8 +38,9 @@ function MyProjects() {
         {/* <MessengerCarousel /> */}
 
         <div className="smallerProjects">
-          {projects.map((item) => (
+          {projects.map((item, index) => (
             <ProjectComponent
+              key={index}
               title={item.title}
               desc={item.desc}
               projectLink={item.projectLink}
