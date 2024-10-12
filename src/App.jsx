@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
@@ -74,24 +74,42 @@ function App() {
     setCpage("Contact_me");
   };
 
+  const handleTestClick = (e) => {
+    const copyItems = [...navItems];
+    console.log(copyItems);
+    for (let x = 0; x < copyItems.length; x++) {
+      if (copyItems[x].name === e.target.innerText) {
+        copyItems[x].active = true;
+      } else {
+        copyItems[x].active = false;
+      }
+    }
+    setNavItems(copyItems);
+  };
+
   const [navItems, setNavItems] = useState([
-    { name: "About_Me.jsx", action: handleAboutClick, active: true },
+    { name: "About_Me.jsx", action: handleTestClick, active: true },
     {
       name: "My_projects.jsx",
-      action: handleProjectsClick,
+      action: handleTestClick,
       active: false,
     },
     {
       name: "My_skills.jsx",
-      action: handleSkillsClick,
+      action: handleTestClick,
       active: false,
     },
     {
       name: "Contact_me.jsx",
-      action: handleContactClick,
+      action: handleTestClick,
       active: false,
     },
   ]);
+
+  useEffect(() => {
+    console.log("change detected");
+    console.log(navItems);
+  }, [navItems]);
 
   const handleDragStart = (e, index) => {
     // e.preventDefault();
@@ -102,7 +120,6 @@ function App() {
     e.preventDefault();
     const sourceIndex = parseInt(e.dataTransfer.getData("index"));
     const newItems = [...navItems];
-    console.log(newItems);
     newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
     console.log(newItems);
     setNavItems(newItems);
@@ -156,7 +173,7 @@ function App() {
               key={index}
               className={`navBtn ${item.active}`}
               draggable
-              onClick={item.action}
+              onClick={(e) => item.action(e)}
               onDragStart={(e) => handleDragStart(e, index)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
