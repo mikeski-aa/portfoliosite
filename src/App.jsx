@@ -74,7 +74,24 @@ function App() {
     setCpage("Contact_me");
   };
 
-  const [items, setItems] = useState(["One", "Two"]);
+  const [navItems, setNavItems] = useState([
+    { name: "About_Me.jsx", action: handleAboutClick, active: true },
+    {
+      name: "My_projects.jsx",
+      action: handleProjectsClick,
+      active: false,
+    },
+    {
+      name: "My_skills.jsx",
+      action: handleSkillsClick,
+      active: false,
+    },
+    {
+      name: "Contact_me.jsx",
+      action: handleContactClick,
+      active: false,
+    },
+  ]);
 
   const handleDragStart = (e, index) => {
     // e.preventDefault();
@@ -84,10 +101,11 @@ function App() {
   const handleDrop = (e, targetIndex) => {
     e.preventDefault();
     const sourceIndex = parseInt(e.dataTransfer.getData("index"));
-    const newItems = [...items];
-
+    const newItems = [...navItems];
+    console.log(newItems);
     newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
-    setItems(newItems);
+    console.log(newItems);
+    setNavItems(newItems);
   };
 
   const handleDragOver = (e) => {
@@ -133,17 +151,19 @@ function App() {
       </div>
       <div className="mainCont">
         <div className="dragContTest">
-          {items.map((item, index) => (
-            <div
+          {navItems.map((item, index) => (
+            <button
               key={index}
-              className="dragItem"
+              className={`navBtn ${item.active}`}
               draggable
+              onClick={item.action}
               onDragStart={(e) => handleDragStart(e, index)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
             >
-              {item}
-            </div>
+              <img src={reactIcon} className="reactIconNav"></img>
+              {item.name}
+            </button>
           ))}
         </div>
         {/* <div className={`sectionDiv ${activeOne}`} ref={aboutRef}>
