@@ -8,7 +8,7 @@
 .mySkillsDiv {
   display: flex;
   gap: 1rem;
-  width: 85vw;
+  /* max-width: 85vw; */
 }
 
 .mySkillsTitle {
@@ -28,5 +28,15 @@
   .skillBox {
     width: 70px;
     font-size: small;
+  }
+}
+
+.react-activity-calendar.styles-module_container__GBNxC {
+  transform: scale(75%);
+}
+
+@media (max-width: 850px) {
+  .react-activity-calendar.styles-module_container__GBNxC {
+    width: 350px;
   }
 }

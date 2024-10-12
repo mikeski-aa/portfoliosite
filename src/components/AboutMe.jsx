@@ -46,48 +46,10 @@ function AboutMe(props) {
             <img src={profilePic} className="profilePicImg"></img>
           </div>
         </div>
-        {/* <div className="aboutSection">
-          <div className="aboutPic">
-            <img src={egAsset} className="profilePicImg"></img>
-          </div>
-          <div className="aboutText">
-            <h2>My journey</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            molestias aperiam accusantium pariatur beatae, amet ut culpa alias
-            eligendi reiciendis magnam, excepturi facilis iusto exercitationem,
-            ex numquam. Laboriosam cumque expedita eveniet cupiditate explicabo.
-            Quidem excepturi hic laborum vitae dolorum quibusdam repellendus
-            cumque ratione, fugiat reprehenderit sint nihil porro. Doloribus,
-            illum?
-          </div>
-        </div>
-        <div className="aboutSection">
-          <div className="aboutText">
-            <h2>Hobbies</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            molestias aperiam accusantium pariatur beatae, amet ut culpa alias
-            eligendi reiciendis magnam, excepturi facilis iusto exercitationem,
-            ex numquam. Laboriosam cumque expedita eveniet cupiditate explicabo.
-            Quidem excepturi hic laborum vitae dolorum quibusdam repellendus
-            cumque ratione, fugiat reprehenderit sint nihil porro. Doloribus,
-            illum?
-          </div>
-          <div className="aboutPic">
-            <img src={egAsset} className="profilePicImg"></img>
-          </div>
-        </div> */}
-        <GitHubCalendar username="mikeski-aa" />
+
+        {/* <GitHubCalendar username="mikeski-aa" /> */}
       </div>
-      {/* <h2 className="profileName">Mike Ru</h2>
-      <img src={profilePic} className="profilePicImg"></img>
-      <div className="aboutMeTitle">
-        <h2>About me</h2>
-      </div>
-      <div className={`aboutMeContent`}>
-        I'm a self-taught aspiring web developer. I begun my development journey
-        in February 2024 taking on "The Odin Project", following the curriculum
-        from basic HTML and CSS, all the way through to learning React and Node.
-      </div> */}
+
       <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
     </div>
   );

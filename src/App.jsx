@@ -145,6 +145,9 @@ function App() {
             >
               <ContactMe />
             </div>
+          </div>
+          <div className="footer">
+            {" "}
             <button className="backToTop">Back to top</button>
           </div>
         </div>
