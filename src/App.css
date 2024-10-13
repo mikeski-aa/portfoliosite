@@ -23,7 +23,7 @@
   /* overflow: hidden;
   background-color: rgb(44, 44, 126); */
   width: 100%;
-  height: 110%;
+  height: 109%;
 }
 
 /* .mainCont.true {
@@ -159,6 +159,7 @@ body {
 .codeStyle,
 .exportLine {
   margin-left: 20px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .sectionDiv {

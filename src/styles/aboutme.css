@@ -81,7 +81,7 @@
 }
 
 .lineWhite.withPadding.moveMe {
-  margin-left: -1.1rem;
+  margin-left: -1.22rem;
 }
 .line {
   color: #c586c0;
@@ -105,11 +105,6 @@
 
 .brackStyle {
   color: #ffd700;
-}
-
-.exportLine {
-  display: flex;
-  flex-direction: column;
 }
 
 @media (max-width: 770px) {

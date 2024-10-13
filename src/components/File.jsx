@@ -1,14 +1,25 @@
 import "../styles/file.css";
 import ReactIcon from "../assets/bwicons/react.svg?react";
+import JSIcon from "../assets/bwicons/yellowjs.svg?react";
 import { GlobalContext } from "../App";
 import { useContext } from "react";
 import { helperClickStateUpdate } from "../utils/helperStateUpdates";
+import bonusPage from "../utils/bonusPageScript";
 
 function File(props) {
   const globalContext = useContext(GlobalContext);
   const name = props.name + `.jsx`;
 
   const handleItemClick = () => {
+    if (props.bonus) {
+      return bonusPage(
+        globalContext.navItems,
+        globalContext.setNavItems,
+        globalContext.bonusPage,
+        globalContext.setBonusPage
+      );
+    }
+
     helperClickStateUpdate(
       globalContext.navItems,
       globalContext.setNavItems,
@@ -23,9 +34,14 @@ function File(props) {
       className={`fileBtn ${props.name} ${globalContext.activePage}`}
       onClick={handleItemClick}
     >
-      <ReactIcon className="fileIcon" />
+      {props.bonus ? (
+        <JSIcon className="fileIcon" />
+      ) : (
+        <ReactIcon className="fileIcon" />
+      )}
+
       {props.name}
-      {`.jsx`}
+      {props.type}
     </button>
   );
 }

@@ -61,13 +61,16 @@ function Folder(props) {
           </button>
           <div className={`fileList ${childTwoStat} componentList`}>
             {files.map((item, index) => (
-              <File key={index} name={item.name} />
+              <File key={index} name={item.name} type=".jsx" />
             ))}
           </div>
           <button className="folderBtn btnThree" onClick={handleChildThree}>
             <Arrow className={`folderChevron ${childThreeStat}`} />
             {props.childThree}
           </button>
+          <div className={`fileList ${childThreeStat} componentList`}>
+            <File name={"utils"} bonus={true} type=".js" />
+          </div>
         </div>
       </div>
     </div>

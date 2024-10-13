@@ -29,6 +29,7 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
+  const [bonusPage, setBonusPage] = useState(false);
   const [navItems, setNavItems] = useState([
     {
       name: "About_me.jsx",
@@ -115,6 +116,8 @@ function App() {
           setCurrentPage,
           setCpage,
           activePage,
+          bonusPage,
+          setBonusPage,
         }}
       >
         <div className="pageTest">
