@@ -12,6 +12,7 @@ import {
   helperScrollStateUpdate,
   helperClickStateUpdate,
 } from "./utils/helperStateUpdates";
+import BonusPage from "./components/BonusPage";
 
 export const GlobalContext = createContext();
 
@@ -168,6 +169,7 @@ function App() {
               >
                 <ContactMe />
               </div>
+              <BonusPage bonusShow={bonusPageLarge} />
             </div>
           </div>
           <Footer />

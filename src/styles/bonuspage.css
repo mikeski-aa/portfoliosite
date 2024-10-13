@@ -1,0 +1,7 @@
+.bonusPage.false {
+  display: none;
+}
+
+.bonusPage.true {
+  display: block;
+}

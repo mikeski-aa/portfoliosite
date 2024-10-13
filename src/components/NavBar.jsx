@@ -1,6 +1,8 @@
 import MethodComponent from "../assets/icons/symbol-method.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
+import Arrow from "../assets/arrow.svg?react";
+import "../styles/navbar.css";
 
 function NavBar(props) {
   // handle setting index data when tab is beggining to be dragged
@@ -36,21 +38,26 @@ function NavBar(props) {
             onDrop={(e) => handleDrop(e, index)}
           >
             {item.name === "bonusPage.js" ? (
-              <JSIconComponent className="reactIconNav" />
+              <JSIconComponent className="locationIcon" />
             ) : (
-              <ReactIconComponent className="reactIconNav" />
+              <ReactIconComponent className="locationIcon" />
             )}
             {item.name}
           </button>
         ))}
       </div>
       <div className="appLocation">
-        <div className="fileLoc">{"src > "}</div>
+        <div className="fileLoc">
+          {"src"}
+          <Arrow className="smallIcon arrow" />
+          {"components"}
+          <Arrow className="smallIcon arrow" />
+        </div>
         <div className="fileLoc">
           {props.name === "bonusPage.js" ? null : (
             <ReactIconComponent className="smallIcon" />
           )}{" "}
-          {props.currentPage + " >"}
+          {props.currentPage} <Arrow className="smallIcon arrow" />
         </div>
         <div className="fileLoc">
           <MethodComponent className="smallIcon" />
