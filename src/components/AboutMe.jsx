@@ -27,7 +27,12 @@ function AboutMe(props) {
         <h2>About_me</h2>
       </div>
       <div className="aboutMeContainer">
-        <div className="boxybox"></div>
+        <div className="aboutMeText">
+          I'm a passionate web developer looking for my next challenge
+        </div>
+        {/* <div className="boxybox"></div> */}
+
+        {/* <img src={profilePic} className="profImg"></img> */}
       </div>
 
       {/* <GitHubCalendar username="mikeski-aa" /> */}

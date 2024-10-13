@@ -14,16 +14,14 @@
 }
 
 .aboutMeContainer {
-  width: 100%;
   display: flex;
   gap: 2rem;
   justify-content: center;
 }
 
-.boxybox {
-  width: 250px;
-  height: 150px;
-  background-color: red;
+.aboutMeText {
+  border: 2px solid #d0dcaa;
+  padding: 5px;
 }
 
 .aboutSection {
@@ -31,11 +29,24 @@
   gap: 15vw;
 }
 
-.aboutText {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 30vw;
+.profPicContainer {
   border: 2px solid #d0dcaa;
-  padding: 15px;
+  padding: 5px;
+  max-width: 250px;
+}
+
+.profImg {
+  object-fit: contain;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1) brightness(1) contrast(1);
+}
+
+.boxybox {
+  width: 250px;
+  height: 250px;
+  background-color: red;
 }
 
 .line {
