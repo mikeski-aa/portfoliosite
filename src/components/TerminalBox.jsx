@@ -17,7 +17,9 @@ function TerminalBox(props) {
           <button className="terminalBtn">TERMINAL</button>
           <button className="terminalBtn">PORTS</button>
         </div>
-        <div className="terminalRightBtnDiv"></div>
+        <div className="terminalRightBtnDiv">
+          <CubeIcon className="terminalIcon" />
+        </div>
       </div>
       <div className="mainTerminalBox">asdasdasdasd</div>
     </div>
