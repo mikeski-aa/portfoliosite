@@ -8,6 +8,7 @@ function Folder(props) {
   const [rootStat, setFolderStat] = useState(false);
   const [childOneStat, setChildOneStat] = useState(false);
   const [childTwoStat, setChildTwoStat] = useState(false);
+  const [childThreeStat, setChildThreeStat] = useState(false);
 
   const handleOuterClick = () => {
     if (rootStat) {
@@ -33,6 +34,14 @@ function Folder(props) {
     }
   };
 
+  const handleChildThree = () => {
+    if (childThreeStat) {
+      setChildThreeStat(false);
+    } else {
+      setChildThreeStat(true);
+    }
+  };
+
   // I am thinking this component could be re-written using recursive components
   return (
     <div className="folderDiv">
@@ -55,6 +64,10 @@ function Folder(props) {
               <File key={index} name={item.name} />
             ))}
           </div>
+          <button className="folderBtn btnThree" onClick={handleChildThree}>
+            <Arrow className={`folderChevron ${childThreeStat}`} />
+            {props.childThree}
+          </button>
         </div>
       </div>
     </div>

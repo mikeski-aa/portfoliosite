@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Portfolio - webapp",
-    desc: "Pure frontend-focused React project. My goal with this project was to emulate the look and feel of my preferred text editor - VSCode. ",
+    desc: "Pure frontend-focused React project. My goal with this project was to emulate the look and feel of my preferred text editor - VSCode. I wanted to re-create the look and feel of VSCode without using any additional external packages or libraries, hence everything was written from the ground up.",
     projectLink: "https://www.google.com",
     repoLink: "https://github.com/mikeski-aa/portfoliosite",
   },
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: "ToDo - webapp",
-    desc: "Pure frontend project. Users are able to create and manage To Dos, create custom lists, change date formatting",
+    desc: "Pure frontend project. Users are able to create and manage To Dos, create custom lists, change date formatting.",
     projectLink: "https://to-do-app-react-mikeski.netlify.app/",
     repoLink: "https://github.com/mikeski-aa/to-do-app-react",
   },
