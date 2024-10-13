@@ -12,6 +12,7 @@ function ContactMe() {
         firstImportLocation={`"./ContactBox"`}
         styleImportLink={`"../styles/contactme.css"`}
         functionName="Contact_me"
+        rLine="177"
       />
       <div className="contactMeTitle">
         <h2>Contact_me</h2>
@@ -21,7 +22,7 @@ function ContactMe() {
           <ContactBox key={index} name={item.name} />
         ))}
       </div>
-      <ExportLine text="Contact_me" />
+      <ExportLine text="Contact_me" top="255" mid="256" bot="257" />
     </div>
   );
 }

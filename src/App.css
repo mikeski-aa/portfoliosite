@@ -153,14 +153,12 @@ body {
 }
 
 .exportLine {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin-top: 20px;
 }
 
 .codeStyle,
 .exportLine {
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 .sectionDiv {

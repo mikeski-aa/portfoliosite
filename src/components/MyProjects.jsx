@@ -14,6 +14,7 @@ function MyProjects() {
         firstImportLocation={`"./OdinbookCarousel"`}
         styleImportLink={`"../styles/myprojects.css"`}
         functionName="My_projects"
+        rLine="243"
       />
       <div className="myProjectsTitle">
         <h2>My_projects</h2>
@@ -33,7 +34,7 @@ function MyProjects() {
           ))}
         </div>
       </div>
-      <ExportLine text="My_projects" />
+      <ExportLine text="My_projects" top="270" mid="271" bot="273" />
     </div>
   );
 }

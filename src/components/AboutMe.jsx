@@ -21,6 +21,7 @@ function AboutMe(props) {
         firstImportLocation={`"../assets/profile.jpg"`}
         styleImportLink={`"../styles/aboutme.css"`}
         functionName="About_me"
+        rLine="351"
       />
 
       <div className="aboutMeTitle">
@@ -52,7 +53,7 @@ function AboutMe(props) {
 
       {/* <GitHubCalendar username="mikeski-aa" /> */}
 
-      <ExportLine text="About_me" />
+      <ExportLine text="About_me" top="391" mid="392" bot="393" />
     </div>
   );
 }

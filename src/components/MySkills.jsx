@@ -12,6 +12,7 @@ function MySkills() {
         firstImportLocation={`"./SkillBox"`}
         styleImportLink={`"../utils/skillsData"`}
         functionName="My_skills"
+        rLine="159"
       />
       <div className="mySkillsTitle">
         <h2>My_skills</h2>
@@ -21,7 +22,7 @@ function MySkills() {
           <SkillBox key={index} name={item.name} />
         ))}
       </div>
-      <ExportLine text="My_skills" />
+      <ExportLine text="My_skills" top="199" mid="200" bot="201" />
     </div>
   );
 }

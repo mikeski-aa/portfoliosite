@@ -73,6 +73,16 @@
 .lineWhite {
   color: white;
 }
+
+.lineWhite.withPadding {
+  padding-right: 1.4rem;
+  color: grey;
+  text-align: left;
+}
+
+.lineWhite.withPadding.moveMe {
+  margin-left: -1.1rem;
+}
 .line {
   color: #c586c0;
 }
@@ -95,6 +105,11 @@
 
 .brackStyle {
   color: #ffd700;
+}
+
+.exportLine {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 770px) {
