@@ -72,6 +72,10 @@ body {
   box-shadow: 0 4px 2px -2px rgb(0, 0, 0);
 }
 
+.appLocation:hover {
+  cursor: default;
+}
+
 /* .sectionDiv.false {
   display: none;
 } */
@@ -79,6 +83,10 @@ body {
 .backToTop {
   position: static;
   bottom: 0;
+}
+
+h2:hover {
+  cursor: default;
 }
 
 .dragContTest {

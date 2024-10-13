@@ -16,7 +16,11 @@ import BonusPage from "./components/BonusPage";
 
 export const GlobalContext = createContext();
 
-// cleanup and get rid of all old svg imports not done as react components
+// TO DO: Add option to close tabs and stop rendering those tabs
+// on clicking bonus, should open a new page.
+// users should be able to switch between bonus page and regular pages.. This won't be true to VScode behaviour but it is a cutesy feature
+// add an INTERACTIBLE terminal on the bottom of the page!
+// style for mobile as best as possible
 
 function App() {
   const [showAbout, setShowAbout] = useState(true);

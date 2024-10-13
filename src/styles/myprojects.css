@@ -25,3 +25,8 @@
 .projectText {
   min-height: 12rem;
 }
+
+.projectText:hover,
+.projectHeading:hover {
+  cursor: default;
+}
