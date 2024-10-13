@@ -4,8 +4,6 @@ import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
 import MySkills from "./components/MySkills";
 import ContactMe from "./components/ContactMe";
-import reactIcon from "../src/assets/icons/react.svg";
-import methodIcon from "../src/assets/icons/symbol-method.svg";
 import VertBar from "./components/VertBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -30,6 +28,7 @@ function App() {
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
   const [bonusPage, setBonusPage] = useState(false);
+  const [bonusPageLarge, setBonusPageLarge] = useState(false);
   const [navItems, setNavItems] = useState([
     {
       name: "About_me.jsx",
@@ -96,6 +95,10 @@ function App() {
   // not sure if this should live here or in nav bar...
   // might need to refactor
   const handleNavClick = (e) => {
+    if (e.target.innerText === "bonusPage.js") {
+      return setBonusPageLarge(true);
+    }
+
     helperClickStateUpdate(
       navItems,
       setNavItems,
@@ -165,7 +168,6 @@ function App() {
               >
                 <ContactMe />
               </div>
-              <div className="blankSpacer"></div>
             </div>
           </div>
           <Footer />
