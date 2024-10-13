@@ -32,7 +32,7 @@ function MySkills() {
         <div className="line">&nbsp;&nbsp;&nbsp;{`return (`}</div>
       </div>
       <div className="mySkillsTitle">
-        <h2>My skills</h2>
+        <h2>My_skills</h2>
       </div>
       <div className="mySkillsDiv">
         {skills.map((item, index) => (

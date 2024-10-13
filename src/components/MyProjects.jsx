@@ -30,7 +30,7 @@ function MyProjects() {
         <div className="line">&nbsp;&nbsp;&nbsp;{`return (`}</div>
       </div>
       <div className="myProjectsTitle">
-        <h2>My projects</h2>
+        <h2>My_projects</h2>
       </div>
       <div className="myProjectsContainer">
         <OdinbookCarousel />

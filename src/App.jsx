@@ -118,16 +118,14 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
-              {/* <div className="testone"></div>
-              <div className="testtwo"></div> */}
-              {/* <div
+              <div
                 className={
                   activePage === 0 ? "sectionDiv true" : "sectionDiv false"
                 }
                 ref={aboutRef}
               >
                 <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
-              </div> */}
+              </div>
               <div
                 className={
                   activePage === 1 ? "sectionDiv true" : "sectionDiv false"
@@ -136,7 +134,7 @@ function App() {
               >
                 <MyProjects />
               </div>
-              {/* <div
+              <div
                 className={
                   activePage === 2 ? "sectionDiv true" : "sectionDiv false"
                 }
@@ -151,7 +149,8 @@ function App() {
                 ref={contactRef}
               >
                 <ContactMe />
-              </div> */}
+              </div>
+              <div className="blankSpacer"></div>
             </div>
           </div>
           <Footer />

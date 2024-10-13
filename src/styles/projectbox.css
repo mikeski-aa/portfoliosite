@@ -4,13 +4,13 @@
   background-color: rgba(255, 255, 255, 0);
   /* box-shadow: 10px 10px 10px grey; */
   border: 2px solid #d0dcaa;
-  border-radius: 5px;
   padding: 15px;
   width: fit-content;
+  align-items: center;
 }
 
 .projectDescription {
-  /* width: 55vw; */
+  width: fit-content;
   transition: 0.5s ease-in-out;
 }
 
@@ -18,6 +18,7 @@
   /* max-height: 0vh; */
   overflow: hidden;
   opacity: 0;
+  max-width: 0px;
 }
 
 .projectDescription.true {
@@ -25,13 +26,11 @@
   text-wrap: wrap;
   /* max-height: calc(100vh - <offset>) */
   opacity: 1;
+  max-width: 65vw;
 }
 
 .detailsBtn {
   width: 10rem;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   font-weight: 600;
   font-size: 1rem;
   font-family: "Courier New", Courier, monospace;
@@ -56,6 +55,7 @@
   height: fit-content;
   background-color: rgba(255, 255, 255, 0);
   align-items: center;
+  width: fit-content;
 }
 
 .LRbuttons {
@@ -69,9 +69,11 @@
 .positionButtons {
   display: flex;
   gap: 1rem;
-  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* position: relative;
   display: relative;
-  top: -15px;
+  top: -15px; */
 }
 
 .carImg {
@@ -146,7 +148,6 @@
 .arrowBtns {
   background: rgba(255, 255, 255, 0);
   border: 2px solid #9cdcfe;
-  border-radius: 5px;
   background-color: #d0dcaa00;
   transition-duration: 0.5s;
 }
@@ -184,7 +185,6 @@
   gap: 15px;
   background-color: rgb(35, 35, 35);
   padding: 5px;
-  border-radius: 5px;
 }
 
 .modalContent {
@@ -210,7 +210,6 @@
   border: none;
   transition-duration: 0.5s;
   font-weight: 700;
-  border-radius: 15px;
 }
 
 .closeBtn:hover {
@@ -220,7 +219,6 @@
 .crossImg {
   width: 25px;
   height: 25px;
-  border-radius: 15px;
   transition-duration: 0.5s;
   fill: red;
 }
@@ -260,9 +258,9 @@
     width: 85vw;
   } */
 
-  /* .projectDescription.true {
-    width: 85vw;
-  } */
+  .projectDescription.true {
+    max-width: 85vw;
+  }
 
   .largeImg {
     object-fit: contain;

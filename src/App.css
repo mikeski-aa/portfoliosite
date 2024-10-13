@@ -39,7 +39,6 @@
 
 .mainTest {
   display: flex;
-  background-color: rgb(66, 66, 85);
   width: 100%;
 }
 
@@ -136,6 +135,10 @@ body {
   position: fixed;
   z-index: 90;
   width: 100%;
+}
+
+.blankSpacer {
+  height: 180px;
 }
 
 /* 

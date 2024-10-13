@@ -39,7 +39,7 @@ function AboutMe(props) {
       <div className="aboutMeMainContent">
         <div className="aboutSection">
           <div className="aboutText">
-            <h2>About</h2>
+            <h2>About_me</h2>
             I'm a passionate and curious self-taught developer
           </div>
           <div className="aboutPic">
