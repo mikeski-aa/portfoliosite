@@ -1,4 +1,4 @@
-import { useContext, createContext, useRef, useState } from "react";
+import { useContext, createContext, useRef, useState, useEffect } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
@@ -9,6 +9,7 @@ import methodIcon from "../src/assets/icons/symbol-method.svg";
 import VertBar from "./components/VertBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { useInView } from "./hooks/useInView";
 
 export const GlobalContext = createContext();
 
@@ -55,6 +56,32 @@ function App() {
       refLink: contactRef,
     },
   ]);
+
+  // using custom hook to check whether an area is in view and adjust text accordingly
+  // const aboutVisible = useInView(aboutRef, "0px");
+  // const projectsVisible = useInView(projectsRef, "0px");
+  // const skillsVisible = useInView(skillsRef, "0px");
+  // const contactVisible = useInView(contactRef, "0px");
+
+  // useEffect(() => {
+  //   if (aboutVisible) {
+  //     setCurrentPage("About_me.jsx");
+  //     setCpage("About");
+  //     setActivePage(0);
+  //   } else if (projectsVisible) {
+  //     setCurrentPage("My_projects.jsx");
+  //     setCpage("My_projects");
+  //     setActivePage(1);
+  //   } else if (skillsVisible) {
+  //     setCurrentPage("My_skills.jsx");
+  //     setCpage("My_skills");
+  //     setActivePage(2);
+  //   } else if (contactVisible) {
+  //     setCurrentPage("Contact_me.jsx");
+  //     setCpage("Contact_me");
+  //     setActivePage(3);
+  //   }
+  // }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
   // smooth scrolling for each element
 
@@ -115,6 +142,7 @@ function App() {
                 currentPage={currentPage}
                 cPage={cPage}
                 navItems={navItems}
+                setNavItems={navItems}
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
