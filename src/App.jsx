@@ -19,6 +19,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
   const [activePage, setActivePage] = useState(0);
+  const [sidebarStat, setSidebarStat] = useState(false);
   const contactRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
@@ -99,58 +100,63 @@ function App() {
 
   return (
     <div className="page">
-      <div className="pageTest">
-        <VertBar />
-        <div className="mainTest">
-          <div className="headtest">
-            <NavBar
-              handleNavClick={(e) => handleNavClick(e)}
-              handleDragOver={(e) => handleDragOver(e)}
-              handleDrop={(e) => handleDrop(e, index)}
-              handleDragStart={(e) => handleDragStart(e, index)}
-              currentPage={currentPage}
-              cPage={cPage}
-              navItems={navItems}
-            />
+      <GlobalContext.Provider
+        value={{ navItems, setNavItems, sidebarStat, setSidebarStat }}
+      >
+        <div className="pageTest">
+          <VertBar />
+          <div className="mainTest">
+            <div className="headtest">
+              <NavBar
+                handleNavClick={(e) => handleNavClick(e)}
+                handleDragOver={(e) => handleDragOver(e)}
+                handleDrop={(e) => handleDrop(e, index)}
+                handleDragStart={(e) => handleDragStart(e, index)}
+                currentPage={currentPage}
+                cPage={cPage}
+                navItems={navItems}
+              />
+            </div>
+            <div className={`mainCont ${sidebarStat}`}>
+              {/* <div className="testone"></div>
+              <div className="testtwo"></div> */}
+              {/* <div
+                className={
+                  activePage === 0 ? "sectionDiv true" : "sectionDiv false"
+                }
+                ref={aboutRef}
+              >
+                <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
+              </div> */}
+              {/* <div
+                className={
+                  activePage === 1 ? "sectionDiv true" : "sectionDiv false"
+                }
+                ref={projectsRef}
+              >
+                <MyProjects />
+              </div> */}
+              <div
+                className={
+                  activePage === 2 ? "sectionDiv true" : "sectionDiv false"
+                }
+                ref={skillsRef}
+              >
+                <MySkills />
+              </div>
+              <div
+                className={
+                  activePage === 3 ? "sectionDiv true" : "sectionDiv false"
+                }
+                ref={contactRef}
+              >
+                <ContactMe />
+              </div>
+            </div>
           </div>
-          <div className="mainCont">
-            <div
-              className={
-                activePage === 0 ? "sectionDiv true" : "sectionDiv false"
-              }
-              ref={aboutRef}
-            >
-              <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
-            </div>
-            <div
-              className={
-                activePage === 1 ? "sectionDiv true" : "sectionDiv false"
-              }
-              ref={projectsRef}
-            >
-              <MyProjects />
-            </div>
-            <div
-              className={
-                activePage === 2 ? "sectionDiv true" : "sectionDiv false"
-              }
-              ref={skillsRef}
-            >
-              <MySkills />
-            </div>
-            <div
-              className={
-                activePage === 3 ? "sectionDiv true" : "sectionDiv false"
-              }
-              ref={contactRef}
-            >
-              <ContactMe />
-            </div>
-          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-      {/* <div className="headerContainer">
+        {/* <div className="headerContainer">
         <VertBar />
         <div className="header">
           <div className="buttonContainer">
@@ -182,7 +188,7 @@ function App() {
         </div>
       </div> */}
 
-      {/* <div className="mainCont">
+        {/* <div className="mainCont">
         <div
           className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
           ref={aboutRef}
@@ -209,6 +215,7 @@ function App() {
         </div>
         <button className="backToTop">Back to top</button>
       </div> */}
+      </GlobalContext.Provider>
     </div>
   );
 }

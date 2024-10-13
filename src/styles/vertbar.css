@@ -64,59 +64,6 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.folderChevron {
-    background: none;
-    width: 10px;
-    height: 10px;
-    fill: grey
-}
 
-.folderChevron.true {
-    transform: rotateZ(90deg);
-}
-
-.folderBtn {
-    background: none;
-    border: none;
-    color: white;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    font-size: 0.55rem;
-    /* width: 180px; */
-    gap: 5px;
-}
-
-.folderBtn:hover {
-    cursor: pointer;
-    background-color: rgba(87, 87, 87, 0.363);
-}
-
-.fileList.false {
-    display: none;
-}
-
-.childOne {
-    margin-top: 5px;
-}
-
-.childTwo {
-    margin-top: 5px;
-}
-
-.btnOne {
-    padding-left: 10px;
-}
-
-.btnTwo {
-    padding-left: 20px;
-}
-
-.componentList {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 5px;
-}
 
 /* need to add styling for mobile and defnitely for when side bar is opened

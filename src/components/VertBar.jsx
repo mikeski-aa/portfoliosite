@@ -5,15 +5,19 @@ import LinkedIn from "../assets/bwicons/linkedin.svg?react";
 import Email from "../assets/bwicons/email.svg?react";
 import Explorer from "./Explorer";
 import { useState, useContext } from "react";
+import { GlobalContext } from "../App";
 
 function VertBar() {
   const [showExp, setShowExp] = useState(false);
+  const globalContext = useContext(GlobalContext);
 
   const handleExplorerClick = () => {
     if (showExp) {
       setShowExp(false);
+      globalContext.setSidebarStat(false);
     } else {
       setShowExp(true);
+      globalContext.setSidebarStat(true);
     }
   };
   return (
