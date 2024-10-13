@@ -96,21 +96,41 @@ function TerminalBox(props) {
           </button>
         </div>
       </div>
-      {/* <div className="redBox">Test</div> */}
-      <div className="mainTerminalTextbox">
-        {messages.map((item, index) => (
-          <TerminalParagraph key={index} text={item} />
-        ))}
-      </div>
-      <div className="terminalInputDiv">
-        <TerminalParagraph text={""} />
-        <input
-          className="terminalInput"
-          value={input}
-          onKeyDown={(e) => handleKeyPress(e)}
-          onChange={(e) => handleInputChange(e)}
-        ></input>
-      </div>
+      {active === 0 ? (
+        <div className="problemsText">
+          No problems have been detected in the workspace.
+        </div>
+      ) : null}
+      {active === 1 ? <div className="outputDiv">{""}</div> : null}
+      {active === 2 ? null : null}
+      {active === 3 ? (
+        <>
+          {" "}
+          <div className="mainTerminalTextbox">
+            {messages.map((item, index) => (
+              <TerminalParagraph key={index} text={item} />
+            ))}
+          </div>
+          <div className="terminalInputDiv">
+            <TerminalParagraph text={""} />
+            <input
+              className="terminalInput"
+              value={input}
+              onKeyDown={(e) => handleKeyPress(e)}
+              onChange={(e) => handleInputChange(e)}
+            ></input>
+          </div>
+        </>
+      ) : null}
+      {active === 4 ? (
+        <>
+          <div className="portText">
+            No forwarded ports. Forward a port to access your running services
+            locally.
+          </div>
+          <button className="portBox">Forward a port</button>
+        </>
+      ) : null}
     </div>
   );
 }

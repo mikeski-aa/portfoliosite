@@ -2,6 +2,7 @@
   border-top: 2px solid grey;
   height: 300px;
   background-color: #1e1e1e;
+  padding-left: 15px;
   /* background-color: blue; */
 }
 
@@ -36,6 +37,10 @@
   gap: -15px;
 }
 
+.terminalBtnDummyDuoDiv:hover {
+  background-color: rgba(192, 192, 192, 0.211);
+}
+
 .terminalBtnDummyDuo {
   display: flex;
   background: none;
@@ -46,7 +51,7 @@
   width: 15px;
   height: 15px;
   fill: #a5b0bb;
-  filter: brightness(4);
+  filter: brightness(8);
 }
 
 .terminalIcon.top {
@@ -59,11 +64,6 @@
   transform: rotateZ(90deg);
   width: 10px;
   height: 15px;
-}
-
-.terminalBtnDummyDuoDiv {
-  display: flex;
-  gap: 0;
 }
 
 .terminalIcon.invert {
@@ -140,6 +140,38 @@
 .terminalBtn.active {
   color: white;
   border-bottom: 2px solid white;
+}
+
+.problemsText {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.outputDiv {
+  width: 25px;
+  height: 18px;
+  margin-left: 10px;
+  border-left: 3px solid #a5b0bb;
+}
+
+.portText,
+.portBox {
+  font-size: 0.7rem;
+  color: white;
+}
+
+.portBox {
+  width: 250px;
+  background-color: #0e639c;
+  border: none;
+  border-radius: 3px;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+.portBox:hover {
+  background-color: #1177bb;
+  cursor: pointer;
 }
 
 /* .terminalIcon:hover {
