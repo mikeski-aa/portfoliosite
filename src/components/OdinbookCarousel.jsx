@@ -5,7 +5,7 @@ import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
 import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
 import Arrow from "../assets/arrow.svg?react";
 import Cross from "../assets/icons/cross.svg?react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // very simple image carousel to go through project images
 function OdinbookCarousel() {
@@ -14,6 +14,7 @@ function OdinbookCarousel() {
   const [modalOpen, setModalOpen] = useState(false);
   const [btnText, setBtnText] = useState("See details");
   const imgArr = [mergedLogin, mergedMain, mergedFriends, mergedProfile];
+  const descRef = useRef(null);
 
   const handleGoLeft = () => {
     if (carouselSeat === 0) {
@@ -56,9 +57,12 @@ function OdinbookCarousel() {
     if (descShow === false) {
       setDescShow(true);
       setBtnText("Hide details");
+      projectDescription.style.maxHeight =
+        projectDescription.scrollHeight + "px";
     } else {
       setDescShow(false);
       setBtnText("Show details");
+      projectDescription.style.maxHeight = "0px";
     }
   };
 
@@ -70,6 +74,17 @@ function OdinbookCarousel() {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
+
+  // handle dynamically adjusting the height of description box based on screen height.
+  // current issue -> resizing screen with description open causes overflow
+  useEffect(() => {
+    if (descShow) {
+      descRef.current.style.maxHeight = descRef.current.scrollHeight + "px";
+    } else {
+      descRef.current.style.maxHeight = "0px";
+    }
+  });
+
   return (
     <div className={"projectBoxContainer"}>
       <div className={`modal ${modalOpen}`}>
@@ -91,21 +106,28 @@ function OdinbookCarousel() {
       <div className="projectTitle line testclass">Odinbook</div>
       <div className="imageCarousel">
         <div className="imagesContainer">
+          <button className="arrowBtns" onClick={handleGoLeft}>
+            <Arrow className="arrowImgLeft" />
+          </button>
+
           <img
             src={imgArr[carouselSeat]}
             className={"carImg"}
             onClick={handleModalOpen}
           ></img>
+          <button className="arrowBtns" onClick={handleGoRight}>
+            <Arrow className="arrowImgRight" />
+          </button>
         </div>
 
-        <div className="LRbuttons">
+        {/* <div className="LRbuttons">
           <button className="arrowBtns" onClick={handleGoLeft}>
             <Arrow className="arrowImgLeft" />
           </button>
           <button className="arrowBtns" onClick={handleGoRight}>
             <Arrow className="arrowImgRight" />
           </button>
-        </div>
+        </div> */}
         <div className="positionButtons">
           <button
             className={`btnx ${activeBtn(0)}`}
@@ -128,7 +150,7 @@ function OdinbookCarousel() {
       <button className="detailsBtn" onClick={handleDescShow}>
         {btnText}
       </button>
-      <div className={`projectDescription ${descShow}`}>
+      <div className={`projectDescription ${descShow}`} ref={descRef}>
         <h4 className="line bolder">Overview: </h4>
         <span className="fileStyle bolder">Fullstack project</span> - social
         media web app, strongly inspierd by Facebook in design and layout. This

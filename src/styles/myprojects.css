@@ -5,6 +5,7 @@
   color: white;
   margin-top: 3.9rem;
   margin-left: 5px;
+  /* min-width: 250px; */
 }
 
 .myProjectsContainer {
@@ -19,4 +20,5 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  max-width: 100%;
 }

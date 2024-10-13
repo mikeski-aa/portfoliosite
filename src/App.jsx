@@ -128,15 +128,15 @@ function App() {
               >
                 <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
               </div> */}
-              {/* <div
+              <div
                 className={
                   activePage === 1 ? "sectionDiv true" : "sectionDiv false"
                 }
                 ref={projectsRef}
               >
                 <MyProjects />
-              </div> */}
-              <div
+              </div>
+              {/* <div
                 className={
                   activePage === 2 ? "sectionDiv true" : "sectionDiv false"
                 }
@@ -151,7 +151,7 @@ function App() {
                 ref={contactRef}
               >
                 <ContactMe />
-              </div>
+              </div> */}
             </div>
           </div>
           <Footer />

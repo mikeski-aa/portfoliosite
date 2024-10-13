@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../styles/myprojects.css";
 import OdinbookCarousel from "./OdinbookCarousel";
-import MessengerCarousel from "./MessengerCarousel";
 import ProjectComponent from "./ProjectComponent";
 import projects from "../utils/projectData";
 
@@ -35,7 +34,6 @@ function MyProjects() {
       </div>
       <div className="myProjectsContainer">
         <OdinbookCarousel />
-        {/* <MessengerCarousel /> */}
 
         <div className="smallerProjects">
           {projects.map((item, index) => (
