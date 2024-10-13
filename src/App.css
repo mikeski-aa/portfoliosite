@@ -185,3 +185,17 @@ body {
 /* @media (max-width: 550px) {
   padding-left: 5px;
 } */
+
+@media (max-width: 485px) {
+  .codeStyle,
+  .exportLine {
+    font-size: 0.63rem;
+  }
+}
+
+@media (min-width: 485px) and (max-width: 540px) {
+  .codeStyle,
+  .exportLine {
+    font-size: 0.88rem;
+  }
+}
