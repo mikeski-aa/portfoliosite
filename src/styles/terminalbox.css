@@ -9,8 +9,78 @@
     height: 25vh;
   }
 }
-/* #A5B0BB */
+
+.terminalRightBtnDiv {
+  display: flex;
+
+  align-items: center;
+  margin-right: 5px;
+}
+
+.terminalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terminalBtnDummy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  background: none;
+  border: none;
+}
+.terminalBtnDummyDuoDiv {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  gap: -15px;
+}
+
+.terminalBtnDummyDuo {
+  display: flex;
+  background: none;
+  border: none;
+}
 
 .terminalIcon {
-  fill: red;
+  width: 15px;
+  height: 15px;
+  fill: #a5b0bb;
+  filter: brightness(4);
 }
+
+.terminalIcon.top {
+  transform: rotateZ(-90deg);
+  width: 10px;
+  height: 15px;
+}
+
+.terminalIcon.down {
+  transform: rotateZ(90deg);
+  width: 10px;
+  height: 15px;
+}
+
+.terminalBtnDummyDuoDiv {
+  display: flex;
+  gap: 0;
+}
+
+.terminalIcon.invert {
+  filter: invert(1);
+}
+
+.terminalBtnDummyDuo:hover,
+.terminalBtnDummy:hover {
+  background-color: rgba(128, 128, 128, 0.374);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* .terminalIcon:hover {
+  background-color: grey;
+  border-radius: 5px;
+} */
