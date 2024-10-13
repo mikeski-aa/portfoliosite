@@ -82,6 +82,22 @@ function OdinbookCarousel() {
     }
   });
 
+  // handle pressing escape to close modal
+  useEffect(() => {
+    function handleEscClick(e) {
+      if (e.code === "Escape") {
+        setModalOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleEscClick);
+
+    // important to remove event listener on component unmount ontherwise memory leak will be introduced
+    return () => {
+      document.removeEventListener("keydown", handleEscClick);
+    };
+  }, []);
+
   return (
     <div className={"projectBoxContainer"}>
       <div className={`modal ${modalOpen}`}>
@@ -117,14 +133,6 @@ function OdinbookCarousel() {
           </button>
         </div>
 
-        {/* <div className="LRbuttons">
-          <button className="arrowBtns" onClick={handleGoLeft}>
-            <Arrow className="arrowImgLeft" />
-          </button>
-          <button className="arrowBtns" onClick={handleGoRight}>
-            <Arrow className="arrowImgRight" />
-          </button>
-        </div> */}
         <div className="positionButtons">
           <button
             className={`btnx ${activeBtn(0)}`}
