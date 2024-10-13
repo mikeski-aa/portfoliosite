@@ -11,8 +11,8 @@ function MyProjects() {
     <div className="myProjectsComponent">
       <CodeComponent
         firstImport="OdinbookCarousel"
-        firstImportLocation={`"./OdinbookCarousel";`}
-        styleImportLink={`"../styles/myprojects.css";`}
+        firstImportLocation={`"./OdinbookCarousel"`}
+        styleImportLink={`"../styles/myprojects.css"`}
         functionName="My_projects"
       />
       <div className="myProjectsTitle">

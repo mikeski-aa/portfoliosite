@@ -3,11 +3,18 @@ function CodeComponent(props) {
   return (
     <div className="codeStyle">
       <div className="line">
-        import <span className="fileStyle">{props.firstImport}</span> from{" "}
-        <span className="linkStyle">{props.firstImportLocation}</span>
+        import <span className="fileStyle">{props.firstImport}</span> from
+        <span className="linkStyle">
+          {props.firstImportLocation}
+          <span className="lineWhite">;</span>
+        </span>
       </div>
       <div className="line">
-        import <span className="linkStyle">{props.styleImportLink}</span>
+        import{" "}
+        <span className="linkStyle">
+          {props.styleImportLink}
+          <span className="lineWhite">;</span>
+        </span>
       </div>
       <br></br>
       <div className="line">

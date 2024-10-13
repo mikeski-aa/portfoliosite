@@ -3,13 +3,14 @@ import contact from "../utils/contactData";
 import ContactBox from "./ContactBox";
 import ExportLine from "./ExportLine";
 import CodeComponent from "./CodeComponent";
+
 function ContactMe() {
   return (
     <div className="contactMeComponent">
       <CodeComponent
         firstImport="ContactBox"
-        firstImportLocation={`"./ContactBox";`}
-        styleImportLink={`"../styles/contactme.css";`}
+        firstImportLocation={`"./ContactBox"`}
+        styleImportLink={`"../styles/contactme.css"`}
         functionName="Contact_me"
       />
       <div className="contactMeTitle">

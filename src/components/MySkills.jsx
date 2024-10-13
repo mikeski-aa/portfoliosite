@@ -9,8 +9,8 @@ function MySkills() {
     <div className="mySkillsComponent">
       <CodeComponent
         firstImport="SkillBox"
-        firstImportLocation={`"./SkillBox";`}
-        styleImportLink={`"../utils/skillsData";`}
+        firstImportLocation={`"./SkillBox"`}
+        styleImportLink={`"../utils/skillsData"`}
         functionName="My_skills"
       />
       <div className="mySkillsTitle">
