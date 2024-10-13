@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// this hook will check if the element is in view.
+// Element ref is passed into the function
+
 export const useInView = (element, rootMargin) => {
   const [isVisible, setIsVisible] = useState(false);
 

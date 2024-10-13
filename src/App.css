@@ -141,6 +141,22 @@ body {
   height: 180px;
 }
 
+.exportLine {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 35px;
+}
+
+.codeStyle {
+  margin-left: 35px;
+}
+
+.sectionDiv {
+  border-bottom: 2px solid grey;
+  padding-bottom: 15px;
+}
+
 /* 
 .headerContainer {
   display: flex;

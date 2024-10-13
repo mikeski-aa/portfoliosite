@@ -8,6 +8,7 @@
 .mySkillsDiv {
   display: flex;
   gap: 1rem;
+  max-width: 60vw;
   /* max-width: 85vw; */
 }
 

@@ -1,6 +1,7 @@
 import "../styles/myskills.css";
 import SkillBox from "./SkillBox";
 import skills from "../utils/skillsData";
+import ExportLine from "./ExportLine";
 
 function MySkills() {
   return (
@@ -39,7 +40,7 @@ function MySkills() {
           <SkillBox key={index} name={item.name} />
         ))}
       </div>
-      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
+      <ExportLine text="My_skills" />
     </div>
   );
 }

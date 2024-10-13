@@ -3,6 +3,7 @@ import "../styles/myprojects.css";
 import OdinbookCarousel from "./OdinbookCarousel";
 import ProjectComponent from "./ProjectComponent";
 import projects from "../utils/projectData";
+import ExportLine from "./ExportLine";
 
 function MyProjects() {
   return (
@@ -47,7 +48,7 @@ function MyProjects() {
           ))}
         </div>
       </div>
-      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
+      <ExportLine text="My_projects" />
     </div>
   );
 }

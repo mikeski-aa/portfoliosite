@@ -1,3 +1,5 @@
+// helper functions to help with page updates and smooth scrolling
+
 // smooth scrolling for each element
 function smoothScroll(inputRef) {
   inputRef.current.scrollIntoView({ behavior: "smooth" });

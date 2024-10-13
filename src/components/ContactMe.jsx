@@ -1,6 +1,7 @@
 import "../styles/contactme.css";
 import contact from "../utils/contactData";
 import ContactBox from "./ContactBox";
+import ExportLine from "./ExportLine";
 
 function ContactMe() {
   return (
@@ -35,7 +36,7 @@ function ContactMe() {
           <ContactBox key={index} name={item.name} />
         ))}
       </div>
-      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
+      <ExportLine text="Contact_me" />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
 import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
 import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
 import Arrow from "../assets/arrow.svg?react";
-import Cross from "../assets/icons/cross.svg?react";
+import Cross from "../assets/bwicons/cross2.svg?react";
 import { useEffect, useRef, useState } from "react";
 
 // very simple image carousel to go through project images
@@ -57,12 +57,9 @@ function OdinbookCarousel() {
     if (descShow === false) {
       setDescShow(true);
       setBtnText("Hide details");
-      projectDescription.style.maxHeight =
-        projectDescription.scrollHeight + "px";
     } else {
       setDescShow(false);
       setBtnText("Show details");
-      projectDescription.style.maxHeight = "0px";
     }
   };
 

@@ -2,6 +2,7 @@ import profilePic from "../assets/placeholderprof.jpg";
 import egAsset from "../assets/example.jpg";
 import "../styles/aboutme.css";
 import GitHubCalendar from "react-github-calendar";
+import ExportLine from "./ExportLine";
 
 function AboutMe(props) {
   const handleAboutShow = () => {
@@ -50,7 +51,7 @@ function AboutMe(props) {
         {/* <GitHubCalendar username="mikeski-aa" /> */}
       </div>
 
-      <div className="line">&nbsp;&nbsp;&nbsp;{`);`}</div>
+      <ExportLine text="About_me" />
     </div>
   );
 }
