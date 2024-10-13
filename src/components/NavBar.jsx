@@ -1,5 +1,5 @@
-import reactIcon from "../assets/icons/react.svg";
-import methodIcon from "../assets/icons/symbol-method.svg";
+import MethodComponent from "../assets/icons/symbol-method.svg?react";
+import ReactIconComponent from "../assets/icons/react.svg?react";
 
 function NavBar(props) {
   // handle setting index data when tab is beggining to be dragged
@@ -34,7 +34,7 @@ function NavBar(props) {
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index)}
           >
-            <img src={reactIcon} className="reactIconNav"></img>
+            <ReactIconComponent className="reactIconNav" />
             {item.name}
           </button>
         ))}
@@ -42,11 +42,12 @@ function NavBar(props) {
       <div className="appLocation">
         <div className="fileLoc">{"src > "}</div>
         <div className="fileLoc">
-          <img src={reactIcon} className="smallIcon" />{" "}
+          <ReactIconComponent className="smallIcon" />{" "}
           {props.currentPage + " >"}
         </div>
         <div className="fileLoc">
-          <img src={methodIcon} className="smallIcon"></img> {props.cPage}
+          <MethodComponent className="smallIcon" />
+          {props.cPage}
         </div>
       </div>
     </>

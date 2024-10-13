@@ -106,6 +106,7 @@ body {
 
 .smallIcon {
   width: 15px;
+  height: 15px;
   filter: brightness(3);
 }
 
