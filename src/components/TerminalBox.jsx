@@ -15,6 +15,20 @@ function TerminalBox(props) {
     "testing",
     "2359832489",
   ]);
+  const [input, setInput] = useState("");
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      const messageCopy = [...messages];
+      messageCopy.push(input);
+      setMessages(messageCopy);
+      setInput("");
+    }
+  };
 
   return (
     <div className={`terminalDiv ${props.terminalStatus}`}>
@@ -60,7 +74,12 @@ function TerminalBox(props) {
       </div>
       <div className="terminalInputDiv">
         <TerminalParagraph text={""} />
-        <input className="terminalInput"></input>
+        <input
+          className="terminalInput"
+          value={input}
+          onKeyDown={(e) => handleKeyPress(e)}
+          onChange={(e) => handleInputChange(e)}
+        ></input>
       </div>
     </div>
   );

@@ -111,9 +111,10 @@
 }
 
 .terminalInput {
-  max-width: 80%;
+  display: flex;
+  width: 40%;
   background: none;
-  border: 1px solid white;
+
   color: white;
 }
 
