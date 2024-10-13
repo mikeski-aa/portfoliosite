@@ -1,11 +1,11 @@
 .aboutMeComponent {
-  padding-left: 3px;
   display: flex;
   flex-direction: column;
   align-items: left;
-  margin-top: 4rem;
   color: white;
-  font-weight: 600;
+  margin-top: 3.9rem;
+  margin-left: 5px;
+  /* min-width: 250px; */
 }
 
 .profilePicImg {
@@ -37,12 +37,15 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .aboutSection {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 15vw;
 }
 
