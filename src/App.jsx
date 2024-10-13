@@ -10,6 +10,10 @@ import VertBar from "./components/VertBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { useInView } from "./hooks/useInView";
+import {
+  helperScrollStateUpdate,
+  helperClickStateUpdate,
+} from "./utils/helperStateUpdates";
 
 export const GlobalContext = createContext();
 
@@ -25,7 +29,6 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
-
   const [navItems, setNavItems] = useState([
     {
       name: "About_me.jsx",
@@ -58,71 +61,47 @@ function App() {
   ]);
 
   // using custom hook to check whether an area is in view and adjust text accordingly
-  // const aboutVisible = useInView(aboutRef, "0px");
-  // const projectsVisible = useInView(projectsRef, "0px");
-  // const skillsVisible = useInView(skillsRef, "0px");
-  // const contactVisible = useInView(contactRef, "0px");
+  const aboutVisible = useInView(aboutRef, "0px");
+  const projectsVisible = useInView(projectsRef, "0px");
+  const skillsVisible = useInView(skillsRef, "0px");
+  const contactVisible = useInView(contactRef, "0px");
 
-  // useEffect(() => {
-  //   if (aboutVisible) {
-  //     setCurrentPage("About_me.jsx");
-  //     setCpage("About");
-  //     setActivePage(0);
-  //   } else if (projectsVisible) {
-  //     setCurrentPage("My_projects.jsx");
-  //     setCpage("My_projects");
-  //     setActivePage(1);
-  //   } else if (skillsVisible) {
-  //     setCurrentPage("My_skills.jsx");
-  //     setCpage("My_skills");
-  //     setActivePage(2);
-  //   } else if (contactVisible) {
-  //     setCurrentPage("Contact_me.jsx");
-  //     setCpage("Contact_me");
-  //     setActivePage(3);
-  //   }
-  // }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
-
-  // smooth scrolling for each element
-
-  const smoothScroll = (inputRef) => {
-    inputRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleNavClick = (e) => {
-    const copyItems = [...navItems];
-    for (let x = 0; x < copyItems.length; x++) {
-      if (copyItems[x].name === e.target.innerText) {
-        copyItems[x].active = true;
-        setCurrentPage(copyItems[x].name);
-        setCpage(copyItems[x].shortname);
-        setActivePage(copyItems[x].trueIndex);
-        smoothScroll(copyItems[x].refLink);
-      } else {
-        copyItems[x].active = false;
-      }
+  // update active based on scroll position
+  useEffect(() => {
+    if (aboutVisible) {
+      setActivePage(0);
+      setCurrentPage("About_me.jsx");
+      setCpage("About");
+      helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
+    } else if (projectsVisible) {
+      setCurrentPage("My_projects.jsx");
+      setCpage("My_projects");
+      setActivePage(1);
+      helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
+    } else if (skillsVisible) {
+      setCurrentPage("My_skills.jsx");
+      setCpage("My_skills");
+      setActivePage(2);
+      helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
+    } else if (contactVisible) {
+      setCurrentPage("Contact_me.jsx");
+      setCpage("Contact_me");
+      setActivePage(3);
+      helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
     }
-    setNavItems(copyItems);
-  };
+  }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
-  // handle setting index data when tab is beggining to be dragged
-  const handleDragStart = (e, index) => {
-    e.dataTransfer.setData("index", index);
-  };
-
-  // handle drop - set new index, splice array replacing item positions.
-  // set new state to update the layout
-  const handleDrop = (e, targetIndex) => {
-    e.preventDefault();
-    const sourceIndex = parseInt(e.dataTransfer.getData("index"));
-    const newItems = [...navItems];
-    newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
-    setNavItems(newItems);
-  };
-
-  // disable default behaviour, otherwise drag won't work
-  const handleDragOver = (e) => {
-    e.preventDefault();
+  // handle nav click
+  // not sure if this should live here or in nav bar...
+  // might need to refactor
+  const handleNavClick = (e) => {
+    helperClickStateUpdate(
+      navItems,
+      setNavItems,
+      e.target.innerText,
+      setCurrentPage,
+      setCpage
+    );
   };
 
   return (
@@ -136,13 +115,10 @@ function App() {
             <div className="headtest">
               <NavBar
                 handleNavClick={(e) => handleNavClick(e)}
-                handleDragOver={(e) => handleDragOver(e)}
-                handleDrop={(e) => handleDrop(e, index)}
-                handleDragStart={(e) => handleDragStart(e, index)}
                 currentPage={currentPage}
                 cPage={cPage}
                 navItems={navItems}
-                setNavItems={navItems}
+                setNavItems={setNavItems}
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
@@ -183,65 +159,6 @@ function App() {
           </div>
           <Footer />
         </div>
-        {/* <div className="headerContainer">
-        <VertBar />
-        <div className="header">
-          <div className="buttonContainer">
-            {navItems.map((item, index) => (
-              <button
-                key={index}
-                className={`navBtn ${item.active}`}
-                draggable
-                onClick={(e) => handleNavClick(e)}
-                onDragStart={(e) => handleDragStart(e, index)}
-                onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, index)}
-              >
-                <img src={reactIcon} className="reactIconNav"></img>
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="appLocation">
-            <div className="fileLoc">{"src > "}</div>
-            <div className="fileLoc">
-              <img src={reactIcon} className="smallIcon" /> {currentPage + " >"}
-            </div>
-            <div className="fileLoc">
-              <img src={methodIcon} className="smallIcon"></img> {cPage}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-        {/* <div className="mainCont">
-        <div
-          className={activePage === 0 ? "sectionDiv true" : "sectionDiv false"}
-          ref={aboutRef}
-        >
-          <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
-        </div>
-        <div
-          className={activePage === 1 ? "sectionDiv true" : "sectionDiv false"}
-          ref={projectsRef}
-        >
-          <MyProjects />
-        </div>
-        <div
-          className={activePage === 2 ? "sectionDiv true" : "sectionDiv false"}
-          ref={skillsRef}
-        >
-          <MySkills />
-        </div>
-        <div
-          className={activePage === 3 ? "sectionDiv true" : "sectionDiv false"}
-          ref={contactRef}
-        >
-          <ContactMe />
-        </div>
-        <button className="backToTop">Back to top</button>
-      </div> */}
       </GlobalContext.Provider>
     </div>
   );
