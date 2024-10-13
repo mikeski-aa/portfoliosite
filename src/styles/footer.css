@@ -5,6 +5,7 @@
 
 .rightPart {
   width: 180px;
+  height: 25px;
 }
 
 .middlePart {
@@ -20,6 +21,7 @@
 .middlePart {
   display: flex;
   align-items: center;
+  height: 25px;
 }
 
 .footer {
@@ -30,7 +32,9 @@
   position: fixed;
   bottom: 0;
   z-index: 9999;
+  height: 25px;
   width: 100%;
+  font-size: 0.55rem;
 }
 
 .footerIcon {
