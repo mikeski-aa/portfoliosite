@@ -16,6 +16,7 @@ function TerminalBox(props) {
     "2359832489",
   ]);
   const [input, setInput] = useState("");
+  const [active, setActive] = useState(3);
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -30,15 +31,44 @@ function TerminalBox(props) {
     }
   };
 
+  const handleBtnClick = (input) => {
+    setActive(input);
+  };
+
   return (
     <div className={`terminalDiv ${props.terminalStatus}`}>
       <div className="terminalHeader">
         <div className="terminalLeftBtnDiv">
-          <button className="terminalBtn">PROBLEMS</button>
-          <button className="terminalBtn">OUTPUT</button>
-          <button className="terminalBtn">DEBUG CONSOLE</button>
-          <button className="terminalBtn">TERMINAL</button>
-          <button className="terminalBtn">PORTS</button>
+          <button
+            className={active === 0 ? "terminalBtn active" : "terminalBtn"}
+            onClick={() => handleBtnClick(0)}
+          >
+            PROBLEMS
+          </button>
+          <button
+            className={active === 1 ? "terminalBtn active" : "terminalBtn"}
+            onClick={() => handleBtnClick(1)}
+          >
+            OUTPUT
+          </button>
+          <button
+            className={active === 2 ? "terminalBtn active" : "terminalBtn"}
+            onClick={() => handleBtnClick(2)}
+          >
+            DEBUG CONSOLE
+          </button>
+          <button
+            className={active === 3 ? "terminalBtn active" : "terminalBtn"}
+            onClick={() => handleBtnClick(3)}
+          >
+            TERMINAL
+          </button>
+          <button
+            className={active === 4 ? "terminalBtn active" : "terminalBtn"}
+            onClick={() => handleBtnClick(4)}
+          >
+            PORTS
+          </button>
         </div>
         <div className="terminalRightBtnDiv">
           <button className="terminalBtnDummy">
@@ -68,8 +98,8 @@ function TerminalBox(props) {
       </div>
       {/* <div className="redBox">Test</div> */}
       <div className="mainTerminalTextbox">
-        {messages.map((item) => (
-          <TerminalParagraph text={item} />
+        {messages.map((item, index) => (
+          <TerminalParagraph key={index} text={item} />
         ))}
       </div>
       <div className="terminalInputDiv">

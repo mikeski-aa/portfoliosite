@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
   height: 25.74px;
+  padding-bottom: 10px;
 }
 
 .terminalBtnDummy {
@@ -114,7 +115,7 @@
   display: flex;
   width: 40%;
   background: none;
-
+  border: none;
   color: white;
 }
 
@@ -125,8 +126,8 @@
 }
 
 .mainTerminalTextbox {
-  height: 235px;
-  overflow-y: scroll;
+  height: 225px;
+  overflow-y: auto;
 }
 
 .redBox {
@@ -134,6 +135,11 @@
   position: relative;
   top: 275px;
   transform: translateY(-43px);
+}
+
+.terminalBtn.active {
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 /* .terminalIcon:hover {
