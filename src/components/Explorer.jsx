@@ -10,6 +10,7 @@ function Explorer(props) {
           rootName="PORTFOLIOSITE [WSL:UBUNTU]"
           childOne="src"
           childTwo="components"
+          childThree="styles"
         />
       </div>
     </div>

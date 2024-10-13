@@ -2,6 +2,7 @@ import { useState } from "react";
 import Arrow from "../assets/arrow.svg?react";
 import File from "./File";
 import files from "../utils/files";
+import "../styles/folder.css";
 
 function Folder(props) {
   const [rootStat, setFolderStat] = useState(false);
