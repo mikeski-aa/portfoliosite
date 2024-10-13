@@ -2,32 +2,16 @@ import "../styles/contactme.css";
 import contact from "../utils/contactData";
 import ContactBox from "./ContactBox";
 import ExportLine from "./ExportLine";
-
+import CodeComponent from "./CodeComponent";
 function ContactMe() {
   return (
     <div className="contactMeComponent">
-      <div className="codeStyle">
-        <div className="line">
-          import <span className="fileStyle">ContactBox</span> from{" "}
-          <span className="linkStyle">"./ContactBox";</span>
-        </div>
-        <div className="line">
-          import <span className="linkStyle">"../styles/contactme.css";</span>
-        </div>
-        <br></br>
-        <div className="line">
-          <span className="fcnStyle">function</span>{" "}
-          <span className="nameStyle">Contact_me</span>
-          <span className="brackStyle">
-            {"("}
-            <span className="fileStyle">props</span>
-            {") {"}
-          </span>
-        </div>
-        <div>...</div>
-
-        <div className="line">&nbsp;&nbsp;&nbsp;{`return (`}</div>
-      </div>
+      <CodeComponent
+        firstImport="ContactBox"
+        firstImportLocation={`"./ContactBox";`}
+        styleImportLink={`"../styles/contactme.css";`}
+        functionName="Contact_me"
+      />
       <div className="contactMeTitle">
         <h2>Contact_me</h2>
       </div>

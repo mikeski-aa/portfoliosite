@@ -22,19 +22,15 @@ function AboutMe(props) {
         styleImportLink={`"../styles/aboutme.css"`}
         functionName="About_me"
       />
-      <div className="aboutMeMainContent">
-        <div className="aboutSection">
-          <div className="aboutText">
-            <h2>About_me</h2>
-            I'm a passionate and curious self-taught developer
-          </div>
-          {/* <div className="aboutPic">
-            <img src={profilePic} className="profilePicImg"></img>
-          </div> */}
-        </div>
 
-        {/* <GitHubCalendar username="mikeski-aa" /> */}
+      <div className="aboutMeTitle">
+        <h2>About_me</h2>
       </div>
+      <div className="aboutMeContainer">
+        <div className="boxybox"></div>
+      </div>
+
+      {/* <GitHubCalendar username="mikeski-aa" /> */}
 
       <ExportLine text="About_me" />
     </div>

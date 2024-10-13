@@ -130,7 +130,7 @@ function App() {
               >
                 <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
               </div>
-              {/* <div
+              <div
                 className={
                   activePage === 1 ? "sectionDiv true" : "sectionDiv false"
                 }
@@ -153,7 +153,7 @@ function App() {
                 ref={contactRef}
               >
                 <ContactMe />
-              </div> */}
+              </div>
               <div className="blankSpacer"></div>
             </div>
           </div>

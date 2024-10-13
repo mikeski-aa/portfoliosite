@@ -1,11 +1,10 @@
 .aboutMeComponent {
   display: flex;
   flex-direction: column;
-  align-items: left;
+
   color: white;
   margin-top: 3.9rem;
   margin-left: 5px;
-  /* min-width: 250px; */
 }
 
 .profilePicImg {
@@ -14,40 +13,21 @@
   object-fit: fill;
 }
 
-.aboutMeContent {
-  text-align: center;
-  transition-duration: 1s;
-}
-
-.aboutMeContent.false {
-  opacity: 0;
-  max-height: 0px;
-  /* transform: scaleY(0); */
-}
-
-.aboutMeContent.true {
-  opacity: 1;
-  max-height: 150px;
-  /* transform: scaleY(100%); */
-}
-
-.aboutMeMainContent {
-  margin-top: 15px;
+.aboutMeContainer {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+}
+
+.boxybox {
+  width: 500px;
+  height: 150px;
+  background-color: red;
 }
 
 .aboutSection {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
   gap: 15vw;
 }
 

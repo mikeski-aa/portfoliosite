@@ -4,32 +4,17 @@ import OdinbookCarousel from "./OdinbookCarousel";
 import ProjectComponent from "./ProjectComponent";
 import projects from "../utils/projectData";
 import ExportLine from "./ExportLine";
+import CodeComponent from "./CodeComponent";
 
 function MyProjects() {
   return (
     <div className="myProjectsComponent">
-      <div className="codeStyle">
-        <div className="line">
-          import <span className="fileStyle">OdinbookCarousel</span> from{" "}
-          <span className="linkStyle">"./OdinbookCarousel";</span>
-        </div>
-        <div className="line">
-          import <span className="linkStyle">"../styles/myprojects.css";</span>
-        </div>
-        <br></br>
-        <div className="line">
-          <span className="fcnStyle">function</span>{" "}
-          <span className="nameStyle">My_projects</span>
-          <span className="brackStyle">
-            {"("}
-            <span className="fileStyle">props</span>
-            {") {"}
-          </span>
-        </div>
-        <div>...</div>
-
-        <div className="line">&nbsp;&nbsp;&nbsp;{`return (`}</div>
-      </div>
+      <CodeComponent
+        firstImport="OdinbookCarousel"
+        firstImportLocation={`"./OdinbookCarousel";`}
+        styleImportLink={`"../styles/myprojects.css";`}
+        functionName="My_projects"
+      />
       <div className="myProjectsTitle">
         <h2>My_projects</h2>
       </div>

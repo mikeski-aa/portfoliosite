@@ -1,4 +1,5 @@
 function CodeComponent(props) {
+  // might add line counter too?
   return (
     <div className="codeStyle">
       <div className="line">

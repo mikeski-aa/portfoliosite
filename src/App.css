@@ -156,7 +156,8 @@ body {
   border-bottom: 2px solid grey;
   padding-bottom: 15px;
   display: flex;
-  justify-content: left;
+  /* justify-content: left; */
+  background-color: rgb(46, 46, 103);
 }
 
 /* 
