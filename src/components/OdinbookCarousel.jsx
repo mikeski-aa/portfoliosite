@@ -116,7 +116,9 @@ function OdinbookCarousel() {
           </div>
         </div>
       </div>
-      <div className="projectTitle line testclass">Odinbook</div>
+      <div className="projectTitle line testclass">
+        <span className="whiteLine">Project showcase:</span> Odinbook
+      </div>
       <div className="imageCarousel">
         <div className="imagesContainer">
           <button className="arrowBtns" onClick={handleGoLeft}>

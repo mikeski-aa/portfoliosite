@@ -21,3 +21,7 @@
   justify-content: center;
   max-width: 100%;
 }
+
+.projectText {
+  min-height: 12rem;
+}
