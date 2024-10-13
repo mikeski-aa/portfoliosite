@@ -1,7 +1,9 @@
 .vertBar {
   display: flex;
-
-
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 100%;
 
 }
 
@@ -12,20 +14,28 @@
     background-color: #333333;
     width: 40px;
     height: 100%;
+    align-items: center;
+    /* position: fixed;
+    top: 0; */
 
 }
 
 .vertIcon {
+  fill: #717171;
   width: 25px;
   height: 25px;
-  z-index: 20;
+
 }
 
 .vertBtn {
   border: 2px solid rgba(255, 255, 255, 0);
   background: none;
-  width: 25px;
-  height: 25px;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .vertBtn.true {
@@ -36,9 +46,7 @@
   fill: white;
 }
 
-.vertIcon {
-  fill: #717171;
-}
+
 
 .vertBtn:hover {
   cursor: pointer;
@@ -47,6 +55,7 @@
 .explorerDiv {
     background-color: #252526;
     transition: 0.5s ease-in-out;
+
     /* opacity: 1; */
 }
 

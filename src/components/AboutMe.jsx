@@ -30,7 +30,9 @@ function AboutMe(props) {
         <div className="aboutMeText">
           <img src={profilePic} className="profImg"></img>
           <div className="upperTextContainer">
-            <div className="nameHeader">Mike Kowalski</div>
+            <div className="nameHeader">
+              <span className="line">Mike </span>&nbsp;Kowalski
+            </div>
             <div className="titleText">
               Web developer based in{" "}
               <span className="line locationBold">Berlin</span>

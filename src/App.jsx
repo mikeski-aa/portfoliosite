@@ -111,7 +111,7 @@ function App() {
       >
         <div className="pageTest">
           <VertBar />
-          <div className="mainTest">
+          <div className={`mainTest ${sidebarStat}`}>
             <div className="headtest">
               <NavBar
                 handleNavClick={(e) => handleNavClick(e)}
