@@ -1,8 +1,8 @@
 const files = [
-  { name: "About_me.jsx" },
-  { name: "My_projects.jsx" },
-  { name: "My_skills.jsx" },
-  { name: "Contact_me.jsx" },
+  { name: "About_me" },
+  { name: "My_projects" },
+  { name: "My_skills" },
+  { name: "Contact_me" },
 ];
 
 export default files;

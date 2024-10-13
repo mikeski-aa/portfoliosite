@@ -69,24 +69,24 @@ function App() {
   // update active based on scroll position
   useEffect(() => {
     if (aboutVisible) {
-      // setActivePage(0);
+      setActivePage("zero");
       setCurrentPage("About_me.jsx");
       setCpage("About");
       helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
     } else if (projectsVisible) {
       setCurrentPage("My_projects.jsx");
       setCpage("My_projects");
-      // setActivePage(1);
+      setActivePage("one");
       helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
     } else if (skillsVisible) {
       setCurrentPage("My_skills.jsx");
       setCpage("My_skills");
-      // setActivePage(2);
+      setActivePage("two");
       helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
     } else if (contactVisible) {
       setCurrentPage("Contact_me.jsx");
       setCpage("Contact_me");
-      // setActivePage(3);
+      setActivePage("three");
       helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
@@ -107,7 +107,15 @@ function App() {
   return (
     <div className="page">
       <GlobalContext.Provider
-        value={{ navItems, setNavItems, sidebarStat, setSidebarStat }}
+        value={{
+          navItems,
+          setNavItems,
+          sidebarStat,
+          setSidebarStat,
+          setCurrentPage,
+          setCpage,
+          activePage,
+        }}
       >
         <div className="pageTest">
           <VertBar />

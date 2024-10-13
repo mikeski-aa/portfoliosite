@@ -19,3 +19,19 @@
   height: 10px;
   fill: rgb(44, 168, 240);
 }
+
+.fileBtn.About_me.zero {
+  background-color: rgba(87, 87, 87, 0.363);
+}
+
+.fileBtn.My_projects.one {
+  background-color: rgba(87, 87, 87, 0.363);
+}
+
+.fileBtn.My_skills.two {
+  background-color: rgba(87, 87, 87, 0.363);
+}
+
+.fileBtn.Contact_me.three {
+  background-color: rgba(87, 87, 87, 0.363);
+}
