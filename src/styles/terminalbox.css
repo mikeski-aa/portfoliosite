@@ -1,0 +1,12 @@
+.terminalDiv {
+  border-top: 2px solid grey;
+  height: 25vh;
+  background-color: black;
+}
+
+@media (max-width: 700px) {
+  .terminalDiv {
+    height: 25vh;
+  }
+}
+/* #A5B0BB */

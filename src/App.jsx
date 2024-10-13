@@ -13,6 +13,7 @@ import {
   helperClickStateUpdate,
 } from "./utils/helperStateUpdates";
 import BonusPage from "./components/BonusPage";
+import TerminalBox from "./components/TerminalBox";
 
 export const GlobalContext = createContext();
 
@@ -174,6 +175,7 @@ function App() {
                 <ContactMe />
               </div>
               <BonusPage bonusShow={bonusPageLarge} />
+              <TerminalBox />
             </div>
           </div>
           <Footer />
