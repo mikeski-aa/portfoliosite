@@ -6,8 +6,16 @@ import EllipsisIcon from "../assets/terminalicons/ellipsis.svg?react";
 import PlusIcon from "../assets/terminalicons/pluslargegrey.svg?react";
 import ArrowIcon from "../assets/arrow.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
+import TerminalParagraph from "./TerminalParagraph";
+import { useState } from "react";
 
 function TerminalBox(props) {
+  const [messages, setMessages] = useState([
+    "Working",
+    "testing",
+    "2359832489",
+  ]);
+
   return (
     <div className={`terminalDiv ${props.terminalStatus}`}>
       <div className="terminalHeader">
@@ -44,7 +52,16 @@ function TerminalBox(props) {
           </button>
         </div>
       </div>
-      <div className="mainTerminalBox">asdasdasdasd</div>
+      {/* <div className="redBox">Test</div> */}
+      <div className="mainTerminalTextbox">
+        {messages.map((item) => (
+          <TerminalParagraph text={item} />
+        ))}
+      </div>
+      <div className="terminalInputDiv">
+        <TerminalParagraph text={""} />
+        <input className="terminalInput"></input>
+      </div>
     </div>
   );
 }
