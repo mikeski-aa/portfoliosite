@@ -17,11 +17,40 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+  max-width: 100%;
 }
 
 .aboutMeText {
+  max-width: 65vw;
   border: 2px solid #d0dcaa;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.upperTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameHeader {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+}
+
+.titleText {
+  font-weight: 600;
+}
+
+.aboutBio,
+.locationBold {
+  font-weight: 700;
+}
+
+.aboutDesc {
+  margin-top: 15px;
 }
 
 .aboutSection {
@@ -29,24 +58,16 @@
   gap: 15vw;
 }
 
-.profPicContainer {
-  border: 2px solid #d0dcaa;
-  padding: 5px;
-  max-width: 250px;
-}
-
 .profImg {
-  object-fit: contain;
-  display: flex;
-  max-width: 100%;
+  max-width: 250px;
   height: auto;
   filter: grayscale(1) brightness(1) contrast(1);
 }
 
 .boxybox {
+  background-color: red;
   width: 250px;
   height: 250px;
-  background-color: red;
 }
 
 .line {
@@ -73,9 +94,19 @@
   color: #ffd700;
 }
 
-@media (max-width: 850px) {
-  .aboutMeMainContent {
-    /* flex-direction: column; */
+@media (max-width: 770px) {
+  .aboutMeText {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .upperTextContainer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nameHeader {
+    text-align: center;
   }
 
   .aboutText {
