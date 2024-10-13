@@ -45,7 +45,7 @@ function Folder(props) {
   // I am thinking this component could be re-written using recursive components
   return (
     <div className="folderDiv">
-      <button className="folderBtn" onClick={handleOuterClick}>
+      <button className="folderBtn root" onClick={handleOuterClick}>
         <Arrow className={`folderChevron ${rootStat}`} />
         {props.rootName}
       </button>

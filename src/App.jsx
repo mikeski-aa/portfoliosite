@@ -175,6 +175,7 @@ function App() {
                 <ContactMe />
               </div>
               <BonusPage bonusShow={bonusPageLarge} />
+              <div className="blankSpacer"></div>
               <TerminalBox />
             </div>
           </div>

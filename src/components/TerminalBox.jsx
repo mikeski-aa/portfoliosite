@@ -11,9 +11,9 @@ import { useState } from "react";
 
 function TerminalBox(props) {
   const [messages, setMessages] = useState([
-    "Working",
-    "testing",
-    "2359832489",
+    "Page loading completed successfully",
+    "Terminal initializing...",
+    "Terminal initialized.",
   ]);
   const [input, setInput] = useState("");
   const [active, setActive] = useState(3);
