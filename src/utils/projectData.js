@@ -38,10 +38,10 @@ const projects = [
     repoLink: "https://github.com/mikeski-aa/wiki-parser-project",
   },
   {
-    title: "Test project",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, sit accusantium nemo debitis quod veniam?",
+    title: "File sharing - webapp",
+    desc: "Node and Express project, using Server Side Rendering with Pug. The goal of this project was to gain more practice with express while building a semi-realistic application. The application allows users to upload images which can be shared between users. ",
     projectLink: "https://www.google.com",
-    repoLink: "https://www.google.com",
+    repoLink: "https://github.com/mikeski-aa/file-sharing",
   },
 ];
 
