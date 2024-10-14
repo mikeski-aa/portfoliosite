@@ -95,6 +95,7 @@ function File(props) {
   };
 
   const handleItemClickRewrite = () => {
+    console.log(globalContext.defaultPages);
     if (props.name === "bonusPage") {
       console.log("bonus page clicked");
 

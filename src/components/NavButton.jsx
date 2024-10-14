@@ -47,39 +47,41 @@ function NavButton(props) {
   const handleCloseClick = () => {
     // if we're about to close last tab and bonus page is still open, need to make sure it is in focus
     // idea is to check if navItems contains bonus page, if it does we need to do some stuff.
-
     // if (globalContext.navItems.length === 2) {
     //   if (checkForBonus(globalContext.navItems)) {
     //     globalContext.setBonusPage(true);
     //     bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
     //   }
     // }
-    removeStateItem(
-      globalContext.navItems,
-      globalContext.setNavItems,
-      props.name
-    );
-
-    updateDisabledPagesState(
-      globalContext.defaultPages,
-      globalContext.setDefaultPages,
-      props.shortname
-    );
-
+    // removeStateItem(
+    //   globalContext.navItems,
+    //   globalContext.setNavItems,
+    //   props.name
+    // );
+    // updateDisabledPagesState(
+    //   globalContext.defaultPages,
+    //   globalContext.setDefaultPages,
+    //   props.shortname
+    // );
     // close not only the tab, but also stop displaying the page and return to regular "jsx" pages shown to user
-    if (props.name === "bonusPage.js") {
-      globalContext.setBonusPage(false);
-      enablAllPages(
-        globalContext.defaultPages,
-        globalContext.setDefaultPages,
-        globalContext.navItems
-      );
-      // deactivateBonusPage(
-      //   globalContext.defaultPages,
-      //   globalContext.setDefaultPages
-      // );
-      return;
-    }
+    // if (props.name === "bonusPage.js") {
+    //   globalContext.setBonusPage(false);
+    //   enablAllPages(
+    //     globalContext.defaultPages,
+    //     globalContext.setDefaultPages,
+    //     globalContext.navItems
+    //   );
+    // deactivateBonusPage(
+    //   globalContext.defaultPages,
+    //   globalContext.setDefaultPages
+    // );
+    //   return;
+    // }
+  };
+
+  // rewriting the terrible mess
+  const handleCloseRewrite = () => {
+    console.log("closeClicked");
   };
 
   return (
@@ -107,7 +109,7 @@ function NavButton(props) {
         className={
           props.active || mouseOver ? "closePageBtn show" : "closePageBtn hide"
         }
-        onClick={() => handleCloseClick()}
+        onClick={() => handleCloseRewrite()}
       >
         <CrossIcon className="closePageIcon" />
       </button>

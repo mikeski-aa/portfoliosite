@@ -173,7 +173,7 @@ function App() {
       if (bonusPage) {
         return;
       }
-      console.log("XD");
+
       setBonusPage(true);
       disableAllPages(defaultPages, setDefaultPages);
       helperClickStateUpdate(
