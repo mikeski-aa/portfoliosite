@@ -167,6 +167,10 @@ function App() {
     // handle "opening" the bonus page
     // disable all other pages
     if (e.target.innerText === "bonusPage.js") {
+      // exit this early in case double clicked to prevent unneeded functions running
+      if (bonusPage) {
+        return;
+      }
       console.log("XD");
       setBonusPage(true);
       disableAllPages(defaultPages, setDefaultPages);
@@ -178,6 +182,20 @@ function App() {
         setCpage
       );
       return;
+    }
+
+    // there is an issue with scrolling when clicking on other elements.
+    // look into it
+    if (bonusPage && e.target.innerText != "bonusPage.js") {
+      setBonusPage(false);
+      enablAllPages(defaultPages, setDefaultPages);
+      return helperClickStateUpdate(
+        navItems,
+        setNavItems,
+        e.target.innerText,
+        setCurrentPage,
+        setCpage
+      );
     }
 
     helperClickStateUpdate(
