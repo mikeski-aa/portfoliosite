@@ -39,7 +39,6 @@ function App() {
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
   const [bonusPage, setBonusPage] = useState(false);
-  const [bonusPageLarge, setBonusPageLarge] = useState(false);
   const [navItems, setNavItems] = useState([
     {
       name: "About_me.jsx",
@@ -160,9 +159,12 @@ function App() {
   // might need to refactor
   // this function living here is weird af.
   const handleNavClick = (e) => {
+    // handle "opening" the bonus page
+    // disable all other pages
     if (e.target.innerText === "bonusPage.js") {
       console.log("XD");
-      return setBonusPageLarge(true);
+      setBonusPage(true);
+      return;
     }
 
     helperClickStateUpdate(
@@ -185,8 +187,6 @@ function App() {
           setCurrentPage,
           setCpage,
           activePage,
-          bonusPage,
-          setBonusPage,
           handleNavClick,
           defaultPages,
           setDefaultPages,
@@ -252,14 +252,13 @@ function App() {
                 className={
                   defaultPages[4].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
-              >
-                <BonusPage bonusShow={bonusPageLarge} />
-              </div>
+              ></div>
               {navItems.length < 1 ? (
                 <AllTabsClosed />
               ) : (
                 <div className="blankSpacer"></div>
               )}
+              {bonusPage ? <BonusPage /> : null}
 
               <TerminalBox />
             </div>
