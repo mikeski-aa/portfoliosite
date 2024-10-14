@@ -15,7 +15,9 @@ import {
   checkIfBonusPresent,
   deactivatePage,
   manyPagesCloseOne,
+  closeBonusActive,
 } from "../utils/navBtnCloseUtils";
+import { checkIfBonusActiveNow } from "../utils/explorerHelperFunctions";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -96,6 +98,18 @@ function NavButton(props) {
     if (globalContext.navItems.length > 2) {
       if (props.name === "bonusPage.js") {
         console.log("bonusPage close clicked");
+        if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+          console.log("BONUS IS ACTIVE");
+          closeBonusActive(
+            globalContext.defaultPages,
+            globalContext.setDefaultPages,
+            globalContext.navItems,
+            globalContext.setNavItems,
+            props.name
+          );
+        } else {
+          console.log("bonus is inactive");
+        }
       } else {
         console.log("more than 2 items in nav");
         // what needs to happen:

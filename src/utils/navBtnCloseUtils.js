@@ -95,9 +95,45 @@ function lastItemWithBonus(
   setDefaultPages(copyDefault);
 }
 
+// we want to close bonus and deactivate it.
+// we then want to re-enable all active pages
+function closeBonusActive(
+  defaultPages,
+  setDefaultPages,
+  navItems,
+  setNavItems,
+  input
+) {
+  const copyNav = [...navItems];
+  const copyDefault = [...defaultPages];
+
+  // filter bonus out of the nav bar
+  const filteredNav = copyNav.filter((item) => item.name != input);
+  // set a new active page
+  filteredNav[0].active = true;
+
+  setNavItems(filteredNav);
+
+  // disable bonus page. enable clicked page. also needs to enable other pages if they are open!
+  // double for loop is terrible but I am struggling to do it otherwise with the current setup of these states
+  for (let x = 0; x < copyDefault.length; x++) {
+    for (let y = 0; y < filteredNav.length; y++) {
+      if (copyDefault[x].name === filteredNav[y].name) {
+        copyDefault[x].disabled = false;
+      } else if (copyDefault[x].name === "bonusPage.js") {
+        copyDefault[x].disabled = true;
+      }
+    }
+  }
+  setDefaultPages(copyDefault);
+}
+
+function closeBonusInactive() {}
+
 export {
   manyPagesCloseOne,
   deactivatePage,
   checkIfBonusPresent,
   lastItemWithBonus,
+  closeBonusActive,
 };
