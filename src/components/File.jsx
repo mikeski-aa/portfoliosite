@@ -5,6 +5,7 @@ import { GlobalContext } from "../App";
 import { useContext } from "react";
 import { helperClickStateUpdate } from "../utils/helperStateUpdates";
 import bonusPage from "../utils/bonusPageScript";
+import { checkOrAddPage } from "../utils/helperStateUpdates";
 
 function File(props) {
   const globalContext = useContext(GlobalContext);
@@ -15,7 +16,16 @@ function File(props) {
     return null;
   }
 
+  // if page was closed, it should be reopened.
+  // if a page is already opened, scroll down to it.
+  // bonus handling also needs to be implemented here.
   const handleItemClick = () => {
+    checkOrAddPage(
+      globalContext.navItems,
+      globalContext.setNavItems,
+      globalContext.defaultPages,
+      props.name
+    );
     // if (props.bonus) {
     //   return bonusPage(
     //     globalContext.navItems,
