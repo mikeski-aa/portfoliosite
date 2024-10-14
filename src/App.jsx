@@ -42,6 +42,7 @@ function App() {
       shortname: "About_me",
       trueIndex: 0,
       refLink: aboutRef,
+      mouseover: false,
     },
     {
       name: "My_projects.jsx",
@@ -49,6 +50,7 @@ function App() {
       shortname: "My_projects",
       trueIndex: 1,
       refLink: projectsRef,
+      mouseover: false,
     },
     {
       name: "My_skills.jsx",
@@ -56,6 +58,7 @@ function App() {
       shortname: "My_skills",
       trueIndex: 2,
       refLink: skillsRef,
+      mouseover: false,
     },
     {
       name: "Contact_me.jsx",
@@ -63,6 +66,7 @@ function App() {
       shortname: "Contact_me",
       trueIndex: 3,
       refLink: contactRef,
+      mouseover: false,
     },
   ]);
 
@@ -127,6 +131,7 @@ function App() {
           activePage,
           bonusPage,
           setBonusPage,
+          handleNavClick,
         }}
       >
         <div className="pageTest">

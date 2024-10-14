@@ -3,62 +3,23 @@ import ReactIconComponent from "../assets/icons/react.svg?react";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import Arrow from "../assets/arrow.svg?react";
 import "../styles/navbar.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import NavButton from "./NavButton";
+import { GlobalContext } from "../App";
 
 function NavBar(props) {
-  const [mouseOver, setMouseOver] = useState("");
-
-  // handle setting index data when tab is beggining to be dragged
-  const handleDragStart = (e, index) => {
-    e.dataTransfer.setData("index", index);
-  };
-
-  // handle drop - set new index, splice array replacing item positions.
-  // set new state to update the layout
-  const handleDrop = (e, targetIndex) => {
-    e.preventDefault();
-    const sourceIndex = parseInt(e.dataTransfer.getData("index"));
-    const newItems = [...props.navItems];
-    newItems.splice(targetIndex, 0, newItems.splice(sourceIndex, 1)[0]);
-    props.setNavItems(newItems);
-  };
-
-  // disable default behaviour, otherwise drag won't work
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
-
-  const handleMouseEnter = (e) => {
-    console.log(e.target.innerText);
-    setMouseOver(e.target.innerText);
-  };
-
-  const handleMouseLeave = () => {
-    setMouseOver("");
-  };
+  const globalContext = useContext(GlobalContext);
 
   return (
     <>
       <div className="buttonContainer">
-        {props.navItems.map((item, index) => (
-          <button
+        {globalContext.navItems.map((item, index) => (
+          <NavButton
             key={index}
-            className={`navBtn ${item.active}`}
-            draggable
-            onClick={(e) => props.handleNavClick(e)}
-            onDragStart={(e) => handleDragStart(e, index)}
-            onDragOver={handleDragOver}
-            onDrop={(e) => handleDrop(e, index)}
-            onMouseEnter={(e) => handleMouseEnter(e)}
-            onMouseLeave={(e) => handleMouseLeave(e)}
-          >
-            {item.name === "bonusPage.js" ? (
-              <JSIconComponent className="locationIcon" />
-            ) : (
-              <ReactIconComponent className="locationIcon" />
-            )}
-            {item.name}
-          </button>
+            index={index}
+            name={item.name}
+            active={item.active}
+          />
         ))}
       </div>
       <div className="appLocation">
