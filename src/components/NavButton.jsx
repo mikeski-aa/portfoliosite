@@ -3,9 +3,10 @@ import "../styles/navbutton.css";
 import { GlobalContext } from "../App";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
+import CrossIcon from "../assets/bwicons/cross2.svg?react";
 
 function NavButton(props) {
-  const [mouseOver, setMouseOver] = useState("");
+  const [mouseOver, setMouseOver] = useState(false);
   const globalContext = useContext(GlobalContext);
 
   // handle setting index data when tab is beggining to be dragged
@@ -28,32 +29,44 @@ function NavButton(props) {
     e.preventDefault();
   };
 
+  // handle mouseover enter and exit, for toggling display of close button
   const handleMouseEnter = (e) => {
     console.log(e.target.innerText);
-    setMouseOver(e.target.innerText);
+    setMouseOver(true);
   };
 
   const handleMouseLeave = () => {
-    setMouseOver("");
+    setMouseOver(false);
   };
   return (
-    <button
-      className={`navBtn ${props.active}`}
-      draggable
-      onClick={(e) => globalContext.handleNavClick(e)}
-      onDragStart={(e) => handleDragStart(e, props.index)}
-      onDragOver={handleDragOver}
-      onDrop={(e) => handleDrop(e, props.index)}
+    <div
+      className={`navBtnDiv ${props.active}`}
       onMouseEnter={(e) => handleMouseEnter(e)}
       onMouseLeave={(e) => handleMouseLeave(e)}
     >
-      {props.name === "bonusPage.js" ? (
-        <JSIconComponent className="locationIcon" />
-      ) : (
-        <ReactIconComponent className="locationIcon" />
-      )}
-      {props.name}
-    </button>
+      <button
+        className={`navBtn ${props.active}`}
+        draggable
+        onClick={(e) => globalContext.handleNavClick(e)}
+        onDragStart={(e) => handleDragStart(e, props.index)}
+        onDragOver={handleDragOver}
+        onDrop={(e) => handleDrop(e, props.index)}
+      >
+        {props.name === "bonusPage.js" ? (
+          <JSIconComponent className="locationIcon" />
+        ) : (
+          <ReactIconComponent className="locationIcon" />
+        )}
+        {props.name}
+      </button>
+      <button
+        className={
+          props.active || mouseOver ? "closePageBtn show" : "closePageBtn hide"
+        }
+      >
+        <CrossIcon className="closePageIcon" />
+      </button>
+    </div>
   );
 }
 
