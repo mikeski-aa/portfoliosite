@@ -63,54 +63,9 @@ function updateDisabledPagesState(state, setState, input) {
   setState(copyItems);
 }
 
-// this function will check whether the page clicked is already "opened"
-// if it is not opened, the page will be added to active page state from default state
-function checkOrAddPage(activeState, setActiveState, defaultState, input) {
-  const copyActiveState = [...activeState];
-  const copyDefaultState = [...defaultState];
-  let found = false;
-
-  for (let x = 0; x < copyActiveState.length; x++) {
-    if (copyActiveState[x].shortname === input) {
-      found = true;
-    }
-  }
-
-  // button is found, don't need to do anything else
-  if (found == true) {
-    return;
-  }
-  const tempobj = {
-    name: "About_me.jsx",
-    active: true,
-    shortname: "About_me",
-    trueIndex: 0,
-
-    visible: true,
-    disabled: false,
-  };
-  copyActiveState.push(tempobj);
-  console.log(copyActiveState);
-  setActiveState(copyActiveState);
-  // console.log(found);
-  // console.log(copyDefaultState);
-  // for (let x = 0; x < copyDefaultState.length; x++) {
-  //   if (copyDefaultState[x].shortname === input) {
-  //     copyDefaultState[x].disabled = false;
-  //     copyActiveState.push(copyDefaultState[x]);
-  //     console.log(copyActiveState);
-  //   }
-  // }
-  // console.log("active state copy new after push:");
-  // console.log(copyActiveState);
-  // setActiveState(copyActiveState);
-  // console.log(activeState);
-}
-
 export {
   helperScrollStateUpdate,
   helperClickStateUpdate,
   removeStateItem,
   updateDisabledPagesState,
-  checkOrAddPage,
 };
