@@ -193,7 +193,9 @@ function App() {
         <div className="pageTest">
           <VertBar />
           <div className={`mainTest ${sidebarStat}`}>
-            <div className="headtest">
+            <div
+              className={navItems.length < 1 ? "headtest hidden" : "headtest"}
+            >
               <NavBar
                 handleNavClick={(e) => handleNavClick(e)}
                 currentPage={currentPage}

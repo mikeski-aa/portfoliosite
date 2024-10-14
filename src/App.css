@@ -129,6 +129,10 @@ h2:hover {
   font-family: "Courier New", Courier, monospace;
 }
 
+.headtest.hidden {
+  display: none;
+}
+
 .sectionDiv {
   border-bottom: 2px solid grey;
   padding-bottom: 3.9rem;
