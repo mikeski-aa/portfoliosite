@@ -161,56 +161,6 @@ function App() {
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
-  // this function is breaking my entire fkn application it NEEDS TO BE FIXED!!!!!
-
-  // handle nav click
-  // not sure if this should live here or in nav bar...
-  // might need to refactor
-  // this function living here is weird af.
-  const handleNavClick = (e) => {
-    // handle "opening" the bonus page
-    // disable all other pages
-    if (e.target.innerText === "bonusPage.js") {
-      // exit this early in case double clicked to prevent unneeded functions running
-      if (bonusPage) {
-        return;
-      }
-
-      setBonusPage(true);
-      disableAllPages(defaultPages, setDefaultPages);
-      helperClickStateUpdate(
-        navItems,
-        setNavItems,
-        e.target.innerText,
-        setCurrentPage,
-        setCpage
-      );
-      return;
-    }
-
-    // there is an issue with scrolling when clicking on other elements.
-    // look into it
-    if (bonusPage && e.target.innerText != "bonusPage.js") {
-      setBonusPage(false);
-      enablAllPages(defaultPages, setDefaultPages, navItems);
-      return helperClickStateUpdate(
-        navItems,
-        setNavItems,
-        e.target.innerText,
-        setCurrentPage,
-        setCpage
-      );
-    }
-
-    helperClickStateUpdate(
-      navItems,
-      setNavItems,
-      e.target.innerText,
-      setCurrentPage,
-      setCpage
-    );
-  };
-
   return (
     <div className="page">
       <GlobalContext.Provider
@@ -222,7 +172,6 @@ function App() {
           setCurrentPage,
           setCpage,
           activePage,
-          handleNavClick,
           defaultPages,
           setDefaultPages,
           setBonusPage,
@@ -242,7 +191,6 @@ function App() {
               className={navItems.length < 1 ? "headtest hidden" : "headtest"}
             >
               <NavBar
-                handleNavClick={(e) => handleNavClick(e)}
                 currentPage={currentPage}
                 cPage={cPage}
                 navItems={navItems}

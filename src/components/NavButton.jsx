@@ -178,6 +178,8 @@ function NavButton(props) {
           globalContext.defaultPages,
           globalContext.setDefaultPages
         );
+        globalContext.setCurrentPage("bonusPage.js");
+        globalContext.setCpage("bonusPage");
       }
     } else {
       console.log("normal page clicked");

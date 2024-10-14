@@ -55,6 +55,8 @@ function File(props) {
           globalContext.defaultPages,
           globalContext.setDefaultPages
         );
+        globalContext.setCurrentPage("bonusPage.js");
+        globalContext.setCpage("bonusPage");
       } else {
         if (globalContext.navItems.length < 1) {
           console.log("no items in nav");
