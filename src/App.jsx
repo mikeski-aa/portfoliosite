@@ -152,10 +152,6 @@ function App() {
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
-  useEffect(() => {
-    console.log("Items changed");
-  }, [navItems]);
-
   // handle nav click
   // not sure if this should live here or in nav bar...
   // might need to refactor
@@ -208,9 +204,9 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
-              <div className="redboxtest" onClick={testonclick}>
+              {/* <div className="redboxtest" onClick={testonclick}>
                 {" "}
-              </div>
+              </div> */}
               <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"

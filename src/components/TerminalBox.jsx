@@ -126,7 +126,6 @@ function TerminalBox(props) {
               value={input}
               onKeyDown={(e) => handleKeyPress(e)}
               onChange={(e) => handleInputChange(e)}
-              autoFocus
               ref={inputRef}
             ></input>
           </div>
