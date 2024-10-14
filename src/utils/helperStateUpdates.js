@@ -74,6 +74,7 @@ function disableAllPages(state, setState) {
 
   for (let x = 0; x < stateCopy.length; x++) {
     if (stateCopy[x].shortname != "bonusPage") {
+      stateCopy[x].active = false;
       stateCopy[x].disabled = true;
     } else {
       stateCopy[x].disabled = false;
