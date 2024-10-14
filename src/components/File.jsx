@@ -8,6 +8,7 @@ import {
   smoothScroll,
 } from "../utils/helperStateUpdates";
 import bonusPage from "../utils/bonusPageScript";
+import { disableAllPages, enablAllPages } from "../utils/helperStateUpdates";
 
 function File(props) {
   const globalContext = useContext(GlobalContext);
@@ -39,8 +40,24 @@ function File(props) {
 
     if (found) {
       if (props.name === "bonusPage") {
+        console.log("FOUND AND NAME IS BP");
+        disableAllPages(
+          globalContext.defaultPages,
+          globalContext.setDefaultPages
+        );
+        globalContext.setBonusPage(true);
+        helperClickStateUpdate(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          "bonusPage.js",
+          globalContext.setCurrentPage,
+          globalContext.setCpage
+        );
+
         return;
       }
+      globalContext.setBonusPage(false);
+      enablAllPages(globalContext.defaultPages, globalContext.setDefaultPages);
       smoothScroll(scrollRef);
       return console.log("found, ending the thingy here");
     }
