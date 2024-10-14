@@ -71,29 +71,6 @@ function App() {
       visible: true,
     },
   ]);
-  // const [disabledPages, setDisabledPages] = useState([
-  //   {
-  //     name: "About_me",
-  //     disabled: false,
-  //   },
-  //   {
-  //     name: "My_projects",
-  //     disabled: false,
-  //   },
-  //   {
-  //     name: "My_skills",
-  //     disabled: false,
-  //   },
-  //   {
-  //     name: "Contact_me",
-  //     disabled: false,
-  //   },
-  //   {
-  //     name: "Bonus",
-  //     disabled: true,
-  //   },
-  // ]);
-
   // this is a temporary fix, which might become a pernament fix if I don't figure out a better solution
   // I need a "default" directory of pages, however, with how refs are implemented, I cannot store this in an outside file
   // this state is required in order to restore nav buttons and other items when they become closed
@@ -175,6 +152,10 @@ function App() {
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
+  useEffect(() => {
+    console.log("Items changed");
+  }, [navItems]);
+
   // handle nav click
   // not sure if this should live here or in nav bar...
   // might need to refactor
@@ -190,6 +171,10 @@ function App() {
       setCurrentPage,
       setCpage
     );
+  };
+
+  const testonclick = () => {
+    console.log(navItems);
   };
 
   return (
@@ -223,6 +208,9 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
+              <div className="redboxtest" onClick={testonclick}>
+                {" "}
+              </div>
               <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"

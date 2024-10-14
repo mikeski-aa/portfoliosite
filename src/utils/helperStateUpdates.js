@@ -80,18 +80,31 @@ function checkOrAddPage(activeState, setActiveState, defaultState, input) {
   if (found == true) {
     return;
   }
-  console.log(found);
-  console.log(copyDefaultState);
-  for (let x = 0; x < copyDefaultState.length; x++) {
-    if (copyDefaultState[x].shortname === input) {
-      copyDefaultState[x].disabled = false;
-      copyActiveState.push(copyDefaultState[x]);
-      console.log(copyActiveState);
-    }
-  }
-  console.log("active state copy new after push:");
+  const tempobj = {
+    name: "About_me.jsx",
+    active: true,
+    shortname: "About_me",
+    trueIndex: 0,
+
+    visible: true,
+    disabled: false,
+  };
+  copyActiveState.push(tempobj);
   console.log(copyActiveState);
   setActiveState(copyActiveState);
+  // console.log(found);
+  // console.log(copyDefaultState);
+  // for (let x = 0; x < copyDefaultState.length; x++) {
+  //   if (copyDefaultState[x].shortname === input) {
+  //     copyDefaultState[x].disabled = false;
+  //     copyActiveState.push(copyDefaultState[x]);
+  //     console.log(copyActiveState);
+  //   }
+  // }
+  // console.log("active state copy new after push:");
+  // console.log(copyActiveState);
+  // setActiveState(copyActiveState);
+  // console.log(activeState);
 }
 
 export {

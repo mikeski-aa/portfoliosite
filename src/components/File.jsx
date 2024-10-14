@@ -20,12 +20,12 @@ function File(props) {
   // if a page is already opened, scroll down to it.
   // bonus handling also needs to be implemented here.
   const handleItemClick = () => {
-    checkOrAddPage(
-      globalContext.navItems,
-      globalContext.setNavItems,
-      globalContext.defaultPages,
-      props.name
-    );
+    // checkOrAddPage(
+    //   globalContext.navItems,
+    //   globalContext.setNavItems,
+    //   globalContext.defaultPages,
+    //   props.name
+    // );
     // if (props.bonus) {
     //   return bonusPage(
     //     globalContext.navItems,
@@ -34,14 +34,13 @@ function File(props) {
     //     globalContext.setBonusPage
     //   );
     // }
-
-    helperClickStateUpdate(
-      globalContext.navItems,
-      globalContext.setNavItems,
-      name,
-      globalContext.setCurrentPage,
-      globalContext.setCpage
-    );
+    // helperClickStateUpdate(
+    //   globalContext.navItems,
+    //   globalContext.setNavItems,
+    //   name,
+    //   globalContext.setCurrentPage,
+    //   globalContext.setCpage
+    // );
   };
 
   return (
