@@ -181,6 +181,10 @@ h2:hover {
   padding: 0; */
 }
 
+.sectionDiv.last {
+  border: none;
+}
+
 .redboxtest {
   width: 500px;
   height: 500px;

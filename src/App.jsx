@@ -275,7 +275,9 @@ function App() {
               </div>
               <div
                 className={
-                  defaultPages[3].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[3].disabled
+                    ? "sectionDiv hidden"
+                    : "sectionDiv last"
                 }
                 ref={contactRef}
               >
