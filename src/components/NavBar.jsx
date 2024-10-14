@@ -19,6 +19,7 @@ function NavBar(props) {
             index={index}
             name={item.name}
             active={item.active}
+            shortname={item.shortname}
           />
         ))}
       </div>

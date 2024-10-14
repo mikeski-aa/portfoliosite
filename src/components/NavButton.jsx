@@ -5,6 +5,7 @@ import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import { removeStateItem } from "../utils/helperStateUpdates";
+import { updateDisabledPagesState } from "../utils/helperStateUpdates";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -41,10 +42,19 @@ function NavButton(props) {
   };
 
   const handleCloseClick = () => {
+    console.log("?????");
+    console.log(props.shortname, props.name);
+
     removeStateItem(
       globalContext.navItems,
       globalContext.setNavItems,
       props.name
+    );
+
+    updateDisabledPagesState(
+      globalContext.disabledPages,
+      globalContext.setDisabledPages,
+      props.shortname
     );
   };
 
@@ -73,11 +83,9 @@ function NavButton(props) {
         className={
           props.active || mouseOver ? "closePageBtn show" : "closePageBtn hide"
         }
+        onClick={() => handleCloseClick()}
       >
-        <CrossIcon
-          className="closePageIcon"
-          onClick={() => handleCloseClick(props.name)}
-        />
+        <CrossIcon className="closePageIcon" />
       </button>
     </div>
   );

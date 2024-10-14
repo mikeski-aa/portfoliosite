@@ -43,8 +43,24 @@ function removeStateItem(state, setState, input) {
   const copyItems = [...state];
   const filteredItems = copyItems.filter((item) => item.name != input);
 
-  console.log(filteredItems);
   setState(filteredItems);
 }
 
-export { helperScrollStateUpdate, helperClickStateUpdate, removeStateItem };
+function updateDisabledPagesState(state, setState, input) {
+  const copyItems = [...state];
+
+  for (let x = 0; x < copyItems.length; x++) {
+    if (copyItems[x].name === input) {
+      copyItems[x].disabled = true;
+    }
+  }
+
+  setState(copyItems);
+}
+
+export {
+  helperScrollStateUpdate,
+  helperClickStateUpdate,
+  removeStateItem,
+  updateDisabledPagesState,
+};

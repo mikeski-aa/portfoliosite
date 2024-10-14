@@ -73,19 +73,19 @@ function App() {
   ]);
   const [disabledPages, setDisabledPages] = useState([
     {
-      name: "About",
+      name: "About_me",
       disabled: false,
     },
     {
-      name: "Projects",
+      name: "My_projects",
       disabled: false,
     },
     {
-      name: "Skills",
+      name: "My_skills",
       disabled: false,
     },
     {
-      name: "Contact",
+      name: "Contact_me",
       disabled: false,
     },
     {
