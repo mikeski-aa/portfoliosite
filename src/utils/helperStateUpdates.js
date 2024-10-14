@@ -34,6 +34,12 @@ function helperClickStateUpdate(state, setState, input, setCurr, setShortCurr) {
         setShortCurr(copyItems[x].shortname);
       }
 
+      if (copyItems[x].name === "bonusPage.js") {
+        setCurr(copyItems[x].name);
+        setShortCurr(copyItems[x].shortname);
+        return;
+      }
+
       // setActivePage(copyItems[x].trueIndex);
       smoothScroll(copyItems[x].refLink);
     } else {
@@ -63,10 +69,40 @@ function updateDisabledPagesState(state, setState, input) {
   setState(copyItems);
 }
 
+function disableAllPages(state, setState) {
+  const stateCopy = [...state];
+
+  for (let x = 0; x < stateCopy.length; x++) {
+    if (stateCopy[x].shortname != "bonusPage") {
+      stateCopy[x].disabled = true;
+    } else {
+      stateCopy[x].disabled = false;
+    }
+  }
+
+  setState(stateCopy);
+}
+
+function enablAllPages(state, setState) {
+  const stateCopy = [...state];
+
+  for (let x = 0; x < stateCopy.length; x++) {
+    if (stateCopy[x].shortname === "bonusPage") {
+      stateCopy[x].disabled = true;
+    } else {
+      stateCopy[x].disabled = false;
+    }
+  }
+
+  setState(stateCopy);
+}
+
 export {
   smoothScroll,
   helperScrollStateUpdate,
   helperClickStateUpdate,
   removeStateItem,
   updateDisabledPagesState,
+  disableAllPages,
+  enablAllPages,
 };

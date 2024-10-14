@@ -15,6 +15,7 @@ import {
 import BonusPage from "./components/BonusPage";
 import TerminalBox from "./components/TerminalBox";
 import AllTabsClosed from "./components/AllTabsClosed";
+import { disableAllPages, enablAllPages } from "./utils/helperStateUpdates";
 
 export const GlobalContext = createContext();
 
@@ -47,6 +48,7 @@ function App() {
       trueIndex: 0,
       refLink: aboutRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "My_projects.jsx",
@@ -55,6 +57,7 @@ function App() {
       trueIndex: 1,
       refLink: projectsRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "My_skills.jsx",
@@ -63,6 +66,7 @@ function App() {
       trueIndex: 2,
       refLink: skillsRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "Contact_me.jsx",
@@ -71,6 +75,7 @@ function App() {
       trueIndex: 3,
       refLink: contactRef,
       visible: true,
+      disabled: false,
     },
   ]);
   // this is a temporary fix, which might become a pernament fix if I don't figure out a better solution
@@ -164,6 +169,14 @@ function App() {
     if (e.target.innerText === "bonusPage.js") {
       console.log("XD");
       setBonusPage(true);
+      disableAllPages(defaultPages, setDefaultPages);
+      helperClickStateUpdate(
+        navItems,
+        setNavItems,
+        e.target.innerText,
+        setCurrentPage,
+        setCpage
+      );
       return;
     }
 
@@ -248,11 +261,7 @@ function App() {
               >
                 <ContactMe />
               </div>
-              <div
-                className={
-                  defaultPages[4].disabled ? "sectionDiv hidden" : "sectionDiv"
-                }
-              ></div>
+
               {navItems.length < 1 ? (
                 <AllTabsClosed />
               ) : (
