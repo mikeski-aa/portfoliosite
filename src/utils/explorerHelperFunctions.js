@@ -98,10 +98,63 @@ function focusBonusManyPages(
   setDefaultPages(copyDefault);
 }
 
+// function to check if bonus page is active
+function checkIfBonusActiveNow(defaultPages) {
+  const copyDefault = [...defaultPages];
+  let bonusOpen = false;
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].name === "bonusPage.js" && !copyDefault[x].disabled) {
+      bonusOpen = true;
+    }
+  }
+
+  return bonusOpen;
+}
+
+// function to disable bonus visibility and enable active of page clicked
+function disableBonusSetNewActive(
+  navItems,
+  setNavItems,
+  defaultPages,
+  setDefaultPages,
+  input
+) {
+  const copyDefault = [...defaultPages];
+  const copyNavItems = [...navItems];
+
+  // disable bonus page. enable clicked page. also needs to enable other pages if they are open!
+  // double for loop is terrible but I am struggling to do it otherwise with the current setup of these states
+  for (let x = 0; x < copyDefault.length; x++) {
+    for (let y = 0; y < copyNavItems.length; y++) {
+      if (copyDefault[x].name === copyNavItems[y].name) {
+        if (copyDefault[x].name === "bonusPage.js") {
+          copyDefault[x].disabled = true;
+        } else {
+          copyDefault[x].disabled = false;
+        }
+      }
+    }
+  }
+  setDefaultPages(copyDefault);
+
+  for (let x = 0; x < copyNavItems.length; x++) {
+    if (copyNavItems[x].shortname === input) {
+      copyNavItems[x].active = true;
+    } else {
+      copyNavItems[x].active = false;
+    }
+  }
+
+  setNavItems(copyNavItems);
+}
+
 export {
   checkPageIsOpen,
   addNewPageToNav,
   addBonusToNavNotEmpty,
   addBonusToNavIsEmpty,
   focusBonusManyPages,
+  checkIfBonusActiveNow,
+  disableBonusSetNewActive,
 };

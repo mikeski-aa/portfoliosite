@@ -16,6 +16,8 @@ import {
   addBonusToNavNotEmpty,
   addBonusToNavIsEmpty,
   focusBonusManyPages,
+  checkIfBonusActiveNow,
+  disableBonusSetNewActive,
 } from "../utils/explorerHelperFunctions";
 
 function File(props) {
@@ -135,9 +137,22 @@ function File(props) {
       console.log("normal page clicked");
       // first we need to check if the page already exists or not
       if (checkPageIsOpen(globalContext.navItems, props.name)) {
-        // page exists already.
-        // we can scroll to it directly
-        return smoothScroll(props.refLink);
+        if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+          console.log("bonus is indeed active now!");
+          // disable active bonus, enable clicked tab
+          disableBonusSetNewActive(
+            globalContext.navItems,
+            globalContext.setNavItems,
+            globalContext.defaultPages,
+            globalContext.setDefaultPages,
+            props.name
+          );
+        } else {
+          console.log("page exists this will scroll now");
+          // page exists already.
+          // we can scroll to it directly
+          return smoothScroll(props.refLink);
+        }
       } else {
         // page is not open and  does NOT exist in navItems.
         // It needs to be added to navItems so that we can re-render the header
