@@ -40,6 +40,8 @@ function App() {
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
   const [bonusPage, setBonusPage] = useState(false);
+
+  // this could be rewritten. we dont need long and short name. total redundancy
   const [navItems, setNavItems] = useState([
     {
       name: "About_me.jsx",

@@ -10,6 +10,11 @@ import { enablAllPages } from "../utils/helperStateUpdates";
 import checkForBonus from "../utils/checkForBonus";
 import bonusActiveSet from "../utils/bonusActiveSet";
 import deactivateBonusPage from "../utils/deactivateBonusPage";
+import {
+  checkIfBonusPresent,
+  deactivatePage,
+  manyPagesCloseOne,
+} from "../utils/navBtnCloseUtils";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -80,8 +85,50 @@ function NavButton(props) {
   };
 
   // rewriting the terrible mess
+  // cases to keep in mind:
+  // the page belongs to "regular" items
+  // the page belongs to bonus
+  // the page is the last page left open
+  // there are two pages left, one regualr one bonus how do we handle each case
   const handleCloseRewrite = () => {
     console.log("closeClicked");
+    if (globalContext.navItems.length > 2) {
+      if (props.name === "bonusPage.js") {
+        console.log("bonusPage close clicked");
+      } else {
+        console.log("more than 2 items in nav");
+        // what needs to happen:
+        // deactivate the page
+        // disable the page
+        manyPagesCloseOne(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          props.name
+        );
+        deactivatePage(
+          globalContext.defaultPages,
+          globalContext.setDefaultPages,
+          props.name
+        );
+      }
+    } else {
+      console.log("less than 2 items detected - warning!");
+      if (checkIfBonusPresent(globalContext.navItems)) {
+        console.log("bonus present!");
+      } else {
+        console.log("bonus is not present all good");
+        manyPagesCloseOne(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          props.name
+        );
+        deactivatePage(
+          globalContext.defaultPages,
+          globalContext.setDefaultPages,
+          props.name
+        );
+      }
+    }
   };
 
   return (
