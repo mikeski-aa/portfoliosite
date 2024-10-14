@@ -24,6 +24,15 @@ function NavBar(props) {
   const handleDragOver = (e) => {
     e.preventDefault();
   };
+
+  const handleMouseEnter = (e) => {
+    console.log(e.target);
+  };
+
+  const handleMouseLeave = () => {
+    alert("mouse leave");
+  };
+
   return (
     <>
       <div className="buttonContainer">
@@ -36,6 +45,8 @@ function NavBar(props) {
             onDragStart={(e) => handleDragStart(e, index)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index)}
+            onMouseEnter={(e) => handleMouseEnter(e)}
+            onMouseLeave={(e) => handleMouseLeave(e)}
           >
             {item.name === "bonusPage.js" ? (
               <JSIconComponent className="locationIcon" />
