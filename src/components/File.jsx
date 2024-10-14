@@ -15,6 +15,7 @@ import {
   addNewPageToNav,
   addBonusToNavNotEmpty,
   addBonusToNavIsEmpty,
+  focusBonusManyPages,
 } from "../utils/explorerHelperFunctions";
 
 function File(props) {
@@ -102,7 +103,15 @@ function File(props) {
       console.log("bonus page clicked");
 
       if (checkPageIsOpen(globalContext.navItems, props.name)) {
+        // on repeat click we set bonus in focus
+        // this means we have to disable and deactivate all other pages
         console.log("bonusPage is open");
+        focusBonusManyPages(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          globalContext.defaultPages,
+          globalContext.setDefaultPages
+        );
       } else {
         if (globalContext.navItems.length < 1) {
           console.log("no items in nav");

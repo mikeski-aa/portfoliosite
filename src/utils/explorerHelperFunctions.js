@@ -65,9 +65,43 @@ function addBonusToNavIsEmpty(defaultPages, setNavItems, input, navItems) {
   return setNavItems(copyNavItems);
 }
 
+// function to set bonus as active and disabling all other pages
+function focusBonusManyPages(
+  navItems,
+  setNavItems,
+  defaultPages,
+  setDefaultPages
+) {
+  const copyDefault = [...defaultPages];
+  const copyNavItems = [...navItems];
+
+  for (let x = 0; x < copyNavItems.length; x++) {
+    if (copyNavItems[x].name === "bonusPage.js") {
+      copyNavItems[x].active = true;
+    } else {
+      copyNavItems[x].active = false;
+    }
+  }
+  console.log("focusbonusmanypages");
+  console.log(copyNavItems);
+
+  setNavItems(copyNavItems);
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].name === "bonusPage.js") {
+      copyDefault[x].disabled = false;
+    } else {
+      copyDefault[x].disabled = true;
+    }
+  }
+  console.log(copyDefault);
+  setDefaultPages(copyDefault);
+}
+
 export {
   checkPageIsOpen,
   addNewPageToNav,
   addBonusToNavNotEmpty,
   addBonusToNavIsEmpty,
+  focusBonusManyPages,
 };
