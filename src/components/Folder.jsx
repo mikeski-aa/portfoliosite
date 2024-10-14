@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import Arrow from "../assets/arrow.svg?react";
 import File from "./File";
-import files from "../utils/files";
 import "../styles/folder.css";
 import { GlobalContext } from "../App";
 
@@ -71,6 +70,7 @@ function Folder(props) {
                 name={item.shortname}
                 type=".jsx"
                 nobonus={true}
+                refLink={item.refLink}
               />
             ))}
           </div>
