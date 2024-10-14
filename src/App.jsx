@@ -94,6 +94,51 @@ function App() {
     },
   ]);
 
+  // this is a temporary fix, which might become a pernament fix if I don't figure out a better solution
+  // I need a "default" directory of pages, however, with how refs are implemented, I cannot store this in an outside file
+  // this state is required in order to restore nav buttons and other items when they become closed
+  const [defaultPages, setDefaultPages] = useState([
+    {
+      name: "About_me.jsx",
+      active: true,
+      shortname: "About_me",
+      trueIndex: 0,
+      refLink: aboutRef,
+      visible: true,
+    },
+    {
+      name: "My_projects.jsx",
+      active: false,
+      shortname: "My_projects",
+      trueIndex: 1,
+      refLink: projectsRef,
+      visible: true,
+    },
+    {
+      name: "My_skills.jsx",
+      active: false,
+      shortname: "My_skills",
+      trueIndex: 2,
+      refLink: skillsRef,
+      visible: true,
+    },
+    {
+      name: "Contact_me.jsx",
+      active: false,
+      shortname: "Contact_me",
+      trueIndex: 3,
+      refLink: contactRef,
+      visible: true,
+    },
+    {
+      name: "bonusPage.js",
+      active: false,
+      shortname: "bonusPage",
+      trueIndex: 4,
+      visible: false,
+    },
+  ]);
+
   // using custom hook to check whether an area is in view and adjust text accordingly
   const aboutVisible = useInView(aboutRef, "0px");
   const projectsVisible = useInView(projectsRef, "0px");

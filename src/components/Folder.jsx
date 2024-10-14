@@ -69,7 +69,7 @@ function Folder(props) {
             {props.childThree}
           </button>
           <div className={`fileList ${childThreeStat} componentList`}>
-            <File name={"utils"} bonus={true} type=".js" />
+            <File name={"bonus"} bonus={true} type=".js" />
           </div>
         </div>
       </div>
