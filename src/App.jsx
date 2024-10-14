@@ -14,6 +14,7 @@ import {
 } from "./utils/helperStateUpdates";
 import BonusPage from "./components/BonusPage";
 import TerminalBox from "./components/TerminalBox";
+import AllTabsClosed from "./components/AllTabsClosed";
 
 export const GlobalContext = createContext();
 
@@ -119,7 +120,7 @@ function App() {
       shortname: "bonusPage",
       trueIndex: 4,
       visible: false,
-      disabled: false,
+      disabled: true,
     },
   ]);
 
@@ -192,7 +193,13 @@ function App() {
       >
         <div className="pageTest">
           <VertBar />
-          <div className={`mainTest ${sidebarStat}`}>
+          <div
+            className={
+              navItems.length < 1
+                ? `mainTest ${sidebarStat} hiddenheight`
+                : `mainTest ${sidebarStat}`
+            }
+          >
             <div
               className={navItems.length < 1 ? "headtest hidden" : "headtest"}
             >
@@ -247,8 +254,12 @@ function App() {
               >
                 <BonusPage bonusShow={bonusPageLarge} />
               </div>
+              {navItems.length < 1 ? (
+                <AllTabsClosed />
+              ) : (
+                <div className="blankSpacer"></div>
+              )}
 
-              <div className="blankSpacer"></div>
               <TerminalBox />
             </div>
           </div>
