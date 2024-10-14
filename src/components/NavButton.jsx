@@ -7,6 +7,7 @@ import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import { removeStateItem } from "../utils/helperStateUpdates";
 import { updateDisabledPagesState } from "../utils/helperStateUpdates";
 import { enablAllPages } from "../utils/helperStateUpdates";
+import checkForBonus from "../utils/checkForBonus";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -42,6 +43,14 @@ function NavButton(props) {
   };
 
   const handleCloseClick = () => {
+    // if we're about to close last tab and bonus page is still open, need to make sure it is in focus
+    // idea is to check if navItems contains bonus page, if it does we need to do some stuff.
+
+    if (globalContext.navItems.length === 2) {
+      if (checkForBonus(globalContext.navItems)) {
+        globalContext.setBonusPage(true);
+      }
+    }
     removeStateItem(
       globalContext.navItems,
       globalContext.setNavItems,
@@ -57,7 +66,11 @@ function NavButton(props) {
     // close not only the tab, but also stop displaying the page and return to regular "jsx" pages shown to user
     if (props.name === "bonusPage.js") {
       globalContext.setBonusPage(false);
-      enablAllPages(globalContext.defaultPages, globalContext.setDefaultPages);
+      enablAllPages(
+        globalContext.defaultPages,
+        globalContext.setDefaultPages,
+        globalContext.navItems
+      );
       return;
     }
   };

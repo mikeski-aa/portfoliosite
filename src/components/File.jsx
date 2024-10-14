@@ -57,7 +57,11 @@ function File(props) {
         return;
       }
       globalContext.setBonusPage(false);
-      enablAllPages(globalContext.defaultPages, globalContext.setDefaultPages);
+      enablAllPages(
+        globalContext.defaultPages,
+        globalContext.setDefaultPages,
+        globalContext.navItems
+      );
       smoothScroll(scrollRef);
       return console.log("found, ending the thingy here");
     }

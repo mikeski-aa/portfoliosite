@@ -188,7 +188,7 @@ function App() {
     // look into it
     if (bonusPage && e.target.innerText != "bonusPage.js") {
       setBonusPage(false);
-      enablAllPages(defaultPages, setDefaultPages);
+      enablAllPages(defaultPages, setDefaultPages, navItems);
       return helperClickStateUpdate(
         navItems,
         setNavItems,
@@ -222,6 +222,7 @@ function App() {
           defaultPages,
           setDefaultPages,
           setBonusPage,
+          bonusPage,
         }}
       >
         <div className="pageTest">

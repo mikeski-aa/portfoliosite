@@ -83,16 +83,34 @@ function disableAllPages(state, setState) {
   setState(stateCopy);
 }
 
-function enablAllPages(state, setState) {
-  const stateCopy = [...state];
+// this should not enable all pages, but only the pages that are current in navItems
 
-  for (let x = 0; x < stateCopy.length; x++) {
-    if (stateCopy[x].shortname === "bonusPage") {
-      stateCopy[x].disabled = true;
-    } else {
-      stateCopy[x].disabled = false;
+function enablAllPages(state, setState, activeState) {
+  const stateCopy = [...state];
+  const activeCopy = [...activeState];
+  let activeArray = [];
+
+  for (let x = 0; x < activeCopy.length; x++) {
+    if (activeCopy[x].name != "bonusPage.js") {
+      activeArray.push(activeCopy[x].name);
     }
   }
+
+  for (let x = 0; x < stateCopy.length; x++) {
+    for (let y = 0; y < activeArray.length; y++) {
+      if (stateCopy[x].name === activeArray[y]) {
+        stateCopy[x].disabled = false;
+      }
+    }
+  }
+
+  // for (let x = 0; x < stateCopy.length; x++) {
+  //   if (stateCopy[x].shortname === "bonusPage") {
+  //     stateCopy[x].disabled = true;
+  //   } else {
+  //     stateCopy[x].disabled = false;
+  //   }
+  // }
 
   setState(stateCopy);
 }
