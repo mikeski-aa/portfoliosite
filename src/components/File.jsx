@@ -14,6 +14,7 @@ import {
   checkPageIsOpen,
   addNewPageToNav,
   addBonusToNavNotEmpty,
+  addBonusToNavIsEmpty,
 } from "../utils/explorerHelperFunctions";
 
 function File(props) {
@@ -103,13 +104,23 @@ function File(props) {
       if (checkPageIsOpen(globalContext.navItems, props.name)) {
         console.log("bonusPage is open");
       } else {
-        console.log("bonus page is not open");
-        addBonusToNavNotEmpty(
-          globalContext.defaultPages,
-          globalContext.setNavItems,
-          props.name,
-          globalContext.navItems
-        );
+        if (globalContext.navItems.length < 1) {
+          console.log("no items in nav");
+          addBonusToNavIsEmpty(
+            globalContext.defaultPages,
+            globalContext.setNavItems,
+            props.name,
+            globalContext.navItems
+          );
+        } else {
+          console.log("bonus page is not open");
+          addBonusToNavNotEmpty(
+            globalContext.defaultPages,
+            globalContext.setNavItems,
+            props.name,
+            globalContext.navItems
+          );
+        }
       }
     } else {
       console.log("normal page clicked");

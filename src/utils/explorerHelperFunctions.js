@@ -46,4 +46,28 @@ function addBonusToNavNotEmpty(defaultPages, setNavItems, input, navItems) {
   return setNavItems(copyNavItems);
 }
 
-export { checkPageIsOpen, addNewPageToNav, addBonusToNavNotEmpty };
+// function to add bonus page to navItems and to set it as active
+function addBonusToNavIsEmpty(defaultPages, setNavItems, input, navItems) {
+  const copyDefault = [...defaultPages];
+  const copyNavItems = [...navItems];
+  let pageObject;
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].shortname === input) {
+      copyDefault[x].disabled = false;
+      copyDefault[x].active = true;
+      pageObject = copyDefault[x];
+    }
+  }
+
+  copyNavItems.push(pageObject);
+  console.log(copyNavItems);
+  return setNavItems(copyNavItems);
+}
+
+export {
+  checkPageIsOpen,
+  addNewPageToNav,
+  addBonusToNavNotEmpty,
+  addBonusToNavIsEmpty,
+};
