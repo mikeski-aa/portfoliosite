@@ -33,7 +33,6 @@ function NavButton(props) {
 
   // handle mouseover enter and exit, for toggling display of close button
   const handleMouseEnter = (e) => {
-    console.log(e.target.innerText);
     setMouseOver(true);
   };
 
@@ -42,9 +41,6 @@ function NavButton(props) {
   };
 
   const handleCloseClick = () => {
-    console.log("?????");
-    console.log(props.shortname, props.name);
-
     removeStateItem(
       globalContext.navItems,
       globalContext.setNavItems,

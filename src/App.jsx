@@ -22,11 +22,13 @@ export const GlobalContext = createContext();
 // users should be able to switch between bonus page and regular pages.. This won't be true to VScode behaviour but it is a cutesy feature
 // add an INTERACTIBLE terminal on the bottom of the page!
 // style for mobile as best as possible
-
 // bonus page needs to be rewritten in terms of activation
 
+// mobile styling needs to be figured out
+// probably need different images to load for mobile
+// warn users that to get the full experience they should use desktop
+
 function App() {
-  const [showAbout, setShowAbout] = useState(true);
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
   const [cPage, setCpage] = useState("About");
   const [activePage, setActivePage] = useState(0);
@@ -155,6 +157,7 @@ function App() {
   // handle nav click
   // not sure if this should live here or in nav bar...
   // might need to refactor
+  // this function living here is weird af.
   const handleNavClick = (e) => {
     if (e.target.innerText === "bonusPage.js") {
       return setBonusPageLarge(true);

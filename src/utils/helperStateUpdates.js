@@ -64,6 +64,7 @@ function updateDisabledPagesState(state, setState, input) {
 }
 
 export {
+  smoothScroll,
   helperScrollStateUpdate,
   helperClickStateUpdate,
   removeStateItem,

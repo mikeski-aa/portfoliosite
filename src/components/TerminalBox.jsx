@@ -7,6 +7,7 @@ import PlusIcon from "../assets/terminalicons/pluslargegrey.svg?react";
 import ArrowIcon from "../assets/arrow.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import TerminalParagraph from "./TerminalParagraph";
+import SplitHorizontal from "../assets/bwicons/split-horizontal.svg?react";
 import { useRef, useState } from "react";
 
 function TerminalBox(props) {
@@ -36,7 +37,6 @@ function TerminalBox(props) {
   };
 
   const handleTerminalTextClick = () => {
-    console.log("terminal box clicked");
     inputRef.current.focus();
   };
 
@@ -87,6 +87,9 @@ function TerminalBox(props) {
               <ArrowIcon className="terminalIcon down" />
             </button>
           </div>
+          <button className="terminalBtnDummy">
+            <SplitHorizontal className="terminalIcon" />
+          </button>
           <button className="terminalBtnDummy">
             <TrashIcon className="terminalIcon" />
           </button>

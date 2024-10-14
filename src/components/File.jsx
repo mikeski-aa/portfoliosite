@@ -3,7 +3,10 @@ import ReactIcon from "../assets/bwicons/react.svg?react";
 import JSIcon from "../assets/bwicons/yellowjs.svg?react";
 import { GlobalContext } from "../App";
 import { useContext } from "react";
-import { helperClickStateUpdate } from "../utils/helperStateUpdates";
+import {
+  helperClickStateUpdate,
+  smoothScroll,
+} from "../utils/helperStateUpdates";
 import bonusPage from "../utils/bonusPageScript";
 
 function File(props) {
@@ -18,24 +21,25 @@ function File(props) {
   // if page was closed, it should be reopened.
   // if a page is already opened, scroll down to it.
   // bonus handling also needs to be implemented here.
-  // this function will check whether the page clicked is already "opened"
-  // if it is not opened, the page will be added to active page state from default state
-  // this function might need to be moved and refactored in seperate JS file honestly
+  // important to re-set visible as true
   const handleItemClick = () => {
-    let shallowCopy = [...globalContext.navItems];
+    const shallowCopy = [...globalContext.navItems];
     const secondCopy = [...globalContext.defaultPages];
 
     let found = false;
+    let scrollRef;
     let objectHolder;
 
     for (let x = 0; x < shallowCopy.length; x++) {
       if (shallowCopy[x].shortname === props.name) {
         found = true;
+        scrollRef = shallowCopy[x].refLink;
       }
     }
 
     if (found) {
-      return;
+      smoothScroll(scrollRef);
+      return console.log("found, ending the thingy here");
     }
 
     // go through default objects and find the one we need
@@ -47,7 +51,16 @@ function File(props) {
     }
 
     shallowCopy.push(objectHolder);
+
     globalContext.setNavItems(shallowCopy);
+
+    // helperClickStateUpdate(
+    //   globalContext.navItems,
+    //   globalContext.setNavItems,
+    //   name,
+    //   globalContext.setCurrentPage,
+    //   globalContext.setCpage
+    // );
   };
 
   return (
