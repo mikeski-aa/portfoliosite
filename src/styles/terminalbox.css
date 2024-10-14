@@ -145,13 +145,22 @@
 .problemsText {
   color: white;
   font-size: 0.7rem;
+  height: 236px;
 }
 
 .outputDiv {
   width: 25px;
-  height: 18px;
+  height: 16px;
   margin-left: 10px;
   border-left: 3px solid #a5b0bb;
+}
+
+.outputContDiv {
+  height: 236px;
+}
+
+.debugDiv {
+  height: 236px;
 }
 
 .portText,
@@ -174,6 +183,10 @@
   cursor: pointer;
 }
 
+.portDiv {
+  height: 236px;
+}
+
 /* .terminalIcon:hover {
   background-color: grey;
   border-radius: 5px;
@@ -184,3 +197,7 @@
     height: 25vh;
   }
 } */
+
+.terminalspacer {
+  height: 20px;
+}

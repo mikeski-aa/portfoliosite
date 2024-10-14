@@ -109,8 +109,12 @@ function TerminalBox(props) {
           No problems have been detected in the workspace.
         </div>
       ) : null}
-      {active === 1 ? <div className="outputDiv">{""}</div> : null}
-      {active === 2 ? null : null}
+      {active === 1 ? (
+        <div className="outputContDiv">
+          <div className="outputDiv">{""}</div>
+        </div>
+      ) : null}
+      {active === 2 ? <div className="debugDiv"></div> : null}
       {active === 3 ? (
         <>
           {" "}
@@ -132,16 +136,17 @@ function TerminalBox(props) {
               ref={inputRef}
             ></input>
           </div>
+          <div className="terminalspacer"></div>
         </>
       ) : null}
       {active === 4 ? (
-        <>
+        <div className="portDiv">
           <div className="portText">
             No forwarded ports. Forward a port to access your running services
             locally.
           </div>
           <button className="portBox">Forward a port</button>
-        </>
+        </div>
       ) : null}
     </div>
   );
