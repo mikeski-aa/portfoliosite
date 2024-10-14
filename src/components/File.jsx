@@ -10,7 +10,10 @@ import {
 import bonusPage from "../utils/bonusPageScript";
 import { disableAllPages, enablAllPages } from "../utils/helperStateUpdates";
 import bonusActiveSet from "../utils/bonusActiveSet";
-import checkPageIsOpen from "../utils/checkPageIsOpen";
+import {
+  checkPageIsOpen,
+  addNewPageToNav,
+} from "../utils/explorerHelperFunctions";
 
 function File(props) {
   const globalContext = useContext(GlobalContext);
@@ -100,9 +103,17 @@ function File(props) {
       if (checkPageIsOpen(globalContext.navItems, props.name)) {
         // page exists already.
         // we can scroll to it directly
-        smoothScroll(props.refLink);
+        return smoothScroll(props.refLink);
       } else {
-        // page does NOT exist. It needs to be added to navItems so that we can re-render the header
+        // page is not open and  does NOT exist in navItems.
+        // It needs to be added to navItems so that we can re-render the header
+        console.log("setting new items");
+        addNewPageToNav(
+          globalContext.defaultPages,
+          globalContext.setNavItems,
+          props.name,
+          globalContext.navItems
+        );
       }
     }
   };
