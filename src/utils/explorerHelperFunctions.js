@@ -149,6 +149,25 @@ function disableBonusSetNewActive(
   setNavItems(copyNavItems);
 }
 
+// add new page but do not change focus from bonus
+function addNewPageWithBonus(defaultPages, setNavItems, input, navItems) {
+  const copyDefault = [...defaultPages];
+  const copyNavItems = [...navItems];
+  let pageObject;
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].shortname === input) {
+      // we need to copy the page and BUT WE DO NOT RE-ENABLE RIGHT NOW
+      copyDefault[x].disabled = true;
+      pageObject = copyDefault[x];
+    }
+  }
+
+  copyNavItems.push(pageObject);
+  console.log(copyNavItems);
+  return setNavItems(copyNavItems);
+}
+
 export {
   checkPageIsOpen,
   addNewPageToNav,
@@ -157,4 +176,5 @@ export {
   focusBonusManyPages,
   checkIfBonusActiveNow,
   disableBonusSetNewActive,
+  addNewPageWithBonus,
 };
