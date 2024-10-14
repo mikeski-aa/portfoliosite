@@ -161,6 +161,7 @@ function App() {
   // this function living here is weird af.
   const handleNavClick = (e) => {
     if (e.target.innerText === "bonusPage.js") {
+      console.log("XD");
       return setBonusPageLarge(true);
     }
 

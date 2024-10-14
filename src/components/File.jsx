@@ -38,6 +38,9 @@ function File(props) {
     }
 
     if (found) {
+      if (props.name === "bonusPage") {
+        return;
+      }
       smoothScroll(scrollRef);
       return console.log("found, ending the thingy here");
     }
