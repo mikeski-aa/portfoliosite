@@ -3,8 +3,11 @@ import ReactIconComponent from "../assets/icons/react.svg?react";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import Arrow from "../assets/arrow.svg?react";
 import "../styles/navbar.css";
+import { useState } from "react";
 
 function NavBar(props) {
+  const [mouseOver, setMouseOver] = useState("");
+
   // handle setting index data when tab is beggining to be dragged
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("index", index);
@@ -26,11 +29,12 @@ function NavBar(props) {
   };
 
   const handleMouseEnter = (e) => {
-    console.log(e.target);
+    console.log(e.target.innerText);
+    setMouseOver(e.target.innerText);
   };
 
   const handleMouseLeave = () => {
-    alert("mouse leave");
+    setMouseOver("");
   };
 
   return (
