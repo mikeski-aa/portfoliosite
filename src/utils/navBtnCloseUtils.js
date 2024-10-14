@@ -128,7 +128,14 @@ function closeBonusActive(
   setDefaultPages(copyDefault);
 }
 
-function closeBonusInactive() {}
+function closeBonusInactive(navItems, setNavItems, input) {
+  const copyNav = [...navItems];
+
+  // filter bonus out of the nav bar
+  const filteredNav = copyNav.filter((item) => item.name != input);
+
+  setNavItems(filteredNav);
+}
 
 export {
   manyPagesCloseOne,
@@ -136,4 +143,5 @@ export {
   checkIfBonusPresent,
   lastItemWithBonus,
   closeBonusActive,
+  closeBonusInactive,
 };

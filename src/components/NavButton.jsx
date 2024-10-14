@@ -16,6 +16,7 @@ import {
   deactivatePage,
   manyPagesCloseOne,
   closeBonusActive,
+  closeBonusInactive,
 } from "../utils/navBtnCloseUtils";
 import { checkIfBonusActiveNow } from "../utils/explorerHelperFunctions";
 
@@ -109,6 +110,11 @@ function NavButton(props) {
           );
         } else {
           console.log("bonus is inactive");
+          closeBonusInactive(
+            globalContext.navItems,
+            globalContext.setNavItems,
+            props.name
+          );
         }
       } else {
         console.log("more than 2 items in nav");

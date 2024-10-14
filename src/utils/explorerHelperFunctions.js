@@ -30,6 +30,7 @@ function addNewPageToNav(defaultPages, setNavItems, input, navItems) {
 }
 
 // function to add bonus page to navItems
+// bonus should NOT be active in this case!
 function addBonusToNavNotEmpty(defaultPages, setNavItems, input, navItems) {
   const copyDefault = [...defaultPages];
   const copyNavItems = [...navItems];
@@ -37,6 +38,7 @@ function addBonusToNavNotEmpty(defaultPages, setNavItems, input, navItems) {
 
   for (let x = 0; x < copyDefault.length; x++) {
     if (copyDefault[x].shortname === input) {
+      copyDefault[x].active = false;
       pageObject = copyDefault[x];
     }
   }
