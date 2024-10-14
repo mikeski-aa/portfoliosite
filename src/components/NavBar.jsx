@@ -20,6 +20,7 @@ function NavBar(props) {
             name={item.name}
             active={item.active}
             shortname={item.shortname}
+            refLink={item.refLink}
           />
         ))}
       </div>

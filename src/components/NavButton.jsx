@@ -4,7 +4,7 @@ import { GlobalContext } from "../App";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
-import { removeStateItem } from "../utils/helperStateUpdates";
+import { removeStateItem, smoothScroll } from "../utils/helperStateUpdates";
 import { updateDisabledPagesState } from "../utils/helperStateUpdates";
 import { enablAllPages } from "../utils/helperStateUpdates";
 import checkForBonus from "../utils/checkForBonus";
@@ -18,7 +18,11 @@ import {
   closeBonusActive,
   closeBonusInactive,
 } from "../utils/navBtnCloseUtils";
-import { checkIfBonusActiveNow } from "../utils/explorerHelperFunctions";
+import {
+  checkIfBonusActiveNow,
+  disableBonusSetNewActive,
+  focusBonusManyPages,
+} from "../utils/explorerHelperFunctions";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -159,6 +163,40 @@ function NavButton(props) {
     }
   };
 
+  // rewriting click handler here...
+  const handleClickNav = (e) => {
+    if (e.target.innerText === "bonusPage.js") {
+      console.log("bonusPage clicked");
+      if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+        console.log("bonus is active");
+        return null;
+      } else {
+        console.log("bonus is inactive");
+        focusBonusManyPages(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          globalContext.defaultPages,
+          globalContext.setDefaultPages
+        );
+      }
+    } else {
+      console.log("normal page clicked");
+      if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+        console.log("bonus is active");
+        disableBonusSetNewActive(
+          globalContext.navItems,
+          globalContext.setNavItems,
+          globalContext.defaultPages,
+          globalContext.setDefaultPages,
+          props.shortname
+        );
+      } else {
+        console.log("bonus is inactive");
+        smoothScroll(props.refLink);
+      }
+    }
+  };
+
   return (
     <div
       className={`navBtnDiv ${props.active}`}
@@ -168,7 +206,7 @@ function NavButton(props) {
       <button
         className={`navBtn ${props.active}`}
         draggable
-        onClick={(e) => globalContext.handleNavClick(e)}
+        onClick={(e) => handleClickNav(e)}
         onDragStart={(e) => handleDragStart(e, props.index)}
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, props.index)}
