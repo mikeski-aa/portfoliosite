@@ -166,3 +166,7 @@ h2:hover {
     font-size: 0.88rem;
   }
 }
+
+.sectionDiv.hidden {
+  display: none;
+}

@@ -6,14 +6,6 @@ import ExportLine from "./ExportLine";
 import CodeComponent from "./CodeComponent";
 
 function AboutMe(props) {
-  const handleAboutShow = () => {
-    if (props.showAbout === false) {
-      props.setShowAbout(true);
-    } else {
-      props.setShowAbout(false);
-    }
-  };
-
   return (
     <div className="aboutMeComponent">
       <CodeComponent

@@ -23,6 +23,8 @@ export const GlobalContext = createContext();
 // add an INTERACTIBLE terminal on the bottom of the page!
 // style for mobile as best as possible
 
+// bonus page needs to be rewritten in terms of activation
+
 function App() {
   const [showAbout, setShowAbout] = useState(true);
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
@@ -67,6 +69,28 @@ function App() {
       trueIndex: 3,
       refLink: contactRef,
       visible: true,
+    },
+  ]);
+  const [disabledPages, setDisabledPages] = useState([
+    {
+      name: "About",
+      disabled: false,
+    },
+    {
+      name: "Projects",
+      disabled: false,
+    },
+    {
+      name: "Skills",
+      disabled: false,
+    },
+    {
+      name: "Contact",
+      disabled: false,
+    },
+    {
+      name: "Bonus",
+      disabled: true,
     },
   ]);
 
@@ -132,6 +156,8 @@ function App() {
           bonusPage,
           setBonusPage,
           handleNavClick,
+          disabledPages,
+          setDisabledPages,
         }}
       >
         <div className="pageTest">
@@ -149,15 +175,15 @@ function App() {
             <div className={`mainCont ${sidebarStat}`}>
               <div
                 className={
-                  activePage === 0 ? "sectionDiv true" : "sectionDiv false"
+                  disabledPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={aboutRef}
               >
-                <AboutMe showAbout={showAbout} setShowAbout={setShowAbout} />
+                <AboutMe />
               </div>
               <div
                 className={
-                  activePage === 1 ? "sectionDiv true" : "sectionDiv false"
+                  disabledPages[1].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={projectsRef}
               >
@@ -165,7 +191,7 @@ function App() {
               </div>
               <div
                 className={
-                  activePage === 2 ? "sectionDiv true" : "sectionDiv false"
+                  disabledPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={skillsRef}
               >
@@ -173,13 +199,20 @@ function App() {
               </div>
               <div
                 className={
-                  activePage === 3 ? "sectionDiv true" : "sectionDiv false"
+                  disabledPages[3].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={contactRef}
               >
                 <ContactMe />
               </div>
-              <BonusPage bonusShow={bonusPageLarge} />
+              <div
+                className={
+                  disabledPages[4].disabled ? "sectionDiv hidden" : "sectionDiv"
+                }
+              >
+                <BonusPage bonusShow={bonusPageLarge} />
+              </div>
+
               <div className="blankSpacer"></div>
               <TerminalBox />
             </div>
