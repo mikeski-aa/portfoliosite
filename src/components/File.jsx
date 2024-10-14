@@ -97,6 +97,18 @@ function File(props) {
   const handleItemClickRewrite = () => {
     if (props.name === "bonusPage") {
       console.log("bonus page clicked");
+
+      if (checkPageIsOpen(globalContext.navItems, props.name)) {
+        console.log("bonusPage is open");
+      } else {
+        console.log("bonus page is not open");
+        addNewPageToNav(
+          globalContext.defaultPages,
+          globalContext.setNavItems,
+          props.name,
+          globalContext.navItems
+        );
+      }
     } else {
       console.log("normal page clicked");
       // first we need to check if the page already exists or not

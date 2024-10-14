@@ -159,6 +159,8 @@ function App() {
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
+  // this function is breaking my entire fkn application it NEEDS TO BE FIXED!!!!!
+
   // handle nav click
   // not sure if this should live here or in nav bar...
   // might need to refactor

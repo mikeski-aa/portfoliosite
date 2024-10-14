@@ -48,12 +48,12 @@ function NavButton(props) {
     // if we're about to close last tab and bonus page is still open, need to make sure it is in focus
     // idea is to check if navItems contains bonus page, if it does we need to do some stuff.
 
-    if (globalContext.navItems.length === 2) {
-      if (checkForBonus(globalContext.navItems)) {
-        globalContext.setBonusPage(true);
-        bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
-      }
-    }
+    // if (globalContext.navItems.length === 2) {
+    //   if (checkForBonus(globalContext.navItems)) {
+    //     globalContext.setBonusPage(true);
+    //     bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
+    //   }
+    // }
     removeStateItem(
       globalContext.navItems,
       globalContext.setNavItems,
