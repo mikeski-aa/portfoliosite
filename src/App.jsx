@@ -221,6 +221,7 @@ function App() {
           handleNavClick,
           defaultPages,
           setDefaultPages,
+          setBonusPage,
         }}
       >
         <div className="pageTest">

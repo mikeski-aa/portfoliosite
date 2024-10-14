@@ -6,6 +6,7 @@ import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import { removeStateItem } from "../utils/helperStateUpdates";
 import { updateDisabledPagesState } from "../utils/helperStateUpdates";
+import { enablAllPages } from "../utils/helperStateUpdates";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -52,6 +53,13 @@ function NavButton(props) {
       globalContext.setDefaultPages,
       props.shortname
     );
+
+    // close not only the tab, but also stop displaying the page and return to regular "jsx" pages shown to user
+    if (props.name === "bonusPage.js") {
+      globalContext.setBonusPage(false);
+      enablAllPages(globalContext.defaultPages, globalContext.setDefaultPages);
+      return;
+    }
   };
 
   return (
