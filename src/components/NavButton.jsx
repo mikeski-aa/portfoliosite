@@ -11,6 +11,7 @@ import checkForBonus from "../utils/checkForBonus";
 import bonusActiveSet from "../utils/bonusActiveSet";
 import deactivateBonusPage from "../utils/deactivateBonusPage";
 import {
+  lastItemWithBonus,
   checkIfBonusPresent,
   deactivatePage,
   manyPagesCloseOne,
@@ -115,6 +116,13 @@ function NavButton(props) {
       console.log("less than 2 items detected - warning!");
       if (checkIfBonusPresent(globalContext.navItems)) {
         console.log("bonus present!");
+        lastItemWithBonus(
+          globalContext.defaultPages,
+          globalContext.setDefaultPages,
+          globalContext.navItems,
+          globalContext.setNavItems,
+          props.name
+        );
       } else {
         console.log("bonus is not present all good");
         manyPagesCloseOne(

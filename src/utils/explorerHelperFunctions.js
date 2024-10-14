@@ -29,4 +29,21 @@ function addNewPageToNav(defaultPages, setNavItems, input, navItems) {
   return setNavItems(copyNavItems);
 }
 
-export { checkPageIsOpen, addNewPageToNav };
+// function to add bonus page to navItems
+function addBonusToNavNotEmpty(defaultPages, setNavItems, input, navItems) {
+  const copyDefault = [...defaultPages];
+  const copyNavItems = [...navItems];
+  let pageObject;
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].shortname === input) {
+      pageObject = copyDefault[x];
+    }
+  }
+
+  copyNavItems.push(pageObject);
+  console.log(copyNavItems);
+  return setNavItems(copyNavItems);
+}
+
+export { checkPageIsOpen, addNewPageToNav, addBonusToNavNotEmpty };

@@ -13,6 +13,7 @@ import bonusActiveSet from "../utils/bonusActiveSet";
 import {
   checkPageIsOpen,
   addNewPageToNav,
+  addBonusToNavNotEmpty,
 } from "../utils/explorerHelperFunctions";
 
 function File(props) {
@@ -103,7 +104,7 @@ function File(props) {
         console.log("bonusPage is open");
       } else {
         console.log("bonus page is not open");
-        addNewPageToNav(
+        addBonusToNavNotEmpty(
           globalContext.defaultPages,
           globalContext.setNavItems,
           props.name,

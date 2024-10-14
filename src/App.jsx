@@ -286,7 +286,7 @@ function App() {
               </div>
 
               {navItems.length < 1 ? <AllTabsClosed /> : null}
-              {bonusPage ? <BonusPage /> : null}
+              {!defaultPages[4].disabled ? <BonusPage /> : null}
 
               <TerminalBox />
             </div>
