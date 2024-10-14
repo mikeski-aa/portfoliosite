@@ -246,9 +246,6 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
-              {/* <div className="redboxtest" onClick={testonclick}>
-                {" "}
-              </div> */}
               <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"

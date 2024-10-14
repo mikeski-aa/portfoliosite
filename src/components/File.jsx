@@ -23,6 +23,11 @@ function File(props) {
   // if a page is already opened, scroll down to it.
   // bonus handling also needs to be implemented here.
   // important to re-set visible as true
+
+  // there is an issue when clicking on components
+  // issue occurs if everything is closed except bonus page
+  // probably not resetting visibility for bonus page correctly at one point or another
+  // start there and look into it
   const handleItemClick = () => {
     const shallowCopy = [...globalContext.navItems];
     const secondCopy = [...globalContext.defaultPages];
