@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Arrow from "../assets/arrow.svg?react";
 import File from "./File";
 import files from "../utils/files";
 import "../styles/folder.css";
+import { GlobalContext } from "../App";
 
 function Folder(props) {
   const [rootStat, setFolderStat] = useState(false);
   const [childOneStat, setChildOneStat] = useState(false);
   const [childTwoStat, setChildTwoStat] = useState(false);
   const [childThreeStat, setChildThreeStat] = useState(false);
+  const globalContext = useContext(GlobalContext);
 
   const handleOuterClick = () => {
     if (rootStat) {
@@ -60,8 +62,16 @@ function Folder(props) {
             {props.childTwo}
           </button>
           <div className={`fileList ${childTwoStat} componentList`}>
-            {files.map((item, index) => (
+            {/* {files.map((item, index) => (
               <File key={index} name={item.name} type=".jsx" />
+            ))} */}
+            {globalContext.defaultPages.map((item, index) => (
+              <File
+                key={index}
+                name={item.shortname}
+                type=".jsx"
+                nobonus={true}
+              />
             ))}
           </div>
           <button className="folderBtn btnThree" onClick={handleChildThree}>
@@ -69,7 +79,7 @@ function Folder(props) {
             {props.childThree}
           </button>
           <div className={`fileList ${childThreeStat} componentList`}>
-            <File name={"bonus"} bonus={true} type=".js" />
+            <File name={"bonus"} bonus={true} type=".js" nobonus={false} />
           </div>
         </div>
       </div>

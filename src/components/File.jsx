@@ -10,15 +10,20 @@ function File(props) {
   const globalContext = useContext(GlobalContext);
   const name = props.name + `.jsx`;
 
+  // prevent rendering of bonus in components folder
+  if (props.nobonus && props.name === "bonusPage") {
+    return null;
+  }
+
   const handleItemClick = () => {
-    if (props.bonus) {
-      return bonusPage(
-        globalContext.navItems,
-        globalContext.setNavItems,
-        globalContext.bonusPage,
-        globalContext.setBonusPage
-      );
-    }
+    // if (props.bonus) {
+    //   return bonusPage(
+    //     globalContext.navItems,
+    //     globalContext.setNavItems,
+    //     globalContext.bonusPage,
+    //     globalContext.setBonusPage
+    //   );
+    // }
 
     helperClickStateUpdate(
       globalContext.navItems,

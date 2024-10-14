@@ -50,7 +50,7 @@ function updateDisabledPagesState(state, setState, input) {
   const copyItems = [...state];
 
   for (let x = 0; x < copyItems.length; x++) {
-    if (copyItems[x].name === input) {
+    if (copyItems[x].shortname === input) {
       copyItems[x].disabled = true;
     }
   }

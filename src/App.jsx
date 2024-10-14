@@ -71,28 +71,28 @@ function App() {
       visible: true,
     },
   ]);
-  const [disabledPages, setDisabledPages] = useState([
-    {
-      name: "About_me",
-      disabled: false,
-    },
-    {
-      name: "My_projects",
-      disabled: false,
-    },
-    {
-      name: "My_skills",
-      disabled: false,
-    },
-    {
-      name: "Contact_me",
-      disabled: false,
-    },
-    {
-      name: "Bonus",
-      disabled: true,
-    },
-  ]);
+  // const [disabledPages, setDisabledPages] = useState([
+  //   {
+  //     name: "About_me",
+  //     disabled: false,
+  //   },
+  //   {
+  //     name: "My_projects",
+  //     disabled: false,
+  //   },
+  //   {
+  //     name: "My_skills",
+  //     disabled: false,
+  //   },
+  //   {
+  //     name: "Contact_me",
+  //     disabled: false,
+  //   },
+  //   {
+  //     name: "Bonus",
+  //     disabled: true,
+  //   },
+  // ]);
 
   // this is a temporary fix, which might become a pernament fix if I don't figure out a better solution
   // I need a "default" directory of pages, however, with how refs are implemented, I cannot store this in an outside file
@@ -105,6 +105,7 @@ function App() {
       trueIndex: 0,
       refLink: aboutRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "My_projects.jsx",
@@ -113,6 +114,7 @@ function App() {
       trueIndex: 1,
       refLink: projectsRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "My_skills.jsx",
@@ -121,6 +123,7 @@ function App() {
       trueIndex: 2,
       refLink: skillsRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "Contact_me.jsx",
@@ -129,6 +132,7 @@ function App() {
       trueIndex: 3,
       refLink: contactRef,
       visible: true,
+      disabled: false,
     },
     {
       name: "bonusPage.js",
@@ -136,6 +140,7 @@ function App() {
       shortname: "bonusPage",
       trueIndex: 4,
       visible: false,
+      disabled: false,
     },
   ]);
 
@@ -201,8 +206,8 @@ function App() {
           bonusPage,
           setBonusPage,
           handleNavClick,
-          disabledPages,
-          setDisabledPages,
+          defaultPages,
+          setDefaultPages,
         }}
       >
         <div className="pageTest">
@@ -220,7 +225,7 @@ function App() {
             <div className={`mainCont ${sidebarStat}`}>
               <div
                 className={
-                  disabledPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={aboutRef}
               >
@@ -228,7 +233,7 @@ function App() {
               </div>
               <div
                 className={
-                  disabledPages[1].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[1].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={projectsRef}
               >
@@ -236,7 +241,7 @@ function App() {
               </div>
               <div
                 className={
-                  disabledPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={skillsRef}
               >
@@ -244,7 +249,7 @@ function App() {
               </div>
               <div
                 className={
-                  disabledPages[3].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[3].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={contactRef}
               >
@@ -252,7 +257,7 @@ function App() {
               </div>
               <div
                 className={
-                  disabledPages[4].disabled ? "sectionDiv hidden" : "sectionDiv"
+                  defaultPages[4].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
               >
                 <BonusPage bonusShow={bonusPageLarge} />

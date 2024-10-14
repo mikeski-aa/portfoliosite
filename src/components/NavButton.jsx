@@ -52,8 +52,8 @@ function NavButton(props) {
     );
 
     updateDisabledPagesState(
-      globalContext.disabledPages,
-      globalContext.setDisabledPages,
+      globalContext.defaultPages,
+      globalContext.setDefaultPages,
       props.shortname
     );
   };
