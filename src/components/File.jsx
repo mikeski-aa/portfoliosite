@@ -22,7 +22,6 @@ function File(props) {
   // if it is not opened, the page will be added to active page state from default state
   // this function might need to be moved and refactored in seperate JS file honestly
   const handleItemClick = () => {
-    console.log(globalContext.navItems);
     let shallowCopy = [...globalContext.navItems];
     const secondCopy = [...globalContext.defaultPages];
 
@@ -36,7 +35,7 @@ function File(props) {
     }
 
     if (found) {
-      return console.log("found, ending the thingy here");
+      return;
     }
 
     // go through default objects and find the one we need

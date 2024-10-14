@@ -169,10 +169,6 @@ function App() {
     );
   };
 
-  const testonclick = () => {
-    console.log(navItems);
-  };
-
   return (
     <div className="page">
       <GlobalContext.Provider
