@@ -24,14 +24,26 @@ function NavBar(props) {
         ))}
       </div>
       <div className="appLocation">
+        {props.currentPage === "bonusPage.js" ? (
+          <div className="fileLoc">
+            {"src"}
+            <Arrow className="smallIcon arrow" />
+            {"bonus"}
+            <Arrow className="smallIcon arrow" />
+          </div>
+        ) : (
+          <div className="fileLoc">
+            {"src"}
+            <Arrow className="smallIcon arrow" />
+            {"components"}
+            <Arrow className="smallIcon arrow" />
+          </div>
+        )}
+
         <div className="fileLoc">
-          {"src"}
-          <Arrow className="smallIcon arrow" />
-          {"components"}
-          <Arrow className="smallIcon arrow" />
-        </div>
-        <div className="fileLoc">
-          {props.name === "bonusPage.js" ? null : (
+          {props.currentPage === "bonusPage.js" ? (
+            <JSIconComponent className="smallIcon" />
+          ) : (
             <ReactIconComponent className="smallIcon" />
           )}{" "}
           {props.currentPage} <Arrow className="smallIcon arrow" />
