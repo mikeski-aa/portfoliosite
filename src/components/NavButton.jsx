@@ -8,6 +8,7 @@ import { removeStateItem } from "../utils/helperStateUpdates";
 import { updateDisabledPagesState } from "../utils/helperStateUpdates";
 import { enablAllPages } from "../utils/helperStateUpdates";
 import checkForBonus from "../utils/checkForBonus";
+import bonusActiveSet from "../utils/bonusActiveSet";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -49,6 +50,7 @@ function NavButton(props) {
     if (globalContext.navItems.length === 2) {
       if (checkForBonus(globalContext.navItems)) {
         globalContext.setBonusPage(true);
+        bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
       }
     }
     removeStateItem(
