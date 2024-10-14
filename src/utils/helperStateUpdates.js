@@ -39,4 +39,12 @@ function helperClickStateUpdate(state, setState, input, setCurr, setShortCurr) {
   setState(copyItems);
 }
 
-export { helperScrollStateUpdate, helperClickStateUpdate };
+function removeStateItem(state, setState, input) {
+  const copyItems = [...state];
+  const filteredItems = copyItems.filter((item) => item.name != input);
+
+  console.log(filteredItems);
+  setState(filteredItems);
+}
+
+export { helperScrollStateUpdate, helperClickStateUpdate, removeStateItem };
