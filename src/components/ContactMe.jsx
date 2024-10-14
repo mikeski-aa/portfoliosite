@@ -17,6 +17,19 @@ function ContactMe() {
       <div className="contactMeTitle">
         <h2>Contact_me</h2>
       </div>
+      <div className="contactMeBlurb">
+        <div className="innerContactDiv">
+          <div className="contactBlurb lone">
+            <span className="fcnStyle">Are you</span> interested in
+            collaborating together or have any questions about this or any other
+            of my projects?
+          </div>
+          <div className="contactBlurb ltwo">
+            Don't hesitate! <span className="brackStyle">Get in touch</span>{" "}
+            with me via any of the following:
+          </div>
+        </div>
+      </div>
       <div className="contactMeDiv">
         {contact.map((item, index) => (
           <ContactBox key={index} name={item.name} />

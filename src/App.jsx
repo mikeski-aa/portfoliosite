@@ -282,11 +282,7 @@ function App() {
                 <ContactMe />
               </div>
 
-              {navItems.length < 1 ? (
-                <AllTabsClosed />
-              ) : (
-                <div className="blankSpacer"></div>
-              )}
+              {navItems.length < 1 ? <AllTabsClosed /> : null}
               {bonusPage ? <BonusPage /> : null}
 
               <TerminalBox />
