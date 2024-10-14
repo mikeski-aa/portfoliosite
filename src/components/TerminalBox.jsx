@@ -7,7 +7,7 @@ import PlusIcon from "../assets/terminalicons/pluslargegrey.svg?react";
 import ArrowIcon from "../assets/arrow.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import TerminalParagraph from "./TerminalParagraph";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function TerminalBox(props) {
   const [messages, setMessages] = useState([
@@ -17,7 +17,7 @@ function TerminalBox(props) {
   ]);
   const [input, setInput] = useState("");
   const [active, setActive] = useState(3);
-
+  const inputRef = useRef(null);
   const handleInputChange = (e) => {
     setInput(e.target.value);
   };
@@ -33,6 +33,11 @@ function TerminalBox(props) {
 
   const handleBtnClick = (input) => {
     setActive(input);
+  };
+
+  const handleTerminalTextClick = () => {
+    console.log("terminal box clicked");
+    inputRef.current.focus();
   };
 
   return (
@@ -106,7 +111,10 @@ function TerminalBox(props) {
       {active === 3 ? (
         <>
           {" "}
-          <div className="mainTerminalTextbox">
+          <div
+            className="mainTerminalTextbox"
+            onClick={handleTerminalTextClick}
+          >
             {messages.map((item, index) => (
               <TerminalParagraph key={index} text={item} />
             ))}
@@ -118,6 +126,8 @@ function TerminalBox(props) {
               value={input}
               onKeyDown={(e) => handleKeyPress(e)}
               onChange={(e) => handleInputChange(e)}
+              autoFocus
+              ref={inputRef}
             ></input>
           </div>
         </>
