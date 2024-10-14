@@ -29,13 +29,21 @@ function File(props) {
   // issue occurs if everything is closed except bonus page
   // probably not resetting visibility for bonus page correctly at one point or another
   // start there and look into it
+  // this function is illegal it needs to be rewritten
   const handleItemClick = () => {
     const shallowCopy = [...globalContext.navItems];
     const secondCopy = [...globalContext.defaultPages];
+    console.log("handleitemclick shallow copy:  ");
+    console.log(shallowCopy);
 
     let found = false;
     let scrollRef;
     let objectHolder;
+
+    if (globalContext.navItems.length === 0 && props.name === "bonusPage") {
+      globalContext.setBonusPage(true);
+      bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
+    }
 
     for (let x = 0; x < shallowCopy.length; x++) {
       if (shallowCopy[x].shortname === props.name) {
@@ -44,6 +52,10 @@ function File(props) {
       }
     }
 
+    // weird bug where state is being introduced as bonusPage.js
+    console.log("here test");
+
+    // this means that the object we clicked in the explorer bar already exists as a tab
     if (found) {
       if (props.name === "bonusPage") {
         console.log("FOUND AND NAME IS BP");
@@ -72,25 +84,17 @@ function File(props) {
       return console.log("found, ending the thingy here");
     }
 
-    // go through default objects and find the one we need
+    // go through default objects and find the one we need in order to add a new tab
     for (let x = 0; x < secondCopy.length; x++) {
       if (secondCopy[x].shortname === props.name) {
         secondCopy[x].disabled = false;
         objectHolder = secondCopy[x];
       }
     }
-
+    console.log("here test2" + props.name);
+    console.log(shallowCopy);
     shallowCopy.push(objectHolder);
-
     globalContext.setNavItems(shallowCopy);
-
-    // helperClickStateUpdate(
-    //   globalContext.navItems,
-    //   globalContext.setNavItems,
-    //   name,
-    //   globalContext.setCurrentPage,
-    //   globalContext.setCpage
-    // );
   };
 
   return (

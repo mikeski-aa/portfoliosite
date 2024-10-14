@@ -85,23 +85,32 @@ function disableAllPages(state, setState) {
 }
 
 // this should not enable all pages, but only the pages that are current in navItems
-
+// this is pressed when bonusPage button is closed on the bar
 function enablAllPages(state, setState, activeState) {
   const stateCopy = [...state];
   const activeCopy = [...activeState];
   let activeArray = [];
 
+  // creates a new array of all pages that are "open"
   for (let x = 0; x < activeCopy.length; x++) {
     if (activeCopy[x].name != "bonusPage.js") {
       activeArray.push(activeCopy[x].name);
     }
   }
 
+  // this compares two arrays, disabling all copies that are not currently visible
   for (let x = 0; x < stateCopy.length; x++) {
     for (let y = 0; y < activeArray.length; y++) {
       if (stateCopy[x].name === activeArray[y]) {
         stateCopy[x].disabled = false;
       }
+    }
+  }
+
+  // enable all pages is only called when closing bonusPage.js
+  for (let x = 0; x < stateCopy.length; x++) {
+    if ((stateCopy[x].name = "bonusPage.js")) {
+      stateCopy[x].active = false;
     }
   }
 

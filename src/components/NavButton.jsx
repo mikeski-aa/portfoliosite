@@ -9,6 +9,7 @@ import { updateDisabledPagesState } from "../utils/helperStateUpdates";
 import { enablAllPages } from "../utils/helperStateUpdates";
 import checkForBonus from "../utils/checkForBonus";
 import bonusActiveSet from "../utils/bonusActiveSet";
+import deactivateBonusPage from "../utils/deactivateBonusPage";
 
 function NavButton(props) {
   const [mouseOver, setMouseOver] = useState(false);
@@ -73,6 +74,10 @@ function NavButton(props) {
         globalContext.setDefaultPages,
         globalContext.navItems
       );
+      // deactivateBonusPage(
+      //   globalContext.defaultPages,
+      //   globalContext.setDefaultPages
+      // );
       return;
     }
   };
