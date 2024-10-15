@@ -110,7 +110,10 @@ function closeBonusActive(
   // filter bonus out of the nav bar
   const filteredNav = copyNav.filter((item) => item.name != input);
   // set a new active page
-  filteredNav[0].active = true;
+
+  if (filteredNav.length >= 1) {
+    filteredNav[0].active = true;
+  }
 
   setNavItems(filteredNav);
 
@@ -137,6 +140,82 @@ function closeBonusInactive(navItems, setNavItems, input) {
   setNavItems(filteredNav);
 }
 
+// close last window if it is only the bonus item
+function closeOnlyActiveBonus(
+  defaultPages,
+  setDefaultPages,
+  navItems,
+  setNavItems,
+  input
+) {
+  const copyNav = [...navItems];
+  const copyDefault = [...defaultPages];
+
+  // filter bonus out of the nav bar
+  const filteredNav = copyNav.filter((item) => item.name != input);
+  // set a new active page
+
+  setNavItems(filteredNav);
+
+  // disable bonus page. enable clicked page. also needs to enable other pages if they are open!
+  // double for loop is terrible but I am struggling to do it otherwise with the current setup of these states
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].name === "bonusPage.js") {
+      copyDefault[x].disabled = true;
+    } else if (copyDefault[x].name === filteredNav[0].name) {
+      copyDefault[x].disabled = false;
+    }
+  }
+  setDefaultPages(copyDefault);
+}
+
+// only bonus is open, need to only close it
+function onlyBonusOpenClose(
+  defaultPages,
+  setDefaultPages,
+  navItems,
+  setNavItems,
+  input
+) {
+  const copyNav = [...navItems];
+  const copyDefault = [...defaultPages];
+
+  const filteredNav = copyNav.filter((item) => item.name != input);
+  // set a new active page
+
+  setNavItems(filteredNav);
+
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].name === "bonusPage.js") {
+      copyDefault[x].disabled = true;
+    }
+  }
+  setDefaultPages(copyDefault);
+}
+
+// two pages open, bonus is inactive, close other page, set bonus
+function closeNormalSetBonus(
+  defaultPages,
+  setDefaultPages,
+  navItems,
+  setNavItems,
+  input
+) {
+  const copyNav = [...navItems];
+  const copyDefault = [...defaultPages];
+
+  const filteredNav = copyNav.filter((item) => item.name != input);
+  // set a new active page
+
+  setNavItems(filteredNav);
+  for (let x = 0; x < copyDefault.length; x++) {
+    if (copyDefault[x].name === "bonusPage.js") {
+      copyDefault[x].disabled = false;
+    }
+  }
+  setDefaultPages(copyDefault);
+}
+
 export {
   manyPagesCloseOne,
   deactivatePage,
@@ -144,4 +223,7 @@ export {
   lastItemWithBonus,
   closeBonusActive,
   closeBonusInactive,
+  closeOnlyActiveBonus,
+  onlyBonusOpenClose,
+  closeNormalSetBonus,
 };

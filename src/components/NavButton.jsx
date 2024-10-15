@@ -17,6 +17,9 @@ import {
   manyPagesCloseOne,
   closeBonusActive,
   closeBonusInactive,
+  closeOnlyActiveBonus,
+  onlyBonusOpenClose,
+  closeNormalSetBonus,
 } from "../utils/navBtnCloseUtils";
 import {
   checkIfBonusActiveNow,
@@ -105,14 +108,36 @@ function NavButton(props) {
       console.log("less than 2 items detected - warning!");
       if (checkIfBonusPresent(globalContext.navItems)) {
         if (checkIfBonusActiveNow(globalContext.defaultPages)) {
-          console.log("bonus active & present & 2 windows open");
-          closeBonusActive(
-            globalContext.defaultPages,
-            globalContext.setDefaultPages,
-            globalContext.navItems,
-            globalContext.setNavItems,
-            props.name
-          );
+          if (globalContext.navItems.length === 2) {
+            if (props.name != "bonusPage.js") {
+              console.log("bonusPage not clicked");
+              closeNormalSetBonus(
+                globalContext.defaultPages,
+                globalContext.setDefaultPages,
+                globalContext.navItems,
+                globalContext.setNavItems,
+                props.name
+              );
+            } else {
+              console.log("bonus active & present & 2< windows open");
+              closeOnlyActiveBonus(
+                globalContext.defaultPages,
+                globalContext.setDefaultPages,
+                globalContext.navItems,
+                globalContext.setNavItems,
+                props.name
+              );
+            }
+          } else {
+            onlyBonusOpenClose(
+              globalContext.defaultPages,
+              globalContext.setDefaultPages,
+              globalContext.navItems,
+              globalContext.setNavItems,
+              props.name
+            );
+            console.log("only bonus active");
+          }
         } else {
           console.log("bonus present but inactive");
           lastItemWithBonus(

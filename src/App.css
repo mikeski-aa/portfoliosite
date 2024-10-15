@@ -175,6 +175,8 @@ h2:hover {
 
 .sectionDiv.hidden {
   display: none;
+  /* opacity: 0;
+  height: 0; */
   /* visibility:;
   height: 0px;
   margin: 0;
