@@ -157,6 +157,7 @@ function NavButton(props) {
           );
           globalContext.setCurrentPage("bonusPage.js");
           globalContext.setCpage("bonusPage");
+          globalContext.setActivePage("four");
         }
       } else {
         console.log("bonus is not present all good");
@@ -191,6 +192,7 @@ function NavButton(props) {
         );
         globalContext.setCurrentPage("bonusPage.js");
         globalContext.setCpage("bonusPage");
+        globalContext.setActivePage("four");
       }
     } else {
       console.log("normal page clicked");

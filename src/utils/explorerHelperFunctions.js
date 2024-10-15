@@ -84,7 +84,7 @@ function focusBonusManyPages(
       copyNavItems[x].active = false;
     }
   }
-  console.log("focusbonusmanypages");
+
   console.log(copyNavItems);
 
   setNavItems(copyNavItems);

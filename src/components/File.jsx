@@ -57,6 +57,7 @@ function File(props) {
         );
         globalContext.setCurrentPage("bonusPage.js");
         globalContext.setCpage("bonusPage");
+        globalContext.setActivePage("four");
       } else {
         if (globalContext.navItems.length < 1) {
           console.log("no items in nav");

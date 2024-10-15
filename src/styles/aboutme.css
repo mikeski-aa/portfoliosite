@@ -115,6 +115,7 @@
   .aboutMeText {
     flex-direction: column;
     align-items: center;
+    max-width: 80vw;
   }
 
   .upperTextContainer {

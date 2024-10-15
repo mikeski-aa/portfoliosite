@@ -176,6 +176,7 @@ function App() {
           setDefaultPages,
           setBonusPage,
           bonusPage,
+          setActivePage,
         }}
       >
         <div className="pageTest">

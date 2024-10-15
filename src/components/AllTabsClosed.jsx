@@ -6,8 +6,9 @@ function AllTabsClosed() {
     <div className="allTabsClosed">
       <div className="reopenContent">
         <div className="textReopen">
-          Looks like you're testing out all of the functionality! Nice! Here's
-          how to re-open closed tabs:
+          Looks like you're testing out all of the{" "}
+          <span className="fcnStyle">functionality</span>! Nice! Here's how to
+          re-open closed tabs:
         </div>
         <img src={HowToGif} className="gifimg"></img>
       </div>
