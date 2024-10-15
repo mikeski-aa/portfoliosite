@@ -128,14 +128,56 @@ function OdinbookCarousel() {
               <Cross className="winIcons crossImg" />
             </button>
           </div>
-          {/* <picture className="largeImg">
-            <source
-              media="(min-width: 700px)"
-              srcSet={imgDesk[carouselSeat]}
-            ></source>
-            <source media="(max-width: 700px)" srcSet={mergedLogin}></source>
-            <img src={mergedLogin} className="largeImg"></img>
-          </picture> */}
+          <div className="dualImgLarge">
+            <img
+              src={imgDesk[carouselSeat]}
+              className="modalImg desktop"
+              loading="lazy"
+            ></img>
+            <img
+              src={imgMobile[carouselSeat]}
+              className="modalImg mobile"
+              loading="lazy"
+            ></img>
+          </div>
+          <div className="positionButtons">
+            <button
+              className={`btnx ${activeBtn(0)}`}
+              onClick={() => handleCircleClicks(0)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(1)}`}
+              onClick={() => handleCircleClicks(1)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(2)}`}
+              onClick={() => handleCircleClicks(2)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(3)}`}
+              onClick={() => handleCircleClicks(3)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(4)}`}
+              onClick={() => handleCircleClicks(4)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(5)}`}
+              onClick={() => handleCircleClicks(5)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(6)}`}
+              onClick={() => handleCircleClicks(6)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(7)}`}
+              onClick={() => handleCircleClicks(7)}
+            ></button>
+            <button
+              className={`btnx ${activeBtn(8)}`}
+              onClick={() => handleCircleClicks(8)}
+            ></button>
+          </div>
           <div className="modalBtns">
             <button className="arrowBtns" onClick={handleGoLeft}>
               <Arrow className="arrowImgLeft" />
@@ -154,7 +196,7 @@ function OdinbookCarousel() {
           <button className="arrowBtns" onClick={handleGoLeft}>
             <Arrow className="arrowImgLeft" />
           </button>
-          <div className="dualImgCar">
+          <div className="dualImgCar" onClick={handleModalOpen}>
             <img
               src={imgDesk[carouselSeat]}
               className="testImg desktop"

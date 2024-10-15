@@ -75,15 +75,7 @@
   top: -15px; */
 }
 
-.carImg {
-  height: 350px;
-  width: 55vw;
-  object-fit: contain;
-  z-index: 15;
-  /* position: absolute; */
-}
-
-.carImg:hover {
+.dualImgCar:hover {
   cursor: pointer;
 }
 
@@ -266,6 +258,15 @@
   width: 20vw;
 }
 
+.modalImg {
+  width: auto;
+  height: 50vh;
+}
+
+.modalImg.desktop {
+  width: 60vw;
+}
+
 .testImg.desktop {
   width: 60vw;
 }
@@ -273,6 +274,14 @@
 .dualImgCar {
   display: flex;
   align-items: center;
+}
+
+.dualImgLarge {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  /* align-items: center; */
 }
 
 @media (max-width: 500px) {
@@ -304,16 +313,27 @@
 }
 
 @media (max-width: 800px) {
-  .testImg.desktop {
+  .testImg.desktop,
+  .modalImg.desktop {
     display: none;
   }
 
   .testImg.mobile {
     width: 60vw;
   }
-
+  .modalImg {
+    width: auto;
+    height: 70vh;
+  }
   .projectBoxContainer {
     width: 90%;
+  }
+}
+
+@media (max-width: 620px) {
+  .modalImg {
+    height: 70vh;
+    width: auto;
   }
 }
 
