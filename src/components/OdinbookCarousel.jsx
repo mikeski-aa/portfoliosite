@@ -115,8 +115,15 @@ function OdinbookCarousel() {
               <Cross className="winIcons crossImg" />
             </button>
           </div>
-
-          <img src={imgArr[carouselSeat]} className="largeImg"></img>
+          <picture className="largeImg">
+            <source
+              media="(min-width: 700px)"
+              srcSet={imgArr[carouselSeat]}
+            ></source>
+            <source media="(max-width: 700px)" srcSet={mergedLogin}></source>
+            <img src={imgArr[carouselSeat]} className="largeImg"></img>
+          </picture>
+          {/* <img src={imgArr[carouselSeat]} className="largeImg"></img> */}
           <div className="modalBtns">
             <button className="arrowBtns" onClick={handleGoLeft}>
               <Arrow className="arrowImgLeft" />
