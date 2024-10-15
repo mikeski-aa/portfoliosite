@@ -71,12 +71,12 @@ function NavButton(props) {
   // for a larger scale project like this, I would
   // render each page individually, never ever having scrolling across multiple pages.
   const handleCloseRewrite = () => {
-    console.log("closeClicked");
+    // console.log("closeClicked");
     if (globalContext.navItems.length > 2) {
       if (props.name === "bonusPage.js") {
-        console.log("bonusPage close clicked");
+        // console.log("bonusPage close clicked");
         if (checkIfBonusActiveNow(globalContext.defaultPages)) {
-          console.log("BONUS IS ACTIVE");
+          // console.log("BONUS IS ACTIVE");
           closeBonusActive(
             globalContext.defaultPages,
             globalContext.setDefaultPages,
@@ -85,7 +85,7 @@ function NavButton(props) {
             props.name
           );
         } else {
-          console.log("bonus is inactive");
+          // console.log("bonus is inactive");
           closeBonusInactive(
             globalContext.navItems,
             globalContext.setNavItems,
@@ -93,7 +93,7 @@ function NavButton(props) {
           );
         }
       } else {
-        console.log("more than 2 items in nav");
+        // console.log("more than 2 items in nav");
         // what needs to happen:
         // deactivate the page
         // disable the page
@@ -109,12 +109,12 @@ function NavButton(props) {
         );
       }
     } else {
-      console.log("less than 2 items detected - warning!");
+      // console.log("less than 2 items detected - warning!");
       if (checkIfBonusPresent(globalContext.navItems)) {
         if (checkIfBonusActiveNow(globalContext.defaultPages)) {
           if (globalContext.navItems.length === 2) {
             if (props.name != "bonusPage.js") {
-              console.log("bonusPage not clicked");
+              // console.log("bonusPage not clicked");
               closeNormalSetBonus(
                 globalContext.defaultPages,
                 globalContext.setDefaultPages,
@@ -123,7 +123,7 @@ function NavButton(props) {
                 props.name
               );
             } else {
-              console.log("bonus active & present & 2< windows open");
+              // console.log("bonus active & present & 2< windows open");
               closeOnlyActiveBonus(
                 globalContext.defaultPages,
                 globalContext.setDefaultPages,
@@ -140,11 +140,11 @@ function NavButton(props) {
               globalContext.setNavItems,
               props.name
             );
-            console.log("only bonus active");
+            // console.log("only bonus active");
             globalContext.setActivePage(null);
           }
         } else {
-          console.log("bonus present but inactive");
+          // console.log("bonus present but inactive");
           lastItemWithBonus(
             globalContext.defaultPages,
             globalContext.setDefaultPages,
@@ -157,7 +157,7 @@ function NavButton(props) {
           globalContext.setActivePage("four");
         }
       } else {
-        console.log("bonus is not present all good");
+        // console.log("bonus is not present all good");
         manyPagesCloseOne(
           globalContext.navItems,
           globalContext.setNavItems,
@@ -176,15 +176,15 @@ function NavButton(props) {
   // rewriting click handler here...
   const handleClickNav = (e) => {
     if (e.target.innerText === "bonusPage.js") {
-      console.log("navLogic logRef 1");
-      console.log("bonusPage clicked");
+      // console.log("navLogic logRef 1");
+      // console.log("bonusPage clicked");
       if (checkIfBonusActiveNow(globalContext.defaultPages)) {
-        console.log("navLogic logRef 2");
-        console.log("bonus is active");
+        // console.log("navLogic logRef 2");
+        // console.log("bonus is active");
         return null;
       } else {
-        console.log("navLogic logRef 3");
-        console.log("bonus is inactive");
+        // console.log("navLogic logRef 3");
+        // console.log("bonus is inactive");
         focusBonusManyPages(
           globalContext.navItems,
           globalContext.setNavItems,
@@ -196,11 +196,11 @@ function NavButton(props) {
         globalContext.setActivePage("four");
       }
     } else {
-      console.log("navLogic logRef 4");
-      console.log("normal page clicked");
+      // console.log("navLogic logRef 4");
+      // console.log("normal page clicked");
       if (checkIfBonusActiveNow(globalContext.defaultPages)) {
-        console.log("navLogic logRef 5");
-        console.log("bonus is active");
+        // console.log("navLogic logRef 5");
+        // console.log("bonus is active");
         disableBonusSetNewActive(
           globalContext.navItems,
           globalContext.setNavItems,
@@ -208,14 +208,17 @@ function NavButton(props) {
           globalContext.setDefaultPages,
           props.shortname
         );
+        // alert("setting don't run: current dont run:" + globalContext.dontRun);
+        globalContext.setDontRun(true);
         setTimeout(() => {
           notSmoothScroll(props.refLink);
-        }, 1);
+        }, 15);
         globalContext.setCurrentPage(props.name);
         globalContext.setCpage(props.shortname);
+        globalContext.setDontRun(false);
       } else {
-        console.log("navLogic logRef 6");
-        console.log("bonus is inactive");
+        // console.log("navLogic logRef 6");
+        // console.log("bonus is inactive");
         smoothScroll(props.refLink);
       }
     }

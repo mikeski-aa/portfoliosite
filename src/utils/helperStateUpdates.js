@@ -22,6 +22,7 @@ function helperScrollStateUpdate(state, setState, input) {
       copyState[x].active = false;
     }
   }
+
   setState(copyState);
 }
 

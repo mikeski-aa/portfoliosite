@@ -42,6 +42,9 @@ function App() {
   const aboutRef = useRef(null);
   const [bonusPage, setBonusPage] = useState(false);
   const [emailModal, setEmailModal] = useState(false);
+  const [dontRun, setDontRun] = useState(false);
+
+  const hasPageBeenRendered = useRef(false);
 
   // this could be rewritten. we dont need long and short name. total redundancy
   const [navItems, setNavItems] = useState([
@@ -139,29 +142,43 @@ function App() {
   const contactVisible = useInView(contactRef, "0px");
 
   // update active based on scroll position
-  // useEffect(() => {
-  //   if (aboutVisible) {
-  //     setActivePage("zero");
-  //     setCurrentPage("About_me.jsx");
-  //     setCpage("About");
-  //     helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
-  //   } else if (projectsVisible) {
-  //     setCurrentPage("My_projects.jsx");
-  //     setCpage("My_projects");
-  //     setActivePage("one");
-  //     helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
-  //   } else if (skillsVisible) {
-  //     setCurrentPage("My_skills.jsx");
-  //     setCpage("My_skills");
-  //     setActivePage("two");
-  //     helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
-  //   } else if (contactVisible) {
-  //     setCurrentPage("Contact_me.jsx");
-  //     setCpage("Contact_me");
-  //     setActivePage("three");
-  //     helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
-  //   }
-  // }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
+  useEffect(() => {
+    if (!dontRun) {
+      if (aboutVisible) {
+        setActivePage("zero");
+        setCurrentPage("About_me.jsx");
+        setCpage("About");
+        helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
+      } else if (projectsVisible) {
+        setCurrentPage("My_projects.jsx");
+        setCpage("My_projects");
+        setActivePage("one");
+        helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
+      } else if (skillsVisible) {
+        setCurrentPage("My_skills.jsx");
+        setCpage("My_skills");
+        setActivePage("two");
+        helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
+      } else if (contactVisible) {
+        setCurrentPage("Contact_me.jsx");
+        setCpage("Contact_me");
+        setActivePage("three");
+        helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
+      }
+    }
+  }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
+
+  // idea for alternative solution: instead of basing active off of scroll location and refs, we base it off of mouse
+
+  const handleMouseEnter = (e, a, b) => {
+    // setCurrentPage(a);
+    // setCpage(b);
+  };
+
+  const handleMouseLeave = (e) => {
+    // setCurrentPage("a");
+    // setCpage("b");
+  };
 
   return (
     <div className="page">
@@ -181,6 +198,8 @@ function App() {
           setActivePage,
           emailModal,
           setEmailModal,
+          dontRun,
+          setDontRun,
         }}
       >
         <EmailModal emailModal={emailModal} setEmailModal={setEmailModal} />
@@ -209,6 +228,10 @@ function App() {
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={aboutRef}
+                // onMouseEnter={(e) =>
+                //   handleMouseEnter(e, "About_me.jsx", "About_me")
+                // }
+                // onMouseLeave={(e) => handleMouseLeave(e)}
               >
                 <AboutMe />
               </div>

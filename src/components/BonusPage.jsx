@@ -2,8 +2,12 @@ import "../styles/bonuspage.css";
 import dragDropGif from "../assets/gif/dragdrop.gif";
 import mmbCloseGif from "../assets/gif/mmbclose.gif";
 import terminalTyping from "../assets/gif/terminaltyping.gif";
+import { useEffect } from "react";
 
 function BonusPage(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={`bonusPageDivCont`}>
       <div className="bonusContent">

@@ -25,7 +25,7 @@ function addNewPageToNav(defaultPages, setNavItems, input, navItems) {
   }
 
   copyNavItems.push(pageObject);
-  console.log(copyNavItems);
+  // console.log(copyNavItems);
   return setNavItems(copyNavItems);
 }
 
@@ -44,7 +44,7 @@ function addBonusToNavNotEmpty(defaultPages, setNavItems, input, navItems) {
   }
 
   copyNavItems.push(pageObject);
-  console.log(copyNavItems);
+  // console.log(copyNavItems);
   return setNavItems(copyNavItems);
 }
 
@@ -63,7 +63,7 @@ function addBonusToNavIsEmpty(defaultPages, setNavItems, input, navItems) {
   }
 
   copyNavItems.push(pageObject);
-  console.log(copyNavItems);
+  // console.log(copyNavItems);
   return setNavItems(copyNavItems);
 }
 
@@ -79,14 +79,14 @@ function focusBonusManyPages(
 
   for (let x = 0; x < copyNavItems.length; x++) {
     if (copyNavItems[x].name === "bonusPage.js") {
-      console.log(copyNavItems[x].name);
+      // console.log(copyNavItems[x].name);
       copyNavItems[x].active = true;
     } else {
       copyNavItems[x].active = false;
     }
   }
 
-  console.log(copyNavItems);
+  // console.log(copyNavItems);
 
   setNavItems(copyNavItems);
 
@@ -97,7 +97,7 @@ function focusBonusManyPages(
       copyDefault[x].disabled = true;
     }
   }
-  console.log(copyDefault);
+  // console.log(copyDefault);
   setDefaultPages(copyDefault);
 }
 
@@ -167,7 +167,7 @@ function addNewPageWithBonus(defaultPages, setNavItems, input, navItems) {
   }
 
   copyNavItems.push(pageObject);
-  console.log(copyNavItems);
+  // console.log(copyNavItems);
   return setNavItems(copyNavItems);
 }
 
