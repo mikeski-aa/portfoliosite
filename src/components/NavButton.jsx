@@ -6,6 +6,7 @@ import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import { smoothScroll, notSmoothScroll } from "../utils/helperStateUpdates";
 import YellowJsAlt from "../assets/bwicons/yellowjsalt.svg?react";
+import testIcon from "../assets/bwicons/yellowjs.svg";
 
 import {
   lastItemWithBonus,
@@ -177,13 +178,25 @@ function NavButton(props) {
 
   // rewriting click handler here...
   const handleClickNav = (e) => {
-    if (e.target.innerText === "bonusPage.js") {
+    // if (typeof e.target.innerText === "undefined") {
+    //   return console.log("undefined val");
+    // } else if (e.target.innerText === "") {
+    //   return console.log("VALUE IS EMPTY!!!!!");
+    // } else {
+    //   console.log("defined val");
+    //   return console.log(e.target.innerText);
+    // }
+
+    // alert(e.target.innerText);
+    // console.log(iconClicked);
+    if (e.target.innerText === "bonusPage.js" || e.target.innerText === "") {
       // console.log("navLogic logRef 1");
       // console.log("bonusPage clicked");
       if (checkIfBonusActiveNow(globalContext.defaultPages)) {
         // console.log("navLogic logRef 2");
         // console.log("bonus is active");
-        console.log("error here?");
+        // console.log("error here?");
+        // setIconClicked(false);
         return null;
       } else {
         // console.log("navLogic logRef 3");
@@ -197,6 +210,7 @@ function NavButton(props) {
         globalContext.setCurrentPage("bonusPage.js");
         globalContext.setCpage("bonusPage");
         globalContext.setActivePage("four");
+        // setIconClicked(false);
       }
     } else {
       // console.log("navLogic logRef 4");
@@ -220,12 +234,8 @@ function NavButton(props) {
         globalContext.setCpage(props.shortname);
         globalContext.setDontRun(false);
       } else {
-        console.log("navLogic logRef 6");
-        // console.log("bonus is inactive");
-        alert(props.name);
-        if (props.name === "bonusPage.js") {
-          return null;
-        }
+        // console.log("navLogic logRef 6");
+
         smoothScroll(props.refLink);
       }
     }
@@ -244,6 +254,12 @@ function NavButton(props) {
     }
   };
 
+  // const handleIconClick = () => {
+  //   console.log("icon clicked");
+  //   console.log(iconClicked);
+  //   setIconClicked(true);
+  // };
+
   return (
     <div
       className={`navBtnDiv ${props.active}`}
@@ -252,6 +268,7 @@ function NavButton(props) {
     >
       <button
         className={`navBtn ${props.active}`}
+        data-x="test"
         draggable
         onClick={(e) => handleClickNav(e)}
         onDragStart={(e) => handleDragStart(e, props.index)}
@@ -259,7 +276,9 @@ function NavButton(props) {
         onDrop={(e) => handleDrop(e, props.index)}
         onMouseDown={(e) => handleKeyDown(e)}
       >
-        {props.name === "bonusPage.js" ? null : (
+        {props.name === "bonusPage.js" ? (
+          <img src={testIcon} className="locationIcon"></img>
+        ) : (
           <ReactIconComponent className="locationIcon" />
         )}
         {props.name}
