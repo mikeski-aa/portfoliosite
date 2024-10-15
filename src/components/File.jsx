@@ -69,6 +69,8 @@ function File(props) {
           );
           if (props.name === "bonusPage") {
             globalContext.setActivePage("four");
+            globalContext.setCurrentPage("bonusPage.js");
+            globalContext.setCpage("bonusPage");
           }
         } else {
           console.log("bonus page is not open");
