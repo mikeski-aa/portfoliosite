@@ -30,11 +30,11 @@ function AboutMe(props) {
             </div>
             <div className="aboutDesc">
               <span className="fcnStyle aboutBio">Hey there!</span> I'm a
-              self-taught web developer who's always been drawn to the creative
-              and technical aspects of building websites. I love the challenge
-              of turning ideas into reality, and I'm constantly learning new
-              things to stay on top of the latest trends in web development.{" "}
-              <br></br>
+              self-taught fullstack developer who's always been drawn to the
+              creative and technical aspects of building websites. I love the
+              challenge of turning ideas into reality, and I'm constantly
+              learning new things to stay on top of the latest trends in web
+              development. <br></br>
               <br></br>Let's create something amazing together!
             </div>
           </div>
