@@ -25,6 +25,7 @@
   border: 2px solid #d0dcaa;
   padding: 5px;
   display: flex;
+  min-width: 255px;
   justify-content: center;
   gap: 1rem;
 }
@@ -129,5 +130,11 @@
 
   .aboutText {
     /* width: 90vw; */
+  }
+}
+
+@media (max-width: 450px) {
+  .aboutMeText {
+    width: 80%;
   }
 }
