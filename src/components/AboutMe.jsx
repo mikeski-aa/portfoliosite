@@ -1,7 +1,5 @@
-import profilePic from "../assets/placeholderprof.jpg";
-import egAsset from "../assets/example.jpg";
+import headshot from "../assets/gif/IMG_20241013_1452212.png";
 import "../styles/aboutme.css";
-import GitHubCalendar from "react-github-calendar";
 import ExportLine from "./ExportLine";
 import CodeComponent from "./CodeComponent";
 
@@ -21,10 +19,10 @@ function AboutMe(props) {
       </div>
       <div className="aboutMeContainer">
         <div className="aboutMeText">
-          <img src={profilePic} className="profImg"></img>
+          <img src={headshot} className="profImg"></img>
           <div className="upperTextContainer">
             <div className="nameHeader">
-              <span className="line">Mike </span>&nbsp;Kowalski
+              <span className="line">Michal </span>&nbsp;Nowak
             </div>
             <div className="titleText">
               Web developer based in{" "}

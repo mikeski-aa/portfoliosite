@@ -33,7 +33,7 @@ export const GlobalContext = createContext();
 
 function App() {
   const [currentPage, setCurrentPage] = useState("About_me.jsx");
-  const [cPage, setCpage] = useState("About");
+  const [cPage, setCpage] = useState("About_me");
   const [activePage, setActivePage] = useState(0);
   const [sidebarStat, setSidebarStat] = useState(false);
   const contactRef = useRef(null);
@@ -142,12 +142,15 @@ function App() {
   const contactVisible = useInView(contactRef, "0px");
 
   // update active based on scroll position
+  // this is has caused me a lot of frustration when switching from bonus page to "normal" pages
+  // hacky work around is to use setTimeout. It doesnt look too bad on local machine, might be awful when hosted.
+
   useEffect(() => {
     if (!dontRun) {
       if (aboutVisible) {
         setActivePage("zero");
         setCurrentPage("About_me.jsx");
-        setCpage("About");
+        setCpage("About_me");
         helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
       } else if (projectsVisible) {
         setCurrentPage("My_projects.jsx");

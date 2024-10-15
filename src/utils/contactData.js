@@ -1,7 +1,7 @@
 const contact = [
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com",
+    link: "https://www.linkedin.com/in/michal-nowak-a40681185/",
   },
   {
     name: "Email",
@@ -9,7 +9,7 @@ const contact = [
   },
   {
     name: "GitHub",
-    link: "https://www.github.com",
+    link: "https://github.com/mikeski-aa",
   },
 ];
 

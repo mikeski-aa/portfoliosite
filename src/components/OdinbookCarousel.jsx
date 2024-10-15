@@ -1,6 +1,4 @@
 import "../styles/projectbox.css";
-import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
-
 import WindowRestoreIcon from "../assets/bwicons/windowrestore.svg?react";
 import LineIcon from "../assets/bwicons/linesvg.svg?react";
 import Arrow from "../assets/arrow.svg?react";
