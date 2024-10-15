@@ -2,7 +2,7 @@
   border-top: 2px solid grey;
   height: 300px;
   background-color: #1e1e1e;
-  width: fit-content;
+
   /* padding-left: 15px; */
   margin-top: 170px;
   /* background-color: blue; */
@@ -21,7 +21,7 @@
   align-items: center;
   height: 25.74px;
   padding-bottom: 10px;
-  width: fit-content;
+  width: inherit;
 }
 
 .terminalBtnDummy {
