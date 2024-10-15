@@ -96,6 +96,9 @@ function File(props) {
             globalContext.setDefaultPages,
             props.name
           );
+          setTimeout(() => {
+            smoothScroll(props.refLink);
+          }, 5);
         } else {
           console.log("page exists this will scroll now");
           // page exists already.

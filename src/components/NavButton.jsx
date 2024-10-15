@@ -203,6 +203,9 @@ function NavButton(props) {
           globalContext.setDefaultPages,
           props.shortname
         );
+        setTimeout(() => {
+          smoothScroll(props.refLink);
+        }, 5);
       } else {
         console.log("bonus is inactive");
         smoothScroll(props.refLink);
