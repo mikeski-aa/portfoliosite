@@ -22,10 +22,6 @@ function EmailModal(props) {
     return () => document.removeEventListener("keydown", handleEscClick);
   }, []);
 
-  const handleLinkClick = () => {
-    window.open("mailto:dev.m.nowak@gmail.com");
-  };
-
   return (
     <div
       className={`modal ${props.emailModal}`}
@@ -54,9 +50,6 @@ function EmailModal(props) {
             >
               dev.m.nowak@gmail.com
             </span>
-            {/* <a href="mailto:dev.m.nowak@gmail.com" className="emailLargeText">
-              dev.m.nowak@gmail.com
-            </a> */}
           </div>
         </div>
       </div>

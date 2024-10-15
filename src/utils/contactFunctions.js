@@ -3,7 +3,7 @@ function handleGithubClick() {
 }
 
 function handleLinkedInClick() {
-  window.open("https://linkedin.com", "__blank");
+  window.open("https://www.linkedin.com/in/michal-nowak-a40681185/", "__blank");
 }
 
 // this will require mobile testing.
