@@ -66,6 +66,14 @@ function NavButton(props) {
   // the page belongs to bonus
   // the page is the last page left open
   // there are two pages left, one regualr one bonus how do we handle each case
+
+  // if you are reading this comment, please know that I know that this code is highly heretical
+  // this is post refactor, just imagine what it was like before
+  // the main reason for this mess is caused by my decision to have a SPA, and having the bonus page open on a blank "canvas"
+  // there are a lot of edge cases when closing - for exampel when closing a tab not in focus or in focus.
+  // this solution is not scalable at all and only works for the usecase of this website.
+  // for a larger scale project like this, I would
+  // render each page individually, never ever having scrolling across multiple pages.
   const handleCloseRewrite = () => {
     console.log("closeClicked");
     if (globalContext.navItems.length > 2) {
@@ -147,6 +155,8 @@ function NavButton(props) {
             globalContext.setNavItems,
             props.name
           );
+          globalContext.setCurrentPage("bonusPage.js");
+          globalContext.setCpage("bonusPage");
         }
       } else {
         console.log("bonus is not present all good");
