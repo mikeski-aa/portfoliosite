@@ -25,7 +25,7 @@
   text-wrap: wrap;
   /* max-height: calc(100vh - <offset>) */
   opacity: 1;
-  max-width: 65vw;
+  max-width: 80vw;
 }
 
 .detailsBtn {
@@ -191,7 +191,7 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: #1e1e1e;
-
+  width: fit-content;
   align-items: center;
 }
 
@@ -361,7 +361,7 @@
   }
 
   .projectDescription {
-    width: 90%;
+    width: 100%;
   }
 
   .imageCarousel {

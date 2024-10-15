@@ -49,3 +49,8 @@
 .bonusGif {
   max-width: 80vw;
 }
+
+@media (max-width: 600px) {
+  .bonusContent {
+  }
+}

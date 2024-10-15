@@ -30,7 +30,10 @@ function VertBar() {
   };
 
   const handleLinkedInClick = () => {
-    window.open("https://linkedin.com", "__blank");
+    window.open(
+      "https://www.linkedin.com/in/michal-nowak-a40681185",
+      "__blank"
+    );
   };
 
   const handleEmailClick = () => {
