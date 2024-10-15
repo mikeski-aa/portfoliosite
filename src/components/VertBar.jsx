@@ -35,52 +35,11 @@ function VertBar() {
 
   const handleEmailClick = () => {
     // window.open("mailto:dev.m.nowak@gmail.com");
-    setEmailModal(true);
+    globalContext.setEmailModal(true);
   };
-
-  const handleCloseModal = () => {
-    setEmailModal(false);
-  };
-
-  const handleKeyPress = (e) => {
-    console.log(e.code);
-    if (e.key === "Escape") {
-      setEmailModal(false);
-    }
-  };
-
-  // escape to close modal
-  useEffect(() => {
-    function handleEscClick(e) {
-      if (e.code === "Escape") setEmailModal(false);
-    }
-
-    document.addEventListener("keydown", handleEscClick);
-
-    return () => document.removeEventListener("keydown", handleEscClick);
-  }, []);
 
   return (
     <div className="vertBar">
-      <div
-        className={`modal ${emailModal}`}
-        onKeyDown={(e) => handleKeyPress(e)}
-      >
-        <div className="modalContent">
-          <div className="modalTopBar">
-            <button className="modalBtn">
-              <LineIcon className="winIcons" />
-            </button>
-            <button className="modalBtn">
-              <WindowRestoreIcon className="winIcons" />
-            </button>
-            <button className="modalBtn close" onClick={handleCloseModal}>
-              <Cross className="winIcons crossImg" />
-            </button>
-          </div>
-          <div className="modalText">Email me at: dev.m.nowak@gmail.com</div>
-        </div>
-      </div>
       <div className="vertBtnDiv">
         <button className={`vertBtn ${showExp}`} onClick={handleExplorerClick}>
           <FilesIcon className={`vertIcon ${showExp}`} />

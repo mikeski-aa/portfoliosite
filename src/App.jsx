@@ -16,6 +16,7 @@ import BonusPage from "./components/BonusPage";
 import TerminalBox from "./components/TerminalBox";
 import AllTabsClosed from "./components/AllTabsClosed";
 import { disableAllPages, enablAllPages } from "./utils/helperStateUpdates";
+import EmailModal from "./components/EmailModal";
 
 export const GlobalContext = createContext();
 
@@ -40,6 +41,7 @@ function App() {
   const skillsRef = useRef(null);
   const aboutRef = useRef(null);
   const [bonusPage, setBonusPage] = useState(false);
+  const [emailModal, setEmailModal] = useState(false);
 
   // this could be rewritten. we dont need long and short name. total redundancy
   const [navItems, setNavItems] = useState([
@@ -177,8 +179,11 @@ function App() {
           setBonusPage,
           bonusPage,
           setActivePage,
+          emailModal,
+          setEmailModal,
         }}
       >
+        <EmailModal emailModal={emailModal} setEmailModal={setEmailModal} />
         <div className="pageTest">
           <VertBar />
           <div

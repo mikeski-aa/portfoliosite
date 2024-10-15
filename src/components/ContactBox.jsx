@@ -7,8 +7,11 @@ import {
   handleGithubClick,
   handleLinkedInClick,
 } from "../utils/contactFunctions";
+import { GlobalContext } from "../App";
+import { useContext } from "react";
 
 function ContactBox(props) {
+  const globalContext = useContext(GlobalContext);
   const icons = {
     LinkedIn: <LinkedIn className="contactIcon" />,
     GitHub: <Github className="contactIcon" />,
@@ -18,7 +21,7 @@ function ContactBox(props) {
   const links = {
     LinkedIn: handleLinkedInClick,
     GitHub: handleGithubClick,
-    Email: handleEmailClick,
+    Email: () => globalContext.setEmailModal(true),
   };
 
   const renderedIcon = icons[props.name];
