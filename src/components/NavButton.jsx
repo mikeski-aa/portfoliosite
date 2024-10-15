@@ -4,12 +4,8 @@ import { GlobalContext } from "../App";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
-import { removeStateItem, smoothScroll } from "../utils/helperStateUpdates";
-import { updateDisabledPagesState } from "../utils/helperStateUpdates";
-import { enablAllPages } from "../utils/helperStateUpdates";
-import checkForBonus from "../utils/checkForBonus";
-import bonusActiveSet from "../utils/bonusActiveSet";
-import deactivateBonusPage from "../utils/deactivateBonusPage";
+import { smoothScroll } from "../utils/helperStateUpdates";
+
 import {
   lastItemWithBonus,
   checkIfBonusPresent,
@@ -215,9 +211,14 @@ function NavButton(props) {
   };
 
   // closing on middle mouse click enabled!
+  // prevent default behaviour (showing of the scroll circle only when mmb is clicked)
+  // only tested on chrome / windows.
+  // need to test on other OS somehow
   const handleKeyDown = (e) => {
-    e.preventDefault();
+    // console.log(e.which);
+    // console.log(e.button);
     if (e.button === 1) {
+      e.preventDefault();
       handleCloseRewrite();
     }
   };

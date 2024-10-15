@@ -134,7 +134,7 @@ function TerminalBox(props) {
               onKeyDown={(e) => handleKeyPress(e)}
               onChange={(e) => handleInputChange(e)}
               ref={inputRef}
-              maxLength={15}
+              maxLength={25}
             ></input>
           </div>
           <div className="terminalspacer"></div>
