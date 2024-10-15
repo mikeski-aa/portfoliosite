@@ -45,3 +45,21 @@
 .bonusGif {
   max-width: 80vw;
 }
+
+@media (max-width: 600px) {
+  .bonusPageDivCont {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 925px) {
+  .bonusPageDivCont {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 415px) {
+  .bonusPageDivCont {
+    margin-top: 210px;
+  }
+}

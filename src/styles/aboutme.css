@@ -138,3 +138,15 @@
     width: 80%;
   }
 }
+
+@media (max-width: 600px) {
+  .aboutMeComponent {
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 925px) {
+  .aboutMeComponent {
+    margin-top: 93px;
+  }
+}

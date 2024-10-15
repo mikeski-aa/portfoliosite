@@ -31,7 +31,14 @@
   cursor: default;
 }
 
-.multiLink {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 600px) {
+  .myProjectsComponent {
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 925px) {
+  .myProjectsComponent {
+    margin-top: 93px;
+  }
 }

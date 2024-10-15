@@ -76,3 +76,15 @@
     width: 80%;
   }
 }
+
+@media (max-width: 600px) {
+  .contactMeComponent {
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 925px) {
+  .contactMeComponent {
+    margin-top: 93px;
+  }
+}
