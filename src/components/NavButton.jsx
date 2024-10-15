@@ -4,7 +4,7 @@ import { GlobalContext } from "../App";
 import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
-import { smoothScroll } from "../utils/helperStateUpdates";
+import { smoothScroll, notSmoothScroll } from "../utils/helperStateUpdates";
 
 import {
   lastItemWithBonus,
@@ -176,11 +176,14 @@ function NavButton(props) {
   // rewriting click handler here...
   const handleClickNav = (e) => {
     if (e.target.innerText === "bonusPage.js") {
+      console.log("navLogic logRef 1");
       console.log("bonusPage clicked");
       if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+        console.log("navLogic logRef 2");
         console.log("bonus is active");
         return null;
       } else {
+        console.log("navLogic logRef 3");
         console.log("bonus is inactive");
         focusBonusManyPages(
           globalContext.navItems,
@@ -193,8 +196,10 @@ function NavButton(props) {
         globalContext.setActivePage("four");
       }
     } else {
+      console.log("navLogic logRef 4");
       console.log("normal page clicked");
       if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+        console.log("navLogic logRef 5");
         console.log("bonus is active");
         disableBonusSetNewActive(
           globalContext.navItems,
@@ -204,9 +209,12 @@ function NavButton(props) {
           props.shortname
         );
         setTimeout(() => {
-          smoothScroll(props.refLink);
-        }, 5);
+          notSmoothScroll(props.refLink);
+        }, 1);
+        globalContext.setCurrentPage(props.name);
+        globalContext.setCpage(props.shortname);
       } else {
+        console.log("navLogic logRef 6");
         console.log("bonus is inactive");
         smoothScroll(props.refLink);
       }

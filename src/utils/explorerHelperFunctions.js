@@ -79,6 +79,7 @@ function focusBonusManyPages(
 
   for (let x = 0; x < copyNavItems.length; x++) {
     if (copyNavItems[x].name === "bonusPage.js") {
+      console.log(copyNavItems[x].name);
       copyNavItems[x].active = true;
     } else {
       copyNavItems[x].active = false;

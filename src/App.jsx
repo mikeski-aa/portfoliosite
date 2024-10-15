@@ -88,7 +88,7 @@ function App() {
   const [defaultPages, setDefaultPages] = useState([
     {
       name: "About_me.jsx",
-      active: true,
+      active: false,
       shortname: "About_me",
       trueIndex: 0,
       refLink: aboutRef,
@@ -139,29 +139,29 @@ function App() {
   const contactVisible = useInView(contactRef, "0px");
 
   // update active based on scroll position
-  useEffect(() => {
-    if (aboutVisible) {
-      setActivePage("zero");
-      setCurrentPage("About_me.jsx");
-      setCpage("About");
-      helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
-    } else if (projectsVisible) {
-      setCurrentPage("My_projects.jsx");
-      setCpage("My_projects");
-      setActivePage("one");
-      helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
-    } else if (skillsVisible) {
-      setCurrentPage("My_skills.jsx");
-      setCpage("My_skills");
-      setActivePage("two");
-      helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
-    } else if (contactVisible) {
-      setCurrentPage("Contact_me.jsx");
-      setCpage("Contact_me");
-      setActivePage("three");
-      helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
-    }
-  }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
+  // useEffect(() => {
+  //   if (aboutVisible) {
+  //     setActivePage("zero");
+  //     setCurrentPage("About_me.jsx");
+  //     setCpage("About");
+  //     helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
+  //   } else if (projectsVisible) {
+  //     setCurrentPage("My_projects.jsx");
+  //     setCpage("My_projects");
+  //     setActivePage("one");
+  //     helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
+  //   } else if (skillsVisible) {
+  //     setCurrentPage("My_skills.jsx");
+  //     setCpage("My_skills");
+  //     setActivePage("two");
+  //     helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
+  //   } else if (contactVisible) {
+  //     setCurrentPage("Contact_me.jsx");
+  //     setCpage("Contact_me");
+  //     setActivePage("three");
+  //     helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
+  //   }
+  // }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
   return (
     <div className="page">

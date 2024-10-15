@@ -68,6 +68,7 @@ function Folder(props) {
               <File
                 key={index}
                 name={item.shortname}
+                longname={item.name}
                 type=".jsx"
                 nobonus={true}
                 refLink={item.refLink}

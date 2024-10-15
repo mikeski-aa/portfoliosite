@@ -5,6 +5,11 @@ function smoothScroll(inputRef) {
   inputRef.current.scrollIntoView({ behavior: "smooth" });
 }
 
+// fast scroll
+function notSmoothScroll(inputRef) {
+  inputRef.current.scrollIntoView();
+}
+
 // update active buttons depending on scroll location
 // this is a little buggy and sometimes causes flickers
 function helperScrollStateUpdate(state, setState, input) {
@@ -127,6 +132,7 @@ function enablAllPages(state, setState, activeState) {
 
 export {
   smoothScroll,
+  notSmoothScroll,
   helperScrollStateUpdate,
   helperClickStateUpdate,
   removeStateItem,
