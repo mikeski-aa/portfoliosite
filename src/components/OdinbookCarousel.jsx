@@ -1,13 +1,12 @@
 import "../styles/projectbox.css";
 import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
-import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
-import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
-import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
+
 import WindowRestoreIcon from "../assets/bwicons/windowrestore.svg?react";
 import LineIcon from "../assets/bwicons/linesvg.svg?react";
 import Arrow from "../assets/arrow.svg?react";
 import Cross from "../assets/bwicons/cross2.svg?react";
 import { useEffect, useRef, useState } from "react";
+import { desktopArray, mobileArray } from "../utils/imageImport";
 
 // very simple image carousel to go through project images
 function OdinbookCarousel() {
@@ -15,19 +14,21 @@ function OdinbookCarousel() {
   const [descShow, setDescShow] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [btnText, setBtnText] = useState("See details");
-  const imgArr = [mergedLogin, mergedMain, mergedFriends, mergedProfile];
   const descRef = useRef(null);
+
+  const imgDesk = desktopArray();
+  const imgMobile = mobileArray();
 
   const handleGoLeft = () => {
     if (carouselSeat === 0) {
-      setCarouselSeat(3);
+      setCarouselSeat(8);
     } else {
       setCarouselSeat(carouselSeat - 1);
     }
   };
 
   const handleGoRight = () => {
-    if (carouselSeat === 3) {
+    if (carouselSeat === 8) {
       setCarouselSeat(0);
     } else {
       setCarouselSeat(carouselSeat + 1);
@@ -43,6 +44,18 @@ function OdinbookCarousel() {
     } else if (btnNum === 2 && carouselSeat === 2) {
       return "active";
     } else if (btnNum === 3 && carouselSeat === 3) {
+      return "active";
+    } else if (btnNum === 4 && carouselSeat === 4) {
+      return "active";
+    } else if (btnNum === 5 && carouselSeat === 5) {
+      return "active";
+    } else if (btnNum === 6 && carouselSeat === 6) {
+      return "active";
+    } else if (btnNum === 7 && carouselSeat === 7) {
+      return "active";
+    } else if (btnNum === 8 && carouselSeat === 8) {
+      return "active";
+    } else if (btnNum === 9 && carouselSeat === 9) {
       return "active";
     } else {
       return "inactive";
@@ -115,15 +128,14 @@ function OdinbookCarousel() {
               <Cross className="winIcons crossImg" />
             </button>
           </div>
-          <picture className="largeImg">
+          {/* <picture className="largeImg">
             <source
               media="(min-width: 700px)"
-              srcSet={imgArr[carouselSeat]}
+              srcSet={imgDesk[carouselSeat]}
             ></source>
             <source media="(max-width: 700px)" srcSet={mergedLogin}></source>
-            <img src={imgArr[carouselSeat]} className="largeImg"></img>
-          </picture>
-          {/* <img src={imgArr[carouselSeat]} className="largeImg"></img> */}
+            <img src={mergedLogin} className="largeImg"></img>
+          </picture> */}
           <div className="modalBtns">
             <button className="arrowBtns" onClick={handleGoLeft}>
               <Arrow className="arrowImgLeft" />
@@ -142,12 +154,27 @@ function OdinbookCarousel() {
           <button className="arrowBtns" onClick={handleGoLeft}>
             <Arrow className="arrowImgLeft" />
           </button>
-
-          <img
+          <div className="dualImgCar">
+            <picture>
+              <source
+                media="(min-width: 800px)"
+                srcSet={imgDesk[carouselSeat]}
+              ></source>
+              <source media="(max-width: 799px)"></source>
+              <source media="(max-width: 800px)" srcSet={null}></source>
+              <img
+                src={imgDesk[carouselSeat]}
+                className="testImg desktop"
+              ></img>
+            </picture>
+            {/* <img src={imgDesk[carouselSeat]} className="testImg desktop"></img> */}
+            {/* <img src={imgMobile[carouselSeat]} className="testImg"></img> */}
+          </div>
+          {/* <img
             src={imgArr[carouselSeat]}
             className={"carImg"}
             onClick={handleModalOpen}
-          ></img>
+          ></img> */}
           <button className="arrowBtns" onClick={handleGoRight}>
             <Arrow className="arrowImgRight" />
           </button>
@@ -169,6 +196,26 @@ function OdinbookCarousel() {
           <button
             className={`btnx ${activeBtn(3)}`}
             onClick={() => handleCircleClicks(3)}
+          ></button>
+          <button
+            className={`btnx ${activeBtn(4)}`}
+            onClick={() => handleCircleClicks(4)}
+          ></button>
+          <button
+            className={`btnx ${activeBtn(5)}`}
+            onClick={() => handleCircleClicks(5)}
+          ></button>
+          <button
+            className={`btnx ${activeBtn(6)}`}
+            onClick={() => handleCircleClicks(6)}
+          ></button>
+          <button
+            className={`btnx ${activeBtn(7)}`}
+            onClick={() => handleCircleClicks(7)}
+          ></button>
+          <button
+            className={`btnx ${activeBtn(8)}`}
+            onClick={() => handleCircleClicks(8)}
           ></button>
         </div>
       </div>
