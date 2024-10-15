@@ -57,41 +57,6 @@ function NavButton(props) {
     setMouseOver(false);
   };
 
-  const handleCloseClick = () => {
-    // if we're about to close last tab and bonus page is still open, need to make sure it is in focus
-    // idea is to check if navItems contains bonus page, if it does we need to do some stuff.
-    // if (globalContext.navItems.length === 2) {
-    //   if (checkForBonus(globalContext.navItems)) {
-    //     globalContext.setBonusPage(true);
-    //     bonusActiveSet(globalContext.navItems, globalContext.setNavItems);
-    //   }
-    // }
-    // removeStateItem(
-    //   globalContext.navItems,
-    //   globalContext.setNavItems,
-    //   props.name
-    // );
-    // updateDisabledPagesState(
-    //   globalContext.defaultPages,
-    //   globalContext.setDefaultPages,
-    //   props.shortname
-    // );
-    // close not only the tab, but also stop displaying the page and return to regular "jsx" pages shown to user
-    // if (props.name === "bonusPage.js") {
-    //   globalContext.setBonusPage(false);
-    //   enablAllPages(
-    //     globalContext.defaultPages,
-    //     globalContext.setDefaultPages,
-    //     globalContext.navItems
-    //   );
-    // deactivateBonusPage(
-    //   globalContext.defaultPages,
-    //   globalContext.setDefaultPages
-    // );
-    //   return;
-    // }
-  };
-
   // rewriting the terrible mess
   // cases to keep in mind:
   // the page belongs to "regular" items
@@ -139,14 +104,25 @@ function NavButton(props) {
     } else {
       console.log("less than 2 items detected - warning!");
       if (checkIfBonusPresent(globalContext.navItems)) {
-        console.log("bonus present!");
-        lastItemWithBonus(
-          globalContext.defaultPages,
-          globalContext.setDefaultPages,
-          globalContext.navItems,
-          globalContext.setNavItems,
-          props.name
-        );
+        if (checkIfBonusActiveNow(globalContext.defaultPages)) {
+          console.log("bonus active & present & 2 windows open");
+          closeBonusActive(
+            globalContext.defaultPages,
+            globalContext.setDefaultPages,
+            globalContext.navItems,
+            globalContext.setNavItems,
+            props.name
+          );
+        } else {
+          console.log("bonus present but inactive");
+          lastItemWithBonus(
+            globalContext.defaultPages,
+            globalContext.setDefaultPages,
+            globalContext.navItems,
+            globalContext.setNavItems,
+            props.name
+          );
+        }
       } else {
         console.log("bonus is not present all good");
         manyPagesCloseOne(
@@ -199,6 +175,14 @@ function NavButton(props) {
     }
   };
 
+  // closing on middle mouse click enabled!
+  const handleKeyDown = (e) => {
+    e.preventDefault();
+    if (e.button === 1) {
+      handleCloseRewrite();
+    }
+  };
+
   return (
     <div
       className={`navBtnDiv ${props.active}`}
@@ -212,6 +196,7 @@ function NavButton(props) {
         onDragStart={(e) => handleDragStart(e, props.index)}
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, props.index)}
+        onMouseDown={(e) => handleKeyDown(e)}
       >
         {props.name === "bonusPage.js" ? (
           <JSIconComponent className="locationIcon" />
