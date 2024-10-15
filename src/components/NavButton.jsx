@@ -5,7 +5,7 @@ import JSIconComponent from "../assets/bwicons/yellowjs.svg?react";
 import ReactIconComponent from "../assets/icons/react.svg?react";
 import CrossIcon from "../assets/bwicons/cross2.svg?react";
 import { smoothScroll, notSmoothScroll } from "../utils/helperStateUpdates";
-import YellowJsAlt from "../assets/bwicons/YellowJsAlt.svg?react";
+import YellowJsAlt from "../assets/bwicons/yellowjsalt.svg?react";
 
 import {
   lastItemWithBonus,
@@ -220,8 +220,12 @@ function NavButton(props) {
         globalContext.setCpage(props.shortname);
         globalContext.setDontRun(false);
       } else {
-        // console.log("navLogic logRef 6");
+        console.log("navLogic logRef 6");
         // console.log("bonus is inactive");
+        alert(props.name);
+        if (props.name === "bonusPage.js") {
+          return null;
+        }
         smoothScroll(props.refLink);
       }
     }
@@ -255,9 +259,7 @@ function NavButton(props) {
         onDrop={(e) => handleDrop(e, props.index)}
         onMouseDown={(e) => handleKeyDown(e)}
       >
-        {props.name === "bonusPage.js" ? (
-          <YellowJsAlt className="locationIcon" />
-        ) : (
+        {props.name === "bonusPage.js" ? null : (
           <ReactIconComponent className="locationIcon" />
         )}
         {props.name}
