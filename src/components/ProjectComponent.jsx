@@ -8,14 +8,30 @@ function ProjectComponent(props) {
       <div className="projectHeading">{props.title}</div>
       <div className="projectText">{props.desc}</div>
       <div className="projectLink">
-        <a target="_blank" href={props.projectLink} className="projectLink">
-          Project link
-        </a>
+        {props.isHosted ? (
+          <a target="_blank" href={props.projectLink} className="projectLink">
+            Project link
+          </a>
+        ) : (
+          <span className="notHosted">Project not currently hosted</span>
+        )}
       </div>
       <div className="repoLink">
-        <a href={props.repoLink} className="projectLink">
-          Repo link
-        </a>
+        {props.type === "Frontend" || props.type === "Backend" ? (
+          <a href={props.repoLink} className="projectLink">
+            {props.type} repo
+          </a>
+        ) : null}
+        {props.type === "Fullstack" ? (
+          <div className="multiLink">
+            <a href={props.feRepo} className="projectLink">
+              Frontend repo
+            </a>
+            <a href={props.beRepo} className="projectLink">
+              Backend repo
+            </a>
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -6,6 +6,11 @@ import Email from "../assets/bwicons/email.svg?react";
 import Explorer from "./Explorer";
 import { useState, useContext } from "react";
 import { GlobalContext } from "../App";
+import {
+  handleEmailClick,
+  handleGithubClick,
+  handleLinkedInClick,
+} from "../utils/contactFunctions";
 
 function VertBar() {
   const [showExp, setShowExp] = useState(false);
@@ -20,19 +25,20 @@ function VertBar() {
       globalContext.setSidebarStat(true);
     }
   };
+
   return (
     <div className="vertBar">
       <div className="vertBtnDiv">
         <button className={`vertBtn ${showExp}`} onClick={handleExplorerClick}>
           <FilesIcon className={`vertIcon ${showExp}`} />
         </button>
-        <button className="vertBtn">
+        <button className="vertBtn" onClick={handleGithubClick}>
           <GithubIcon className="vertIcon" />
         </button>
-        <button className="vertBtn">
+        <button className="vertBtn" onClick={handleLinkedInClick}>
           <LinkedIn className="vertIcon" />
         </button>
-        <button className="vertBtn">
+        <button className="vertBtn" onClick={handleEmailClick}>
           <Email className="vertIcon" />
         </button>
       </div>

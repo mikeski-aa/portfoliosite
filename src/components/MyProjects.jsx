@@ -30,6 +30,10 @@ function MyProjects() {
               desc={item.desc}
               projectLink={item.projectLink}
               repoLink={item.repoLink}
+              feRepo={item.feRepo}
+              beRepo={item.beRepo}
+              type={item.type}
+              isHosted={item.isHosted}
             ></ProjectComponent>
           ))}
         </div>

@@ -30,3 +30,8 @@
 .projectHeading:hover {
   cursor: default;
 }
+
+.multiLink {
+  display: flex;
+  flex-direction: column;
+}
