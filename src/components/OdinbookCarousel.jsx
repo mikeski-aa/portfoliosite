@@ -3,6 +3,8 @@ import mergedLogin from "../assets/odinbookpics/mergedLogin.png";
 import mergedMain from "../assets/odinbookpics/mergedMainFd.png";
 import mergedFriends from "../assets/odinbookpics/mergedFriends.png";
 import mergedProfile from "../assets/odinbookpics/mergedProfile.png";
+import WindowRestoreIcon from "../assets/bwicons/windowrestore.svg?react";
+import LineIcon from "../assets/bwicons/linesvg.svg?react";
 import Arrow from "../assets/arrow.svg?react";
 import Cross from "../assets/bwicons/cross2.svg?react";
 import { useEffect, useRef, useState } from "react";
@@ -102,9 +104,18 @@ function OdinbookCarousel() {
     <div className={"projectBoxContainer"}>
       <div className={`modal ${modalOpen}`}>
         <div className="modalContent">
-          <button className="closeBtn" onClick={handleCloseModal}>
-            <Cross className="crossImg" />
-          </button>
+          <div className="modalTopBar">
+            <button className="modalBtn">
+              <LineIcon className="winIcons" />
+            </button>
+            <button className="modalBtn">
+              <WindowRestoreIcon className="winIcons" />
+            </button>
+            <button className="modalBtn close" onClick={handleCloseModal}>
+              <Cross className="winIcons crossImg" />
+            </button>
+          </div>
+
           <img src={imgArr[carouselSeat]} className="largeImg"></img>
           <div className="modalBtns">
             <button className="arrowBtns" onClick={handleGoLeft}>
