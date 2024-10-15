@@ -155,7 +155,7 @@ function OdinbookCarousel() {
             <Arrow className="arrowImgLeft" />
           </button>
           <div className="dualImgCar">
-            <picture>
+            {/* <picture>
               <source
                 media="(min-width: 800px)"
                 srcSet={imgDesk[carouselSeat]}
@@ -166,9 +166,17 @@ function OdinbookCarousel() {
                 src={imgDesk[carouselSeat]}
                 className="testImg desktop"
               ></img>
-            </picture>
-            {/* <img src={imgDesk[carouselSeat]} className="testImg desktop"></img> */}
-            {/* <img src={imgMobile[carouselSeat]} className="testImg"></img> */}
+            </picture> */}
+            <img
+              src={imgDesk[carouselSeat]}
+              className="testImg desktop"
+              loading="lazy"
+            ></img>
+            <img
+              src={imgMobile[carouselSeat]}
+              className="testImg mobile"
+              loading="lazy"
+            ></img>
           </div>
           {/* <img
             src={imgArr[carouselSeat]}

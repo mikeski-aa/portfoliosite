@@ -302,3 +302,28 @@
     height: 250px;
   }
 }
+
+@media (max-width: 800px) {
+  .testImg.desktop {
+    display: none;
+  }
+
+  .testImg.mobile {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 470px) {
+  /* .testImg.mobile {
+    width: 40vw;
+  } */
+
+  .positionButtons {
+    gap: 0.25rem;
+  }
+
+  .btnx {
+    width: 15px;
+    height: 15px;
+  }
+}
