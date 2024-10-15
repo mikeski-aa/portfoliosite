@@ -35,7 +35,18 @@ function ContactMe() {
           <ContactBox key={index} name={item.name} />
         ))}
       </div>
+
       <ExportLine text="Contact_me" top="255" mid="256" bot="257" />
+      {window.innerWidth <= 963 ? (
+        <div className="mobileContainer">
+          <div className="mobileMessage">
+            It looks like you are viewing this page on a mobile device! Not all
+            the features are available on mobile, try the{" "}
+            <span className="brackStyle">desktop</span> site to get access to
+            all of the features!
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

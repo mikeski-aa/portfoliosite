@@ -171,18 +171,6 @@ function App() {
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
-  // idea for alternative solution: instead of basing active off of scroll location and refs, we base it off of mouse
-
-  const handleMouseEnter = (e, a, b) => {
-    // setCurrentPage(a);
-    // setCpage(b);
-  };
-
-  const handleMouseLeave = (e) => {
-    // setCurrentPage("a");
-    // setCpage("b");
-  };
-
   return (
     <div className="page">
       <GlobalContext.Provider
@@ -231,10 +219,6 @@ function App() {
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={aboutRef}
-                // onMouseEnter={(e) =>
-                //   handleMouseEnter(e, "About_me.jsx", "About_me")
-                // }
-                // onMouseLeave={(e) => handleMouseLeave(e)}
               >
                 <AboutMe />
               </div>
