@@ -7,7 +7,7 @@
   background: none;
   color: white;
   padding-left: 30px;
-  background-color: red;
+  background-color: rgba(184, 184, 184, 0);
 }
 
 .fileBtn:hover {
