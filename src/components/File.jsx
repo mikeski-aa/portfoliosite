@@ -1,4 +1,4 @@
-import "../styles/file.css";
+import "../styles/fileStyle.css";
 import ReactIcon from "../assets/bwicons/react.svg?react";
 import JSIcon from "../assets/bwicons/yellowjs.svg?react";
 import { GlobalContext } from "../App";
