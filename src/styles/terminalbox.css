@@ -202,3 +202,9 @@
 .terminalspacer {
   height: 20px;
 }
+
+@media (max-width: 805px) {
+  .terminalDiv {
+    display: none;
+  }
+}

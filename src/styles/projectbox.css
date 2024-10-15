@@ -311,6 +311,10 @@
   .testImg.mobile {
     width: 60vw;
   }
+
+  .projectBoxContainer {
+    width: 90%;
+  }
 }
 
 @media (max-width: 470px) {
@@ -325,5 +329,21 @@
   .btnx {
     width: 15px;
     height: 15px;
+  }
+
+  .imagesContainer {
+    width: 80vw;
+  }
+
+  .projectDescription {
+    width: 90%;
+  }
+
+  .imageCarousel {
+    max-width: 150px;
+  }
+
+  .projectBoxContainer {
+    overflow: hidden;
   }
 }

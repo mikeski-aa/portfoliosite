@@ -213,7 +213,7 @@ function App() {
                 }
                 ref={projectsRef}
               >
-                {/* <MyProjects /> */}
+                <MyProjects />
               </div>
               <div
                 className={
@@ -237,7 +237,7 @@ function App() {
               {navItems.length < 1 ? <AllTabsClosed /> : null}
               {!defaultPages[4].disabled ? <BonusPage /> : null}
 
-              {/* <TerminalBox /> */}
+              <TerminalBox />
             </div>
           </div>
           <Footer />
