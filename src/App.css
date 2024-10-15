@@ -171,6 +171,7 @@ h2:hover {
 
 .sectionDiv.last {
   border: none;
+  margin-bottom: 3.9rem;
 }
 
 .redboxtest {
@@ -216,5 +217,11 @@ h2:hover {
     flex-direction: column;
     flex-wrap: wrap;
     max-height: 130px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sectionDiv.last {
+    margin-bottom: 9rem;
   }
 }
