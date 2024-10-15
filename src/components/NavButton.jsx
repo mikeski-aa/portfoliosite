@@ -145,6 +145,7 @@ function NavButton(props) {
               props.name
             );
             console.log("only bonus active");
+            globalContext.setActivePage(null);
           }
         } else {
           console.log("bonus present but inactive");
@@ -171,6 +172,7 @@ function NavButton(props) {
           globalContext.setDefaultPages,
           props.name
         );
+        globalContext.setActivePage(null);
       }
     }
   };

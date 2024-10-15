@@ -67,6 +67,9 @@ function File(props) {
             props.name,
             globalContext.navItems
           );
+          if (props.name === "bonusPage") {
+            globalContext.setActivePage("four");
+          }
         } else {
           console.log("bonus page is not open");
           addBonusToNavNotEmpty(
