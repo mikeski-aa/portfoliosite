@@ -10,7 +10,7 @@ function handleLinkedInClick() {
 // ideally if viewed from mobile I want this to directly lead to mobile page
 // temp alternative may be to open a modal instead with email link?
 function handleEmailClick() {
-  window.open("mailto:someone@yoursite.com");
+  window.open("mailto:dev.m.nowak@gmail.com");
 }
 
 export { handleGithubClick, handleEmailClick, handleLinkedInClick };

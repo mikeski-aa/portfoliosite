@@ -41,7 +41,7 @@ function TerminalBox(props) {
   };
 
   return (
-    <div className={`terminalDiv ${props.terminalStatus}`}>
+    <div className={`terminalDiv ${props.bonusPage}`}>
       <div className="terminalHeader">
         <div className="terminalLeftBtnDiv">
           <button

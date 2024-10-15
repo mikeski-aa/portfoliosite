@@ -5,7 +5,7 @@ const contact = [
   },
   {
     name: "Email",
-    link: "https://www.linkedin.com",
+    link: "dev.m.nowak@gmail.com",
   },
   {
     name: "GitHub",
