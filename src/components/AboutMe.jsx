@@ -25,7 +25,7 @@ function AboutMe(props) {
               <span className="line">Michal </span>&nbsp;Nowak
             </div>
             <div className="titleText">
-              Fullstack develope based in{" "}
+              Fullstack developer based in{" "}
               <span className="line locationBold">Berlin</span>
             </div>
             <div className="aboutDesc">
