@@ -18,11 +18,10 @@ function NewMainPageDesign() {
             Fullstack developer based in Berlin&nbsp;
           </div>
           <div className="newAboutText">
-            Hey there! I'm a self-taught fullstack developer who's always been
-            drawn to the creative and technical aspects of building websites. I
-            love the challenge of turning ideas into reality, and I'm constantly
-            learning new things to stay on top of the latest trends in web
-            development. Let's create something amazing together!
+            I'm a self-taught fullstack developer who's always been drawn to the
+            creative and technical aspects of building websites. I love the
+            challenge of turning ideas into reality, and I'm constantly learning
+            new things to stay on top of the latest trends in web development.
           </div>
         </div>
       </div>

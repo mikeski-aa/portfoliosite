@@ -18,8 +18,8 @@
 .headshotImgNew {
   max-width: 35vw;
   border-radius: 180px;
-  border: 2px solid pink;
-  /* animation: descLoad 0.3s; */
+  border: 4px solid rgba(255, 255, 255, 0);
+  animation: borderChange 2s forwards;
 }
 
 .newAboutHeading {
@@ -67,5 +67,15 @@
   to {
     width: 100%;
     border-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes borderChange {
+  from {
+    border-color: rgba(255, 255, 255, 0);
+  }
+
+  to {
+    border-color: orange;
   }
 }
