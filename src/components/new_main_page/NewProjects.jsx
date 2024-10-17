@@ -1,10 +1,17 @@
 import TestImage from "../../assets/desktoppics/main-front.png";
 import TestImageOne from "../../assets/desktoppics/loginDesk.png";
 import { useEffect, useState } from "react";
+import {
+  desktopArray,
+  newAssetArray,
+  mobileArray,
+} from "../../utils/imageImport";
 
 function NewProjects() {
   const [index, setIndex] = useState(0);
-  const imgArr = [TestImage, TestImageOne];
+  const imgArrDesktop = desktopArray();
+  const imgArrMobile = mobileArray();
+  const imgNewArr = newAssetArray();
 
   const imgTest = {
     0: <img src={TestImage} className="projImg" loading="lazy"></img>,
@@ -15,20 +22,35 @@ function NewProjects() {
 
   useEffect(() => {
     setTimeout(() => {
-      if (index + 1 === imgArr.length) {
+      if (index + 1 === imgNewArr.length) {
         setIndex(0);
       } else {
         setIndex(index + 1);
       }
-    }, 5000);
+    }, 7100);
   }, [index]);
 
   return (
     <div className="newProjectsContainer">
       <div className="newProjectDiv">
         <div className="newProjHeading">Test Text Here</div>
-        <div className="newProjImgContainer"></div>
-        {renderedImage ? renderedImage : null}
+        <div className="newProjImgContainer">
+          {/* <img
+            src={imgArrDesktop[index]}
+            className="projImg desktop"
+            loading="lazy"
+          ></img>
+          <img
+            src={imgArrMobile[index]}
+            className="projImg mobile"
+            loading="lazy"
+          ></img> */}
+          <img
+            src={imgNewArr[index]}
+            className="projImg mobile"
+            loading="lazy"
+          ></img>
+        </div>
 
         <div className="newProjDesc">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. A voluptatem

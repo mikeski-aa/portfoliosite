@@ -1,17 +1,34 @@
+.newProjImgContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .projImg {
-  max-width: 100%;
-  animation-name: fadeInOut;
-  animation-duration: 1s;
-  animation-direction: normal;
-  opacity: 1;
+  animation: fadeInOut 7s 1s infinite;
+
+  object-fit: contain;
+}
+
+.projImg.desktop {
+  max-width: 50vw;
+}
+
+.projImg.mobile {
+  max-height: 30vw;
 }
 
 @keyframes fadeInOut {
-  from {
+  0% {
     opacity: 0;
   }
 
-  to {
+  50% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

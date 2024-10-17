@@ -18,6 +18,14 @@ import mUserComment from "../assets/mobilepics/userMobile.png";
 import mEditUser from "../assets/mobilepics/editUserMobile.png";
 import mOprofile from "../assets/mobilepics/friendMobile.png";
 
+import logweb from "../assets/newassets/logweb.png";
+import regweb from "../assets/newassets/regweb.png";
+import mainweb from "../assets/newassets/mainweb.png";
+import friendweb from "../assets/newassets/friendweb.png";
+import searchweb from "../assets/newassets/searchweb.png";
+import editweb from "../assets/newassets/editweb.png";
+import commentweb from "../assets/newassets/commentweb.png";
+
 function desktopArray() {
   const desktopItems = [
     dLogin,
@@ -50,4 +58,18 @@ function mobileArray() {
   return mobileItems;
 }
 
-export { desktopArray, mobileArray };
+function newAssetArray() {
+  const newArray = [
+    logweb,
+    regweb,
+    mainweb,
+    friendweb,
+    searchweb,
+    editweb,
+    commentweb,
+  ];
+
+  return newArray;
+}
+
+export { desktopArray, mobileArray, newAssetArray };
