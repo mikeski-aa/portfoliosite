@@ -7,6 +7,7 @@
   /* overflow: hidden;
   background-color: rgb(44, 44, 126); */
   width: 100%;
+  margin-top: 61px;
   /* height: 109%; */
 }
 
@@ -24,6 +25,7 @@
 
 .mainTest {
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-left: 40px;
   transition: 0.5s ease-in-out;

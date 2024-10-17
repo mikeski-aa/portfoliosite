@@ -1,0 +1,30 @@
+.newSection.About {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1rem;
+}
+
+.newAbout.content.div {
+  max-width: 40vw;
+  color: white;
+}
+
+.headshotImgNew {
+  max-width: 35vw;
+  border-radius: 180px;
+  border: 2px solid pink;
+}
+
+.newAboutHeading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.newAboutSubHeading {
+  font-size: 1.2rem;
+}
+
+.newAboutText {
+  margin-top: 15px;
+}

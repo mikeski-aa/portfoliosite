@@ -1,7 +1,8 @@
 import "../../styles/new_main_design/newpagedesign.css";
 import { GlobalContext } from "../../App";
 import { useContext } from "react";
-import headshot from "../../assets/gif/IMG_20241013_1452212.png";
+import headshot from "../../assets/gif/IMG_252521.png";
+import "../../styles/new_main_design/newaboutstyle.css";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -9,7 +10,7 @@ function NewMainPageDesign() {
     <div className="newDesignDiv">
       <div className="newSection About">
         <div className="newHeadshotDiv">
-          <img src={headshot} className="headshotImg"></img>
+          <img src={headshot} className="headshotImgNew"></img>
         </div>
         <div className="newAbout content div">
           <div className="newAboutHeading">Michal Nowak</div>
