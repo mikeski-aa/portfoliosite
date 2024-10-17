@@ -12,25 +12,30 @@ function NewProjects() {
   const imgArrDesktop = desktopArray();
   const imgArrMobile = mobileArray();
   const imgNewArr = newAssetArray();
+  const [fade, setFade] = useState(true);
 
-  const indexWord = {
-    0: "zero",
+  let test = {
     1: "one",
-    2: "two",
-    3: "three",
-    4: "four",
-    5: "five",
-    6: "six",
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      if (imgIndex + 1 === imgNewArr.length) {
+    const timeout = setInterval(() => {
+      if (imgIndex == imgNewArr.length - 1) {
         setImgIndex(0);
       } else {
-        setImgIndex(imgIndex + 1);
+        setImgIndex((imgIndex) => imgIndex + 1);
       }
-    }, 2000);
+    }, 5000);
+
+    return () => clearInterval(timeout);
+  }, [imgIndex]);
+
+  useEffect(() => {
+    setFade(false);
+    const timeout = setTimeout(() => {
+      setFade(true);
+    }, 4000);
+    return () => clearTimeout(timeout);
   }, [imgIndex]);
 
   return (
@@ -38,29 +43,11 @@ function NewProjects() {
       <div className="newProjectDiv">
         <div className="newProjHeading">Test Text Here</div>
         <div className="newProjImgContainer">
-          {/* <img
-            src={imgArrDesktop[index]}
-            className="projImg desktop"
-            loading="lazy"
-          ></img>
-          <img
-            src={imgArrMobile[index]}
-            className="projImg mobile"
-            loading="lazy"
-          ></img> */}
           <img
             src={imgNewArr[imgIndex]}
-            className="projImg new"
+            className={`projImg ${fade ? "new" : ""} directsc`}
             loading="lazy"
           ></img>
-          {/* {imgNewArr.map((item, index) => (
-            <img
-              key={index}
-              src={item}
-              className={`projImg new ${indexWord[]} ${indexWord[imgIndex]}`}
-              loading="lazy"
-            ></img>
-          ))} */}
         </div>
 
         <div className="newProjDesc">
