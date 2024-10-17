@@ -7,7 +7,7 @@
 
 .newAbout.content.div {
   max-width: 40vw;
-  min-width: 40vw;
+  /* min-width: 40vw;  */
   color: white;
   display: flex;
   flex-direction: column;
@@ -25,12 +25,18 @@
 .newAboutHeading {
   font-size: 2rem;
   font-weight: 700;
-  animation: typing 1s steps(20, end) forwards;
+  /* animation: typing 1s steps(20, end) forwards;
+  animation: borderFlicker 1s infinite; */
+  animation-name: typing;
+  animation-duration: 1s;
+  animation-timing-function: steps(20, end);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0;
   overflow: hidden;
-  width: 0;
+  width: 100%;
   white-space: nowrap;
-  border-right: 0.15rem solid orange;
-  max-width: fit-content;
+  border-right: 0.3rem solid orange;
 }
 
 .newAboutSubHeading {
@@ -45,6 +51,11 @@
 
 .newAboutText {
   margin-top: 15px;
+}
+
+.Typewriter__cursor {
+  color: orange;
+  font-weight: 800;
 }
 
 @keyframes descLoad {
@@ -77,5 +88,47 @@
 
   to {
     border-color: orange;
+  }
+}
+
+@keyframes borderFlicker {
+  from {
+    border-color: rgba(255, 255, 255, 0);
+  }
+
+  to {
+    border-color: orange;
+  }
+}
+
+@media (max-width: 650px) {
+  .newSection.About {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newAboutHeading {
+  }
+
+  .newAbout.content.div {
+    max-width: 90%;
+    /* width: 100%; */
+    text-align: center;
+    align-items: center;
+  }
+
+  .newAboutText {
+    max-width: 90%;
+  }
+
+  /* .Typewriter {
+    display: flex;
+  } */
+
+  .newAboutHeading,
+  .newAboutSubHeading {
+    overflow: hidden;
+    text-wrap: wrap;
+    width: fit-content;
   }
 }

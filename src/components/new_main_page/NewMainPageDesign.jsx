@@ -3,6 +3,10 @@ import { GlobalContext } from "../../App";
 import { useContext } from "react";
 import headshot from "../../assets/gif/IMG_252521.png";
 import "../../styles/new_main_design/newaboutstyle.css";
+import "../../styles/new_main_design/newskills.css";
+import Typewriter from "typewriter-effect";
+import skills from "../../utils/skillsData";
+import NewSkillBox from "./NewSkillBox";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -18,14 +22,24 @@ function NewMainPageDesign() {
             Fullstack developer based in Berlin&nbsp;
           </div>
           <div className="newAboutText">
-            I'm a self-taught fullstack developer who's always been drawn to the
-            creative and technical aspects of building websites. I love the
-            challenge of turning ideas into reality, and I'm constantly learning
-            new things to stay on top of the latest trends in web development.
+            <Typewriter
+              options={{ delay: 0.2 }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString(
+                    "I'm a self-taught fullstack developer who's always been drawn to the creative and technical aspects of building websites. I love the challenge of turning ideas into reality, and I'm constantly learning new things to stay on top of the latest trends in web development."
+                  )
+                  .start();
+              }}
+            />
           </div>
         </div>
       </div>
-      <div className="newSection Skills"></div>
+      <div className="newSection Skills">
+        {skills.map((item, index) => (
+          <NewSkillBox key={index} name={item.name} />
+        ))}
+      </div>
       <div className="newSection Projects"></div>
       <div className="newSection Contact"></div>
     </div>

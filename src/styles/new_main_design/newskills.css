@@ -1,0 +1,25 @@
+.newSection.Skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.newSkillBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid orange;
+  gap: 0.5rem;
+}
+
+.newSkillIcon {
+  width: 15px;
+  height: 15px;
+  fill: orange;
+}
+
+.newSkillText {
+  font-weight: 600;
+  color: white;
+}

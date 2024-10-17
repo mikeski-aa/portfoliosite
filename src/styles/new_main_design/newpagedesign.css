@@ -1,3 +1,5 @@
 .newDesignDiv {
-  /* height: 2000px; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
