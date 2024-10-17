@@ -5,10 +5,10 @@ import "../styles/folder.css";
 import { GlobalContext } from "../App";
 
 function Folder(props) {
-  const [rootStat, setFolderStat] = useState(false);
-  const [childOneStat, setChildOneStat] = useState(false);
-  const [childTwoStat, setChildTwoStat] = useState(false);
-  const [childThreeStat, setChildThreeStat] = useState(false);
+  const [rootStat, setFolderStat] = useState(true);
+  const [childOneStat, setChildOneStat] = useState(true);
+  const [childTwoStat, setChildTwoStat] = useState(true);
+  const [childThreeStat, setChildThreeStat] = useState(true);
   const globalContext = useContext(GlobalContext);
 
   const handleOuterClick = () => {

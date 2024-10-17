@@ -15,7 +15,6 @@
 }
 
 .explorerContainer.false {
-  /* opacity: 0; */
-  /* visibility: hidden; */
+
   overflow: hidden;
 }

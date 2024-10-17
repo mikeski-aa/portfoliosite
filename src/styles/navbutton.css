@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  z-index: 0;
 }
 
 .navBtnDiv {
