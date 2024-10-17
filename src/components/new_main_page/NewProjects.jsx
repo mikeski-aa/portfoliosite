@@ -25,7 +25,7 @@ function NewProjects() {
       } else {
         setImgIndex((imgIndex) => imgIndex + 1);
       }
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(timeout);
   }, [imgIndex]);
@@ -34,9 +34,11 @@ function NewProjects() {
     setFade(false);
     const timeout = setTimeout(() => {
       setFade(true);
-    }, 2500);
+    }, 3000);
     return () => clearTimeout(timeout);
   }, [imgIndex]);
+
+  // for now im going to leave these terrible transtions in, but THEY NEED TO GET FIXED... IT LOOKS AWFUL.
 
   return (
     <div className="newProjectsContainer">
