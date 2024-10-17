@@ -4,9 +4,11 @@ import { useContext } from "react";
 import headshot from "../../assets/gif/IMG_252521.png";
 import "../../styles/new_main_design/newaboutstyle.css";
 import "../../styles/new_main_design/newskills.css";
+import "../../styles/new_main_design/newprojects.css";
 import Typewriter from "typewriter-effect";
 import skills from "../../utils/skillsData";
 import NewSkillBox from "./NewSkillBox";
+import NewProjects from "./NewProjects";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -40,7 +42,9 @@ function NewMainPageDesign() {
           <NewSkillBox key={index} name={item.name} />
         ))}
       </div>
-      <div className="newSection Projects"></div>
+      <div className="newSection Projects">
+        <NewProjects />
+      </div>
       <div className="newSection Contact"></div>
     </div>
   );
