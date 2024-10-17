@@ -8,27 +8,30 @@ import {
 } from "../../utils/imageImport";
 
 function NewProjects() {
-  const [index, setIndex] = useState(0);
+  const [imgIndex, setImgIndex] = useState(0);
   const imgArrDesktop = desktopArray();
   const imgArrMobile = mobileArray();
   const imgNewArr = newAssetArray();
 
-  const imgTest = {
-    0: <img src={TestImage} className="projImg" loading="lazy"></img>,
-    1: <img src={TestImageOne} className="projImg" loading="lazy"></img>,
+  const indexWord = {
+    0: "zero",
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
   };
-
-  const renderedImage = imgTest[index];
 
   useEffect(() => {
     setTimeout(() => {
-      if (index + 1 === imgNewArr.length) {
-        setIndex(0);
+      if (imgIndex + 1 === imgNewArr.length) {
+        setImgIndex(0);
       } else {
-        setIndex(index + 1);
+        setImgIndex(imgIndex + 1);
       }
-    }, 7100);
-  }, [index]);
+    }, 2000);
+  }, [imgIndex]);
 
   return (
     <div className="newProjectsContainer">
@@ -46,10 +49,18 @@ function NewProjects() {
             loading="lazy"
           ></img> */}
           <img
-            src={imgNewArr[index]}
-            className="projImg mobile"
+            src={imgNewArr[imgIndex]}
+            className="projImg new"
             loading="lazy"
           ></img>
+          {/* {imgNewArr.map((item, index) => (
+            <img
+              key={index}
+              src={item}
+              className={`projImg new ${indexWord[]} ${indexWord[imgIndex]}`}
+              loading="lazy"
+            ></img>
+          ))} */}
         </div>
 
         <div className="newProjDesc">

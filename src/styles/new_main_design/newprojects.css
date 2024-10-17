@@ -5,10 +5,35 @@
   align-items: center;
 }
 
-.projImg {
-  animation: fadeInOut 7s 1s infinite;
+.newProjectDiv {
+  border: 3px solid orange;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
 
+.projImg {
+  /* animation: fadeInOut 7s 3s forward; */
   object-fit: contain;
+  opacity: 1;
+}
+/* .projImg.new.zero.zero,
+.projImg.new.one.one,
+.projImg.new.two.two,
+.projImg.new.three.three,
+.projImg.new.four.four,
+.projImg.new.five.five,
+.projImg.new.six.six {
+  opacity: 0.5;
+} */
+
+.projImg.new {
+  max-width: 50vw;
+  border-radius: 25px;
 }
 
 .projImg.desktop {
@@ -19,7 +44,7 @@
   max-height: 30vw;
 }
 
-@keyframes fadeInOut {
+/* @keyframes fadeInOut {
   0% {
     opacity: 0;
   }
@@ -31,4 +56,4 @@
   100% {
     opacity: 0;
   }
-}
+} */
