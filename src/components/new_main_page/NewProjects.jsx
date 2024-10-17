@@ -34,7 +34,7 @@ function NewProjects() {
     setFade(false);
     const timeout = setTimeout(() => {
       setFade(true);
-    }, 4000);
+    }, 2500);
     return () => clearTimeout(timeout);
   }, [imgIndex]);
 
