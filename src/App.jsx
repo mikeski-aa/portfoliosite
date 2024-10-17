@@ -17,6 +17,7 @@ import TerminalBox from "./components/TerminalBox";
 import AllTabsClosed from "./components/AllTabsClosed";
 import { disableAllPages, enablAllPages } from "./utils/helperStateUpdates";
 import EmailModal from "./components/EmailModal";
+import NewMainPageDesign from "./components/new_main_page/NewMainPageDesign";
 
 export const GlobalContext = createContext();
 
@@ -214,6 +215,7 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
+              <NewMainPageDesign />
               {/* <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
