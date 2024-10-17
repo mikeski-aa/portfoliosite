@@ -214,7 +214,7 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
-              <div
+              {/* <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
@@ -247,7 +247,7 @@ function App() {
                 ref={contactRef}
               >
                 <ContactMe />
-              </div>
+              </div> */}
 
               {navItems.length < 1 ? <AllTabsClosed /> : null}
               {!defaultPages[4].disabled ? <BonusPage /> : null}
