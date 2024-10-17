@@ -7,24 +7,65 @@
 
 .newAbout.content.div {
   max-width: 40vw;
+  min-width: 40vw;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* animation: descLoad 2s; */
 }
 
 .headshotImgNew {
   max-width: 35vw;
   border-radius: 180px;
   border: 2px solid pink;
+  /* animation: descLoad 0.3s; */
 }
 
 .newAboutHeading {
   font-size: 2rem;
   font-weight: 700;
+  animation: typing 1s steps(20, end) forwards;
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  border-right: 0.15rem solid orange;
+  max-width: fit-content;
 }
 
 .newAboutSubHeading {
   font-size: 1.2rem;
+  animation: typing 1s steps(20, end) forwards;
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  border-right: 0.15rem solid orange;
+  max-width: fit-content;
 }
 
 .newAboutText {
   margin-top: 15px;
+}
+
+@keyframes descLoad {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+    border-color: rgba(255, 255, 255, 0);
+  }
 }

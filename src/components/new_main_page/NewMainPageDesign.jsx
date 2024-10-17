@@ -13,9 +13,9 @@ function NewMainPageDesign() {
           <img src={headshot} className="headshotImgNew"></img>
         </div>
         <div className="newAbout content div">
-          <div className="newAboutHeading">Michal Nowak</div>
+          <div className="newAboutHeading">Michal Nowak&nbsp;</div>
           <div className="newAboutSubHeading">
-            Fullstack developer based in Berlin
+            Fullstack developer based in Berlin&nbsp;
           </div>
           <div className="newAboutText">
             Hey there! I'm a self-taught fullstack developer who's always been
