@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Portfolio - webapp",
-    desc: "Pure frontend-focused React project. My goal with this project was to emulate the look and feel of my preferred text editor - VSCode. I wanted to re-create the look and feel of VSCode without using any additional external packages or libraries, hence everything was written from the ground up.",
+    desc: "Pure frontend-focused React project. My goal with this project was to emulate the look and feel of my preferred text editor - VSCode. I wanted to re-create the look and feel of VSCode.",
     projectLink: "https://mnowak.netlify.app",
     repoLink: "https://github.com/mikeski-aa/portfoliosite",
     type: "Frontend",

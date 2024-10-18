@@ -93,7 +93,7 @@ function OdinbookCarousel() {
     } else {
       descRef.current.style.maxHeight = "0px";
     }
-  });
+  }, []);
 
   // handle pressing escape to close modal
   useEffect(() => {

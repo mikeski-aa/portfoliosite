@@ -19,7 +19,7 @@
 .projImg {
   object-fit: contain;
   /* transition: transform 0.5s ease-in-out; */
-  transition-duration: 1s;
+  transition-duration: 2s;
   opacity: 1;
   /* transform: translateX(0); */
 }

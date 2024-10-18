@@ -25,7 +25,7 @@ function NewProjects() {
       } else {
         setImgIndex((imgIndex) => imgIndex + 1);
       }
-    }, 4000);
+    }, 7000);
 
     return () => clearInterval(timeout);
   }, [imgIndex]);
@@ -34,7 +34,7 @@ function NewProjects() {
     setFade(false);
     const timeout = setTimeout(() => {
       setFade(true);
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timeout);
   }, [imgIndex]);
 
@@ -58,7 +58,7 @@ function NewProjects() {
           esse blanditiis. Exercitationem blanditiis asperiores praesentium iure
           necessitatibus, fuga minus ullam sint dolorum atque quo commodi
           ducimus, iusto reprehenderit! Pariatur quo eum tenetur atque iure odio
-          ea accusantium natus omnis.
+          ea accusantium natus omnis.d
         </div>
       </div>
     </div>

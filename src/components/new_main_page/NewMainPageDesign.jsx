@@ -9,6 +9,8 @@ import Typewriter from "typewriter-effect";
 import skills from "../../utils/skillsData";
 import NewSkillBox from "./NewSkillBox";
 import NewProjects from "./NewProjects";
+import projects from "../../utils/projectData";
+import NewProjectCard from "./NewProjectCard";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -43,7 +45,19 @@ function NewMainPageDesign() {
         ))}
       </div>
       <div className="newSection Projects">
-        <NewProjects />
+        {/* <NewProjects /> */}
+        <div className="newProjectCardsContainer">
+          {" "}
+          {projects.map((item, index) => (
+            <NewProjectCard
+              key={index}
+              heading={item.title}
+              text={item.desc}
+              isHosted={item.isHosted}
+              projectLink={item.projectLink}
+            />
+          ))}
+        </div>
       </div>
       <div className="newSection Contact"></div>
     </div>
