@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../styles/new_main_design/newprojectcard.css";
-import NewSkillBox from "./NewSkillBox";
+import NewSkillBoxForCard from "./NewSkillBoxForCard";
 import Internet from "../../assets/bwicons/internet.svg?react";
 import Github from "../../assets/bwicons/github2.svg?react";
 
@@ -8,13 +8,11 @@ function NewProjectCard(props) {
   const [showDesc, setShowDesc] = useState(false);
 
   const handleMouseEnter = () => {
-    console.log("xd");
     setShowDesc(true);
   };
 
   const handleMouseExit = () => {
     setShowDesc(false);
-    console.log("leaving");
   };
 
   return (
@@ -58,7 +56,7 @@ function NewProjectCard(props) {
       </div>
       <div className="techCard">
         {props.skills.map((item, index) => (
-          <NewSkillBox key={index} name={item.name} />
+          <NewSkillBoxForCard key={index} name={item.name} />
         ))}
       </div>
     </div>

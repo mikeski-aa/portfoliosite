@@ -25,7 +25,7 @@ function NewContactBox(props) {
   return (
     <button className="newContactBox" onClick={activeLink}>
       {renderedIcon ? renderedIcon : null}
-      {props.name === "Email" ? "dev.m.nowak@gmail.com" : props.name}
+      {props.name}
     </button>
   );
 }

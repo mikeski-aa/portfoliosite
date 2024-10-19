@@ -1,24 +1,19 @@
 import "../../styles/new_main_design/newpagedesign.css";
-import { GlobalContext } from "../../App";
-import { useContext } from "react";
 import headshot from "../../assets/gif/IMG_252521.png";
-import "../../styles/new_main_design/newaboutstyle.css";
 import "../../styles/new_main_design/newskills.css";
 import "../../styles/new_main_design/newprojects.css";
 import Typewriter from "typewriter-effect";
 import skills from "../../utils/skillsData";
 import NewSkillBox from "./NewSkillBox";
-import NewProjects from "./NewProjects";
 import projects from "../../utils/projectData";
 import NewProjectCard from "./NewProjectCard";
 import NewContactMe from "./NewContactMe";
-import ContactMe from "../ContactMe";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
   return (
     <div className="newDesignDiv">
-      <div className="newSection About">
+      {/* <div className="newSection About">
         <div className="newHeadshotDiv">
           <img src={headshot} className="headshotImgNew"></img>
         </div>
@@ -40,7 +35,7 @@ function NewMainPageDesign() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="newSection Skills">
         <div className="scrollHolder">
           {skills.map((item, index) => (
@@ -51,7 +46,6 @@ function NewMainPageDesign() {
       <div className="newSection Projects">
         <div className="newProjectsHeading">Projects</div>
         <div className="newProjectCardsContainer">
-          {" "}
           {projects.map((item, index) => (
             <NewProjectCard
               key={index}

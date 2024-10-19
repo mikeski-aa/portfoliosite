@@ -216,6 +216,32 @@ function App() {
             </div>
             <div className={`mainCont ${sidebarStat}`}>
               <NewMainPageDesign />
+              <div
+                className={
+                  defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
+                }
+                ref={aboutRef}
+              ></div>
+              <div
+                className={
+                  defaultPages[1].disabled ? "sectionDiv hidden" : "sectionDiv"
+                }
+                ref={projectsRef}
+              ></div>
+              <div
+                className={
+                  defaultPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
+                }
+                ref={skillsRef}
+              ></div>
+              <div
+                className={
+                  defaultPages[3].disabled
+                    ? "sectionDiv hidden"
+                    : "sectionDiv last"
+                }
+                ref={contactRef}
+              ></div>
               {/* <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"

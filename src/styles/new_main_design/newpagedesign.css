@@ -1,7 +1,7 @@
 .newDesignDiv {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 6rem;
 }
 
 .newSection.Projects,
@@ -36,4 +36,5 @@
 .ghubLink {
   text-decoration: none;
   color: white;
+  font-size: 1rem;
 }

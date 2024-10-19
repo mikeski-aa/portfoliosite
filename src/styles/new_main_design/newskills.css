@@ -21,8 +21,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0);
   border-bottom: 3px solid orange;
   gap: 0.5rem;
+  padding: 5px;
   transition-duration: 0.5s;
 }
 
@@ -39,4 +41,7 @@
 
 .newSkillBoxContainer:hover {
   cursor: pointer;
+  border-radius: 5px;
+  transform: scale(1.1);
+  border: 3px solid orange;
 }

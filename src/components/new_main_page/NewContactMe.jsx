@@ -6,12 +6,9 @@ function NewContactMe() {
   return (
     <div className="newContactContainer">
       <div className="contactMeHeadDiv">
-        <div className="contactBlurb lone">
+        <div className="contactBlurb new">
           Are you interested in collaborating together or have any questions
-          about this or any other of my projects?
-        </div>
-        <div className="contactBlurb ltwo">
-          Don't hesitate! Get in touch with me via any of the following:
+          about any of my projects?
         </div>
       </div>
       <div className="contactMeBtnDiv">
