@@ -137,7 +137,7 @@ function TerminalBox(props) {
               maxLength={25}
             ></input>
           </div>
-          <div className="terminalspacer"></div>
+          {/* <div className="terminalspacer"></div> */}
         </>
       ) : null}
       {active === 4 ? (

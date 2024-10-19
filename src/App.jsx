@@ -97,15 +97,6 @@ function App() {
       disabled: false,
     },
     {
-      name: "My_projects.jsx",
-      active: false,
-      shortname: "My_projects",
-      trueIndex: 1,
-      refLink: projectsRef,
-      visible: true,
-      disabled: false,
-    },
-    {
       name: "My_skills.jsx",
       active: false,
       shortname: "My_skills",
@@ -114,6 +105,16 @@ function App() {
       visible: true,
       disabled: false,
     },
+    {
+      name: "My_projects.jsx",
+      active: false,
+      shortname: "My_projects",
+      trueIndex: 1,
+      refLink: projectsRef,
+      visible: true,
+      disabled: false,
+    },
+
     {
       name: "Contact_me.jsx",
       active: false,
@@ -193,6 +194,70 @@ function App() {
     return () => window.removeEventListener("resize", updateWindowWidth);
   }, []);
 
+  // trying out something that will let me map pages and render them based on how they are order in navItems
+
+  const pageOrder = [
+    {
+      page: (
+        <div
+          className={
+            defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
+          }
+          ref={aboutRef}
+        >
+          <NewAboutComp />
+        </div>
+      ),
+      id: 0,
+    },
+    {
+      page: (
+        <div
+          className={
+            defaultPages[1].disabled ? "sectionDiv hidden" : "sectionDiv skills"
+          }
+          ref={skillsRef}
+        >
+          <div className="scrollHolder">
+            {skills.map((item, index) => (
+              <NewSkillBox key={index} name={item.name} />
+            ))}
+          </div>
+        </div>
+      ),
+      id: 1,
+    },
+    {
+      page: (
+        <div
+          className={
+            defaultPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
+          }
+          ref={projectsRef}
+        >
+          <NewProjectComp />
+        </div>
+      ),
+      id: 2,
+    },
+    {
+      page: (
+        <div
+          className={
+            defaultPages[3].disabled ? "sectionDiv hidden" : "sectionDiv last"
+          }
+          ref={contactRef}
+        >
+          <div className="newSection Contact">
+            <div className="newProjectsHeading">Contact</div>
+            <NewContactMe />
+          </div>
+        </div>
+      ),
+      id: 3,
+    },
+  ];
+
   return (
     <div className="page">
       {windowWidth <= 963 ? (
@@ -242,7 +307,10 @@ function App() {
                   />
                 </div>
                 <div className={`mainCont ${sidebarStat}`}>
-                  <div
+                  {pageOrder.map((page, index) => (
+                    <div key={index}>{page.page}</div>
+                  ))}
+                  {/* <div
                     className={
                       defaultPages[0].disabled
                         ? "sectionDiv hidden"
@@ -288,7 +356,7 @@ function App() {
                       <div className="newProjectsHeading">Contact</div>
                       <NewContactMe />
                     </div>
-                  </div>
+                  </div> */}
 
                   {navItems.length < 1 ? <AllTabsClosed /> : null}
                   {!defaultPages[4].disabled ? <BonusPage /> : null}
