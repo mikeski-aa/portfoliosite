@@ -38,3 +38,8 @@
   color: white;
   font-size: 1rem;
 }
+
+.contactMeHeadDiv {
+  display: flex;
+  justify-content: center;
+}
