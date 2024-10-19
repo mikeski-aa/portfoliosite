@@ -281,7 +281,7 @@ function NavButton(props) {
         ) : (
           <ReactIconComponent className="locationIcon" />
         )}
-        {props.name}
+        <div className="btnTextNavBtn"> {props.name}</div>
       </button>
       <button
         className={

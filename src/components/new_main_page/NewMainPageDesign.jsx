@@ -73,7 +73,7 @@ function NewMainPageDesign() {
             target="_blank"
             className="ghubLink"
           >
-            All of my projects can be found on my GitHub
+            More projects
           </a>
         </div>
       </div>

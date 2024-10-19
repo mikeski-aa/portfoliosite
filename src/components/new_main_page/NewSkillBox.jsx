@@ -7,6 +7,9 @@ import PsIcon from "../../assets/bwicons/photoshop.svg?react";
 import PsqlIcon from "../../assets/bwicons/postgres.svg?react";
 import ReactIcon from "../../assets/bwicons/react.svg?react";
 import ExpressIcon from "../../assets/bwicons/expressicon.svg?react";
+import VscodeIcon from "../../assets/bwicons/vscodeicon.svg?react";
+import JestIcon from "../../assets/bwicons/jesticon.svg?react";
+import GitIcon from "../../assets/bwicons/github2.svg?react";
 
 function NewSkillBox(props) {
   const icons = {
@@ -19,6 +22,9 @@ function NewSkillBox(props) {
     PostgreSQL: <PsqlIcon className="newSkillIcon" />,
     React: <ReactIcon className="newSkillIcon" />,
     Express: <ExpressIcon className="newSkillIcon" />,
+    Jest: <JestIcon className="newSkillIcon" />,
+    VSCode: <VscodeIcon className="newSkillIcon" />,
+    Git: <GitIcon className="newSkillIcon" />,
   };
 
   const renderedIcon = icons[props.name];
@@ -26,7 +32,9 @@ function NewSkillBox(props) {
   return (
     <div className="newSkillBoxContainer">
       {renderedIcon ? renderedIcon : null}
-      <div className="newSkillText">{props.name}</div>
+      <div className="newSkillText">
+        {props.name === "VSCode" ? "Visual Studio Code" : props.name}
+      </div>
     </div>
   );
 }

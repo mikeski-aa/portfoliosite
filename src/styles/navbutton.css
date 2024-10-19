@@ -59,3 +59,14 @@
 .closePageBtn.hide {
   visibility: hidden;
 }
+
+.btnTextNavBtn {
+  transition-duration: 0.5s;
+}
+
+@media (max-width: 883px) {
+  .btnTextNavBtn {
+    width: 0px;
+    overflow-x: hidden;
+  }
+}
