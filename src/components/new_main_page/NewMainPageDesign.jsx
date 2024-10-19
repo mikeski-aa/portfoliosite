@@ -56,6 +56,7 @@ function NewMainPageDesign() {
               isHosted={item.isHosted}
               projectLink={item.projectLink}
               smallPic={item.smallPic}
+              skills={item.tech}
             />
           ))}
         </div>

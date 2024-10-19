@@ -14,6 +14,16 @@ const projects = [
     type: "Backend",
     smallPic: odinbook,
     isHosted: true,
+    tech: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "Express" },
+      { name: "PostgreSQL" },
+      { name: "CSS" },
+      { name: "HTML" },
+      { name: "Photoshop" },
+    ],
   },
   {
     title: "Portfolio",
@@ -23,6 +33,14 @@ const projects = [
     type: "Frontend",
     smallPic: portfolio,
     isHosted: true,
+    tech: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "CSS" },
+      { name: "HTML" },
+      { name: "Photoshop" },
+    ],
   },
   {
     title: "Dm.me",
@@ -33,6 +51,16 @@ const projects = [
     type: "Fullstack",
     smallPic: dmme,
     isHosted: true,
+    tech: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "Express" },
+      { name: "PostgreSQL" },
+      { name: "CSS" },
+      { name: "HTML" },
+      { name: "Photoshop" },
+    ],
   },
   {
     title: "ToDo",
@@ -42,6 +70,13 @@ const projects = [
     type: "Frontend",
     smallPic: todo,
     isHosted: true,
+    tech: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "CSS" },
+      { name: "HTML" },
+    ],
   },
   {
     title: "Knight Travel",
@@ -51,6 +86,14 @@ const projects = [
     type: "Backend",
     smallPic: knight,
     isHosted: true,
+    tech: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "CSS" },
+      { name: "HTML" },
+      { name: "Photoshop" },
+    ],
   },
 
   // {

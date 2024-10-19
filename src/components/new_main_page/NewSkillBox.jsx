@@ -6,6 +6,7 @@ import NodeIcon from "../../assets/bwicons/node.svg?react";
 import PsIcon from "../../assets/bwicons/photoshop.svg?react";
 import PsqlIcon from "../../assets/bwicons/postgres.svg?react";
 import ReactIcon from "../../assets/bwicons/react.svg?react";
+import ExpressIcon from "../../assets/bwicons/expressicon.svg?react";
 
 function NewSkillBox(props) {
   const icons = {
@@ -17,6 +18,7 @@ function NewSkillBox(props) {
     Photoshop: <PsIcon className="newSkillIcon" />,
     PostgreSQL: <PsqlIcon className="newSkillIcon" />,
     React: <ReactIcon className="newSkillIcon" />,
+    Express: <ExpressIcon className="newSkillIcon" />,
   };
 
   const renderedIcon = icons[props.name];

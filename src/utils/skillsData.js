@@ -2,6 +2,7 @@ const skills = [
   { name: "JavaScript" },
   { name: "React" },
   { name: "Node" },
+  { name: "Express" },
   { name: "PostgreSQL" },
   { name: "MongoDB" },
   { name: "CSS" },
