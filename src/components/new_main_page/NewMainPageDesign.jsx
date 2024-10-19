@@ -8,6 +8,8 @@ import NewSkillBox from "./NewSkillBox";
 import projects from "../../utils/projectData";
 import NewProjectCard from "./NewProjectCard";
 import NewContactMe from "./NewContactMe";
+import desktopShowcase from "../../assets/gif/desktopShowcase.gif";
+import terminalShowcase from "../../assets/gif/terminalShowcase.gif";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -74,6 +76,22 @@ function NewMainPageDesign() {
       <div className="newSection Contact">
         <div className="newProjectsHeading">Contact</div>
         <NewContactMe />
+      </div>
+      <div className="mobile">
+        <div className="mobileTextHeader">Hey there mobile device user!</div>
+        <div className="mobileMainText">
+          Check out the desktop version to see the full version of my website
+          which includes:
+        </div>
+
+        <div className="imagesGifs">
+          <div className="firstImgText">
+            Interactive explorer and page windows
+          </div>
+          <img src={desktopShowcase} className="desktopShowcase"></img>
+          <div className="firstImgText two">Interactive terminal</div>
+          <img src={terminalShowcase} className="desktopShowcase"></img>
+        </div>
       </div>
     </div>
   );

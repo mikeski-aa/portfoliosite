@@ -23,6 +23,7 @@
 .newContactIcon {
   width: 5vw;
   height: 5vw;
+  max-width: 130px;
   fill: orange;
 }
 

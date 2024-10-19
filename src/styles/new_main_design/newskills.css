@@ -1,6 +1,8 @@
 .newSection.Skills {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  height: fit-content;
 
   /* overflow-x: hidden; */
 }
@@ -12,7 +14,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   width: 80%;
-  height: 10rem;
+  min-height: 10rem;
   /* width: fit-content; */
 }
 
@@ -40,6 +42,9 @@
 .newSkillText {
   font-weight: 600;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .newSkillBoxContainer:hover {

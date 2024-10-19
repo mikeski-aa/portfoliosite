@@ -3,11 +3,14 @@
   flex-direction: column;
   align-items: left;
   gap: 6rem;
+  justify-content: space-between;
+  height: 100%;
 
   /* overflow: hidden;
   background-color: rgb(44, 44, 126); */
   width: 100%;
   margin-top: 61px;
+
   /* height: 109%; */
 }
 

@@ -149,6 +149,7 @@ function TerminalBox(props) {
           <button className="portBox">Forward a port</button>
         </div>
       ) : null}
+      <div className="terminalspacer"></div>
     </div>
   );
 }
