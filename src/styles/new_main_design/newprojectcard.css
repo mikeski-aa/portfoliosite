@@ -1,7 +1,7 @@
 .newProjectCardsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
 }
 
@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border: none;
   margin-top: 0px;
 }
@@ -35,6 +36,7 @@
 .newProjectCard:hover {
   cursor: pointer;
   transform: scale(1.02);
+  box-shadow: 5px 5px 5px 5px rgb(129, 87, 2);
 }
 
 .newProjectDesc.false {
@@ -78,6 +80,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
+  margin-bottom: 25px;
 }
 
 .btnCard {
@@ -94,4 +97,30 @@
 .btnCard:hover {
   cursor: pointer;
   border-bottom: 2px solid orange;
+}
+
+.projText,
+.projectHeading {
+  text-align: center;
+}
+
+@media (max-width: 510px) {
+  .cardImgSmall,
+  .newProjectDesc,
+  .techCard {
+    min-width: 60vw;
+    max-width: 60vw;
+  }
+
+  .projText {
+    font-size: 0.6rem;
+  }
+
+  .projectHeading {
+    font-size: 1rem;
+  }
+
+  .projectLinksDiv {
+    margin-bottom: 0;
+  }
 }
