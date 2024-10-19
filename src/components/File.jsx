@@ -129,6 +129,8 @@ function File(props) {
             globalContext.navItems
           );
         } else {
+          console.log("we are here");
+          console.log(globalContext.navItems);
           // console.log("setting new items");
           // console.log("fileLogic logRef 11");
           addNewPageToNav(

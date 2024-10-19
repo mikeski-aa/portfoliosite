@@ -115,6 +115,8 @@ function closeBonusActive(
     filteredNav[0].active = true;
   }
 
+  console.log(filteredNav);
+
   setNavItems(filteredNav);
 
   // disable bonus page. enable clicked page. also needs to enable other pages if they are open!

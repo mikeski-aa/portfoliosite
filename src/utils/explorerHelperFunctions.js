@@ -20,6 +20,7 @@ function addNewPageToNav(defaultPages, setNavItems, input, navItems) {
     if (copyDefault[x].shortname === input) {
       // we need to copy the page and re-enable it after it was closed!
       copyDefault[x].disabled = false;
+      // copyDefault[x].active = true;
       pageObject = copyDefault[x];
     }
   }

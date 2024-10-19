@@ -149,6 +149,10 @@ h2:hover {
   /* background-color: rgb(46, 46, 103); */
 }
 
+.contentHolder.hidden {
+  display: none;
+}
+
 .sectionDiv.skills {
   /* height: 500px; */
 }

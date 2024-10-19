@@ -134,6 +134,12 @@ function App() {
     },
   ]);
 
+  // set states to manage refs
+  // const [aboutVisRef, setAboutVisRef] = useState(useInView(aboutRef, "0px"))
+  // const [projectVisRef, setProjectVisRef] = useState(useInView(projectsRef, "0px"))
+  // const [skillVisRef, setSkillVisRef] = useState(useInView(skillsRef, "0px"))
+  // const [contactVisRef, setContactVisRef] = useState(useInView(contactRef, "0px"))
+
   // using custom hook to check whether an area is in view and adjust text accordingly
   const aboutVisible = useInView(aboutRef, "0px");
   const projectsVisible = useInView(projectsRef, "0px");
@@ -146,6 +152,7 @@ function App() {
 
   useEffect(() => {
     if (!dontRun) {
+      console.log("still running");
       if (aboutVisible) {
         setActivePage("zero");
         setCurrentPage("About_me.jsx");
@@ -201,7 +208,7 @@ function App() {
       page: (
         <div
           className={
-            defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
+            defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv about"
           }
           ref={aboutRef}
         >
@@ -231,7 +238,9 @@ function App() {
       page: (
         <div
           className={
-            defaultPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
+            defaultPages[2].disabled
+              ? "sectionDiv hidden"
+              : "sectionDiv projects"
           }
           ref={projectsRef}
         >
@@ -258,31 +267,31 @@ function App() {
     },
   ];
 
-  const [pageOrderState, setPageOrderState] = useState(pageOrder);
+  // const [pageOrderState, setPageOrderState] = useState(pageOrder);
 
   // this is quite ugly and uses double for loop which is a no-no but it works
-  useEffect(() => {
-    const updatePageOrder = () => {
-      const tempArr = [];
-      const shallowCopy = [...pageOrder];
-      navItems.map((item) => tempArr.push(item.trueIndex));
-      const test = [];
+  // useEffect(() => {
+  //   const updatePageOrder = () => {
+  //     const tempArr = [];
+  //     const shallowCopy = [...pageOrder];
+  //     navItems.map((item) => tempArr.push(item.trueIndex));
+  //     const test = [];
 
-      for (let x = 0; x < tempArr.length; x++) {
-        for (let y = 0; y < pageOrder.length; y++) {
-          if (tempArr[x] === pageOrder[y].id) {
-            test.push(pageOrder[y]);
-          }
-        }
-      }
+  //     for (let x = 0; x < tempArr.length; x++) {
+  //       for (let y = 0; y < pageOrder.length; y++) {
+  //         if (tempArr[x] === pageOrder[y].id) {
+  //           test.push(pageOrder[y]);
+  //         }
+  //       }
+  //     }
 
-      setPageOrderState(test);
+  //     setPageOrderState(test);
 
-      console.log(tempArr);
-    };
+  //     console.log(tempArr);
+  //   };
 
-    updatePageOrder();
-  }, [navItems]);
+  //   updatePageOrder();
+  // }, [navItems]);
 
   return (
     <div className="page">
@@ -333,8 +342,17 @@ function App() {
                   />
                 </div>
                 <div className={`mainCont ${sidebarStat}`}>
-                  {pageOrderState.map((page, index) => (
-                    <div key={index}>{page.page}</div>
+                  {pageOrder.map((page, index) => (
+                    <div
+                      key={index}
+                      className={
+                        defaultPages[page.id].disabled
+                          ? "contentHolder hidden"
+                          : "contentHolder"
+                      }
+                    >
+                      {page.page}
+                    </div>
                   ))}
                   {/* <div
                     className={
