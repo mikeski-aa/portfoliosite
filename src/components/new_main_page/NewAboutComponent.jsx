@@ -2,7 +2,7 @@ import Typewriter from "typewriter-effect";
 import "../../styles/new_main_design/newaboutstyle.css";
 import headshot from "../../assets/gif/IMG_252521.png";
 
-function NewAboutComponent() {
+function NewAboutComp() {
   return (
     <div className="newSection About">
       <div className="newHeadshotDiv">
@@ -30,4 +30,4 @@ function NewAboutComponent() {
   );
 }
 
-export default NewAboutComponent;
+export default NewAboutComp;

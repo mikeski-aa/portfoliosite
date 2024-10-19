@@ -139,10 +139,11 @@ h2:hover {
 }
 
 .sectionDiv {
-  border-bottom: 2px solid grey;
-  padding-bottom: 3.9rem;
+  /* border-bottom: 2px solid grey; */
+  /* padding-bottom: 3.9rem; */
   display: flex;
-  margin-bottom: 150px;
+  justify-content: center;
+  /* margin-bottom: 150px; */
   /* justify-content: left; */
   /* background-color: rgb(46, 46, 103); */
 }

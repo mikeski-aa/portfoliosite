@@ -18,6 +18,11 @@ import AllTabsClosed from "./components/AllTabsClosed";
 import { disableAllPages, enablAllPages } from "./utils/helperStateUpdates";
 import EmailModal from "./components/EmailModal";
 import NewMainPageDesign from "./components/new_main_page/NewMainPageDesign";
+import NewAboutComp from "./components/new_main_page/NewAboutComponent";
+import skills from "./utils/skillsData";
+import NewSkillBox from "./components/new_main_page/NewSkillBox";
+import NewProjectComp from "./components/new_main_page/NewProjectsComp";
+import NewContactMe from "./components/new_main_page/NewContactMe";
 
 export const GlobalContext = createContext();
 
@@ -215,25 +220,35 @@ function App() {
               />
             </div>
             <div className={`mainCont ${sidebarStat}`}>
-              <NewMainPageDesign />
+              {/* <NewMainPageDesign /> */}
               <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
                 ref={aboutRef}
-              ></div>
+              >
+                <NewAboutComp />
+              </div>
               <div
                 className={
                   defaultPages[1].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
-                ref={projectsRef}
-              ></div>
+                ref={skillsRef}
+              >
+                <div className="scrollHolder">
+                  {skills.map((item, index) => (
+                    <NewSkillBox key={index} name={item.name} />
+                  ))}
+                </div>
+              </div>
               <div
                 className={
                   defaultPages[2].disabled ? "sectionDiv hidden" : "sectionDiv"
                 }
-                ref={skillsRef}
-              ></div>
+                ref={projectsRef}
+              >
+                <NewProjectComp />
+              </div>
               <div
                 className={
                   defaultPages[3].disabled
@@ -241,7 +256,12 @@ function App() {
                     : "sectionDiv last"
                 }
                 ref={contactRef}
-              ></div>
+              >
+                <div className="newSection Contact">
+                  <div className="newProjectsHeading">Contact</div>
+                  <NewContactMe />
+                </div>
+              </div>
               {/* <div
                 className={
                   defaultPages[0].disabled ? "sectionDiv hidden" : "sectionDiv"
