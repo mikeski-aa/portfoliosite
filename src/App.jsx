@@ -58,7 +58,7 @@ function App() {
       name: "My_skills.jsx",
       active: false,
       shortname: "My_skills",
-      trueIndex: 2,
+      trueIndex: 1,
       refLink: skillsRef,
       visible: true,
       disabled: false,
@@ -67,7 +67,7 @@ function App() {
       name: "My_projects.jsx",
       active: false,
       shortname: "My_projects",
-      trueIndex: 1,
+      trueIndex: 2,
       refLink: projectsRef,
       visible: true,
       disabled: false,
@@ -100,7 +100,7 @@ function App() {
       name: "My_skills.jsx",
       active: false,
       shortname: "My_skills",
-      trueIndex: 2,
+      trueIndex: 1,
       refLink: skillsRef,
       visible: true,
       disabled: false,
@@ -109,7 +109,7 @@ function App() {
       name: "My_projects.jsx",
       active: false,
       shortname: "My_projects",
-      trueIndex: 1,
+      trueIndex: 2,
       refLink: projectsRef,
       visible: true,
       disabled: false,
@@ -258,6 +258,32 @@ function App() {
     },
   ];
 
+  const [pageOrderState, setPageOrderState] = useState(pageOrder);
+
+  // this is quite ugly and uses double for loop which is a no-no but it works
+  useEffect(() => {
+    const updatePageOrder = () => {
+      const tempArr = [];
+      const shallowCopy = [...pageOrder];
+      navItems.map((item) => tempArr.push(item.trueIndex));
+      const test = [];
+
+      for (let x = 0; x < tempArr.length; x++) {
+        for (let y = 0; y < pageOrder.length; y++) {
+          if (tempArr[x] === pageOrder[y].id) {
+            test.push(pageOrder[y]);
+          }
+        }
+      }
+
+      setPageOrderState(test);
+
+      console.log(tempArr);
+    };
+
+    updatePageOrder();
+  }, [navItems]);
+
   return (
     <div className="page">
       {windowWidth <= 963 ? (
@@ -307,7 +333,7 @@ function App() {
                   />
                 </div>
                 <div className={`mainCont ${sidebarStat}`}>
-                  {pageOrder.map((page, index) => (
+                  {pageOrderState.map((page, index) => (
                     <div key={index}>{page.page}</div>
                   ))}
                   {/* <div
