@@ -57,6 +57,9 @@ function NewMainPageDesign() {
               projectLink={item.projectLink}
               smallPic={item.smallPic}
               skills={item.tech}
+              type={item.type}
+              feRepo={item.feRepo}
+              beRepo={item.beRepo}
             />
           ))}
         </div>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../../styles/new_main_design/newprojectcard.css";
 import NewSkillBox from "./NewSkillBox";
+import Internet from "../../assets/bwicons/internet.svg?react";
+import Github from "../../assets/bwicons/github2.svg?react";
 
 function NewProjectCard(props) {
   const [showDesc, setShowDesc] = useState(false);
@@ -25,7 +27,31 @@ function NewProjectCard(props) {
       <div className={`newProjectDesc ${showDesc}`}>
         <p className="projectHeading">{props.heading}</p>
         <p className="projText">{props.text}</p>
-        <div className="projectLinksDiv"></div>
+        <div className="projectLinksDiv">
+          <button
+            className="btnCard"
+            onClick={() => window.open(props.projectLink, "_blank")}
+          >
+            <Internet className="projectLinkIcon" />
+            Project site
+          </button>
+          <button
+            className="btnCard"
+            onClick={() => window.open(props.feRepo, "_blank")}
+          >
+            <Github className="projectLinkIcon" />
+            Frontend Repo
+          </button>
+          {props.type != "Fullstack" ? null : (
+            <button
+              className="btnCard"
+              onClick={() => window.open(props.beRepo, "_blank")}
+            >
+              <Github className="projectLinkIcon" />
+              Backend Repo
+            </button>
+          )}
+        </div>
       </div>
       <div className="newProjectImg">
         <img className="cardImgSmall" src={props.smallPic} />
