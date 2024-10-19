@@ -8,7 +8,7 @@ import portfolio from "../assets/project_cards/portfolio.png";
 const projects = [
   {
     title: "Odinbook",
-    desc: "Lsfsgs gsdgsdg dgksdjfa sdfhjIOJ OhifseduofhSDFL SDNFSDKFJSDIOFSDJFSDFSDF",
+    desc: "Odinbook is a PERN stack social media webapp based on Facebook's design. Secure user login implemented using JWT, users are able to create new accounts, create text or picture posts, create comments and likes, manage friends, customise their profile. ",
     projectLink: "https://odinbookproject.netlify.app/",
     repoLink: "https://github.com/mikeski-aa/knight-travel",
     type: "Backend",
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     title: "Dm.me",
-    desc: "Fullstack project, React frontend built on Node & Express backend. This application handles registeration, loggin in, friend list management and direct messaging as well as group messages.",
+    desc: "Dm.me is a PERN stack messaging webapp. Secure login using JWT, users can add friends, create direct messages, create group messages to 3 or more friends, manage their friends and customise user profile (online status, profile picture, display name).",
     projectLink: "https://dmmeapp.netlify.app",
     feRepo: "https://github.com/mikeski-aa/messenger-frontend",
     beRepo: "https://github.com/mikeski-aa/messenger-backend",
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     title: "ToDo",
-    desc: "Pure frontend project. Users are able to create and manage To Dos, create custom lists, change date formatting.",
+    desc: "ToDo is a React to-do webapp. Users are able to create and manage their individual to-do tasks, create specific to-do lists for tasks, move and re-assign tasks between lists and change their preferred data format (EU/US).",
     projectLink: "https://to-do-app-react-mikeski.netlify.app/",
     repoLink: "https://github.com/mikeski-aa/to-do-app-react",
     type: "Frontend",
@@ -80,7 +80,7 @@ const projects = [
   },
   {
     title: "Knight Travel",
-    desc: "Pure Node project. The program will calculate the shortest possible move from a starting point on a chessboard to the final coordinates determined by the user, displaying the optimal shortest path and number of interations taken to get there using recursion and breadth-first approach. App was recently re-written in react and hosted with simple animations.",
+    desc: "Knight travel is a React project where a user can select the starting and end location for the knight on the chessboard by either drag and drop or clicking the chessboard. The shortest path betwen two coordinates is displayed and possible paths are animated.",
     projectLink: "https://knight-move-react.netlify.app/",
     repoLink: "https://github.com/mikeski-aa/knight-travel",
     type: "Backend",

@@ -5,16 +5,6 @@
   align-items: center;
 }
 
-.cardImgSmall {
-  width: 20vw;
-}
-
-.newProjectImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .newProjectDiv {
   border: 3px solid orange;
   border-radius: 25px;
