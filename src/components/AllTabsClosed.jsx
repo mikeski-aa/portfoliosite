@@ -10,7 +10,7 @@ function AllTabsClosed() {
           <span className="fcnStyle">functionality</span>! Nice! Here's how to
           re-open closed tabs:
         </div>
-        <img src={HowToGif} className="gifimg"></img>
+        <img src={HowToGif} className="gifimg" loading="lazy"></img>
       </div>
     </div>
   );
