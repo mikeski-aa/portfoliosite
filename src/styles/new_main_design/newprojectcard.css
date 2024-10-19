@@ -7,13 +7,23 @@
 
 .newProjectCard {
   color: white;
-  border: 3px solid orange;
+  outline: 3px solid orange;
   border-radius: 25px;
-  padding: 15px;
+
   width: fit-content;
-  height: 250px;
 }
 
 .newProjectDesc {
   max-width: 400px;
+}
+
+.cardImgSmall {
+  width: 30vw;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.newProjectImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

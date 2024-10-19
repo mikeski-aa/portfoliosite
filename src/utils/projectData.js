@@ -7,6 +7,15 @@ import portfolio from "../assets/project_cards/portfolio.png";
 
 const projects = [
   {
+    title: "Odinbook",
+    desc: "Lsfsgs gsdgsdg dgksdjfa sdfhjIOJ OhifseduofhSDFL SDNFSDKFJSDIOFSDJFSDFSDF",
+    projectLink: "https://odinbookproject.netlify.app/",
+    repoLink: "https://github.com/mikeski-aa/knight-travel",
+    type: "Backend",
+    smallPic: odinbook,
+    isHosted: true,
+  },
+  {
     title: "Portfolio",
     desc: "Pure frontend-focused React project. My goal with this project was to emulate the look and feel of my preferred text editor - VSCode. I wanted to re-create the look and feel of VSCode.",
     projectLink: "https://mnowak.netlify.app",
@@ -43,15 +52,7 @@ const projects = [
     smallPic: knight,
     isHosted: true,
   },
-  {
-    title: "Odinbook",
-    desc: "LsfsgsgsdgsdgdgksdjfasdfhjIOJOhifseduofhSDFLSDNFSDKFJSDIOFSDJFSDFSDF",
-    projectLink: "https://odinbookproject.netlify.app/",
-    repoLink: "https://github.com/mikeski-aa/knight-travel",
-    type: "Backend",
-    smallPic: odinbook,
-    isHosted: true,
-  },
+
   // {
   //   title: "Where's Waldo - game",
   //   desc: "Fullstack game project, React frontend on Node backend. Users must identify specific characters on an image by clicking on the image. User time taken to find characters is taken and stored in Postgres database for the leaderboards. ",
