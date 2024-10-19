@@ -20,7 +20,7 @@
 
 .newProjectDesc {
   min-width: 400px;
-  max-width: 30vw;
+  max-width: 20vw;
   position: absolute;
   background-color: rgba(21, 21, 21, 0.853);
   height: 99%;
@@ -44,7 +44,7 @@
 }
 
 .cardImgSmall {
-  max-width: 30vw;
+  max-width: 20vw;
   min-width: 400px;
   border-radius: 25px 25px 0px 0px;
 }
@@ -58,7 +58,7 @@
 .techCard {
   display: flex;
   flex-wrap: wrap;
-  max-width: 30vw;
+  max-width: 20vw;
   min-width: 400px;
   align-items: center;
   justify-content: center;

@@ -42,9 +42,11 @@ function NewMainPageDesign() {
         </div>
       </div>
       <div className="newSection Skills">
-        {skills.map((item, index) => (
-          <NewSkillBox key={index} name={item.name} />
-        ))}
+        <div className="scrollHolder">
+          {skills.map((item, index) => (
+            <NewSkillBox key={index} name={item.name} />
+          ))}
+        </div>
       </div>
       <div className="newSection Projects">
         <div className="newProjectsHeading">Projects</div>

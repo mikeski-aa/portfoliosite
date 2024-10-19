@@ -1,8 +1,23 @@
 .newSection.Skills {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+}
+
+.scrollHolder {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  white-space: nowrap; /* Prevent line breaks */
+  animation: scroll-skills infinite linear;
+  animation-duration: 3s;
+
+  /* Other styles for positioning and width */
+}
+
+.scrollHolder {
 }
 
 .newSkillBoxContainer {
@@ -22,4 +37,17 @@
 .newSkillText {
   font-weight: 600;
   color: white;
+}
+
+@keyframes scroll-skills {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%); /* Adjust for container width */
+  }
+
+  100% {
+    transform: translateX(100%); /* Adjust for container width */
+  }
 }
