@@ -150,44 +150,37 @@ function App() {
         setCurrentPage("About_me.jsx");
         setCpage("About_me");
         helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
-        console.log(
-          aboutVisible,
-          projectsVisible,
-          skillsVisible,
-          contactVisible
-        );
-      } else if (projectsVisible) {
-        setCurrentPage("My_projects.jsx");
-        setCpage("My_projects");
-        setActivePage("one");
-        helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
-        console.log(
-          aboutVisible,
-          projectsVisible,
-          skillsVisible,
-          contactVisible
-        );
+      } else if (projectsVisible && skillsVisible) {
+        setCurrentPage("My_skills.jsx");
+        setCpage("My_skills");
+        setActivePage("two");
+        helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
       } else if (skillsVisible) {
         setCurrentPage("My_skills.jsx");
         setCpage("My_skills");
         setActivePage("two");
         helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
-        console.log(
-          aboutVisible,
-          projectsVisible,
-          skillsVisible,
-          contactVisible
-        );
-      } else if (contactVisible) {
+      } else if (projectsVisible && contactVisible) {
         setCurrentPage("Contact_me.jsx");
         setCpage("Contact_me");
         setActivePage("three");
 
         helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
+      } else if (projectsVisible) {
+        setCurrentPage("My_projects.jsx");
+        setCpage("My_projects");
+        setActivePage("one");
+        helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
+      } else if (contactVisible) {
+        setCurrentPage("Contact_me.jsx");
+        setCpage("Contact_me");
+        setActivePage("three");
+        helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
       }
     }
   }, [aboutVisible, projectsVisible, skillsVisible, contactVisible]);
 
+  // update with window scale to render mobile page instead
   useEffect(() => {
     const updateWindowWidth = () => {
       const newWidth = window.innerWidth;
