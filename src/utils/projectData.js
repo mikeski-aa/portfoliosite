@@ -92,7 +92,6 @@ const projects = [
       { name: "Node" },
       { name: "CSS" },
       { name: "HTML" },
-      { name: "Photoshop" },
     ],
   },
 
