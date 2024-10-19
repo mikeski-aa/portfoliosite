@@ -150,20 +150,39 @@ function App() {
         setCurrentPage("About_me.jsx");
         setCpage("About_me");
         helperScrollStateUpdate(navItems, setNavItems, "About_me.jsx");
+        console.log(
+          aboutVisible,
+          projectsVisible,
+          skillsVisible,
+          contactVisible
+        );
       } else if (projectsVisible) {
         setCurrentPage("My_projects.jsx");
         setCpage("My_projects");
         setActivePage("one");
         helperScrollStateUpdate(navItems, setNavItems, "My_projects.jsx");
+        console.log(
+          aboutVisible,
+          projectsVisible,
+          skillsVisible,
+          contactVisible
+        );
       } else if (skillsVisible) {
         setCurrentPage("My_skills.jsx");
         setCpage("My_skills");
         setActivePage("two");
         helperScrollStateUpdate(navItems, setNavItems, "My_skills.jsx");
+        console.log(
+          aboutVisible,
+          projectsVisible,
+          skillsVisible,
+          contactVisible
+        );
       } else if (contactVisible) {
         setCurrentPage("Contact_me.jsx");
         setCpage("Contact_me");
         setActivePage("three");
+
         helperScrollStateUpdate(navItems, setNavItems, "Contact_me.jsx");
       }
     }
@@ -244,7 +263,7 @@ function App() {
                     className={
                       defaultPages[1].disabled
                         ? "sectionDiv hidden"
-                        : "sectionDiv"
+                        : "sectionDiv skills"
                     }
                     ref={skillsRef}
                   >
