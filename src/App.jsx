@@ -23,7 +23,7 @@ import skills from "./utils/skillsData";
 import NewSkillBox from "./components/new_main_page/NewSkillBox";
 import NewProjectComp from "./components/new_main_page/NewProjectsComp";
 import NewContactMe from "./components/new_main_page/NewContactMe";
-import "../src/styles/netlifycssfix.css";
+// import "../src/styles/netlifycssfix.css";
 
 export const GlobalContext = createContext();
 
