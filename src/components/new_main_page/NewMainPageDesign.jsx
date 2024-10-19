@@ -11,6 +11,8 @@ import NewSkillBox from "./NewSkillBox";
 import NewProjects from "./NewProjects";
 import projects from "../../utils/projectData";
 import NewProjectCard from "./NewProjectCard";
+import NewContactMe from "./NewContactMe";
+import ContactMe from "../ContactMe";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -45,7 +47,7 @@ function NewMainPageDesign() {
         ))}
       </div>
       <div className="newSection Projects">
-        {/* <NewProjects /> */}
+        <div className="newProjectsHeading">Projects</div>
         <div className="newProjectCardsContainer">
           {" "}
           {projects.map((item, index) => (
@@ -63,8 +65,20 @@ function NewMainPageDesign() {
             />
           ))}
         </div>
+        <div className="moreProjectsBtn">
+          <a
+            href="https://github.com/mikeski-aa"
+            target="_blank"
+            className="ghubLink"
+          >
+            All of my projects can be found on my GitHub
+          </a>
+        </div>
       </div>
-      <div className="newSection Contact"></div>
+      <div className="newSection Contact">
+        <div className="newProjectsHeading">Contact</div>
+        <NewContactMe />
+      </div>
     </div>
   );
 }

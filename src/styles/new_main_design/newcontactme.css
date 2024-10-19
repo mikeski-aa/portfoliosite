@@ -1,0 +1,52 @@
+.newContactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contactMeHeadDiv {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newContactIcon {
+  width: 5vw;
+  height: 5vw;
+  fill: orange;
+}
+
+.newContactBox {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  outline: 2px solid orange;
+  border-radius: 25px;
+  padding: 15px;
+  transition-duration: 0.5s;
+}
+
+.newContactBox:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.contactMeBtnDiv {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .newContactBox {
+    font-size: 1rem;
+  }
+}

@@ -61,9 +61,6 @@ function NewProjectCard(props) {
           <NewSkillBox key={index} name={item.name} />
         ))}
       </div>
-      {/* {props.isHosted ? (
-        <div className="newProjectLink">{props.projectLink}</div>
-      ) : null} */}
     </div>
   );
 }

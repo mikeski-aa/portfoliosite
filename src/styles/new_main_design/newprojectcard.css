@@ -109,7 +109,7 @@
   .newProjectDesc,
   .techCard {
     min-width: 60vw;
-    max-width: 60vw;
+    max-width: 80vw;
   }
 
   .projText {
@@ -122,5 +122,9 @@
 
   .projectLinksDiv {
     margin-bottom: 0;
+  }
+
+  .newProjectCardsContainer {
+    justify-content: center;
   }
 }
