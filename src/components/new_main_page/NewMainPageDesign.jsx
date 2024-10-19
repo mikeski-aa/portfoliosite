@@ -47,7 +47,7 @@ function NewMainPageDesign() {
       <div className="newSection Projects">
         {/* <NewProjects /> */}
         <div className="newProjectCardsContainer">
-          {" "}
+          {/* {" "}
           {projects.map((item, index) => (
             <NewProjectCard
               key={index}
@@ -56,7 +56,7 @@ function NewMainPageDesign() {
               isHosted={item.isHosted}
               projectLink={item.projectLink}
             />
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="newSection Contact"></div>
