@@ -1,18 +1,17 @@
 .newSection.About {
   display: flex;
-  /* align-items: center; */
+
   justify-content: center;
   gap: 1rem;
 }
 
 .newAbout.content.div {
   max-width: 40vw;
-  /* min-width: 40vw;  */
+
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* animation: descLoad 2s; */
 }
 
 .headshotImgNew {
@@ -25,8 +24,7 @@
 .newAboutHeading {
   font-size: 2rem;
   font-weight: 700;
-  /* animation: typing 1s steps(20, end) forwards;
-  animation: borderFlicker 1s infinite; */
+
   animation-name: typing;
   animation-duration: 1s;
   animation-timing-function: steps(20, end);
@@ -112,7 +110,7 @@
 
   .newAbout.content.div {
     max-width: 90%;
-    /* width: 100%; */
+
     text-align: center;
     align-items: center;
   }
@@ -120,10 +118,6 @@
   .newAboutText {
     max-width: 90%;
   }
-
-  /* .Typewriter {
-    display: flex;
-  } */
 
   .newAboutHeading,
   .newAboutSubHeading {

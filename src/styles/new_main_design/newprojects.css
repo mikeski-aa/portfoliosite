@@ -18,10 +18,9 @@
 
 .projImg {
   object-fit: contain;
-  /* transition: transform 0.5s ease-in-out; */
+
   transition-duration: 2s;
   opacity: 1;
-  /* transform: translateX(0); */
 }
 
 .directsc.small {
@@ -30,18 +29,7 @@
 
 .projImg.new {
   opacity: 0;
-  /* transform: translateX(-100%); */
 }
-
-/* .projImg {
-  object-fit: contain;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
-}
-
-.projImg.new {
-  opacity: 0;
-} */
 
 .directsc {
   max-width: 50vw;

@@ -3,11 +3,7 @@
   height: 300px;
   background-color: #1e1e1e;
 
-  /* padding-left: 15px; */
   margin-top: 170px;
-  /* position: relative;
-  transform: translateY(-50px); */
-  /* background-color: blue; */
 }
 
 .terminalDiv.false {
@@ -129,8 +125,6 @@
 }
 
 .terminalInput:focus {
-  /* border-left: 3px solid white;
-  border: none; */
   outline: none;
 }
 
@@ -198,21 +192,7 @@
 
 .terminalLeftBtnDiv {
   max-width: 401.5px;
-
-  /* display: flex;
-  align-items: center; */
 }
-
-/* .terminalIcon:hover {
-  background-color: grey;
-  border-radius: 5px;
-} */
-
-/* @media (max-width: 700px) {
-  .terminalDiv {
-    height: 25vh;
-  }
-} */
 
 .terminalspacer {
   height: 20px;

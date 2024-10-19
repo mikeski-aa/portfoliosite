@@ -3,8 +3,6 @@
   justify-content: center;
   flex-wrap: wrap;
   height: fit-content;
-
-  /* overflow-x: hidden; */
 }
 
 .scrollHolder {
@@ -15,7 +13,6 @@
   gap: 1rem;
   width: 80%;
   min-height: 10rem;
-  /* width: fit-content; */
 }
 
 .scrollHolder {
