@@ -11,7 +11,7 @@ import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../App";
 
 function VertBar() {
-  const [showExp, setShowExp] = useState(false);
+  const [showExp, setShowExp] = useState(true);
   const [emailModal, setEmailModal] = useState(false);
   const globalContext = useContext(GlobalContext);
 

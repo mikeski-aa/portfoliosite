@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  width: 80vw;
 }
 
 .contactMeHeadDiv {
@@ -55,6 +54,7 @@
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 700px) {

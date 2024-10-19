@@ -16,16 +16,6 @@ function NewContactMe() {
           <NewContactBox key={index} name={item.name} />
         ))}
       </div>
-      <div className="mobileContainer">
-        {window.innerWidth <= 963 ? (
-          <div className="mobileMessage">
-            It looks like you are viewing this page on a mobile device! Not all
-            the features are available on mobile, try the{" "}
-            <span className="brackStyle">desktop</span> site to get access to
-            all of the features!
-          </div>
-        ) : null}
-      </div>
     </div>
   );
 }

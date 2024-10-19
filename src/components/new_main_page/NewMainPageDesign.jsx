@@ -13,7 +13,7 @@ function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
   return (
     <div className="newDesignDiv">
-      {/* <div className="newSection About">
+      <div className="newSection About">
         <div className="newHeadshotDiv">
           <img src={headshot} className="headshotImgNew"></img>
         </div>
@@ -35,7 +35,7 @@ function NewMainPageDesign() {
             />
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="newSection Skills">
         <div className="scrollHolder">
           {skills.map((item, index) => (
