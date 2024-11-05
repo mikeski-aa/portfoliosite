@@ -27,7 +27,7 @@ function NewSkillBoxForCard(props) {
     Jest: <JestIcon className="newSkillIconCard" />,
     VSCode: <VscodeIcon className="newSkillIconCard" />,
     Git: <GitIcon className="newSkillIconCard" />,
-    TypeScript: <TsIcon className="skillIcon" />,
+    TypeScript: <TsIcon className="newSkillIconCard" />,
   };
 
   const renderedIcon = icons[props.name];

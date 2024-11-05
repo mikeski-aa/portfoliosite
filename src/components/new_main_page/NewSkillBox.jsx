@@ -10,6 +10,7 @@ import ExpressIcon from "../../assets/bwicons/expressicon.svg?react";
 import VscodeIcon from "../../assets/bwicons/vscodeicon.svg?react";
 import JestIcon from "../../assets/bwicons/jesticon.svg?react";
 import GitIcon from "../../assets/bwicons/github2.svg?react";
+import TsIcon from "../../assets/bwicons/typescript.svg?react";
 
 function NewSkillBox(props) {
   const icons = {
@@ -25,6 +26,7 @@ function NewSkillBox(props) {
     Jest: <JestIcon className="newSkillIcon" />,
     VSCode: <VscodeIcon className="newSkillIcon" />,
     Git: <GitIcon className="newSkillIcon" />,
+    TypeScript: <TsIcon className="newSkillIcon" />,
   };
 
   const renderedIcon = icons[props.name];
