@@ -1,4 +1,5 @@
 const skills = [
+  { name: "TypeScript" },
   { name: "JavaScript" },
   { name: "React" },
   { name: "Node" },
