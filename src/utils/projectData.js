@@ -4,8 +4,30 @@ import odinbook from "../assets/project_cards/odinbook.png";
 import todo from "../assets/project_cards/todo.png";
 import waldo from "../assets/project_cards/whereswaldo.png";
 import portfolio from "../assets/project_cards/portfolio.png";
+import storebuddy from "../assets/project_cards/storebuddy.png";
 
 const projects = [
+  {
+    title: "StoreBuddy",
+    desc: "StoreBuddy is a simple store management webapp. Frontend is built using React in TypeScript, using ReactRouter for page routing and ContextAPI for state management. Backend written in Express.js. Authentication is handled by Passport.js middleware. Additionally, project uses Prisma ORM for PSQL database. Express backend utilises CRON for job scheduling - this is for database purging.",
+    projectLink: "https://storebuddy.netlify.app/",
+    feRepo: "https://github.com/mikeski-aa/new-project-fe-ts",
+    beRepo: "https://github.com/mikeski-aa/new-project-be",
+    type: "Fullstack",
+    smallPic: storebuddy,
+    isHosted: true,
+    tech: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "Express" },
+      { name: "PostgreSQL" },
+      { name: "CSS" },
+      { name: "HTML" },
+      { name: "Photoshop" },
+    ],
+  },
   {
     title: "Odinbook",
     desc: "Odinbook is a PERN stack social media webapp based on Facebook's design. Secure user login implemented using JWT, users are able to create new accounts, create text or picture posts, create comments and likes, manage friends, customise their profile. The application is designed to be responsive and fully functional on mobile and desktop devices.",
