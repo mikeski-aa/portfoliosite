@@ -105,7 +105,7 @@ const projects = [
     title: "Knight Travel",
     desc: "Knight travel is a React project where a user can select the starting and end location for the knight on the chessboard by either drag and drop or clicking the chessboard. The shortest path betwen two coordinates is displayed and possible paths are animated. Original project was a pure node application, rewritten to in React.",
     projectLink: "https://knight-move-react.netlify.app/",
-    feRepo: "https://github.com/mikeski-aa/knight-travel",
+    feRepo: "https://github.com/mikeski-aa/knight-moves-react",
     type: "Frontend",
     smallPic: knight,
     isHosted: true,
