@@ -5,8 +5,29 @@ import todo from "../assets/project_cards/todo.png";
 import waldo from "../assets/project_cards/whereswaldo.png";
 import portfolio from "../assets/project_cards/portfolio.png";
 import storebuddy from "../assets/project_cards/storebuddy.png";
+import tictactoe from "../assets/project_cards/mptictactoe.png";
 
 const projects = [
+  {
+    title: "Multiplayer Tic Tac Toe",
+    desc: "Multiplayer Tic Tac Toe is a multiplayer Tic Tac Toe game with leaderboards. Frontend is written in TypeScript with React, using Context API for state management. Backend is written in Node using Express.js, utilising websockets (Socket.io specifically) for websocket integration. User details are stored on PSQL server. For security, CORS set up on websockets and APIs to prevent XO attacks, and all user input is escaped to prevent SQL injection-based attacks.",
+    projectLink: "https://xomulti.netlify.app/",
+    feRepo: "https://github.com/mikeski-aa/ttt-fe-ts",
+    beRepo: "https://github.com/mikeski-aa/websocket-backend",
+    type: "Fullstack",
+    smallPic: tictactoe,
+    isHosted: true,
+    tech: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "Express" },
+      { name: "PostgreSQL" },
+      { name: "CSS" },
+      { name: "HTML" },
+    ],
+  },
   {
     title: "StoreBuddy",
     desc: "StoreBuddy is a simple store management webapp. Frontend is built using React in TypeScript, using ReactRouter for page routing and ContextAPI for state management. Backend written in Express.js. Authentication is handled by Passport.js middleware. Additionally, project uses Prisma ORM for PSQL database. Express backend utilises CRON for job scheduling - this is for database purging.",
