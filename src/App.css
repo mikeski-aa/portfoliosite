@@ -169,3 +169,7 @@ h2:hover {
     font-size: 0.88rem;
   }
 }
+
+#tsparticles {
+  z-index: -5;
+}

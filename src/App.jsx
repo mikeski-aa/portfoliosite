@@ -23,6 +23,8 @@ import skills from "./utils/skillsData";
 import NewSkillBox from "./components/new_main_page/NewSkillBox";
 import NewProjectComp from "./components/new_main_page/NewProjectsComp";
 import NewContactMe from "./components/new_main_page/NewContactMe";
+import BackgroundParticles from "./components/BackgroundParticles";
+
 // import "../src/styles/netlifycssfix.css";
 
 export const GlobalContext = createContext();
@@ -153,7 +155,7 @@ function App() {
 
   useEffect(() => {
     if (!dontRun) {
-      console.log("still running");
+      // console.log("still running");
       if (aboutVisible) {
         setActivePage("zero");
         setCurrentPage("About_me.jsx");
@@ -343,6 +345,7 @@ function App() {
                   />
                 </div>
                 <div className={`mainCont ${sidebarStat}`}>
+                  <BackgroundParticles />
                   {pageOrder.map((page, index) => (
                     <div
                       key={index}

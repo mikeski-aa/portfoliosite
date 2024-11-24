@@ -10,6 +10,7 @@ import NewProjectCard from "./NewProjectCard";
 import NewContactMe from "./NewContactMe";
 import desktopShowcase from "../../assets/gif/desktopShowcase.gif";
 import terminalShowcase from "../../assets/gif/terminalShowcase.gif";
+import BackgroundParticles from "../BackgroundParticles";
 
 function NewMainPageDesign() {
   // writing out the basic layout before breaking it down into own compoenents and styling individually
@@ -78,6 +79,7 @@ function NewMainPageDesign() {
         <NewContactMe />
       </div>
       <div className="mobile">
+        <BackgroundParticles />
         <div className="mobileTextHeader">Hey there mobile device user!</div>
         <div className="mobileMainText">
           Check out the desktop version to see the full version of my website
