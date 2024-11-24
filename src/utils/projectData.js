@@ -2,7 +2,7 @@ import dmme from "../assets/project_cards/dmme.png";
 import knight from "../assets/project_cards/knightmove.png";
 import odinbook from "../assets/project_cards/odinbook.png";
 import todo from "../assets/project_cards/todo.png";
-import waldo from "../assets/project_cards/whereswaldo.png";
+import myocrapp from "../assets/project_cards/myocrapp.png";
 import portfolio from "../assets/project_cards/portfolio.png";
 import storebuddy from "../assets/project_cards/storebuddy.png";
 import tictactoe from "../assets/project_cards/mptictactoe.png";
@@ -11,19 +11,17 @@ const projects = [
   {
     title: "Parser / OCR app",
     desc: `Air RB Parser is an application designed to analyze screenshots from the "Air Realistic Battle" mode in the MMO game "War Thunder" to determine the battle rating (BR) of the user's team's vehicles, thereby revealing whether they are in an "uptier" or "downtier" scenario.
-Frontend is written in TypeScript with React, using Context API for state management. The app utilizes Tesseract.js for Optical Character Recognition (OCR). Data parsing and handling is done with Cheerio and Papa Parse for CSV operations.`,
+Frontend is written in TypeScript with React. The app utilizes Tesseract.js for Optical Character Recognition (OCR). Data parsing and handling is done with Cheerio and Papa Parse for CSV operations.`,
     projectLink: "https://wt-airrb-check.netlify.app/",
     feRepo: "https://github.com/mikeski-aa/ocr-scoreboard-check",
     type: "Fullstack",
-    smallPic: tictactoe,
+    smallPic: myocrapp,
     isHosted: true,
     tech: [
       { name: "TypeScript" },
       { name: "JavaScript" },
       { name: "React" },
       { name: "Node" },
-      { name: "Express" },
-      { name: "PostgreSQL" },
       { name: "CSS" },
       { name: "HTML" },
     ],
