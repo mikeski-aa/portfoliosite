@@ -9,6 +9,26 @@ import tictactoe from "../assets/project_cards/mptictactoe.png";
 
 const projects = [
   {
+    title: "Parser / OCR app",
+    desc: `Air RB Parser is an application designed to analyze screenshots from the "Air Realistic Battle" mode in the MMO game "War Thunder" to determine the battle rating (BR) of the user's team's vehicles, thereby revealing whether they are in an "uptier" or "downtier" scenario.
+Frontend is written in TypeScript with React, using Context API for state management. The app utilizes Tesseract.js for Optical Character Recognition (OCR). Data parsing and handling is done with Cheerio and Papa Parse for CSV operations.`,
+    projectLink: "https://wt-airrb-check.netlify.app/",
+    feRepo: "https://github.com/mikeski-aa/ocr-scoreboard-check",
+    type: "Fullstack",
+    smallPic: tictactoe,
+    isHosted: true,
+    tech: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Node" },
+      { name: "Express" },
+      { name: "PostgreSQL" },
+      { name: "CSS" },
+      { name: "HTML" },
+    ],
+  },
+  {
     title: "Multiplayer Tic Tac Toe",
     desc: "Multiplayer Tic Tac Toe is a multiplayer Tic Tac Toe game with leaderboards. Frontend is written in TypeScript with React, using Context API for state management. Backend is written in Node using Express.js, utilising websockets (Socket.io specifically) for websocket integration. User details are stored on PSQL server. For security, CORS set up on websockets and APIs to prevent XO attacks, and all user input is escaped to prevent SQL injection-based attacks.",
     projectLink: "https://xomulti.netlify.app/",
