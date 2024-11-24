@@ -14,7 +14,7 @@ const projects = [
 Frontend is written in TypeScript with React. The app utilizes Tesseract.js for Optical Character Recognition (OCR). Data parsing and handling is done with Cheerio and Papa Parse for CSV operations.`,
     projectLink: "https://wt-airrb-check.netlify.app/",
     feRepo: "https://github.com/mikeski-aa/ocr-scoreboard-check",
-    type: "Fullstack",
+    type: "Frontend",
     smallPic: myocrapp,
     isHosted: true,
     tech: [
