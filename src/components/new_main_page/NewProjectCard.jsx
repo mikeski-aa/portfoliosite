@@ -56,6 +56,7 @@ function NewProjectCard(props) {
           className="cardImgSmall"
           src={props.smallPic}
           alt="project preview image"
+          loading="lazy"
         />
       </div>
       <div className="techCard">

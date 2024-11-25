@@ -22,6 +22,7 @@ function NewMainPageDesign() {
             src={headshot}
             className="headshotImgNew"
             alt="headshot image"
+            loading="lazy"
           ></img>
         </div>
         <div className="newAbout content div">
@@ -98,12 +99,14 @@ function NewMainPageDesign() {
             src={desktopShowcase}
             className="desktopShowcase"
             alt="dekstop showcase image"
+            loading="lazy"
           ></img>
           <div className="firstImgText two">Interactive terminal</div>
           <img
             src={terminalShowcase}
             className="desktopShowcase"
             alt="desktop showcase terminal"
+            loading="lazy"
           ></img>
         </div>
       </div>
