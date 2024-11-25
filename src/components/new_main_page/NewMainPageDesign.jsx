@@ -18,7 +18,11 @@ function NewMainPageDesign() {
     <div className="newDesignDiv">
       <div className="newSection About">
         <div className="newHeadshotDiv">
-          <img src={headshot} className="headshotImgNew"></img>
+          <img
+            src={headshot}
+            className="headshotImgNew"
+            alt="headshot image"
+          ></img>
         </div>
         <div className="newAbout content div">
           <div className="newAboutHeading">Michal Nowak&nbsp;</div>
@@ -90,9 +94,17 @@ function NewMainPageDesign() {
           <div className="firstImgText">
             Interactive explorer and page windows
           </div>
-          <img src={desktopShowcase} className="desktopShowcase"></img>
+          <img
+            src={desktopShowcase}
+            className="desktopShowcase"
+            alt="dekstop showcase image"
+          ></img>
           <div className="firstImgText two">Interactive terminal</div>
-          <img src={terminalShowcase} className="desktopShowcase"></img>
+          <img
+            src={terminalShowcase}
+            className="desktopShowcase"
+            alt="desktop showcase terminal"
+          ></img>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ function AboutMe(props) {
       </div>
       <div className="aboutMeContainer">
         <div className="aboutMeText">
-          <img src={headshot} className="profImg"></img>
+          <img src={headshot} className="profImg" alt="profile picture"></img>
           <div className="upperTextContainer">
             <div className="nameHeader">
               <span className="line">Michal </span>&nbsp;Nowak

@@ -49,6 +49,7 @@ function NewProjects() {
             src={imgNewArr[imgIndex]}
             className={`projImg ${fade ? "new" : ""} directsc`}
             loading="lazy"
+            alt="project image small"
           ></img>
         </div>
 

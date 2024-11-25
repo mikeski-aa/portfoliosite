@@ -6,7 +6,11 @@ function NewAboutComp() {
   return (
     <div className="newSection About">
       <div className="newHeadshotDiv">
-        <img src={headshot} className="headshotImgNew"></img>
+        <img
+          src={headshot}
+          className="headshotImgNew"
+          alt="headshot image"
+        ></img>
       </div>
       <div className="newAbout content div">
         <div className="newAboutHeading">Michal Nowak&nbsp;</div>

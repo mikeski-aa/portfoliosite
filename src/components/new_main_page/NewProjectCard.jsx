@@ -52,7 +52,11 @@ function NewProjectCard(props) {
         </div>
       </div>
       <div className="newProjectImg">
-        <img className="cardImgSmall" src={props.smallPic} />
+        <img
+          className="cardImgSmall"
+          src={props.smallPic}
+          alt="project preview image"
+        />
       </div>
       <div className="techCard">
         {props.skills.map((item, index) => (

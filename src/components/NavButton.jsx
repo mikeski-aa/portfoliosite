@@ -277,7 +277,11 @@ function NavButton(props) {
         onMouseDown={(e) => handleKeyDown(e)}
       >
         {props.name === "bonusPage.js" ? (
-          <img src={testIcon} className="locationIcon"></img>
+          <img
+            src={testIcon}
+            className="locationIcon"
+            alt="javascript icon"
+          ></img>
         ) : (
           <ReactIconComponent className="locationIcon" />
         )}

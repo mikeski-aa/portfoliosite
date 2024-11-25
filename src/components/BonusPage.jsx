@@ -17,7 +17,12 @@ function BonusPage(props) {
             Did you know you can <span className="line">drag tabs</span>?
           </div>
 
-          <img src={dragDropGif} className="bonusGif" loading="lazy"></img>
+          <img
+            src={dragDropGif}
+            className="bonusGif"
+            loading="lazy"
+            alt="functionality gif"
+          ></img>
         </div>
         <div className="bonus part two">
           <div className="bonusTxtBox">
@@ -25,7 +30,12 @@ function BonusPage(props) {
             <span className="linkStyle">middle mouse button</span>!
           </div>
 
-          <img src={mmbCloseGif} className="bonusGif" loading="lazy" />
+          <img
+            src={mmbCloseGif}
+            className="bonusGif"
+            loading="lazy"
+            alt="functionality gif"
+          />
         </div>
         <div className="bonus part three">
           <div className="bonusTxtBox">
@@ -34,7 +44,12 @@ function BonusPage(props) {
             <span className="brackStyle">interact with the terminal</span>!
           </div>
 
-          <img src={terminalTyping} className="bonusGif" loading="lazy" />
+          <img
+            src={terminalTyping}
+            className="bonusGif"
+            loading="lazy"
+            alt="functionality gif"
+          />
         </div>
       </div>
     </div>
